@@ -6,7 +6,6 @@ const colors = {
   primary: { DEFAULT: '#FF6000', medium: '#FFA06A', light: '#FFDBC4', 'x-light': '#FFF3EB' },
   secondary: { DEFAULT: '#924AAF', medium: '#C479E1', light: '#F8AAFF', 'x-light': '#FFDDFF' },
   accent: { DEFAULT: '#32363B', medium: '#414B58', light: '#6d6d6d', 'x-light': '#CECECE' },
-  // neutral: '',
 
   info: { DEFAULT: '#3E96E7', 'x-light': '#dcefff' },
   success: { DEFAULT: '#85BC63', medium: '#5f8f41', 'x-light': '#e6f8f1' },
