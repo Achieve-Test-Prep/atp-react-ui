@@ -1,3 +1,17 @@
+
+
+# 2.6.0 (2023-01-18)
+
+
+### Bug Fixes
+
+* **fix:** minor fix ([50c8bee](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/50c8beecd17c9594a52af444bcfe38d751d2d9db))
+
+
+### Features
+
+* add components ([fc1f8c9](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/fc1f8c917957412f0774030faadf5b48b5d0c797))
+
 ## [2.5.1](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.5.0...2.5.1) (2023-01-18)
 
 ### Bug Fixes
