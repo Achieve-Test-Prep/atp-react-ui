@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import type { TableCellProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
+
+import type { TableCellProps } from './types';
 
 const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>(function TableCell(props, ref) {
   const { className, children, ...other } = props;

@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import type { BadgeProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
+
+import type { BadgeProps } from './types';
 
 const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(function Badge(props, ref) {
   const { className, children, as = 'base', size = 'base', type = 'primary', ...other } = props;

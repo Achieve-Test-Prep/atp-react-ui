@@ -2,9 +2,10 @@ import { ForwardedRef, forwardRef, useContext } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import type { CheckboxProps, CheckboxRef } from './types';
 import { ThemeContext } from '../themes/theme-context';
 import { Label } from '../Typography';
+
+import type { CheckboxProps, CheckboxRef } from './types';
 
 export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>(function Checkbox(
   { valid, className, type = 'check', label, disabled, labelClassName, ...other }: CheckboxProps,

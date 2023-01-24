@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import type { LabelProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
+
+import type { LabelProps } from './types';
 
 const Label = React.forwardRef<HTMLLabelElement, LabelProps>(function Label(props, ref) {
   const { children, checkbox, radio, disabled, className, ...other } = props;

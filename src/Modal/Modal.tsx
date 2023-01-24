@@ -3,11 +3,12 @@ import React, { useEffect, useContext, useState } from 'react';
 import { createPortal } from 'react-dom';
 import FocusLock from 'react-focus-lock';
 
-import type { ModalProps } from './types';
 import { Backdrop } from '../Backdrop';
 import { Button } from '../Button';
 import { ThemeContext } from '../themes/theme-context';
 import { Transition } from '../Transition';
+
+import type { ModalProps } from './types';
 
 const Modal = React.forwardRef<HTMLDivElement, ModalProps>(function Modal(props, ref) {
   const { children, onClose, isOpen, disableInternalClosing = false, ...other } = props;

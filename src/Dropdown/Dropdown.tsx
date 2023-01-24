@@ -3,9 +3,10 @@ import React, { useEffect, useContext, useRef } from 'react';
 import FocusLock from 'react-focus-lock';
 import { twMerge } from 'tailwind-merge';
 
-import type { DropdownProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
 import { Transition } from '../Transition';
+
+import type { DropdownProps } from './types';
 
 const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(function Dropdown(props, ref) {
   const { children, onClose, isOpen, className, align = 'left', ...other } = props;

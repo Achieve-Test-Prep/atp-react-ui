@@ -2,10 +2,11 @@ import { useContext } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import type { ButtonProps } from './types';
 import { SpinnerProps } from '../Progress/types';
 import { ThemeContext } from '../themes/theme-context';
 import warn from '../utils/warning';
+
+import type { ButtonProps } from './types';
 
 export function useButton(props: ButtonProps) {
   const {

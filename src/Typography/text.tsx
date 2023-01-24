@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import type { TextProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
+
+import type { TextProps } from './types';
 
 const Text = React.forwardRef<HTMLDivElement, TextProps>(function Label(props, ref) {
   const { children, as = 'div', className, ...other } = props;

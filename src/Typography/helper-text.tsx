@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import type { HelperTextProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
+
+import type { HelperTextProps } from './types';
 
 const HelperText = React.forwardRef<HTMLSpanElement, HelperTextProps>(function HelperText(props, ref) {
   const { children, valid, className, ...other } = props;

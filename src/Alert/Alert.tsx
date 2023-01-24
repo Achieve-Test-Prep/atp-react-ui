@@ -2,10 +2,11 @@ import React, { useContext } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { SuccessIcon, WarningIcon, DangerIcon, InfoIcon, NeutralIcon } from './alert-icons';
-import type { AlertProps } from './types';
 import { Button } from '../Button';
 import { ThemeContext } from '../themes/theme-context';
+
+import { SuccessIcon, WarningIcon, DangerIcon, InfoIcon, NeutralIcon } from './alert-icons';
+import type { AlertProps } from './types';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
   const { className, children, type = 'neutral', onClose, ...other } = props;

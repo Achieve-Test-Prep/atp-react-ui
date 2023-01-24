@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import type { InputProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
 import { Label } from '../Typography';
+
+import type { InputProps } from './types';
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input(props, ref) {
   const { valid, className, label, labelClassName, ...other } = props;

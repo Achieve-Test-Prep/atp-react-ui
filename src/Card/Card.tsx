@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import type { CardProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
+
+import type { CardProps } from './types';
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(function Card(props, ref) {
   const { className, children, colored = false, ...other } = props;

@@ -2,8 +2,9 @@ import { useContext } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import type { SpinnerProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
+
+import type { SpinnerProps } from './types';
 
 export function Spinner({ className = '', animate = true, size = 'base', ...rest }: SpinnerProps) {
   const {

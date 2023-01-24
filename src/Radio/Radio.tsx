@@ -2,9 +2,10 @@ import { ForwardedRef, forwardRef, useContext } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import type { RadioProps, RadioRef } from './types';
 import { ThemeContext } from '../themes/theme-context';
 import { Label } from '../Typography';
+
+import type { RadioProps, RadioRef } from './types';
 
 export const Radio = forwardRef<RadioRef, RadioProps>(function Checkbox(
   { valid, className, type = 'radio', label, disabled, labelClassName, ...other }: RadioProps,

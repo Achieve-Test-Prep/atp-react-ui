@@ -2,8 +2,9 @@ import React, { FC, PropsWithChildren, useContext } from 'react';
 
 import Tippy from '@tippyjs/react';
 
-import type { TooltipProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
+
+import type { TooltipProps } from './types';
 
 const placements = {
   // default
