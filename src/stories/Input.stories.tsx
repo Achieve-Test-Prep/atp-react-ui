@@ -15,9 +15,3 @@ export const Text = Template.bind({});
 Text.args = {
   value: 'This is the text',
 };
-
-export const Radio = Template.bind({});
-Radio.args = {
-  type: 'radio',
-  label: 'This is Radio',
-};
