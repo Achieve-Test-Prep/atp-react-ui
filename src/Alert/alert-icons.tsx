@@ -1,4 +1,4 @@
-import { AlertIconProps } from './types';
+import type { AlertIconProps } from './types';
 
 export const InfoIcon: React.FC<React.PropsWithChildren<AlertIconProps>> = (props) => (
   <svg

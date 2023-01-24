@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TableProps } from './types';
+import type { TableProps } from './types';
 
 const Table = React.forwardRef<HTMLTableElement, TableProps>(function Table(props, ref) {
   const { children, ...other } = props;

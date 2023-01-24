@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import classNames from 'classnames';
+import { twMerge } from 'tailwind-merge';
 
 import { ThemeContext } from '../themes/theme-context';
 import { DivProps } from '../types';
@@ -12,9 +12,7 @@ const TableFooter = React.forwardRef<HTMLDivElement, DivProps>(function TableFoo
     theme: { tableFooter },
   } = useContext(ThemeContext);
 
-  const baseStyle = tableFooter.base;
-
-  const cls = classNames(baseStyle, className);
+  const cls = twMerge(tableFooter.base, className);
 
   return (
     <div className={cls} ref={ref} {...other}>

@@ -2,9 +2,9 @@ import React, { ChangeEvent, useContext } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
+import type { ISelectOption, SelectProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
 import { Label } from '../Typography';
-import { ISelectOption, SelectProps } from './types';
 
 const Select = React.forwardRef<HTMLSelectElement, SelectProps>(function Select(props, ref) {
   const {

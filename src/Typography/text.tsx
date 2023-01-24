@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 
-import classNames from 'classnames';
 import { twMerge } from 'tailwind-merge';
 
+import type { TextProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
-import { TextProps } from './types';
 
 const Text = React.forwardRef<HTMLDivElement, TextProps>(function Label(props, ref) {
   const { children, as = 'div', className, ...other } = props;
@@ -12,7 +11,7 @@ const Text = React.forwardRef<HTMLDivElement, TextProps>(function Label(props, r
     theme: { text },
   } = useContext(ThemeContext);
 
-  const cls = twMerge(text.p, classNames(text?.[as as keyof typeof text] ?? ''), className);
+  const cls = twMerge(text.p, text?.[as as keyof typeof text] ?? '', className);
 
   if (as === 'h1') {
     return (

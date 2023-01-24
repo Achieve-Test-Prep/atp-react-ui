@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
-import classNames from 'classnames';
+import { twMerge } from 'tailwind-merge';
 
+import type { TableSectionProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
-import { TableSectionProps } from './types';
 
 const TableHeader = React.forwardRef<HTMLTableSectionElement, TableSectionProps>(function TableHeader(props, ref) {
   const { className, children, ...other } = props;
@@ -12,9 +12,7 @@ const TableHeader = React.forwardRef<HTMLTableSectionElement, TableSectionProps>
     theme: { tableHeader },
   } = useContext(ThemeContext);
 
-  const baseStyle = tableHeader.base;
-
-  const cls = classNames(baseStyle, className);
+  const cls = twMerge(tableHeader.base, className);
 
   return (
     <thead className={cls} ref={ref} {...other}>

@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 
-import classNames from 'classnames';
 import { twMerge } from 'tailwind-merge';
 
+import type { AvatarProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
-import { AvatarProps } from './types';
 
 const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(function Avatar(props, ref) {
   const { size = 'base', src, alt, className, ...other } = props;
@@ -12,7 +11,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(function Avatar(pro
     theme: { avatar },
   } = useContext(ThemeContext);
 
-  const cls = twMerge(classNames(avatar.base, avatar.size[size]), className);
+  const cls = twMerge(avatar.base, avatar.size[size], className);
 
   return (
     <div className={cls} ref={ref} {...other}>

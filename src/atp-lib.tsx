@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useMemo } from 'react';
 
 import defaultTheme from './themes/default';
 import { ThemeContext } from './themes/theme-context';
-import { DivProps } from './types';
+import type { DivProps } from './types';
 import { mergeDeep } from './utils/merge-deep';
 import useDarkMode from './utils/use-dark-mode';
 

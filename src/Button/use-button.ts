@@ -1,12 +1,11 @@
 import { useContext } from 'react';
 
-import classNames from 'classnames';
 import { twMerge } from 'tailwind-merge';
 
+import type { ButtonProps } from './types';
 import { SpinnerProps } from '../Progress/types';
 import { ThemeContext } from '../themes/theme-context';
 import warn from '../utils/warning';
-import { ButtonProps } from './types';
 
 export function useButton(props: ButtonProps) {
   const {
@@ -55,8 +54,8 @@ export function useButton(props: ButtonProps) {
 
   const buttonStyles = twMerge(
     as === '__dropdownItem'
-      ? classNames(button.dropdownItem.base)
-      : classNames(
+      ? button.dropdownItem.base
+      : twMerge(
           button.base,
           // has icon but no children
           hasIcon && !children && btnIconSize,
@@ -72,8 +71,8 @@ export function useButton(props: ButtonProps) {
     className
   );
 
-  const iconLeftStyles = classNames(button.icon[size], children ? button.icon.left : '');
-  const iconRightStyles = classNames(button.icon[size], children ? button.icon.right : '');
+  const iconLeftStyles = twMerge(button.icon[size], children ? button.icon.left : '');
+  const iconRightStyles = twMerge(button.icon[size], children ? button.icon.right : '');
 
   const loaderSize = (size === 'xs' || size === 'pagination' ? 'xs' : 'sm') as SpinnerProps['size'];
 

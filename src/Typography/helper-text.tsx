@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
-import classNames from 'classnames';
+import { twMerge } from 'tailwind-merge';
 
+import type { HelperTextProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
-import { HelperTextProps } from './types';
 
 const HelperText = React.forwardRef<HTMLSpanElement, HelperTextProps>(function HelperText(props, ref) {
   const { children, valid, className, ...other } = props;
@@ -11,22 +11,18 @@ const HelperText = React.forwardRef<HTMLSpanElement, HelperTextProps>(function H
     theme: { helperText },
   } = useContext(ThemeContext);
 
-  const baseStyle = helperText.base;
-  const validStyle = helperText.valid;
-  const invalidStyle = helperText.invalid;
-
   const validationStyle = (iValid: boolean | undefined): string => {
     switch (iValid) {
       case true:
-        return validStyle;
+        return helperText.valid;
       case false:
-        return invalidStyle;
+        return helperText.invalid;
       default:
         return '';
     }
   };
 
-  const cls = classNames(baseStyle, validationStyle(valid), className);
+  const cls = twMerge(helperText.base, validationStyle(valid), className);
 
   return (
     <span className={cls} ref={ref} {...other}>

@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
+import type { LabelProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
-import { LabelProps } from './types';
 
 const Label = React.forwardRef<HTMLLabelElement, LabelProps>(function Label(props, ref) {
   const { children, checkbox, radio, disabled, className, ...other } = props;
@@ -11,15 +11,11 @@ const Label = React.forwardRef<HTMLLabelElement, LabelProps>(function Label(prop
     theme: { label },
   } = useContext(ThemeContext);
 
-  const baseStyle = label.base;
-  const checkStyle = label.checkbox;
-  const disabledStyle = label.disabled;
-
   const cls = twMerge(
-    baseStyle,
+    label.base,
     // check and radio are interchangeable
-    (checkbox || radio) && checkStyle,
-    disabled && disabledStyle,
+    (checkbox || radio) && label.checkbox,
+    disabled && label.disabled,
     className
   );
 

@@ -13,10 +13,8 @@ const DropdownItem = React.forwardRef<Ref, ButtonProps>(function DropdownItem(pr
     theme: { dropdownItem },
   } = useContext(ThemeContext);
 
-  const baseStyle = dropdownItem.base;
-
   return (
-    <li className={baseStyle}>
+    <li className={dropdownItem.base}>
       <Button as="__dropdownItem" ref={ref} {...other}>
         {children}
       </Button>

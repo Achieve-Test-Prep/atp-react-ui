@@ -1,24 +1,17 @@
 import React, { useContext } from 'react';
 
-import classNames from 'classnames';
 import { twMerge } from 'tailwind-merge';
 
-import { Button } from '../Button';
-import { ThemeContext } from '../themes/theme-context';
 import { SuccessIcon, WarningIcon, DangerIcon, InfoIcon, NeutralIcon } from './alert-icons';
 import type { AlertProps } from './types';
+import { Button } from '../Button';
+import { ThemeContext } from '../themes/theme-context';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
   const { className, children, type = 'neutral', onClose, ...other } = props;
   const {
     theme: { alert },
   } = useContext(ThemeContext);
-
-  const baseStyle = alert.base;
-  const withCloseStyle = alert.withClose;
-  const typeStyle = alert[type];
-  const iconBaseStyle = alert.icon.base;
-  const iconTypeStyle = alert.icon[type];
 
   let Icon;
   switch (type) {
@@ -41,12 +34,12 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props,
       Icon = NeutralIcon;
   }
 
-  const cls = classNames(baseStyle, typeStyle, onClose && withCloseStyle, className);
+  const cls = twMerge(alert.base, alert[type], onClose && alert.withClose, className);
 
-  const iconCls = twMerge(iconBaseStyle, iconTypeStyle, 'absolute left-0 top-0 ml-4 mt-4');
+  const iconCls = twMerge(alert.icon.base, alert.icon[type], 'absolute left-0 top-0 ml-4 mt-4');
   const closeCls = twMerge(
-    iconBaseStyle,
-    iconTypeStyle,
+    alert.icon.base,
+    alert.icon[type],
     'absolute top-0 right-0 mt-4 mr-4 hover:bg-gray-overlay/10 focus:ring-primary-medium'
   );
 

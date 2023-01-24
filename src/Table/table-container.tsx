@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
-import classNames from 'classnames';
+import { twMerge } from 'tailwind-merge';
 
 import { ThemeContext } from '../themes/theme-context';
-import { DivProps } from '../types';
+import type { DivProps } from '../types';
 
 const TableContainer = React.forwardRef<HTMLDivElement, DivProps>(function TableContainer(props, ref) {
   const { className, children, ...other } = props;
@@ -12,9 +12,7 @@ const TableContainer = React.forwardRef<HTMLDivElement, DivProps>(function Table
     theme: { tableContainer },
   } = useContext(ThemeContext);
 
-  const baseStyle = tableContainer.base;
-
-  const cls = classNames(baseStyle, className);
+  const cls = twMerge(tableContainer.base, className);
 
   return (
     <div className={cls} ref={ref} {...other}>

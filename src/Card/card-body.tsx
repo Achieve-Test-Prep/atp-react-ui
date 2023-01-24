@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
-import classNames from 'classnames';
+import { twMerge } from 'tailwind-merge';
 
 import { ThemeContext } from '../themes/theme-context';
-import { DivProps } from '../types';
+import type { DivProps } from '../types';
 
 const CardBody = React.forwardRef<HTMLDivElement, DivProps>(function CardBody(props, ref) {
   const { className, children, ...other } = props;
@@ -11,9 +11,7 @@ const CardBody = React.forwardRef<HTMLDivElement, DivProps>(function CardBody(pr
     theme: { cardBody },
   } = useContext(ThemeContext);
 
-  const baseStyle = cardBody.base;
-
-  const cls = classNames(baseStyle, className);
+  const cls = twMerge(cardBody.base, className);
 
   return (
     <div className={cls} ref={ref} {...other}>

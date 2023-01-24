@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
-import classNames from 'classnames';
+import { twMerge } from 'tailwind-merge';
 
+import type { TableCellProps } from './types';
 import { ThemeContext } from '../themes/theme-context';
-import { TableCellProps } from './types';
 
 const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>(function TableCell(props, ref) {
   const { className, children, ...other } = props;
@@ -12,9 +12,7 @@ const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>(functio
     theme: { tableCell },
   } = useContext(ThemeContext);
 
-  const baseStyle = tableCell.base;
-
-  const cls = classNames(baseStyle, className);
+  const cls = twMerge(tableCell.base, className);
 
   return (
     <td className={cls} ref={ref} {...other}>

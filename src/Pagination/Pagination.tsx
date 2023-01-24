@@ -125,10 +125,8 @@ export const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagina
     theme: { pagination },
   } = useContext(ThemeContext);
 
-  const baseStyle = pagination.base;
-
   return (
-    <div className={baseStyle} ref={ref} {...other}>
+    <div className={pagination.base} ref={ref} {...other}>
       {/*
        * This (label) should probably be an option, and not the default
        */}
