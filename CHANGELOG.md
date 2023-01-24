@@ -1,5 +1,13 @@
 
 
+## [2.6.1](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.6.0...2.6.1) (2023-01-24)
+
+
+### Bug Fixes
+
+* **fix:** fix types ([8e54ebb](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/8e54ebb0e4fe3ed2d94fa67a5f237151667f886c))
+* formatting ([5727380](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/572738048ece64482ce9dda65114e809fc06001c))
+
 # 2.6.0 (2023-01-18)
 
 
