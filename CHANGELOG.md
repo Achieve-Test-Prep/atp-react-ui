@@ -1,5 +1,12 @@
 
 
+## [2.6.2](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.6.1...2.6.2) (2023-01-25)
+
+
+### Bug Fixes
+
+* **fix modal:** fix modal transition ([1747e85](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/1747e85f7fabf82612c703f0f47984bd9ced82ad))
+
 ## [2.6.1](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.6.0...2.6.1) (2023-01-24)
 
 
