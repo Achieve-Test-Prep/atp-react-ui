@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect, useContext, useState, SyntheticEvent } from 'react';
 
 import { createPortal } from 'react-dom';
 import FocusLock from 'react-focus-lock';
@@ -43,46 +43,45 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(function Modal(props,
   }, []);
 
   const modalComponent = (
-    <Transition show={isOpen}>
-      <>
+    <Transition
+      enter="transition ease-out duration-150"
+      enterFrom="opacity-0"
+      enterTo="opacity-100"
+      leave="transition ease-in duration-150"
+      leaveFrom="opacity-100"
+      leaveTo="opacity-0"
+      show={isOpen}
+    >
+      <Backdrop onClick={handleOnClose}>
         <Transition
           enter="transition ease-out duration-150"
-          enterFrom="opacity-0"
+          enterFrom="opacity-0 transform translate-y-1/2"
           enterTo="opacity-100"
           leave="transition ease-in duration-150"
           leaveFrom="opacity-100"
-          leaveTo="opacity-0"
+          leaveTo="opacity-0 transform translate-y-1/2"
+          className={modal.base}
+          role="dialog"
+          onClick={(e: SyntheticEvent) => e.stopPropagation()}
+          {...other}
         >
-          <Backdrop onClick={handleOnClose}>
-            <Transition
-              enter="transition ease-out duration-150"
-              enterFrom="opacity-0 transform translate-y-1/2"
-              enterTo="opacity-100"
-              leave="transition ease-in duration-150"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0 transform translate-y-1/2"
-            >
-              <div className={modal.base} role="dialog" onClick={(e) => e.stopPropagation()} ref={ref} {...other}>
-                <FocusLock returnFocus>
-                  <header className="flex justify-end">
-                    {onClose && (
-                      <Button
-                        icon="XMarkIcon"
-                        size="xs"
-                        as="link"
-                        disabled={disableInternalClosing}
-                        aria-label="close"
-                        onClick={handleOnClose}
-                      />
-                    )}
-                  </header>
-                  {children}
-                </FocusLock>
-              </div>
-            </Transition>
-          </Backdrop>
+          <FocusLock returnFocus>
+            <header className="flex justify-end">
+              {onClose && (
+                <Button
+                  icon="XMarkIcon"
+                  size="xs"
+                  as="link"
+                  disabled={disableInternalClosing}
+                  aria-label="close"
+                  onClick={handleOnClose}
+                />
+              )}
+            </header>
+            {children}
+          </FocusLock>
         </Transition>
-      </>
+      </Backdrop>
     </Transition>
   );
 
