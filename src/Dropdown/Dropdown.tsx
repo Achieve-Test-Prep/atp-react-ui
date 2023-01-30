@@ -3,8 +3,8 @@ import React, { useEffect, useContext, useRef } from 'react';
 import FocusLock from 'react-focus-lock';
 import { twMerge } from 'tailwind-merge';
 
+import { AnimatedDiv } from '../animations';
 import { ThemeContext } from '../themes/theme-context';
-import { Transition } from '../Transition';
 
 import type { DropdownProps } from './types';
 
@@ -40,15 +40,13 @@ const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(function Dropdo
   const cls = twMerge(dropdown.base, dropdown.align[align], className);
 
   return (
-    <Transition show={isOpen} leave="transition ease-out duration-150" leaveFrom="opacity-100" leaveTo="opacity-0">
-      <div ref={ref}>
-        <FocusLock returnFocus>
-          <ul className={cls} ref={dropdownRef} aria-label="submenu" {...other}>
-            {children}
-          </ul>
-        </FocusLock>
-      </div>
-    </Transition>
+    <AnimatedDiv isOpen={isOpen} animated={{ appear: true, xyz: 'fade down' }} ref={ref}>
+      <FocusLock returnFocus>
+        <ul className={cls} ref={dropdownRef} aria-label="submenu" {...other}>
+          {children}
+        </ul>
+      </FocusLock>
+    </AnimatedDiv>
   );
 });
 

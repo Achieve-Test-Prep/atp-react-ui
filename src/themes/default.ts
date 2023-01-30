@@ -91,7 +91,7 @@ export default {
   },
   // Modal
   modal: {
-    base: 'w-full px-6 py-4 overflow-hidden bg-white rounded-t-lg tb:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl',
+    base: 'w-full z-40 px-6 py-4 overflow-hidden bg-white rounded-t-lg tb:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl',
   },
   // ModalBody
   modalBody: {
@@ -138,7 +138,7 @@ export default {
 
   // Backdrop
   backdrop: {
-    base: 'fixed inset-0 z-40 flex items-end bg-gray-overlay/20 sm:items-center sm:justify-center',
+    base: 'fixed inset-0 z-30 flex items-end bg-gray-overlay/20 sm:items-center sm:justify-center',
   },
 
   // Textarea

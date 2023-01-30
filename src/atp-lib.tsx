@@ -1,5 +1,7 @@
 import React, { useLayoutEffect, useMemo } from 'react';
 
+import '@animxyz/core';
+
 import defaultTheme from './themes/default';
 import { ThemeContext } from './themes/theme-context';
 import type { DivProps } from './types';

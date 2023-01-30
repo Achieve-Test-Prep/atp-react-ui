@@ -1,5 +1,6 @@
 export * from './types';
 export * from './Alert';
+export * from './animations';
 export * from './Avatar';
 export * from './Backdrop';
 export * from './Badge';
@@ -21,4 +22,3 @@ export { ThemeContext as AtpLibContext } from './themes/theme-context';
 export * from './Tooltip';
 export * from './Typography';
 export * from './atp-lib';
-export * from './Transition';
