@@ -1,5 +1,17 @@
 
 
+# [2.7.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.6.2...2.7.0) (2023-01-30)
+
+
+### Bug Fixes
+
+* **webpack:** fixed webpack ([c033db4](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/c033db4cbc275476d0948a727b229a672fa3b58a))
+
+
+### Features
+
+* **animations:** added animations ([631ecdc](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/631ecdcf12bbd844c580c8cdd2fa0b5b24001f81))
+
 ## [2.6.2](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.6.1...2.6.2) (2023-01-25)
 
 
