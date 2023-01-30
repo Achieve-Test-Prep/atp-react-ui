@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
@@ -21,6 +21,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         exclude: /node_modules/,
@@ -35,4 +39,4 @@ module.exports = {
     ],
   },
   // plugins: [new BundleAnalyzerPlugin()],
-}
+};
