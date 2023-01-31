@@ -1,5 +1,12 @@
 
 
+## [2.7.1](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.7.0...2.7.1) (2023-01-31)
+
+
+### Bug Fixes
+
+* **animation:** fix animation ([1931335](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/1931335fc56cdd496a16406118c4ebb58254235e))
+
 # [2.7.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.6.2...2.7.0) (2023-01-30)
 
 
