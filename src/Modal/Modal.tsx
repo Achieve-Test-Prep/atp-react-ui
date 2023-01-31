@@ -45,13 +45,13 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(function Modal(props,
   const modalComponent = (
     <AnimatedDiv
       isOpen={isOpen}
-      animated={{ appear: true, xyz: 'fade ease-out-back' }}
+      animated={{ duration: 'auto', xyz: 'fade out-delay-3' }}
       className="fixed inset-0 z-20 flex items-end sm:items-center sm:justify-center"
     >
       <AnimatedDiv
         isOpen={isOpen}
-        animated={{ appear: true, xyz: 'fade down' }}
-        className={modal.base}
+        animated={{ xyz: 'fade down' }}
+        className={modal.base + ' xyz-nested'}
         role="dialog"
         onClick={(e) => e.stopPropagation()}
         ref={ref}
@@ -75,8 +75,8 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(function Modal(props,
       </AnimatedDiv>
 
       {/* back drop */}
-      <Animated appear xyz="fade ease-out-back">
-        {isOpen && <Backdrop />}
+      <Animated xyz="delay-2 ease-out-back">
+        <Backdrop className="xyz-nested" />
       </Animated>
     </AnimatedDiv>
   );
