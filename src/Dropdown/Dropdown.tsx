@@ -40,7 +40,7 @@ const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(function Dropdo
   const cls = twMerge(dropdown.base, dropdown.align[align], className);
 
   return (
-    <AnimatedDiv isOpen={isOpen} animated={{ appear: true, xyz: 'fade down' }} ref={ref}>
+    <AnimatedDiv isOpen={isOpen} animated={{ xyz: 'fade down duration-3 small' }} ref={ref}>
       <FocusLock returnFocus>
         <ul className={cls} ref={dropdownRef} aria-label="submenu" {...other}>
           {children}

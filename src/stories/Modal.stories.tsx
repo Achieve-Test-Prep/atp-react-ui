@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
+import '@animxyz/core';
 import { Modal } from '../Modal';
 import { Button } from '../Button';
+import { useBoolean } from '../hooks/use-boolean';
 
 export default {
   title: 'Modal',
@@ -12,24 +14,13 @@ export default {
 
 const Template: ComponentStory<typeof Modal> = (args) => {
   const { isOpen, onClose, ...rest } = args;
-  const [isOpens, setOpen] = useState(args.isOpen);
+  const [isOpens, open] = useBoolean(isOpen);
 
   return (
     <>
-      <Modal
-        {...args}
-        onClose={() => {
-          setOpen(false);
-        }}
-        isOpen={isOpens}
-      />
-      <Button
-        className="z-[9999999px] fixed"
-        onClick={() => {
-          setOpen((s) => !s);
-        }}
-      >
-        Open
+      <Modal {...rest} onClose={open.setFalse} isOpen={isOpens} />
+      <Button size="xs" className="z-[9999999px] fixed" onClick={open.toggle}>
+        Click to open
       </Button>
     </>
   );
