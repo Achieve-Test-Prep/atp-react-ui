@@ -1,5 +1,12 @@
 
 
+## [2.7.2](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.7.1...2.7.2) (2023-02-01)
+
+
+### Bug Fixes
+
+* **fix:** animation fix for drop down ([ab0454f](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/ab0454f2a596c7fd70449f37fc6ffd491dd6524f))
+
 ## [2.7.1](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.7.0...2.7.1) (2023-01-31)
 
 
