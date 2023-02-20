@@ -41,6 +41,24 @@
     "camelcase": "off",
     "no-unused-vars": ["error", { "vars": "local", "args": "none", "ignoreRestSiblings": false }],
     "@typescript-eslint/no-unused-vars": ["error", { "vars": "local", "args": "none", "ignoreRestSiblings": false }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "examples/**",
+          "examples-native/**",
+          "**/example/**",
+          "*.js",
+          "**/*.test.js",
+          "**/*.stories.*",
+          "**/scripts/*.js",
+          "**/stories/**/*.js",
+          "**/__tests__/**/*.js",
+          "**/.storybook/**/*.*"
+        ],
+        "peerDependencies": true
+      }
+    ],
     "@typescript-eslint/naming-convention": [
       "error",
       {
