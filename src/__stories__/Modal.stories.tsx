@@ -3,9 +3,9 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import '@animxyz/core';
-import { Modal } from '../Modal';
 import { Button } from '../Button';
 import { useBoolean } from '../hooks/use-boolean';
+import { Modal } from '../Modal';
 
 export default {
   title: 'Modal',
@@ -14,6 +14,7 @@ export default {
 
 const Template: ComponentStory<typeof Modal> = (args) => {
   const { isOpen, onClose, ...rest } = args;
+  console.log(onClose);
   const [isOpens, open] = useBoolean(isOpen);
 
   return (

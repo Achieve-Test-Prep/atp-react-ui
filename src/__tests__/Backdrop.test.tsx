@@ -2,7 +2,7 @@ import React from 'react';
 
 import { mount } from 'enzyme';
 
-import Backdrop from '../Backdrop';
+import { Backdrop } from '../Backdrop';
 
 describe('Backdrop', () => {
   it('should render without crashing', () => {

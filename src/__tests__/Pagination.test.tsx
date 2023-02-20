@@ -2,7 +2,7 @@ import React from 'react';
 
 import { mount } from 'enzyme';
 
-import Pagination, { PageButton, NavigationButton, EmptyPageButton } from '../Pagination';
+import { Pagination, PageButton, NavigationButton, EmptyPageButton } from '../Pagination';
 
 describe('NavigationButton', () => {
   it('should render without crashing', () => {

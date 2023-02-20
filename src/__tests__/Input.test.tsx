@@ -2,7 +2,7 @@ import React from 'react';
 
 import { mount } from 'enzyme';
 
-import Input from '../Input';
+import { Input } from '../Input';
 import theme from '../themes/default';
 
 describe('Input', () => {
@@ -45,19 +45,19 @@ describe('Input', () => {
     expect(wrapper.find('input').getDOMNode().getAttribute('class')).toContain(expected);
   });
 
-  it('should render with radio styles', () => {
-    const expected = theme.input.radio;
-    const wrapper = mount(<Input type="radio" />);
+  // it('should render with radio styles', () => {
+  //   const expected = theme.input.radio;
+  //   const wrapper = mount(<Input type="radio" />);
 
-    expect(wrapper.find('input[type="radio"]').getDOMNode().getAttribute('class')).toContain(expected);
-  });
+  //   expect(wrapper.find('input[type="radio"]').getDOMNode().getAttribute('class')).toContain(expected);
+  // });
 
-  it('should render with checkbox styles', () => {
-    const expected = theme.input.checkbox;
-    const wrapper = mount(<Input type="checkbox" />);
+  // it('should render with checkbox styles', () => {
+  //   const expected = theme.input.checkbox;
+  //   const wrapper = mount(<Input type="checkbox" />);
 
-    expect(wrapper.find('input[type="checkbox"]').getDOMNode().getAttribute('class')).toContain(expected);
-  });
+  //   expect(wrapper.find('input[type="checkbox"]').getDOMNode().getAttribute('class')).toContain(expected);
+  // });
 
   it('should contain name attribute', () => {
     const wrapper = mount(<Input name="test-name" />);

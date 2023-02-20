@@ -3,6 +3,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Avatar } from '../Avatar';
+
 import avatarImage from './static/avatar-1.jpg';
 
 export default {

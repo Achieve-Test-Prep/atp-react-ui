@@ -2,7 +2,7 @@ import React from 'react';
 
 import { mount } from 'enzyme';
 
-import Textarea from '../Textarea';
+import { Textarea } from '../Textarea';
 import theme from '../themes/default';
 
 describe('Textarea', () => {

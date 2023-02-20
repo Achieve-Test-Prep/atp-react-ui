@@ -2,7 +2,7 @@ import React from 'react';
 
 import { mount } from 'enzyme';
 
-import Alert from '../Alert';
+import { Alert } from '../Alert';
 import { SuccessIcon, DangerIcon, WarningIcon, InfoIcon, NeutralIcon } from '../Alert/alert-icons';
 
 describe('Avatar', () => {

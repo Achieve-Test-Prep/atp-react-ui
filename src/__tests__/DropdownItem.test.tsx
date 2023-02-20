@@ -2,7 +2,7 @@ import React from 'react';
 
 import { mount } from 'enzyme';
 
-import Button from '../Button';
+import { Button } from '../Button';
 import { DropdownItem } from '../Dropdown';
 
 describe('DropdownItem', () => {

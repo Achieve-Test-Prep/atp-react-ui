@@ -2,7 +2,7 @@ import React from 'react';
 
 import { mount } from 'enzyme';
 
-import Avatar from '../Avatar';
+import { Avatar } from '../Avatar';
 
 describe('Avatar', () => {
   it('should render without crashing', () => {
@@ -18,7 +18,7 @@ describe('Avatar', () => {
 
   it('should render with large styles', () => {
     const expected = 'w-10 h-10';
-    const wrapper = mount(<Avatar src="test" size="large" />);
+    const wrapper = mount(<Avatar src="test" size="lg" />);
 
     expect(wrapper.find(Avatar).getDOMNode().getAttribute('class')).toContain(expected);
   });
@@ -39,7 +39,7 @@ describe('Avatar', () => {
 
   it('should render with small styles', () => {
     const expected = 'w-6 h-6';
-    const wrapper = mount(<Avatar src="test" size="small" />);
+    const wrapper = mount(<Avatar src="test" size="sm" />);
 
     expect(wrapper.find(Avatar).getDOMNode().getAttribute('class')).toContain(expected);
   });
