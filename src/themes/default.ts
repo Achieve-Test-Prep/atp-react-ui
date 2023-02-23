@@ -221,8 +221,7 @@ export default {
 
   // Card
   card: {
-    base: 'min-w-0 flex flex-col rounded-lg shadow-card overflow-hidden',
-    default: 'bg-white tb:bg-gray-800',
+    base: 'min-w-0 flex flex-col rounded-lg shadow-card overflow-hidden bg-white tb:bg-gray-800',
   },
 
   cardBody: {

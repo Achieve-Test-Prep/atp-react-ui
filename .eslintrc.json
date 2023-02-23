@@ -87,7 +87,7 @@
       }
     ]
   },
-  "ignorePatterns": ["*.js", "setupTests.ts", "config.test.ts", "src/__tests__", "src/stories"],
+  "ignorePatterns": ["*.js", "setupTests.ts", "config.test.ts", "src/__tests__", "src/__stories__"],
   "settings": {
     "react": {
       "version": "detect"
