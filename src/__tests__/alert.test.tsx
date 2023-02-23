@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-// import userEvent from '@testing-library/user-event'
 
 import { Alert } from '../Alert';
 import { SuccessIcon, DangerIcon, WarningIcon, InfoIcon, NeutralIcon } from '../Alert/alert-icons';

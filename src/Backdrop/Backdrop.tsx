@@ -12,7 +12,8 @@ const Backdrop = React.forwardRef<HTMLDivElement, DivProps>(function Backdrop(pr
   } = useContext(ThemeContext);
 
   const cls = twMerge(backdrop.base, className);
-  return <section className={cls} ref={ref} {...other}></section>;
+
+  return <section className={cls} ref={ref} {...other} />;
 });
 
 export default Backdrop;

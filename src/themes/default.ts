@@ -109,7 +109,6 @@ export default {
   // Badge
   badge: {
     base: 'inline-flex font-medium leading-5 rounded-full',
-
     size: {
       sm: 'text-[0.625rem] px-1.5',
       base: 'text-xs px-2',

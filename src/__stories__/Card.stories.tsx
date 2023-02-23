@@ -20,10 +20,3 @@ export const Basic = Template.bind({});
 Basic.args = {
   children: 'Hello',
 };
-
-export const Colored = Template.bind({});
-Colored.args = {
-  children: 'Hello',
-  colored: true,
-  className: 'bg-red-200',
-};
