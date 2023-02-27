@@ -10,21 +10,19 @@ describe('NavigationButton', () => {
     render(<NavigationButton directionIcon="prev" onClick={onClick} />);
   });
 
-  //   it('should contain "Previous" aria-label based on directionIcon', () => {
-  //     const onClick = () => {};
-  //     const expected = 'Previous';
-  //     const { container } = render(<NavigationButton directionIcon="prev" onClick={onClick} />);
+  it('should contain "Previous" aria-label based on directionIcon', () => {
+    const onClick = () => {};
+    const expected = 'Previous';
+    const { getByLabelText } = render(<NavigationButton directionIcon="prev" onClick={onClick} />);
+    expect(getByLabelText(expected)).toBeTruthy();
+  });
 
-  //     // expect(wrapper.find('button').getDOMNode().getAttribute('aria-label')).toContain(expected);
-  //   });
-
-  //   it('should contain "Next" aria-label based on directionIcon', () => {
-  //     const onClick = () => {};
-  //     const expected = 'Next';
-  //     const { container } = render(<NavigationButton directionIcon="next" onClick={onClick} />);
-
-  //     // expect(wrapper.find('button').getDOMNode().getAttribute('aria-label')).toContain(expected);
-  //   });
+  it('should contain "Next" aria-label based on directionIcon', () => {
+    const onClick = () => {};
+    const expected = 'Next';
+    const { getByLabelText } = render(<NavigationButton directionIcon="next" onClick={onClick} />);
+    expect(getByLabelText(expected)).toBeTruthy();
+  });
 
   //   it('should contain a child SVG', () => {
   //     const onClick = () => {};
@@ -284,19 +282,19 @@ describe('NavigationButton', () => {
   //     // expect(wrapper.find(PageButton).children().length).toBe(expectedAfterUpdate);
   //   });
 
-  //   it('should update the pages total when resultsPerPage is updated', () => {
-  //     const onChange = () => {};
-  //     const expectedBeforeUpdate = 6;
-  //     const expectedAfterUpdate = 3;
+  it('should update the pages total when resultsPerPage is updated', () => {
+    const onChange = () => {};
+    const expectedBeforeUpdate = 6;
+    const expectedAfterUpdate = 3;
 
-  //     const { container } = render(
-  //       <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} />
-  //     );
+    const { container } = render(
+      <Pagination totalResults={30} resultsPerPage={5} label="Navigation" onChange={onChange} />
+    );
 
-  //     // expect(wrapper.find(PageButton).children().length).toBe(expectedBeforeUpdate);
+    // expect(wrapper.find(PageButton).children().length).toBe(expectedBeforeUpdate);
 
-  //     // wrapper.setProps({ resultsPerPage: 10 });
-  //     // wrapper.update();
-  //     // expect(wrapper.find(PageButton).children().length).toBe(expectedAfterUpdate);
-  //   });
+    // wrapper.setProps({ resultsPerPage: 10 });
+    // wrapper.update();
+    // expect(wrapper.find(PageButton).children().length).toBe(expectedAfterUpdate);
+  });
 });

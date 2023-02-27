@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
@@ -12,7 +12,11 @@ const Text = React.forwardRef<HTMLDivElement, TextProps>(function Label(props, r
     theme: { text },
   } = useContext(ThemeContext);
 
-  const cls = twMerge(text.p, text?.[as as keyof typeof text] ?? '', className);
+  const cls = useMemo(
+    () => twMerge(as === 'div' || as === 'span' ? text.p : '', text?.[as as keyof typeof text] ?? '', className),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [as, className]
+  );
 
   if (as === 'h1') {
     return (

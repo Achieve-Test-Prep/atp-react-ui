@@ -10,14 +10,14 @@ export default {
     subtitle: 'font-sans text-xl font-medium leading-tight',
     'subtitle-small': 'font-sans text-xs font-semibold leading-tight',
     p: 'font-sans text-accent text-xs font-normal leading-normal tb:text-gray-400',
-    'p-small': 'font-sans font-normal leading-normal text-[0.625rem]',
+    'p-small': 'font-sans font-normal text-[0.625rem] leading-normal',
     caption: 'tracking-[0.16px] font-sans text-xs font-normal leading-tight',
     'caption-medium': 'tracking-[0.16px] font-sans text-sm font-normal leading-tight',
     'caption-medium-bold': 'tracking-[0.16px] font-sans text-sm font-medium leading-tight',
     'caption-large': 'tracking-[0.16px] font-sans text-lg font-normal leading-tight',
     overline: 'tracking-[0.16px] font-sans text-xs font-normal leading-tight underline',
     'overline-medium': 'font-sans text-xs font-medium leading-tight',
-    tooltip: 'tracking-[0.16px] font-sans font-normal leading-tight text-[0.625rem]',
+    tooltip: 'tracking-[0.16px] font-sans font-normal text-[0.625rem] leading-tight',
   },
   // Alert
   alert: {

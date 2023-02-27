@@ -18,6 +18,7 @@ interface IAnimatedDiv extends DivProps {
 
 export const AnimatedDiv = forwardRef<TRef, IAnimatedDiv>(function AnimatedDiv(props, ref) {
   const { animated, children, isOpen = true, ...rest } = props;
+
   return (
     <XyzTransition ref={ref} {...animated}>
       {isOpen && <div {...rest}>{children}</div>}
