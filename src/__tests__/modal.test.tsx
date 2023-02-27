@@ -3,6 +3,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 
 import { Modal } from '../Modal';
+import theme from '../themes/default';
 
 describe('Modal', () => {
   it('should render without crashing', () => {
@@ -16,33 +17,27 @@ describe('Modal', () => {
 
   it('should render with base styles', () => {
     const onClose = jest.fn();
-    const expected =
-      'w-full px-6 py-4 overflow-hidden bg-white rounded-t-lg tb:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl';
-    const { container } = render(
+    const expected = theme.modal.base;
+    const { getByRole } = render(
       <Modal isOpen={true} onClose={onClose}>
         Lorem ipsum
       </Modal>
     );
-
-    // expect(wrapper.find('div[role="dialog"]').getDOMNode().getAttribute('class')).toContain(expected);
+    expect(getByRole('dialog')).toHaveClass(expected);
   });
 
-  //   it('should call onClose when Esc is pressed', () => {
-  //     const map = {} as ListenerMap;
-  //     document.addEventListener = jest.fn((e, cb) => {
-  //       map[e] = cb;
-  //     });
-  //     const onClose = jest.fn();
-  //     render(
-  //       <Modal isOpen={true} onClose={onClose}>
-  //         Lorem ipsum
-  //       </Modal>
-  //     );
+  // it('should call onClose when Esc is pressed', () => {
+  //   const onClose = jest.fn();
+  //   const { getByRole } = render(
+  //     <Modal isOpen={true} onClose={onClose}>
+  //       Lorem ipsum
+  //     </Modal>
+  //   );
 
-  //     map.keydown({ key: 'Esc' });
-
-  //     expect(onClose).toHaveBeenCalled();
-  //   });
+  //   const cont = getByRole('dialogue');
+  //   fireEvent.keyDown(cont, { key: 'Esc' });
+  //   expect(onClose).toHaveBeenCalled();
+  // });
 
   //   it('should not call onClose when other key than Esc is pressed', () => {
   //     const map = {} as ListenerMap;

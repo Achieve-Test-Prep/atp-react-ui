@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, getByTestId } from '@testing-library/react';
 
 import { TableBody } from '../Table';
+import theme from '../themes/default';
 
 describe('TableBody', () => {
   it('should render without crashing', () => {
@@ -14,13 +15,13 @@ describe('TableBody', () => {
   });
 
   it('should render with base styles', () => {
-    const expected = 'bg-white divide-y tb:divide-gray-700 tb:bg-gray-800 text-gray-700 tb:text-gray-400';
-    const { container } = render(
+    const expected = theme.tableBody.base;
+    const { getByTestId } = render(
       <table>
-        <TableBody />
+        <TableBody data-testid="table_body" />
       </table>
     );
 
-    // expect(wrapper.find('tbody').getDOMNode().getAttribute('class')).toContain(expected);
+    expect(getByTestId('table_body')).toHaveClass(expected);
   });
 });

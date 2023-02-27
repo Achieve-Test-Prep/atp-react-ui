@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, getByRole } from '@testing-library/react';
 
 import { TableCell } from '../Table';
+import theme from '../themes/default';
 
 describe('TableCell', () => {
   it('should render without crashing', () => {
@@ -18,8 +19,8 @@ describe('TableCell', () => {
   });
 
   it('should render with base styles', () => {
-    const expected = 'px-4 py-3';
-    const { container } = render(
+    const expected = theme.tableCell.base;
+    const { getByRole } = render(
       <table>
         <tbody>
           <tr>
@@ -29,6 +30,6 @@ describe('TableCell', () => {
       </table>
     );
 
-    // expect(wrapper.find('td').getDOMNode().getAttribute('class')).toContain(expected);
+    expect(getByRole('cell')).toHaveClass(expected);
   });
 });

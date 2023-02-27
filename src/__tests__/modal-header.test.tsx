@@ -3,6 +3,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 
 import { ModalHeader } from '../Modal';
+import theme from '../themes/default';
 
 describe('ModalHeader', () => {
   it('should render without crashing', () => {
@@ -10,9 +11,8 @@ describe('ModalHeader', () => {
   });
 
   it('should render with base styles', () => {
-    const expected = 'mt-4 mb-2 text-lg font-semibold text-gray-700 tb:text-gray-300';
+    const expected = theme.modalHeader.base;
     const { container } = render(<ModalHeader>Lorem ipsum</ModalHeader>);
-
-    // expect(wrapper.find('p').getDOMNode().getAttribute('class')).toContain(expected);
+    expect(container.firstChild).toHaveClass(expected);
   });
 });

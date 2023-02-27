@@ -12,8 +12,8 @@ describe('TableContainer', () => {
 
   it('should render with base styles', () => {
     const expected = theme.tableContainer.base;
-    const { container } = render(<TableContainer />);
+    const { getByTestId } = render(<TableContainer data-testid="table_cont" />);
 
-    // expect(wrapper.find(TableContainer).getDOMNode().getAttribute('class')).toContain(expected);
+    expect(getByTestId('table_cont')).toHaveClass(expected);
   });
 });

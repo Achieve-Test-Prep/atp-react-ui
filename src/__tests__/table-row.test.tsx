@@ -17,7 +17,7 @@ describe('TableRow', () => {
 
   it('should not have base styles', () => {
     const expected = '';
-    const { container } = render(
+    const { getByRole } = render(
       <table>
         <tbody>
           <TableRow />
@@ -25,6 +25,6 @@ describe('TableRow', () => {
       </table>
     );
 
-    // expect(wrapper.find('tr').getDOMNode().getAttribute('class')).toBe(expected);
+    expect(getByRole('row').classList.length).toBe(0);
   });
 });

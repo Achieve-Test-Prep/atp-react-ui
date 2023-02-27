@@ -10,8 +10,7 @@ describe('Table', () => {
   });
 
   it('should contain a table', () => {
-    const { container } = render(<Table />);
-
-    // expect(wrapper.find('table')).toBeTruthy();
+    const { getByRole } = render(<Table />);
+    expect(getByRole('table')).toBeTruthy();
   });
 });

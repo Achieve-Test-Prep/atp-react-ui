@@ -3,6 +3,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 
 import { TableHeader } from '../Table';
+import theme from '../themes/default';
 
 describe('TableHeader', () => {
   it('should render without crashing', () => {
@@ -14,14 +15,13 @@ describe('TableHeader', () => {
   });
 
   it('should render with base styles', () => {
-    const expected =
-      'text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b tb:border-gray-700 bg-gray-50 tb:text-gray-400 tb:bg-gray-800';
-    const { container } = render(
+    const expected = theme.tableHeader.base;
+    const { getByTestId } = render(
       <table>
-        <TableHeader />
+        <TableHeader data-testid="thead-test" />
       </table>
     );
 
-    // expect(wrapper.find('thead').getDOMNode().getAttribute('class')).toContain(expected);
+    expect(getByTestId('thead-test')).toHaveClass(expected);
   });
 });

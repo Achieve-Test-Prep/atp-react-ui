@@ -3,6 +3,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 
 import { ModalBody } from '../Modal';
+import theme from '../themes/default';
 
 describe('ModalBody', () => {
   it('should render without crashing', () => {
@@ -10,10 +11,9 @@ describe('ModalBody', () => {
   });
 
   it('should render with base styles', () => {
-    const expected = 'mb-6 text-sm text-gray-700 tb:text-gray-400';
+    const expected = theme.modalBody.base;
     const { container } = render(<ModalBody>Lorem ipsum</ModalBody>);
-
-    // expect(wrapper.find('div').getDOMNode().getAttribute('class')).toContain(expected);
+    expect(container.firstChild).toHaveClass(expected);
   });
 
   it('should render children', () => {
@@ -24,7 +24,6 @@ describe('ModalBody', () => {
         <p>Ipsum</p>
       </ModalBody>
     );
-
-    // expect(wrapper.find('p')).toHaveLength(expected);
+    expect(container.firstChild?.childNodes.length).toEqual(expected);
   });
 });

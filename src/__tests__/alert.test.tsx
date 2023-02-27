@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 
 import { Alert } from '../Alert';
-import { SuccessIcon, DangerIcon, WarningIcon, InfoIcon, NeutralIcon } from '../Alert/alert-icons';
+
 const test = (
   <svg
     className="h-5 w-5 text-success tb:text-green-300 absolute left-0 top-0 ml-4 mt-4"
