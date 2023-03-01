@@ -1,5 +1,12 @@
 
 
+## [2.7.5](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.7.4...2.7.5) (2023-03-01)
+
+
+### Bug Fixes
+
+* **dropdown:** improvements in dropdown compoonents ([1a4c7f9](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/1a4c7f94f633148366b78a40b13ef7d126834508))
+
 ## [2.7.4](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.7.3...2.7.4) (2023-02-27)
 
 ## [2.7.3](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.7.2...2.7.3) (2023-02-23)
