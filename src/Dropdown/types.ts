@@ -2,7 +2,7 @@ export interface DropdownProps extends React.HTMLAttributes<HTMLUListElement> {
   /**
    * Function executed when the dropdown is closed
    */
-  onClose: () => void;
+  onClose: (e: KeyboardEvent | MouseEvent) => void;
   /**
    * Defines if the dropdown is open
    */

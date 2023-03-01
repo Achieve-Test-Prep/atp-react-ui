@@ -9,21 +9,21 @@ import { ThemeContext } from '../themes/theme-context';
 import type { DropdownProps } from './types';
 
 const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(function Dropdown(props, ref) {
-  const { children, onClose, isOpen, className, align = 'left', ...other } = props;
+  const { children, onClose, isOpen, className, align = 'right', ...other } = props;
   const {
     theme: { dropdown },
   } = useContext(ThemeContext);
 
   function handleEsc(e: KeyboardEvent) {
     if (e.key === 'Esc' || e.key === 'Escape') {
-      onClose();
+      onClose(e);
     }
   }
 
   const dropdownRef = useRef<HTMLUListElement>(null);
   function handleClickOutside(e: MouseEvent) {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-      onClose();
+      onClose(e);
     }
   }
 
@@ -35,12 +35,12 @@ const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(function Dropdo
       document.removeEventListener('keydown', handleEsc);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isOpen]);
+  }, []);
 
   const cls = twMerge(dropdown.base, dropdown.align[align], className);
 
   return (
-    <AnimatedDiv isOpen={isOpen} animated={{ xyz: 'fade down duration-3 small' }} ref={ref}>
+    <AnimatedDiv isOpen={isOpen} animated={{ mode: 'out-in', xyz: 'fade down duration-2 small' }} ref={ref}>
       <FocusLock returnFocus>
         <ul className={cls} ref={dropdownRef} aria-label="submenu" {...other}>
           {children}
