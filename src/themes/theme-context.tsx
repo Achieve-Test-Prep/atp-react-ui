@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 
 import defaultTheme from './default';
 
@@ -16,6 +16,6 @@ interface ThemeProviderProps {
   value?: any;
 }
 
-export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>> = ({ children, value }) => {
+export function ThemeProvider({ children, value }: PropsWithChildren<ThemeProviderProps>) {
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
-};
+}

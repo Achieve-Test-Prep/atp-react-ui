@@ -6,7 +6,7 @@ import { ThemeContext } from '../themes/theme-context';
 
 import type { TableSectionProps } from './types';
 
-const TableBody = React.forwardRef<HTMLTableSectionElement, TableSectionProps>(function TableBody(props, ref) {
+const TableBody = React.forwardRef<HTMLTableSectionElement, TableSectionProps>((props, ref) => {
   const { className, children, ...other } = props;
 
   const {

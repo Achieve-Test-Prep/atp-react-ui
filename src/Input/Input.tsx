@@ -7,7 +7,7 @@ import { Label } from '../Typography';
 
 import type { InputProps } from './types';
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input(props, ref) {
+const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const { valid, className, label, labelClassName, ...other } = props;
 
   const {

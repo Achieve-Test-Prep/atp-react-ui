@@ -10,7 +10,7 @@ import { ThemeContext } from '../themes/theme-context';
 
 import type { ModalProps } from './types';
 
-const Modal = React.forwardRef<HTMLDivElement, ModalProps>(function Modal(props, ref) {
+const Modal = React.forwardRef<HTMLDivElement, ModalProps>((props, ref) => {
   const { children, onClose, isOpen, disableInternalClosing = false, ...other } = props;
 
   const {
@@ -51,7 +51,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(function Modal(props,
       <AnimatedDiv
         isOpen={isOpen}
         animated={{ xyz: 'fade down' }}
-        className={modal.base + ' xyz-nested'}
+        className={`${modal.base} xyz-nested`}
         role="dialog"
         onClick={(e) => e.stopPropagation()}
         ref={ref}

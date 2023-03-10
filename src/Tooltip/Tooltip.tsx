@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, useContext } from 'react';
+import React, { PropsWithChildren, useContext } from 'react';
 
 import Tippy from '@tippyjs/react';
 
@@ -25,13 +25,13 @@ const placements = {
   'left-end': 'rounded-br-none',
 };
 
-export const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
+export default function Tooltip({
   children,
   disabled,
   placement = 'top',
   className,
   ...props
-}) => {
+}: PropsWithChildren<TooltipProps>) {
   const {
     theme: { text },
   } = useContext(ThemeContext);
@@ -49,4 +49,4 @@ export const Tooltip: FC<PropsWithChildren<TooltipProps>> = ({
       <div>{children}</div>
     </Tippy>
   );
-};
+}

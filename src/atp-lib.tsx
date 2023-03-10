@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useMemo } from 'react';
+import React, { PropsWithChildren, useLayoutEffect, useMemo } from 'react';
 
 import '@animxyz/core';
 
@@ -24,12 +24,12 @@ interface Props extends DivProps {
   usePreferences?: boolean;
 }
 
-export const AtpLib: React.FC<React.PropsWithChildren<Props>> = ({
+export default function AtpLib({
   children,
   theme: customTheme,
   dark,
   usePreferences = false,
-}) => {
+}: PropsWithChildren<Props>) {
   const mergedTheme = mergeDeep(defaultTheme, customTheme);
   const [mode, setMode, toggleMode] = useDarkMode(usePreferences);
 
@@ -54,4 +54,4 @@ export const AtpLib: React.FC<React.PropsWithChildren<Props>> = ({
   );
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
-};
+}

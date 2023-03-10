@@ -16,10 +16,11 @@ export const useSetTimeout = (): UseSetTimeoutReturnType => {
   // Cleanup function.
   useEffect(
     () => () => {
-      for (const id of Object.keys(timeoutIds)) {
+      const keys = Object.keys(timeoutIds);
+      keys.forEach((id) => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        clearTimeout(id as any);
-      }
+        clearTimeout(timeoutIds[id as any]);
+      });
     },
     // useConst ensures this will never change, but react-hooks/exhaustive-deps doesn't know that
     [timeoutIds]

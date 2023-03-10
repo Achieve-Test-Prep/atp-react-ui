@@ -6,7 +6,7 @@ import { ThemeContext } from '../themes/theme-context';
 
 import type { BadgeProps } from './types';
 
-const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(function Badge(props, ref) {
+const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, ref) => {
   const { className, children, as = 'base', size = 'base', type = 'primary', ...other } = props;
 
   const {

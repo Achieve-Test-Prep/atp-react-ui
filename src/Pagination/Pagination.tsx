@@ -45,7 +45,9 @@ export const PageButton: React.FC<React.PropsWithChildren<PageButtonProps>> = fu
   );
 };
 
-export const EmptyPageButton = () => <span className="px-2 py-1">...</span>;
+export function EmptyPageButton() {
+  return <span className="px-2 py-1">...</span>;
+}
 
 export interface PaginationProps {
   /**
@@ -68,7 +70,7 @@ export interface PaginationProps {
 
 type Ref = HTMLDivElement;
 
-export const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(props, ref) {
+export const Pagination = React.forwardRef<Ref, PaginationProps>((props, ref) => {
   const { totalResults, resultsPerPage = 10, label, onChange, ...other } = props;
   const [pages, setPages] = useState<(number | string)[]>([]);
   const [activePage, setActivePage] = useState(1);
@@ -78,13 +80,13 @@ export const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagina
   const LAST_PAGE = TOTAL_PAGES;
   const MAX_VISIBLE_PAGES = 7;
 
-  function handlePreviousClick() {
+  const handlePreviousClick = () => {
     setActivePage(activePage - 1);
-  }
+  };
 
-  function handleNextClick() {
+  const handleNextClick = () => {
     setActivePage(activePage + 1);
-  }
+  };
 
   useEffect(() => {
     // [1], 2, 3, 4, 5, ..., 12 case #1
@@ -146,7 +148,7 @@ export const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagina
               />
             </li>
             {pages.map((p, i) => (
-              <li key={p.toString() + i}>
+              <li key={p}>
                 {p === '...' ? (
                   <EmptyPageButton />
                 ) : (

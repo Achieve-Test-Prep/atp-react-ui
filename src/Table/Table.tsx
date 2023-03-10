@@ -2,7 +2,7 @@ import React from 'react';
 
 import type { TableProps } from './types';
 
-const Table = React.forwardRef<HTMLTableElement, TableProps>(function Table(props, ref) {
+const Table = React.forwardRef<HTMLTableElement, TableProps>((props, ref) => {
   const { children, ...other } = props;
   return (
     <div className="w-full overflow-x-auto">

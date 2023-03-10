@@ -22,7 +22,7 @@ describe('Dropdown', () => {
 
   it('should render aligned to the default position', () => {
     const onClose = jest.fn();
-    const expected = 'left-0';
+    const expected = 'right-0';
     const { getByLabelText } = render(<Dropdown isOpen={true} onClose={onClose} />);
     const ul = getByLabelText('submenu');
     expect(ul).toHaveClass(expected);

@@ -7,27 +7,31 @@ import { Label } from '../Typography';
 
 import type { RadioProps, RadioRef } from './types';
 
-export const Radio = forwardRef<RadioRef, RadioProps>(function Checkbox(
-  { valid, className, type = 'radio', label, disabled, labelClassName, ...other }: RadioProps,
-  ref: ForwardedRef<RadioRef>
-) {
-  const {
-    theme: { radio },
-  } = useContext(ThemeContext);
+const Radio = forwardRef<RadioRef, RadioProps>(
+  (
+    { valid, className, type = 'radio', label, disabled, labelClassName, ...other }: RadioProps,
+    ref: ForwardedRef<RadioRef>
+  ) => {
+    const {
+      theme: { radio },
+    } = useContext(ThemeContext);
 
-  function validationStyle(iValid: boolean | undefined): string {
-    if (iValid !== undefined) {
-      return iValid ? radio.valid : radio.invalid;
+    function validationStyle(iValid: boolean | undefined): string {
+      if (iValid !== undefined) {
+        return iValid ? radio.valid : radio.invalid;
+      }
+      return '';
     }
-    return '';
+
+    const cls = twMerge(radio.base, radio.active, radio.disabled, validationStyle(valid), className);
+
+    return (
+      <Label radio disabled={disabled} className={labelClassName}>
+        <input ref={ref} {...other} type="radio" disabled={disabled} className={cls} />
+        {label}
+      </Label>
+    );
   }
+);
 
-  const cls = twMerge(radio.base, radio.active, radio.disabled, validationStyle(valid), className);
-
-  return (
-    <Label radio disabled={disabled} className={labelClassName}>
-      <input ref={ref} {...other} type="radio" disabled={disabled} className={cls} />
-      {label}
-    </Label>
-  );
-});
+export default Radio;

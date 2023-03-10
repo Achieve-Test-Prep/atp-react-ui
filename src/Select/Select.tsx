@@ -7,7 +7,7 @@ import { Label } from '../Typography';
 
 import type { ISelectOption, SelectProps } from './types';
 
-const Select = React.forwardRef<HTMLSelectElement, SelectProps>(function Select(props, ref) {
+const Select = React.forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
   const {
     valid,
     onChangeSelection,
@@ -58,13 +58,11 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(function Select(
       <div className="relative mt-1 rounded-md shadow-sm">
         <select onChange={handleChange} className={cls} ref={ref} disabled={disabled} multiple={!!multiple} {...other}>
           {children ||
-            options.map((item) => {
-              return (
-                <option key={item.value} value={item.value}>
-                  {item.name}
-                </option>
-              );
-            })}
+            options.map((item) => (
+              <option key={item.value} value={item.value}>
+                {item.name}
+              </option>
+            ))}
         </select>
       </div>
     </div>

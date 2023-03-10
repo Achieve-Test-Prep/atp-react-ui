@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export const useDarkMode = (
+const useDarkMode = (
   usePreferences: boolean
 ): [Mode, React.Dispatch<React.SetStateAction<Mode>> | null, (() => void) | null] => {
   const [mode, setMode] = useState<Mode>(null);

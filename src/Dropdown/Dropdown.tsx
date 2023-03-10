@@ -8,7 +8,7 @@ import { ThemeContext } from '../themes/theme-context';
 
 import type { DropdownProps } from './types';
 
-const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(function Dropdown(props, ref) {
+const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>((props, ref) => {
   const { children, onClose, isOpen, className, align = 'right', ...other } = props;
   const {
     theme: { dropdown },

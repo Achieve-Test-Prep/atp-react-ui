@@ -6,7 +6,7 @@ import { ThemeContext } from '../themes/theme-context';
 
 import type { TextProps } from './types';
 
-const Text = React.forwardRef<HTMLDivElement, TextProps>(function Label(props, ref) {
+const Text = React.forwardRef<HTMLDivElement, TextProps>((props, ref) => {
   const { children, as = 'div', className, ...other } = props;
   const {
     theme: { text },

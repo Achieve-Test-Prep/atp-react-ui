@@ -6,7 +6,7 @@ import { ThemeContext } from '../themes/theme-context';
 
 import type { HelperTextProps } from './types';
 
-const HelperText = React.forwardRef<HTMLSpanElement, HelperTextProps>(function HelperText(props, ref) {
+const HelperText = React.forwardRef<HTMLSpanElement, HelperTextProps>((props, ref) => {
   const { children, valid, className, ...other } = props;
   const {
     theme: { helperText },

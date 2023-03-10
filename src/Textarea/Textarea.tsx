@@ -6,7 +6,7 @@ import { ThemeContext } from '../themes/theme-context';
 
 import type { TextareaProps } from './types';
 
-const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea(props, ref) {
+const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
   const { valid, disabled, className, children, ...other } = props;
 
   const {

@@ -15,10 +15,11 @@ export const useSetInterval = (): UseSetIntervalReturnType => {
 
   useEffect(
     () => () => {
-      for (const id of Object.keys(intervalIds)) {
+      const keys = Object.keys(intervalIds);
+      keys.forEach((id) => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        clearInterval(id as any);
-      }
+        clearTimeout(intervalIds[id as any]);
+      });
     },
     // useConst ensures this will never change, but react-hooks/exhaustive-deps doesn't know that
     [intervalIds]

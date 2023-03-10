@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { ThemeContext } from '../themes/theme-context';
 import type { DivProps } from '../types';
 
-const CardBody = React.forwardRef<HTMLDivElement, DivProps>(function CardBody(props, ref) {
+const CardBody = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
   const { className, children, ...other } = props;
   const {
     theme: { cardBody },

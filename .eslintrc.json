@@ -11,6 +11,7 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
+    "airbnb",
     "airbnb-typescript",
     "prettier"
   ],
@@ -23,10 +24,11 @@
     },
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "jsx-a11y", "prettier"],
   "rules": {
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
     "prettier/prettier": ["error", {}, { "usePrettierrc": true }], // Use our .prettierrc file as source
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "react-hooks/rules-of-hooks": "error",

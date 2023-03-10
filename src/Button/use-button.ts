@@ -8,7 +8,7 @@ import warn from '../utils/warning';
 
 import type { ButtonProps } from './types';
 
-export function useButton(props: ButtonProps) {
+export default function useButton(props: ButtonProps) {
   const {
     tag = 'button',
     // Fix https://github.com/estevanmaito/atp-react-ui/issues/7

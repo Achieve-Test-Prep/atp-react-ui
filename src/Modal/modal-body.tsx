@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { ThemeContext } from '../themes/theme-context';
 import { DivProps } from '../types';
 
-const ModalBody = React.forwardRef<HTMLDivElement, DivProps>(function ModalBody(props, ref) {
+const ModalBody = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
   const { children, className, ...other } = props;
   const {
     theme: { modalBody },

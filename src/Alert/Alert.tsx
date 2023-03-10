@@ -8,7 +8,7 @@ import { ThemeContext } from '../themes/theme-context';
 import { SuccessIcon, WarningIcon, DangerIcon, InfoIcon, NeutralIcon } from './alert-icons';
 import type { AlertProps } from './types';
 
-const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   const { className, children, type = 'neutral', onClose, ...other } = props;
   const {
     theme: { alert },

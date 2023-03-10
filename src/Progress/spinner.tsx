@@ -6,7 +6,7 @@ import { ThemeContext } from '../themes/theme-context';
 
 import type { SpinnerProps } from './types';
 
-export function Spinner({ className = '', animate = true, size = 'base', ...rest }: SpinnerProps) {
+export default function Spinner({ className = '', animate = true, size = 'base', ...rest }: SpinnerProps) {
   const {
     theme: { spinner },
   } = useContext(ThemeContext);

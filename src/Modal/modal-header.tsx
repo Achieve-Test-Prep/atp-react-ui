@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { ThemeContext } from '../themes/theme-context';
 import { DivProps } from '../types';
 
-const ModalHeader = React.forwardRef<HTMLParagraphElement, DivProps>(function ModalHeader(props, ref) {
+const ModalHeader = React.forwardRef<HTMLParagraphElement, DivProps>((props, ref) => {
   const { children, className, ...other } = props;
   const {
     theme: { modalHeader },

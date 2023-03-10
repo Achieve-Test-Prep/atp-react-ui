@@ -6,7 +6,7 @@ import { ThemeContext } from '../themes/theme-context';
 
 import type { LabelProps } from './types';
 
-const Label = React.forwardRef<HTMLLabelElement, LabelProps>(function Label(props, ref) {
+const Label = React.forwardRef<HTMLLabelElement, LabelProps>((props, ref) => {
   const { children, checkbox, radio, disabled, className, ...other } = props;
   const {
     theme: { label },
@@ -21,6 +21,7 @@ const Label = React.forwardRef<HTMLLabelElement, LabelProps>(function Label(prop
   );
 
   return (
+    // eslint-disable-next-line jsx-a11y/label-has-associated-control
     <label className={cls} ref={ref} {...other}>
       {children}
     </label>
