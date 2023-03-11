@@ -1,5 +1,22 @@
 
 
+# [3.0.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.7.5...3.0.0) (2023-03-11)
+
+
+### Bug Fixes
+
+* **export for components:** components export ([67391a1](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/67391a1fd5e0548ad9373447d7220c4c20559310))
+
+
+### Code Refactoring
+
+* **modal and dropdown:** add support for headless ui ([252c0fd](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/252c0fdfe75281a307ba7f34b7a8272c912cafef))
+
+
+### BREAKING CHANGES
+
+* **modal and dropdown:** props change in dropdown and modal
+
 ## [2.7.5](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.7.4...2.7.5) (2023-03-01)
 
 
