@@ -2,28 +2,46 @@ import React from 'react';
 
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import { ModalBody } from '../Modal';
+import { Modal, ModalBody } from '../Modal';
 import theme from '../themes/default';
+
+window.ResizeObserver =
+  window.ResizeObserver ||
+  jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+  }));
 
 describe('ModalBody', () => {
   it('should render without crashing', () => {
-    render(<ModalBody>Lorem ipsum</ModalBody>);
+    render(
+      <Modal open={true} onClose={() => {}}>
+        <ModalBody>Lorem ipsum</ModalBody>
+      </Modal>
+    );
   });
 
   it('should render with base styles', () => {
     const expected = theme.modalBody.base;
-    const { container } = render(<ModalBody>Lorem ipsum</ModalBody>);
-    expect(container.firstChild).toHaveClass(expected);
+    const { getByTestId } = render(
+      <Modal open={true} onClose={() => {}}>
+        <ModalBody data-testid="modalBody">Lorem ipsum</ModalBody>
+      </Modal>
+    );
+    expect(getByTestId('modalBody')).toHaveClass(expected);
   });
 
   it('should render children', () => {
     const expected = 2;
-    const { container } = render(
-      <ModalBody>
-        <p>Lorem</p>
-        <p>Ipsum</p>
-      </ModalBody>
+    const { getByTestId } = render(
+      <Modal open={true} onClose={() => {}}>
+        <ModalBody data-testid="modalBody">
+          <p>Lorem</p>
+          <p>Ipsum</p>
+        </ModalBody>
+      </Modal>
     );
-    expect(container.firstChild?.childNodes.length).toEqual(expected);
+    expect(getByTestId('modalBody').childNodes.length).toEqual(expected);
   });
 });

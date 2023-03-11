@@ -2,17 +2,33 @@ import React from 'react';
 
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import { ModalHeader } from '../Modal';
+import { Modal, ModalHeader } from '../Modal';
 import theme from '../themes/default';
+
+window.ResizeObserver =
+  window.ResizeObserver ||
+  jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+  }));
 
 describe('ModalHeader', () => {
   it('should render without crashing', () => {
-    render(<ModalHeader>Lorem ipsum</ModalHeader>);
+    render(
+      <Modal open={true} onClose={() => {}}>
+        <ModalHeader>Lorem ipsum</ModalHeader>
+      </Modal>
+    );
   });
 
   it('should render with base styles', () => {
     const expected = theme.modalHeader.base;
-    const { container } = render(<ModalHeader>Lorem ipsum</ModalHeader>);
-    expect(container.firstChild).toHaveClass(expected);
+    const { getByRole } = render(
+      <Modal open={true} onClose={() => {}}>
+        <ModalHeader>Lorem ipsum</ModalHeader>
+      </Modal>
+    );
+    expect(getByRole('heading')).toHaveClass(expected);
   });
 });

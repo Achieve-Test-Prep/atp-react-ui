@@ -1,87 +1,82 @@
-import React, { useEffect, useContext, useState } from 'react';
+import { forwardRef, Fragment, PropsWithChildren, useContext } from 'react';
 
-import { createPortal } from 'react-dom';
-import FocusLock from 'react-focus-lock';
+import { Dialog, Transition } from '@headlessui/react';
+import { twMerge } from 'tailwind-merge';
 
-import { AnimatedDiv, Animated } from '../animations';
 import { Backdrop } from '../Backdrop';
 import { Button } from '../Button';
 import { ThemeContext } from '../themes/theme-context';
 
-import type { ModalProps } from './types';
+import { ModalProps } from './types';
 
-const Modal = React.forwardRef<HTMLDivElement, ModalProps>((props, ref) => {
-  const { children, onClose, isOpen, disableInternalClosing = false, ...other } = props;
+const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((props, ref) => {
+  const {
+    children,
+    onClose,
+    open,
+    className,
+    disableInternalClosing = false,
+    showCloseButton = true,
+    ...other
+  } = props;
 
   const {
     theme: { modal },
   } = useContext(ThemeContext);
+  const cls = twMerge(modal.base, className);
 
-  function handleEsc(e: KeyboardEvent) {
-    if (e.key === 'Esc' || e.key === 'Escape') {
-      handleOnClose();
-    }
-  }
-
-  const handleOnClose = () => {
-    if (onClose && !disableInternalClosing) {
-      onClose();
+  const handleClose = () => {
+    if (!disableInternalClosing) {
+      onClose(false);
     }
   };
 
-  useEffect(() => {
-    document.addEventListener('keydown', handleEsc, { capture: true });
-    return () => {
-      document.removeEventListener('keydown', handleEsc);
-    };
-  });
+  return (
+    <Transition appear show={open} as={Fragment}>
+      <Dialog as="div" ref={ref} className="relative z-20" onClose={handleClose}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <Backdrop />
+        </Transition.Child>
 
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const modalComponent = (
-    <AnimatedDiv
-      isOpen={isOpen}
-      animated={{ duration: 'auto', xyz: 'fade out-delay-3' }}
-      className="fixed inset-0 z-20 flex items-end sm:items-center sm:justify-center"
-    >
-      <AnimatedDiv
-        isOpen={isOpen}
-        animated={{ xyz: 'fade down' }}
-        className={`${modal.base} xyz-nested`}
-        role="dialog"
-        onClick={(e) => e.stopPropagation()}
-        ref={ref}
-        {...other}
-      >
-        <FocusLock returnFocus>
-          <header className="flex justify-end">
-            {onClose && (
-              <Button
-                icon="XMarkIcon"
-                size="xs"
-                as="link"
-                disabled={disableInternalClosing}
-                aria-label="close"
-                onClick={handleOnClose}
-              />
-            )}
-          </header>
-          {children}
-        </FocusLock>
-      </AnimatedDiv>
-
-      {/* back drop */}
-      <Animated xyz="delay-2 ease-out-back">
-        <Backdrop className="xyz-nested" />
-      </Animated>
-    </AnimatedDiv>
+        <section className="z-40 fixed inset-0 overflow-y-auto">
+          <div className="flex min-h-full justify-center items-end sm:items-center sm:justify-center">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <Dialog.Panel {...other} className={cls}>
+                {showCloseButton && (
+                  <Button
+                    icon="XMarkIcon"
+                    size="xs"
+                    as="link"
+                    disabled={disableInternalClosing}
+                    aria-label="close"
+                    onClick={handleClose}
+                    className="absolute right-6 top-4"
+                  />
+                )}
+                {children}
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
+        </section>
+      </Dialog>
+    </Transition>
   );
-
-  return mounted ? createPortal(modalComponent, document.body) : null;
 });
 
 export default Modal;

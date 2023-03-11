@@ -1,14 +1,15 @@
-export interface DropdownProps extends React.HTMLAttributes<HTMLUListElement> {
-  /**
-   * Function executed when the dropdown is closed
-   */
-  onClose: (e: KeyboardEvent | MouseEvent) => void;
-  /**
-   * Defines if the dropdown is open
-   */
-  isOpen: boolean;
-  /**
-   * Defines the alignement of the dropdown related to its parent
-   */
+import { ElementType } from 'react';
+
+import { MenuItemProps, MenuItemsProps, MenuProps } from '@headlessui/react';
+
+import { ButtonProps } from '../Button';
+
+export type DropdownProps = MenuProps<ElementType>;
+
+export type DropdownMenuItemsProps = MenuItemsProps<ElementType> & {
   align?: 'left' | 'right';
-}
+};
+
+export type DropdownMenuItemProps = MenuItemProps<ElementType> & {
+  buttonProps?: ButtonProps;
+};

@@ -2,10 +2,9 @@ import React from 'react';
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import '@animxyz/core';
 import { Button } from '../Button';
 import { useBoolean } from '../hooks/use-boolean';
-import { Modal } from '../Modal';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from '../Modal';
 
 export default {
   title: 'Modal',
@@ -13,14 +12,26 @@ export default {
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args) => {
-  const { isOpen, onClose, ...rest } = args;
+  const { open, onClose, ...rest } = args;
   console.log(onClose);
-  const [isOpens, open] = useBoolean(isOpen);
+  const [isOpens, opens] = useBoolean(open);
 
   return (
     <>
-      <Modal {...rest} onClose={open.setFalse} isOpen={isOpens} />
-      <Button size="xs" className="z-[9999999px] fixed" onClick={open.toggle}>
+      <Modal {...rest} onClose={opens.setFalse} open={isOpens}>
+        <ModalHeader>This is the title</ModalHeader>
+        <ModalBody>
+          This is the modal.
+          <br />
+          It has fix for initial focus <br />
+          It has fix added for scrolling
+        </ModalBody>
+        <ModalFooter>
+          <Button as="link">Got it, thanks!</Button>
+          <Button>Got it, thanks!</Button>
+        </ModalFooter>
+      </Modal>
+      <Button size="xs" className="z-[9999999px] fixed" onClick={opens.toggle}>
         Click to open
       </Button>
     </>

@@ -1,24 +1,33 @@
-import React, { useContext } from 'react';
+import React, { PropsWithChildren, useContext } from 'react';
 
-import Button from '../Button/Button';
-import type { ButtonProps, Ref } from '../Button/types';
+import { Menu } from '@headlessui/react';
+import { twMerge } from 'tailwind-merge';
+
+import { Button, ButtonProps } from '../Button';
 import { ThemeContext } from '../themes/theme-context';
 
-// type Ref = typeof Button
-const DropdownItem = React.forwardRef<Ref, ButtonProps>((props, ref) => {
-  // Note: className is passed to the inner Button
-  const { children, ...other } = props;
+import { DropdownMenuItemProps } from './types';
+
+const DropdownItem = React.forwardRef<HTMLDivElement, PropsWithChildren<DropdownMenuItemProps>>((props, ref) => {
+  const { children, className, as = 'li', buttonProps, ...other } = props;
+  const { as: btnAs = '__dropdownItem', className: btnClassName, ...res } = (buttonProps || {}) as ButtonProps;
 
   const {
     theme: { dropdownItem },
   } = useContext(ThemeContext);
 
   return (
-    <li className={dropdownItem.base}>
-      <Button as="__dropdownItem" ref={ref} {...other}>
-        {children}
-      </Button>
-    </li>
+    <Menu.Item as={as} ref={ref} {...other} className={twMerge(dropdownItem.base, className)}>
+      {({ active }) => (
+        <Button
+          as={btnAs}
+          className={twMerge(btnClassName, active ? 'hover:bg-primary-x-light hover:text-primary' : '')}
+          {...res}
+        >
+          {children}
+        </Button>
+      )}
+    </Menu.Item>
   );
 });
 

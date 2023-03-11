@@ -1,53 +1,21 @@
-import React, { useEffect, useContext, useRef } from 'react';
+import { PropsWithChildren } from 'react';
 
-import FocusLock from 'react-focus-lock';
-import { twMerge } from 'tailwind-merge';
+import { Menu } from '@headlessui/react';
 
-import { AnimatedDiv } from '../animations';
-import { ThemeContext } from '../themes/theme-context';
+import { DropdownProps } from './types';
 
-import type { DropdownProps } from './types';
-
-const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>((props, ref) => {
-  const { children, onClose, isOpen, className, align = 'right', ...other } = props;
-  const {
-    theme: { dropdown },
-  } = useContext(ThemeContext);
-
-  function handleEsc(e: KeyboardEvent) {
-    if (e.key === 'Esc' || e.key === 'Escape') {
-      onClose(e);
-    }
-  }
-
-  const dropdownRef = useRef<HTMLUListElement>(null);
-  function handleClickOutside(e: MouseEvent) {
-    if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-      onClose(e);
-    }
-  }
-
-  useEffect(() => {
-    document.addEventListener('click', handleClickOutside, { capture: true });
-    document.addEventListener('keydown', handleEsc, { capture: true });
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-      document.removeEventListener('keydown', handleEsc);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const cls = twMerge(dropdown.base, dropdown.align[align], className);
-
+export default function Dropdown({ as = 'div', children, ...rest }: PropsWithChildren<DropdownProps>) {
   return (
-    <AnimatedDiv isOpen={isOpen} animated={{ mode: 'out-in', xyz: 'fade down duration-2 small' }} ref={ref}>
-      <FocusLock returnFocus>
-        <ul className={cls} ref={dropdownRef} aria-label="submenu" {...other}>
-          {children}
-        </ul>
-      </FocusLock>
-    </AnimatedDiv>
+    <Menu as={as} {...rest} className="relative inline-block">
+      {children}
+    </Menu>
   );
-});
+}
 
-export default Dropdown;
+// function EditActiveIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
+//   return (
+//     <svg {...props} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+//       <path d="M4 13V16H7L16 7L13 4L4 13Z" fill="#FFDBC4" stroke="#FF6000" strokeWidth="2" />
+//     </svg>
+//   );
+// }

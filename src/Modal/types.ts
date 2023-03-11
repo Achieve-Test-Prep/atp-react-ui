@@ -1,15 +1,19 @@
-export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
-  /**
-   * Defines if the modal is open
-   */
-  isOpen: boolean;
-  /**
-   * Function executed when the dropdown is closed
-   * Controls the visibility of close button as well
-   */
-  onClose?: () => void;
+import { ElementType } from 'react';
+
+import { DialogProps, DialogTitleProps } from '@headlessui/react';
+import { DescriptionProps } from '@headlessui/react/dist/components/description/description';
+
+export type ModalProps = DialogProps<ElementType> & {
   /**
    * disables the internal closing mechanics
    */
   disableInternalClosing?: boolean;
-}
+
+  /**
+   * show and hides the close button
+   */
+  showCloseButton?: boolean;
+};
+
+export type ModalHeaderProps = DialogTitleProps<ElementType>;
+export type ModalBodyProps = DescriptionProps;

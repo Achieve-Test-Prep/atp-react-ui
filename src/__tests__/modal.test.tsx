@@ -5,11 +5,19 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { Modal } from '../Modal';
 import theme from '../themes/default';
 
+window.ResizeObserver =
+  window.ResizeObserver ||
+  jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+  }));
+
 describe('Modal', () => {
   it('should render without crashing', () => {
     const onClose = jest.fn();
     render(
-      <Modal isOpen={true} onClose={onClose}>
+      <Modal open={true} onClose={onClose}>
         Lorem ipsum
       </Modal>
     );
@@ -18,18 +26,18 @@ describe('Modal', () => {
   it('should render with base styles', () => {
     const onClose = jest.fn();
     const expected = theme.modal.base;
-    const { getByRole } = render(
-      <Modal isOpen={true} onClose={onClose}>
+    const { getByTestId } = render(
+      <Modal data-testid="modal" open={true} onClose={onClose}>
         Lorem ipsum
       </Modal>
     );
-    expect(getByRole('dialog')).toHaveClass(expected);
+    expect(getByTestId('modal')).toHaveClass(expected);
   });
 
   // it('should call onClose when Esc is pressed', () => {
   //   const onClose = jest.fn();
   //   const { getByRole } = render(
-  //     <Modal isOpen={true} onClose={onClose}>
+  //     <Modal open={true} onClose={onClose}>
   //       Lorem ipsum
   //     </Modal>
   //   );
@@ -46,7 +54,7 @@ describe('Modal', () => {
   //     });
   //     const onClose = jest.fn();
   //     render(
-  //       <Modal isOpen={true} onClose={onClose}>
+  //       <Modal open={true} onClose={onClose}>
   //         Lorem ipsum
   //       </Modal>
   //     );
@@ -64,7 +72,7 @@ describe('Modal', () => {
   //     document.removeEventListener = removeListener;
   //     const onClose = jest.fn();
   //     const { container } = render(
-  //       <Modal isOpen={true} onClose={onClose}>
+  //       <Modal open={true} onClose={onClose}>
   //         Lorem ipsum
   //       </Modal>
   //     );
@@ -81,7 +89,7 @@ describe('Modal', () => {
   //     });
   //     const onClose = jest.fn();
   //     const { container } = render(
-  //       <Modal isOpen={true} onClose={onClose}>
+  //       <Modal open={true} onClose={onClose}>
   //         Lorem ipsum
   //       </Modal>
   //     );

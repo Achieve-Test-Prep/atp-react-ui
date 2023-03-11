@@ -91,11 +91,11 @@ export default {
   },
   // Modal
   modal: {
-    base: 'w-full z-40 px-6 py-4 overflow-hidden bg-white rounded-t-lg tb:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl',
+    base: 'transition-all transform overflow-hidden w-full px-6 py-4 overflow-hidden bg-white rounded-t-lg tb:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl',
   },
   // ModalBody
   modalBody: {
-    base: 'mb-6 text-sm text-accent-light tb:text-gray-400',
+    base: 'mb-6 mt-4 text-sm text-accent-light tb:text-gray-400',
   },
   // ModalFooter
   modalFooter: {
@@ -103,7 +103,7 @@ export default {
   },
   // ModalHeader
   modalHeader: {
-    base: 'mt-4 mb-2 text-lg font-semibold text-accent-light tb:text-gray-300',
+    base: 'mt-4 text-lg font-semibold text-accent-primary tb:text-gray-300',
   },
 
   // Badge

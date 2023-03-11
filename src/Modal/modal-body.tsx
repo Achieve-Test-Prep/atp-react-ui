@@ -1,22 +1,25 @@
 import React, { useContext } from 'react';
 
+import { Dialog } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
 
 import { ThemeContext } from '../themes/theme-context';
-import { DivProps } from '../types';
 
-const ModalBody = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
+import { ModalBodyProps } from './types';
+
+const ModalBody = React.forwardRef<HTMLDivElement, ModalBodyProps>((props, ref) => {
   const { children, className, ...other } = props;
   const {
     theme: { modalBody },
   } = useContext(ThemeContext);
 
-  const cls = twMerge(modalBody.base, className);
+  // TODO: this className should be check
+  const cls = twMerge(modalBody.base, className as string);
 
   return (
-    <div className={cls} ref={ref} {...other}>
+    <Dialog.Description className={cls} ref={ref} {...other}>
       {children}
-    </div>
+    </Dialog.Description>
   );
 });
 
