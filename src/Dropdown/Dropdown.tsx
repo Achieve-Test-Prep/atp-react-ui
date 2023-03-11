@@ -1,15 +1,11 @@
-import { PropsWithChildren } from 'react';
-
 import { Menu } from '@headlessui/react';
 
 import { DropdownProps } from './types';
 
-export default function Dropdown({ as = 'div', children, ...rest }: PropsWithChildren<DropdownProps>) {
-  return (
-    <Menu as={as} {...rest} className="relative inline-block">
-      {children}
-    </Menu>
-  );
+export default function Dropdown(props: DropdownProps) {
+  const { as = 'div', ...rest } = props;
+
+  return <Menu as={as} {...rest} className="relative inline-block" />;
 }
 
 // function EditActiveIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {

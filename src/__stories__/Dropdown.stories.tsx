@@ -1,10 +1,11 @@
-import React, { useRef } from 'react';
+import React, { ReactElement, useRef } from 'react';
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Dropdown, DropdownButton, DropdownItem, DropdownItems } from '../Dropdown';
 import { useBoolean } from '../hooks/use-boolean';
-import { Icon } from '../Icon';
+import { Menu } from '@headlessui/react';
+import { Button } from '../Button';
 
 export default {
   title: 'Dropdown',
@@ -14,27 +15,23 @@ export default {
 const Template: ComponentStory<typeof Dropdown> = (args) => {
   const ref = useRef(null);
   const { ...rest } = args;
-  const [isOpens, open] = useBoolean();
 
   return (
     <section className="flex flex-col items-center">
       <div className="relative z-10">
         <Dropdown>
-          <div>
-            <DropdownButton className="inline-flex w-full justify-center rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-              Options
-            </DropdownButton>
-          </div>
+          {({ open }) => (
+            <>
+              <DropdownButton>Test Button</DropdownButton>
 
-          <DropdownItems>
-            <div className="px-1 py-1 ">
-              <DropdownItem buttonProps={{ tag: 'a', href: 'test' }}>Test</DropdownItem>
-            </div>
-
-            <div className="px-1 py-1">
-              <DropdownItem>Delete</DropdownItem>
-            </div>
-          </DropdownItems>
+              <DropdownItems>
+                <DropdownItem>Lorem Ipsum</DropdownItem>
+                <DropdownItem>Lorem Ipsum</DropdownItem>
+                <DropdownItem>Lorem Ipsum</DropdownItem>
+                <DropdownItem>{(prop) => <Button as="__dropdownItem">Lorem Ipsum</Button>}</DropdownItem>
+              </DropdownItems>
+            </>
+          )}
         </Dropdown>
       </div>
     </section>
@@ -42,6 +39,3 @@ const Template: ComponentStory<typeof Dropdown> = (args) => {
 };
 
 export const Basic = Template.bind({});
-Basic.args = {
-  isOpen: false,
-};

@@ -1,4 +1,4 @@
-import React, { Fragment, PropsWithChildren, useContext } from 'react';
+import React, { Fragment, useContext } from 'react';
 
 import { Menu, Transition } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
@@ -7,8 +7,8 @@ import { ThemeContext } from '../themes/theme-context';
 
 import { DropdownMenuItemsProps } from './types';
 
-const DropdownItems = React.forwardRef<HTMLDivElement, PropsWithChildren<DropdownMenuItemsProps>>((props, ref) => {
-  const { children, className, as = 'ul', align = 'right', ...rest } = props;
+const DropdownItems = React.forwardRef<HTMLDivElement, DropdownMenuItemsProps>((props, ref) => {
+  const { className, as = 'ul', align = 'right', ...rest } = props;
 
   const {
     theme: { dropdown },
@@ -25,9 +25,7 @@ const DropdownItems = React.forwardRef<HTMLDivElement, PropsWithChildren<Dropdow
       leaveFrom="transform opacity-100 scale-100"
       leaveTo="transform opacity-0 scale-95"
     >
-      <Menu.Items as={as} ref={ref} {...rest} className={cls}>
-        {children}
-      </Menu.Items>
+      <Menu.Items as={as} ref={ref} {...rest} className={cls} />
     </Transition>
   );
 });

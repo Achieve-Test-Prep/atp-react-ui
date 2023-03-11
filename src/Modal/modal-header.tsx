@@ -7,19 +7,15 @@ import { ThemeContext } from '../themes/theme-context';
 
 import { ModalHeaderProps } from './types';
 
-const ModalHeader = React.forwardRef<HTMLParagraphElement, ModalHeaderProps>((props, ref) => {
-  const { children, className, ...other } = props;
+function ModalHeader(props: ModalHeaderProps) {
+  const { className, ...other } = props;
   const {
     theme: { modalHeader },
   } = useContext(ThemeContext);
 
   const cls = twMerge(modalHeader.base, className);
 
-  return (
-    <Dialog.Title ref={ref} className={cls} {...other}>
-      {children}
-    </Dialog.Title>
-  );
-});
+  return <Dialog.Title className={cls} {...other} />;
+}
 
 export default ModalHeader;

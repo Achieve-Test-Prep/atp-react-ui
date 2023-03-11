@@ -1,5 +1,7 @@
 import { Menu } from '@headlessui/react';
 
-const DropdownButton = Menu.Button;
+import { DropdownButtonProps } from './types';
 
-export default DropdownButton;
+export default function DropdownButton(props: DropdownButtonProps) {
+  return <Menu.Button {...props} />;
+}

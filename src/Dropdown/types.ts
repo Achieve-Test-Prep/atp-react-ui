@@ -1,6 +1,6 @@
 import { ElementType } from 'react';
 
-import { MenuItemProps, MenuItemsProps, MenuProps } from '@headlessui/react';
+import { MenuItemProps, MenuItemsProps, MenuProps, MenuButtonProps } from '@headlessui/react';
 
 import { ButtonProps } from '../Button';
 
@@ -13,3 +13,5 @@ export type DropdownMenuItemsProps = MenuItemsProps<ElementType> & {
 export type DropdownMenuItemProps = MenuItemProps<ElementType> & {
   buttonProps?: ButtonProps;
 };
+
+export type DropdownButtonProps = MenuButtonProps<ElementType>;
