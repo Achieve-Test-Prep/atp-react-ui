@@ -1,5 +1,12 @@
 
 
+## [3.0.2](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.0.1...3.0.2) (2023-03-13)
+
+
+### Bug Fixes
+
+* **fix:** close analytics plugin ([80ca3be](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/80ca3bec992268f67da5a077fd1e7250d8177ca4))
+
 ## [3.0.1](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.0.0...3.0.1) (2023-03-13)
 
 # [3.0.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/2.7.5...3.0.0) (2023-03-11)
