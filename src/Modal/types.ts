@@ -12,8 +12,9 @@ export type ModalProps = DialogProps<ElementType> & {
   /**
    * show and hides the close button
    */
-  showCloseButton?: boolean;
+  hideCloseButton?: boolean;
 };
 
 export type ModalHeaderProps = DialogTitleProps<ElementType>;
+
 export type ModalBodyProps = DescriptionProps;

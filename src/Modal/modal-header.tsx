@@ -7,7 +7,7 @@ import { ThemeContext } from '../themes/theme-context';
 
 import { ModalHeaderProps } from './types';
 
-function ModalHeader(props: ModalHeaderProps) {
+export default function ModalHeader(props: ModalHeaderProps) {
   const { className, ...other } = props;
   const {
     theme: { modalHeader },
@@ -17,5 +17,3 @@ function ModalHeader(props: ModalHeaderProps) {
 
   return <Dialog.Title className={cls} {...other} />;
 }
-
-export default ModalHeader;

@@ -1,10 +1,13 @@
+const h5 = 'font-serif text-base font-normal leading-tight tb:text-gray-400';
+const captionMedium = 'tracking-[0.16px] font-sans text-sm font-normal leading-tight';
+
 export default {
   text: {
     h1: 'font-sans text-2xl font-semibold leading-tight',
     h2: 'font-sans text-xl font-semibold leading-tight',
     h3: 'font-serif text-xl font-normal leading-tight tracking-wide tb:text-gray-400',
     h4: 'font-serif text-lg font-normal leading-tight tracking-tight tb:text-gray-400',
-    h5: 'font-serif text-base font-normal leading-tight tb:text-gray-400',
+    h5,
     h6: 'font-serif text-sm font-semibold leading-tight tb:text-gray-400',
     subheading: 'font-sans text-sm font-normal italic leading-tight',
     subtitle: 'font-sans text-xl font-medium leading-tight',
@@ -12,7 +15,7 @@ export default {
     p: 'font-sans text-accent text-xs font-normal leading-normal tb:text-gray-400',
     'p-small': 'font-sans font-normal text-[0.625rem] leading-normal',
     caption: 'tracking-[0.16px] font-sans text-xs font-normal leading-tight',
-    'caption-medium': 'tracking-[0.16px] font-sans text-sm font-normal leading-tight',
+    'caption-medium': captionMedium,
     'caption-medium-bold': 'tracking-[0.16px] font-sans text-sm font-medium leading-tight',
     'caption-large': 'tracking-[0.16px] font-sans text-lg font-normal leading-tight',
     overline: 'tracking-[0.16px] font-sans text-xs font-normal leading-tight underline',
@@ -74,7 +77,7 @@ export default {
   },
   // Dropdown
   dropdown: {
-    base: 'absolute w-56 p-2 mt-2 text-gray-600 bg-white border border-gray-100 rounded-lg shadow-md min-w-max-content tb:text-gray-300 tb:border-gray-700 tb:bg-gray-700',
+    base: 'absolute w-56 px-6 py-4 mt-2 z-10 text-accent-light bg-white border border-gray-100 rounded-lg shadow-md min-w-max-content tb:text-gray-300 tb:border-gray-700 tb:bg-gray-700',
     align: {
       left: 'left-0',
       right: 'right-0',
@@ -91,19 +94,19 @@ export default {
   },
   // Modal
   modal: {
-    base: 'transition-all transform overflow-hidden w-full px-6 py-4 overflow-hidden bg-white rounded-t-lg tb:bg-gray-800 sm:rounded-lg sm:m-4 sm:max-w-xl',
+    base: 'tb:bg-gray-800 w-full transform overflow-hidden rounded-t-lg bg-white px-6 py-4 shadow-lg transition-all md:m-4 md:max-w-xl md:rounded-lg',
   },
   // ModalBody
   modalBody: {
-    base: 'mb-6 mt-4 text-sm text-accent-light tb:text-gray-400',
+    base: `mb-6 mt-4 ${captionMedium} text-accent-light tb:text-gray-400`,
   },
   // ModalFooter
   modalFooter: {
-    base: 'flex flex-col items-center justify-end px-6 py-3 -mx-6 -mb-4 space-y-4 sm:space-y-0 sm:space-x-6 sm:flex-row bg-gray-50 tb:bg-gray-800',
+    base: 'flex flex-col items-center md:items-end justify-start px-6 py-3 -mx-6 -mb-4 space-y-4 md:space-y-0 md:space-x-6 md:flex-row bg-gray-25 tb:bg-gray-800',
   },
   // ModalHeader
   modalHeader: {
-    base: 'mt-4 text-lg font-semibold text-accent-primary tb:text-gray-300',
+    base: `mt-4 ${h5} text-accent-primary tb:text-gray-300`,
   },
 
   // Badge

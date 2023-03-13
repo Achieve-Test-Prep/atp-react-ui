@@ -16,7 +16,7 @@ const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((props, 
     open,
     className,
     disableInternalClosing = false,
-    showCloseButton = true,
+    hideCloseButton = false,
     ...other
   } = props;
 
@@ -47,7 +47,7 @@ const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((props, 
         </Transition.Child>
 
         <section className="z-40 fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full justify-center items-end sm:items-center sm:justify-center">
+          <div className="flex min-h-full justify-center items-end md:items-center md:justify-center">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -58,7 +58,7 @@ const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((props, 
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel {...other} className={cls}>
-                {showCloseButton && (
+                {!hideCloseButton && (
                   <Button
                     icon="XMarkIcon"
                     size="xs"
