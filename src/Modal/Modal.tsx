@@ -1,6 +1,7 @@
 import { forwardRef, Fragment, PropsWithChildren, useContext } from 'react';
 
 import { Dialog, Transition } from '@headlessui/react';
+import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
 import { twMerge } from 'tailwind-merge';
 
 import { Backdrop } from '../Backdrop';
@@ -60,7 +61,7 @@ const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((props, 
               <Dialog.Panel {...other} className={cls}>
                 {!hideCloseButton && (
                   <Button
-                    icon="XMarkIcon"
+                    icon={XMarkIcon}
                     size="xs"
                     as="link"
                     disabled={disableInternalClosing}

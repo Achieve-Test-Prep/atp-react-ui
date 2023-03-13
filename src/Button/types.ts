@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
-import { IconName } from '../Icon/types';
+import { SvgIconProps } from '../Icon/types';
 
-type IconType = IconName;
+type IconType = SvgIconProps;
 // | string
 // | React.FunctionComponent<React.PropsWithChildren<{ className: string; 'aria-hidden': boolean }>>
 // | React.ComponentClass<{ className: string; 'aria-hidden': boolean }>;

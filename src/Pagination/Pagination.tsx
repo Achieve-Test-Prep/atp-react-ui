@@ -1,5 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 
+import ArrowSmallLeftIcon from '@heroicons/react/24/outline/ArrowSmallLeftIcon';
+import ArrowSmallRightIcon from '@heroicons/react/24/outline/ArrowSmallRightIcon';
+
 import Button from '../Button/Button';
 import { ButtonAsButtonProps } from '../Button/types';
 import { ThemeContext } from '../themes/theme-context';
@@ -15,7 +18,7 @@ export const NavigationButton: React.FC<React.PropsWithChildren<NavigationButton
 }) {
   const ariaLabel = directionIcon === 'prev' ? 'Previous' : 'Next';
 
-  const icon = directionIcon === 'prev' ? 'ArrowSmallLeftIcon' : 'ArrowSmallRightIcon';
+  const icon = directionIcon === 'prev' ? ArrowSmallLeftIcon : ArrowSmallRightIcon;
 
   return (
     <Button size="pagination" as="link" icon={icon} onClick={onClick} disabled={disabled} aria-label={ariaLabel} />

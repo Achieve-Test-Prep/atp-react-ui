@@ -21,4 +21,7 @@ export { ThemeContext as AtpLibContext } from './themes/theme-context';
 export * from './Tooltip';
 export * from './Typography';
 export { default as AtpLib } from './atp-lib';
+
+// Third party libs
 export * from '@headlessui/react';
+export * from 'tailwind-merge';

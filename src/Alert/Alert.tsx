@@ -1,11 +1,17 @@
 import React, { useContext } from 'react';
 
+import CheckCircleIcon from '@heroicons/react/24/outline/CheckCircleIcon';
+import EllipsisHorizontalCircleIcon from '@heroicons/react/24/outline/EllipsisHorizontalCircleIcon';
+import ExclamationCircleIcon from '@heroicons/react/24/outline/ExclamationCircleIcon';
+import InformationCircleIcon from '@heroicons/react/24/outline/InformationCircleIcon';
+import XCircleIcon from '@heroicons/react/24/outline/XCircleIcon';
+import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
 import { twMerge } from 'tailwind-merge';
 
 import { Button } from '../Button';
+import { Icon } from '../Icon';
 import { ThemeContext } from '../themes/theme-context';
 
-import { SuccessIcon, WarningIcon, DangerIcon, InfoIcon, NeutralIcon } from './alert-icons';
 import type { AlertProps } from './types';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
@@ -14,25 +20,23 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
     theme: { alert },
   } = useContext(ThemeContext);
 
-  let Icon;
+  let icon;
   switch (type) {
     case 'success':
-      Icon = SuccessIcon;
+      icon = CheckCircleIcon;
       break;
     case 'warning':
-      Icon = WarningIcon;
+      icon = XCircleIcon;
       break;
     case 'error':
-      Icon = DangerIcon;
+      icon = ExclamationCircleIcon;
       break;
     case 'info':
-      Icon = InfoIcon;
+      icon = InformationCircleIcon;
       break;
     case 'neutral':
-      Icon = NeutralIcon;
-      break;
     default:
-      Icon = NeutralIcon;
+      icon = EllipsisHorizontalCircleIcon;
   }
 
   const cls = twMerge(alert.base, alert[type], onClose && alert.withClose, className);
@@ -47,9 +51,9 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   return (
     <div className={cls} role="alert" ref={ref} {...other}>
       {onClose && (
-        <Button icon="XMarkIcon" className={closeCls} size="xs" as="link" aria-label="close" onClick={onClose} />
+        <Button icon={XMarkIcon} className={closeCls} size="xs" as="link" aria-label="close" onClick={onClose} />
       )}
-      <Icon className={iconCls} />
+      <Icon icon={icon} className={iconCls} />
       {children}
     </div>
   );

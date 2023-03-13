@@ -1,9 +1,12 @@
-import * as HeroOutlinedIcons from '@heroicons/react/24/outline';
+import { ForwardRefExoticComponent, SVGProps } from 'react';
 
-export type IconName = keyof typeof HeroOutlinedIcons;
+export type SvgIconProps = ForwardRefExoticComponent<
+  SVGProps<SVGSVGElement> & { title?: string | undefined; titleId?: string | undefined }
+>;
 
-export interface IconProps {
-  icon: IconName;
-  type?: 'solid' | 'outlined';
-  className?: string;
-}
+export type IconProps = {
+  icon: SvgIconProps;
+  title?: string | undefined;
+  titleId?: string | undefined;
+  className?: string | undefined;
+};
