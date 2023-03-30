@@ -2,8 +2,7 @@ name: Build and Publish Storybook
 
 on:
   push:
-    branches:
-      - 'github-pages'
+    branches: [develop]
 jobs:
   deploy:
     environment:
