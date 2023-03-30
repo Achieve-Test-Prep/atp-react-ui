@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.ts',
+  entry: './root/index.ts',
   output: {
     globalObject: 'this',
     path: path.resolve(__dirname, 'dist'),
