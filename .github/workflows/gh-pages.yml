@@ -32,6 +32,8 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Install Dependencies
         run: npm ci
+      - name: Build Tailwind
+        run: npm run prestorybook
       - name: Run Build
         if: success()
         run: npm run build-storybook
