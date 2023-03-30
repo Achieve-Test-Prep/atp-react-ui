@@ -35,9 +35,6 @@ jobs:
       - name: Run Build
         if: success()
         run: npm run build-storybook
-        with:
-          source: storybook-static
-          destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 
