@@ -1,6 +1,6 @@
-const atpLib = require('../config');
+import atpLib from '../config';
 
-module.exports = atpLib({
+export default atpLib({
   content: ['./root/**/*.{html,js,ts,tsx}'],
   theme: {},
   plugins: [

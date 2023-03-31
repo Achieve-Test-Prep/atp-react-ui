@@ -41,6 +41,10 @@ export interface Props {
    * Shows the button as a block (full width)
    */
   block?: boolean;
+  /**
+   * Shows the button as a block (full width)
+   */
+  iconClassName?: string;
 }
 
 export interface ButtonAsButtonProps extends Props, React.ButtonHTMLAttributes<HTMLButtonElement> {

@@ -23,6 +23,7 @@ export default function useButton(props: ButtonProps) {
     className,
     children,
     showLoader,
+    iconClassName,
     ...other
   } = props;
   const {
@@ -72,9 +73,8 @@ export default function useButton(props: ButtonProps) {
     className
   );
 
-  const iconLeftStyles = twMerge(button.icon[size], children ? button.icon.left : '');
-  const iconRightStyles = twMerge(button.icon[size], children ? button.icon.right : '');
-
+  const iconLeftStyles = twMerge(button.icon[size], children ? button.icon.left : '', iconClassName);
+  const iconRightStyles = twMerge(button.icon[size], children ? button.icon.right : '', iconClassName);
   const loaderSize = (size === 'xs' || size === 'pagination' ? 'xs' : 'sm') as SpinnerProps['size'];
 
   return {
