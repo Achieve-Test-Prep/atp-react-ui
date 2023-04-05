@@ -1,5 +1,12 @@
 
 
+## [3.1.1](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.1.0...3.1.1) (2023-04-05)
+
+
+### Bug Fixes
+
+* **fix tailwind cinfig issue:** tailwind config issue fixed ([49ed741](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/49ed7416220ef897f820f50c7906aa74436f17a7))
+
 # [3.1.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.0.2...3.1.0) (2023-03-31)
 
 
