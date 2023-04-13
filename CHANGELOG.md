@@ -1,5 +1,12 @@
 
 
+## [3.1.2](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.1.1...3.1.2) (2023-04-13)
+
+
+### Bug Fixes
+
+* **minor issues:** issues related to congig, modal body, link button ([56b9b4f](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/56b9b4fe2aadc58d06917b3dd6639e83dc113f7e))
+
 ## [3.1.1](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.1.0...3.1.1) (2023-04-05)
 
 
