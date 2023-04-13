@@ -135,12 +135,12 @@ export const Pagination = React.forwardRef<Ref, PaginationProps>((props, ref) =>
       {/*
        * This (label) should probably be an option, and not the default
        */}
-      <span className="flex items-center font-semibold tracking-wide uppercase">
+      <span className="flex items-center font-semibold uppercase tracking-wide">
         Showing {activePage * resultsPerPage - resultsPerPage + 1}-{Math.min(activePage * resultsPerPage, totalResults)}{' '}
         of {totalResults}
       </span>
 
-      <div className="flex mt-2 sm:mt-auto sm:justify-end">
+      <div className="mt-2 flex sm:mt-auto sm:justify-end">
         <nav aria-label={label}>
           <ul className="inline-flex items-center gap-0.5">
             <li>

@@ -8,7 +8,7 @@ import { ThemeContext } from '../themes/theme-context';
 import { ModalBodyProps } from './types';
 
 const ModalBody = React.forwardRef<HTMLDivElement, ModalBodyProps>((props, ref) => {
-  const { children, className, ...other } = props;
+  const { children, className, as = 'div', ...other } = props;
   const {
     theme: { modalBody },
   } = useContext(ThemeContext);
@@ -17,7 +17,7 @@ const ModalBody = React.forwardRef<HTMLDivElement, ModalBodyProps>((props, ref) 
   const cls = twMerge(modalBody.base, className as string);
 
   return (
-    <Dialog.Description className={cls} ref={ref} {...other}>
+    <Dialog.Description as={as} className={cls} ref={ref} {...other}>
       {children}
     </Dialog.Description>
   );

@@ -7,6 +7,8 @@
   "arrowParens": "always",
   "endOfLine": "auto",
   "bracketSpacing": true,
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindConfig": "./style/tailwind.config.js",
   "overrides": [
     {
       "files": "*.{js,jsx,tsx,ts,scss,json,html}",

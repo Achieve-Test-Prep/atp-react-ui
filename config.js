@@ -2,6 +2,12 @@ const deepMerge = require('deepmerge');
 const twColors = require('tailwindcss/colors');
 const customFormsPlugin = require('@tailwindcss/forms');
 
+delete twColors['lightBlue'];
+delete twColors['warmGray'];
+delete twColors['trueGray'];
+delete twColors['coolGray'];
+delete twColors['blueGray'];
+
 const colors = {
   primary: { DEFAULT: '#FF6000', medium: '#FFA06A', light: '#FFDBC4', 'x-light': '#FFF3EB' },
   secondary: { DEFAULT: '#924AAF', medium: '#C479E1', light: '#F8AAFF', 'x-light': '#FFDDFF' },

@@ -283,9 +283,9 @@ export default {
     },
 
     link: {
-      base: 'text-accent-light tb:text-gray-400 border border-transparent',
+      base: 'tb:text-gray-400 border border-transparent text-accent-light shadow-sm',
       active:
-        'active:bg-transparent shadow-sm hover:text-primary hover:bg-primary-x-light focus:ring-primary-light tb:hover:bg-gray-500 tb:hover:text-gray-300/10',
+        'tb:hover:bg-gray-500 tb:hover:text-gray-300/10 hover:bg-primary-x-light hover:text-primary hover:shadow-none focus:ring-primary-light active:bg-transparent',
       disabled: '',
     },
 

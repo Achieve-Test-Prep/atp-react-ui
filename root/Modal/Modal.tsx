@@ -47,8 +47,8 @@ const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((props, 
           <Backdrop />
         </Transition.Child>
 
-        <section className="z-40 fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full justify-center items-end md:items-center md:justify-center">
+        <section className="fixed inset-0 z-40 overflow-y-auto">
+          <div className="flex min-h-full items-end justify-center md:items-center md:justify-center">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
