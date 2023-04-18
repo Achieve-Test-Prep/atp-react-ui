@@ -102,7 +102,7 @@ export default {
   },
   // ModalFooter
   modalFooter: {
-    base: 'flex flex-col items-center md:items-end justify-start px-6 py-3 -mx-6 -mb-4 space-y-4 md:space-y-0 md:space-x-6 md:flex-row bg-gray-25 tb:bg-gray-800',
+    base: 'flex flex-col items-center md:items-end justify-start px-6 py-3 -mx-6 -mb-4 space-y-4 md:space-y-0 md:space-x-4 md:flex-row bg-gray-25 tb:bg-gray-800',
   },
   // ModalHeader
   modalHeader: {
