@@ -8,12 +8,12 @@ import { ThemeContext } from '../themes/theme-context';
 import { ModalHeaderProps } from './types';
 
 export default function ModalHeader(props: ModalHeaderProps) {
-  const { className, ...other } = props;
+  const { className, as = 'div', ...other } = props;
   const {
     theme: { modalHeader },
   } = useContext(ThemeContext);
 
   const cls = twMerge(modalHeader.base, className);
 
-  return <Dialog.Title className={cls} {...other} />;
+  return <Dialog.Title as={as} className={cls} {...other} />;
 }

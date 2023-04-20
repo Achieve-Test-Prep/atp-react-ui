@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface RadioProps extends React.ComponentPropsWithRef<'input'> {
   /**
    * Defines the color of the input
@@ -14,7 +16,7 @@ export interface RadioProps extends React.ComponentPropsWithRef<'input'> {
   /**
    * Shows the label of the input
    */
-  label?: string;
+  label?: ReactNode;
   /**
    * Shows the label of the input
    */

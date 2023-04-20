@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface SelectProps extends React.ComponentPropsWithRef<'select'> {
   /**
    * Defines the color of the select
@@ -6,7 +8,7 @@ export interface SelectProps extends React.ComponentPropsWithRef<'select'> {
   /**
    * Shows the label of the input
    */
-  label?: string;
+  label?: ReactNode;
   /**
    * Shows the label of the input
    */

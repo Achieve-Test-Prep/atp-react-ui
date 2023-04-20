@@ -42,6 +42,10 @@ export interface Props {
    */
   block?: boolean;
   /**
+   * Shows the button within footer of modal
+   */
+  modal?: boolean;
+  /**
    * Shows the button as a block (full width)
    */
   iconClassName?: string;

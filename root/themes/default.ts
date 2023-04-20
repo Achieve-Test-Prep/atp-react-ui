@@ -77,7 +77,7 @@ export default {
   },
   // Dropdown
   dropdown: {
-    base: 'absolute w-56 px-6 py-4 mt-2 z-10 text-accent-light bg-white border border-gray-100 rounded-lg shadow-md min-w-max-content tb:text-gray-300 tb:border-gray-700 tb:bg-gray-700',
+    base: 'min-w-max-content tb:text-gray-300 tb:border-gray-700 tb:bg-gray-700 absolute z-10 mt-2 w-56 rounded-lg border border-gray-100 bg-white px-6 py-4 text-accent-light shadow-md',
     align: {
       left: 'left-0',
       right: 'right-0',
@@ -228,7 +228,7 @@ export default {
   },
 
   cardBody: {
-    base: 'p-4',
+    base: 'px-4 py-5 sm:px-6',
   },
 
   // Button
@@ -263,7 +263,7 @@ export default {
       base: 'h-5 w-5',
       md: 'h-5 w-5',
       sm: 'h-5 w-5',
-      xs: 'h-5 w-5',
+      xs: 'h-4 w-4',
 
       left: 'mr-2 -ml-1',
       right: 'ml-2 -mr-1',
@@ -287,6 +287,10 @@ export default {
       active:
         'tb:hover:bg-gray-500 tb:hover:text-gray-300/10 hover:bg-primary-x-light hover:text-primary hover:shadow-none focus:ring-primary-light active:bg-transparent',
       disabled: '',
+    },
+
+    modal: {
+      base: 'w-full md:w-auto',
     },
 
     // this is the button that lives inside the DropdownItem

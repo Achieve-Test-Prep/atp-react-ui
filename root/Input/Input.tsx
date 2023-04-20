@@ -25,7 +25,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 
   return (
     <div>
-      <Label className={labelClassName}>{label}</Label>
+      {label && <Label className={labelClassName}>{label}</Label>}
       <div className="relative mt-1 rounded-md shadow-sm">
         <input ref={ref} {...other} className={cls} />
       </div>

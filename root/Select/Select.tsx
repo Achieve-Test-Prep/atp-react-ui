@@ -54,7 +54,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>((props, ref) => 
 
   return (
     <div>
-      <Label className={labelClassName}>{label}</Label>
+      {label && <Label className={labelClassName}>{label}</Label>}
       <div className="relative mt-1 rounded-md shadow-sm">
         <select onChange={handleChange} className={cls} ref={ref} disabled={disabled} multiple={!!multiple} {...other}>
           {children ||

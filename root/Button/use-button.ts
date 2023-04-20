@@ -17,6 +17,7 @@ export default function useButton(props: ButtonProps) {
     size = 'base',
     as = 'primary',
     block = false,
+    modal = false,
     icon,
     iconLeft,
     iconRight,
@@ -66,7 +67,8 @@ export default function useButton(props: ButtonProps) {
           // does not have icon
           !hasIcon && btnSize,
           btnAs.base,
-          block ? button.block : null
+          block ? button.block : null,
+          modal ? button.modal.base : null
         ),
     `${btnAs.disabled} ${button.disabled}`,
     `${btnAs.active} ${button.active}`,
