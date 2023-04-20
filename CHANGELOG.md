@@ -1,5 +1,12 @@
 
 
+## [3.1.4](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.1.3...3.1.4) (2023-04-20)
+
+
+### Bug Fixes
+
+* **fix issue:** fix issues with multiple components ([c66763b](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/c66763baca669b64b5d1bae5c6fbfd58d658f5bc))
+
 ## [3.1.3](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.1.2...3.1.3) (2023-04-18)
 
 ## [3.1.2](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.1.1...3.1.2) (2023-04-13)
