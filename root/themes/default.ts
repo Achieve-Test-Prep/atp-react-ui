@@ -1,27 +1,9 @@
-const h5 = 'font-serif text-base font-normal leading-tight tb:text-gray-400';
-const captionMedium = 'tracking-[0.16px] font-sans text-sm font-normal leading-tight';
+import button from './buttons';
+import { modalHeader, modalFooter, modalBody, modal } from './modal';
+import { text } from './text';
 
 export default {
-  text: {
-    h1: 'font-sans text-2xl font-semibold leading-tight',
-    h2: 'font-sans text-xl font-semibold leading-tight',
-    h3: 'font-serif text-xl font-normal leading-tight tracking-wide tb:text-gray-400',
-    h4: 'font-serif text-lg font-normal leading-tight tracking-tight tb:text-gray-400',
-    h5,
-    h6: 'font-serif text-sm font-semibold leading-tight tb:text-gray-400',
-    subheading: 'font-sans text-sm font-normal italic leading-tight',
-    subtitle: 'font-sans text-xl font-medium leading-tight',
-    'subtitle-small': 'font-sans text-xs font-semibold leading-tight',
-    p: 'font-sans text-accent text-xs font-normal leading-normal tb:text-gray-400',
-    'p-small': 'font-sans font-normal text-[0.625rem] leading-normal',
-    caption: 'tracking-[0.16px] font-sans text-xs font-normal leading-tight',
-    'caption-medium': captionMedium,
-    'caption-medium-bold': 'tracking-[0.16px] font-sans text-sm font-medium leading-tight',
-    'caption-large': 'tracking-[0.16px] font-sans text-lg font-normal leading-tight',
-    overline: 'tracking-[0.16px] font-sans text-xs font-normal leading-tight underline',
-    'overline-medium': 'font-sans text-xs font-medium leading-tight',
-    tooltip: 'tracking-[0.16px] font-sans font-normal text-[0.625rem] leading-tight',
-  },
+  text,
   // Alert
   alert: {
     base: 'p-4 pl-12 relative rounded-lg leading-5 bg-gray-75 text-accent-light',
@@ -92,22 +74,15 @@ export default {
       sm: 'w-6 h-6',
     },
   },
+
   // Modal
-  modal: {
-    base: 'tb:bg-gray-800 w-full transform overflow-hidden rounded-t-lg bg-white px-6 py-4 shadow-lg transition-all md:m-4 md:max-w-xl md:rounded-lg',
-  },
+  modal,
   // ModalBody
-  modalBody: {
-    base: `mb-6 mt-4 ${captionMedium} text-accent-light tb:text-gray-400`,
-  },
+  modalBody,
   // ModalFooter
-  modalFooter: {
-    base: 'flex flex-col items-center md:items-end justify-start px-6 py-3 -mx-6 -mb-4 space-y-4 md:space-y-0 md:space-x-4 md:flex-row bg-gray-25 tb:bg-gray-800',
-  },
+  modalFooter,
   // ModalHeader
-  modalHeader: {
-    base: `mt-4 ${h5} text-accent-primary tb:text-gray-300`,
-  },
+  modalHeader,
 
   // Badge
   badge: {
@@ -232,72 +207,7 @@ export default {
   },
 
   // Button
-  button: {
-    base: 'relative leading-none font-medium tracking-[0.16px] whitespace-nowrap select-none align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150',
-    disabled: 'disabled:cursor-not-allowed disabled:text-outline disabled:bg-gray-50 disabled:border-outline',
-    active: 'focus:ring focus:outline-none',
-    block: 'w-full',
-
-    size: {
-      lg: 'px-10 py-3.5 rounded-lg text-sm',
-      base: 'px-5 py-2.5 rounded-lg text-sm',
-      md: 'px-5 py-2 rounded-lg text-sm',
-      sm: 'px-4 py-[0.4375rem] rounded-lg text-xs',
-      xs: 'px-3 py-[0.1875rem] rounded-md text-xs',
-
-      icon: {
-        lg: 'p-3.5 rounded-xl text-base',
-        base: 'p-2.5 rounded-xl text-base',
-        md: 'p-2 rounded-xl text-sm',
-        sm: 'p-[0.3125rem] rounded-xl text-sm',
-        xs: 'p-px rounded-lg text-xs',
-        pagination: 'px-1 py-0.5 text-sm rounded-md',
-      },
-
-      pagination: 'px-3 py-1 rounded-md text-xs',
-    },
-
-    // styles applied to the SVG icon
-    icon: {
-      lg: 'h-5 w-5',
-      base: 'h-5 w-5',
-      md: 'h-5 w-5',
-      sm: 'h-5 w-5',
-      xs: 'h-4 w-4',
-
-      left: 'mr-2 -ml-1',
-      right: 'ml-2 -mr-1',
-    },
-
-    primary: {
-      base: 'text-white bg-primary border border-transparent',
-      active: 'active:hover:brightness-95 hover:brightness-95 focus:ring-primary-light',
-      disabled: 'disabled:active:hover:brightness-100 disabled:hover:brightness-100',
-    },
-
-    outline: {
-      base: 'text-accent-light border-outline border tb:text-gray-400',
-      active:
-        'active:bg-transparent hover:text-primary focus:text-primary hover:border-primary focus:border-primary active:border-primary focus:ring focus:ring-primary-light',
-      disabled: '',
-    },
-
-    link: {
-      base: 'tb:text-gray-400 border border-transparent text-accent-light shadow-sm',
-      active:
-        'tb:hover:bg-gray-500 tb:hover:text-gray-300/10 hover:bg-primary-x-light hover:text-primary hover:shadow-none focus:ring-primary-light active:bg-transparent',
-      disabled: '',
-    },
-
-    modal: {
-      base: 'w-full md:w-auto',
-    },
-
-    // this is the button that lives inside the DropdownItem
-    dropdownItem: {
-      base: 'relative focus:ring-primary-light text-accent-light inline-flex items-center cursor-pointer w-full px-2 py-2.5 text-sm font-medium transition-colors duration-150 rounded-md hover:bg-primary-x-light hover:text-primary tb:hover:bg-gray-800 tb:hover:text-gray-200',
-    },
-  },
+  button,
 
   spinner: {
     base: 'relative inline-block flex-shrink-0 rounded-full border-primary after:absolute after:rounded-full after:bg-white',

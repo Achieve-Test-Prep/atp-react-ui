@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
@@ -11,7 +11,8 @@ const CardBody = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
     theme: { cardBody },
   } = useContext(ThemeContext);
 
-  const cls = twMerge(cardBody.base, className);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const cls = useMemo(() => helper(cardBody.base, className), [className]);
 
   return (
     <div className={cls} ref={ref} {...other}>
@@ -21,3 +22,7 @@ const CardBody = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
 });
 
 export default CardBody;
+
+function helper(base: string, className?: string) {
+  return twMerge(base, className);
+}

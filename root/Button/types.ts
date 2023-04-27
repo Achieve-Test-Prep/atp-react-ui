@@ -36,7 +36,7 @@ export interface Props {
   /**
    * The style of the button
    */
-  as?: 'outline' | 'link' | 'primary' | '__dropdownItem';
+  as?: 'outline' | 'link' | 'contained' | '__dropdownItem';
   /**
    * Shows the button as a block (full width)
    */
@@ -49,6 +49,11 @@ export interface Props {
    * Shows the button as a block (full width)
    */
   iconClassName?: string;
+
+  /**
+   * theme color
+   */
+  theme?: 'dark' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning';
 }
 
 export interface ButtonAsButtonProps extends Props, React.ButtonHTMLAttributes<HTMLButtonElement> {

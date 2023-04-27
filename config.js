@@ -15,15 +15,11 @@ const colors = {
 
   info: { DEFAULT: '#3E96E7', 'x-light': '#dcefff' },
   success: { DEFAULT: '#85BC63', medium: '#5f8f41', 'x-light': '#e6f8f1' },
-  warning: { dark: '#e6ab12', DEFAULT: '#FFDC81', 'x-light': '#fff5db' },
+  warning: { DEFAULT: '#FFCB46', dark: '#e6ab12', 'x-light': '#fff5db' },
   error: { DEFAULT: '#FF5353', 'x-light': '#ffeaea' },
 
   outline: '#D1D5DB',
   avatar: '#b7babc',
-
-  transparent: 'transparent',
-  current: 'currentColor',
-  white: '#ffffff',
 
   ...twColors,
 
