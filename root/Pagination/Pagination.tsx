@@ -42,7 +42,7 @@ export const PageButton: React.FC<React.PropsWithChildren<PageButtonProps>> = fu
   onClick,
 }) {
   return (
-    <Button size="pagination" as={isActive ? 'primary' : 'link'} onClick={onClick}>
+    <Button size="pagination" as={isActive ? 'contained' : 'link'} onClick={onClick}>
       {page}
     </Button>
   );
