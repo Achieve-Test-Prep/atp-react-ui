@@ -1,5 +1,18 @@
 
 
+# [3.2.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.1.4...3.2.0) (2023-04-27)
+
+
+### Bug Fixes
+
+* **minor fix:** minor fix ([3f23eb5](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/3f23eb5286db6c8175df00dbc6ea3ee74e737064))
+* workflow ([574340d](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/574340d7f62aeeb8fc05ecbfbb993e94e0218118))
+
+
+### Features
+
+* **new buttons:** button types added ([ff236c9](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/ff236c9923c7bae41fb0aade4c2aa94ce3293b28))
+
 ## [3.1.4](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.1.3...3.1.4) (2023-04-20)
 
 
