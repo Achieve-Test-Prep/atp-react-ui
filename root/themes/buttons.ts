@@ -90,13 +90,13 @@ const button = {
     error: {
       contained: 'bg-error text-white',
       link: 'text-error',
-      outline: 'text-error-medium border-error',
+      outline: 'text-error border-error',
     },
 
     info: {
       contained: 'bg-info text-white',
       link: 'text-info',
-      outline: 'text-info-medium border-info',
+      outline: 'text-info border-info',
     },
 
     warning: {

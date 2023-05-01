@@ -14,7 +14,7 @@ export default function useButton(props: ButtonProps) {
     // Fix https://github.com/estevanmaito/atp-react-ui/issues/7
     type = tag === 'button' ? 'button' : undefined,
     disabled = false,
-    theme = 'primary',
+    theme,
     size = 'base',
     as = 'contained',
     block = false,
@@ -85,19 +85,23 @@ type helperProps = ButtonProps & {
 
 function helper({
   button,
-
   className,
   iconClassName,
-  theme = 'primary',
+  theme: colorTheme,
   size = 'base',
   as = 'contained',
   block,
   modal,
-
   hasChildren,
   hasIcon,
 }: helperProps) {
   const btnAs = button?.[as] ?? {};
+  let theme = colorTheme ?? 'primary';
+  if (!colorTheme && as === 'outline') {
+    theme = 'dark';
+  }
+
+  // (!colorTheme && as === 'outline') ? 'dark' : 'primary';
 
   /**
    * Only used in Pagination.
