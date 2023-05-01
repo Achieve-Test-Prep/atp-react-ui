@@ -1,5 +1,12 @@
 
 
+## [3.2.1](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.0...3.2.1) (2023-05-01)
+
+
+### Bug Fixes
+
+* **colors:** colors for buttons ([aa41a4a](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/aa41a4a767652f36e7fad13778b2bdf7ab5d6e23))
+
 # [3.2.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.1.4...3.2.0) (2023-04-27)
 
 
