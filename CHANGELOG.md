@@ -1,5 +1,12 @@
 
 
+## [3.2.2](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.1...3.2.2) (2023-05-04)
+
+
+### Bug Fixes
+
+* **default button theme:** default button theme set to dark ([9390907](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/9390907fa3bdce890e39a9af5a3937e2d15edc57))
+
 ## [3.2.1](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.0...3.2.1) (2023-05-01)
 
 
