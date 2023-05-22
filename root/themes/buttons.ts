@@ -42,7 +42,7 @@ const button = {
   },
 
   link: {
-    base: 'border text-accent-light shadow-sm focus:border-primary',
+    base: 'border text-accent-light shadow-sm',
     active: 'hover:bg-primary-x-light hover:text-primary hover:shadow-none active:bg-transparent',
     disabled: '',
   },
@@ -59,7 +59,7 @@ const button = {
 
   // this is the button that lives inside the DropdownItem
   dropdownItem: {
-    base: 'relative focus:ring-primary border focus:border-primary text-accent-light inline-flex items-center cursor-pointer w-full px-4 py-2.5 text-sm font-medium transition-colors duration-150 rounded-md hover:bg-primary-x-light hover:text-primary tb:hover:bg-gray-800 tb:hover:text-gray-200',
+    base: 'relative focus:ring-primary border-0 text-accent-light inline-flex items-center cursor-pointer w-full px-4 py-2.5 text-sm font-medium transition-colors duration-150 rounded-md hover:bg-primary-x-light hover:text-primary tb:hover:bg-gray-800 tb:hover:text-gray-200',
   },
 
   themeColor: {
