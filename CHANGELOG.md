@@ -1,5 +1,12 @@
 
 
+## [3.2.4](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.2...3.2.4) (2023-05-22)
+
+
+### Bug Fixes
+
+* **hooks:** fix useBoolean ([a964e39](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/a964e3998f20eb167bf0d0728599d374d6de03a0))
+
 ## [3.2.3](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.2...3.2.3) (2023-05-22)
 
 
