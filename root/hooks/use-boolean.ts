@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import useConst from './use-const';
 
@@ -38,5 +38,7 @@ export function useBoolean(initialState = false): [boolean, IUseBooleanCallbacks
     setValue(v);
   });
 
-  return [value, { setTrue, setFalse, toggle, set }];
+  const setFun = useMemo(() => ({ setTrue, setFalse, toggle, set }), [setFalse, setTrue, toggle, set]);
+
+  return [value, setFun];
 }
