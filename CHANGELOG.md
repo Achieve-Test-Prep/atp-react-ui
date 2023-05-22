@@ -1,5 +1,12 @@
 
 
+## [3.2.5](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.4...3.2.5) (2023-05-22)
+
+
+### Bug Fixes
+
+* **ui:** ui fix ([ea33211](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/ea3321123df67fbb4e81e4d890970b9799ee70a0))
+
 ## [3.2.4](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.2...3.2.4) (2023-05-22)
 
 
