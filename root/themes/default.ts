@@ -153,16 +153,14 @@ export default {
 
   // Input
   input: {
-    base: 'block w-full p-2.5 focus:outline-none text-sm text-accent-light tb:text-gray-300 leading-5 rounded-lg',
+    base: 'tb:text-gray-300 block w-full rounded-lg border border-outline p-2.5 text-sm leading-5 text-accent-light focus:outline-none',
     active:
-      'focus:border-primary border-outline tb:border-outline focus:ring focus:ring-primary-light tb:focus:border-outline tb:focus:ring-gray-300 tb:bg-gray-700',
-    disabled: 'disabled:cursor-not-allowed disabled:text-accent-disabled disabled:bg-gray-50 disabled:border-outline',
+      'tb:border-outline tb:focus:border-outline tb:focus:ring-gray-300 tb:bg-gray-700 border-outline focus:border-primary focus:ring focus:ring-primary-light',
+    disabled: 'disabled:text-accent-disabled disabled:cursor-not-allowed disabled:border-outline disabled:bg-gray-50',
     valid:
-      'border-success tb:bg-gray-700 focus:border-success tb:focus:border-success focus:ring focus:ring-green-200 tb:focus:ring-green-200',
+      'tb:bg-gray-700 tb:focus:border-success tb:focus:ring-green-200 border-success focus:border-success focus:ring focus:ring-green-200',
     invalid:
-      'border-error tb:bg-gray-700 focus:border-error tb:focus:border-error focus:ring focus:ring-red-200 tb:focus:ring-red-200',
-    radio:
-      'cursor-pointer text-primary form-radio focus:border-primary focus:outline-none focus:ring focus:ring-primary-light focus:ring-offset-0 tb:focus:ring-gray-300',
+      'tb:bg-gray-700 tb:focus:border-error tb:focus:ring-red-200 border-error focus:border-error focus:ring focus:ring-red-200',
   },
 
   // Checkbox
