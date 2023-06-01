@@ -1,37 +1,32 @@
-import { ForwardedRef, forwardRef, useContext } from 'react';
+import { forwardRef, ElementRef, ComponentPropsWithoutRef, useContext } from 'react';
 
+import CheckIcon from '@heroicons/react/24/outline/CheckIcon';
+import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import { twMerge } from 'tailwind-merge';
 
 import { ThemeContext } from '../themes/theme-context';
-import { Label } from '../Typography';
 
-import type { CheckboxProps, CheckboxRef } from './types';
+const Checkbox = forwardRef<
+  ElementRef<typeof CheckboxPrimitive.Root>,
+  ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
+>(({ className, ...props }, ref) => {
+  const {
+    theme: { checkbox },
+  } = useContext(ThemeContext);
 
-const Checkbox = forwardRef<CheckboxRef, CheckboxProps>(
-  (
-    { valid, className, type = 'check', label, disabled, labelClassName, ...other }: CheckboxProps,
-    ref: ForwardedRef<CheckboxRef>
-  ) => {
-    const {
-      theme: { checkbox },
-    } = useContext(ThemeContext);
+  return (
+    <CheckboxPrimitive.Root
+      ref={ref}
+      className={twMerge(checkbox.base, checkbox.checked, checkbox.active, checkbox.disabled, className)}
+      {...props}
+    >
+      <CheckboxPrimitive.Indicator className={twMerge('flex items-center justify-center')}>
+        <CheckIcon className="-mt-px h-4 w-4" />
+      </CheckboxPrimitive.Indicator>
+    </CheckboxPrimitive.Root>
+  );
+});
 
-    function validationStyle(iValid: boolean | undefined): string {
-      if (iValid !== undefined) {
-        return iValid ? checkbox.valid : checkbox.invalid;
-      }
-      return '';
-    }
-
-    const cls = twMerge(checkbox.base, checkbox.active, checkbox.disabled, validationStyle(valid), className);
-
-    return (
-      <Label checkbox disabled={disabled} className={labelClassName}>
-        <input ref={ref} {...other} type="checkbox" disabled={disabled} className={cls} />
-        {label}
-      </Label>
-    );
-  }
-);
+Checkbox.displayName = CheckboxPrimitive.Root.displayName;
 
 export default Checkbox;

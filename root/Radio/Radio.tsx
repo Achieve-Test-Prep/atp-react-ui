@@ -1,37 +1,51 @@
-import { ForwardedRef, forwardRef, useContext } from 'react';
+import { forwardRef, ElementRef, ComponentPropsWithoutRef, useContext } from 'react';
 
+import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 import { twMerge } from 'tailwind-merge';
 
 import { ThemeContext } from '../themes/theme-context';
-import { Label } from '../Typography';
 
-import type { RadioProps, RadioRef } from './types';
+const RadioItemsGroup = forwardRef<
+  ElementRef<typeof RadioGroupPrimitive.Root>,
+  ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
+>(({ className, ...props }, ref) => (
+  <RadioGroupPrimitive.Root className={twMerge('grid gap-2 ', className)} {...props} ref={ref} />
+));
+RadioItemsGroup.displayName = 'RadioItemsGroup';
 
-const Radio = forwardRef<RadioRef, RadioProps>(
-  (
-    { valid, className, type = 'radio', label, disabled, labelClassName, ...other }: RadioProps,
-    ref: ForwardedRef<RadioRef>
-  ) => {
-    const {
-      theme: { radio },
-    } = useContext(ThemeContext);
+const RadioItem = forwardRef<
+  ElementRef<typeof RadioGroupPrimitive.Item>,
+  ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
+>(({ className, children, ...props }, ref) => {
+  const {
+    theme: { radio },
+  } = useContext(ThemeContext);
+  return (
+    <RadioGroupPrimitive.Item
+      ref={ref}
+      className={twMerge(radio.base, radio.active, radio.disabled, className)}
+      {...props}
+    >
+      <RadioGroupPrimitive.Indicator className="flex items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="h-2.5 w-2.5 fill-current text-current"
+        >
+          <circle cx="12" cy="12" r="10" />
+        </svg>
+      </RadioGroupPrimitive.Indicator>
+    </RadioGroupPrimitive.Item>
+  );
+});
 
-    function validationStyle(iValid: boolean | undefined): string {
-      if (iValid !== undefined) {
-        return iValid ? radio.valid : radio.invalid;
-      }
-      return '';
-    }
+RadioItem.displayName = 'RadioItem';
 
-    const cls = twMerge(radio.base, radio.active, radio.disabled, validationStyle(valid), className);
-
-    return (
-      <Label radio disabled={disabled} className={labelClassName}>
-        <input ref={ref} {...other} type="radio" disabled={disabled} className={cls} />
-        {label}
-      </Label>
-    );
-  }
-);
-
-export default Radio;
+export { RadioItemsGroup, RadioItem };

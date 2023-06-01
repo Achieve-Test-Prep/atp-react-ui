@@ -145,47 +145,33 @@ export default {
 
   // Label
   label: {
-    base: 'block text-sm tracking-[0.16px] font-normal leading-tight text-accent-light tb:text-gray-400',
-    // checkbox and radio get this same style
-    checkbox: 'inline-flex items-center cursor-pointer',
-    disabled: 'cursor-not-allowed',
+    base: 'block text-sm font-normal leading-tight tracking-[0.16px] text-accent-light',
   },
 
   // Input
   input: {
-    base: 'tb:text-gray-300 block w-full rounded-lg border border-outline p-2.5 text-sm leading-5 text-accent-light focus:outline-none',
-    active:
-      'tb:border-outline tb:focus:border-outline tb:focus:ring-gray-300 tb:bg-gray-700 border-outline focus:border-primary focus:ring focus:ring-primary-light',
+    base: 'block w-full rounded-lg border border-outline p-2.5 text-sm leading-5 text-accent-light focus:outline-none',
+    active: 'focus:border-primary focus:ring focus:ring-primary-light',
     disabled: 'disabled:text-accent-disabled disabled:cursor-not-allowed disabled:border-outline disabled:bg-gray-50',
-    valid:
-      'tb:bg-gray-700 tb:focus:border-success tb:focus:ring-green-200 border-success focus:border-success focus:ring focus:ring-green-200',
-    invalid:
-      'tb:bg-gray-700 tb:focus:border-error tb:focus:ring-red-200 border-error focus:border-error focus:ring focus:ring-red-200',
+    valid: 'border-success focus:border-success focus:ring focus:ring-green-200',
+    invalid: 'border-error focus:border-error focus:ring focus:ring-red-200',
   },
 
   // Checkbox
   checkbox: {
-    active:
-      'focus:border-primary border-outline tb:border-outline focus:ring focus:ring-primary-light tb:focus:border-outline tb:focus:ring-gray-300 tb:bg-gray-700',
-    disabled: 'disabled:cursor-not-allowed disabled:text-accent-disabled disabled:bg-gray-50 disabled:border-outline',
-    valid:
-      'border-success tb:bg-gray-700 focus:border-success tb:focus:border-success focus:ring focus:ring-green-200 tb:focus:ring-green-200',
-    invalid:
-      'border-error tb:bg-gray-700 focus:border-error tb:focus:border-error focus:ring focus:ring-red-200 tb:focus:ring-red-200',
-    base: 'mr-3 text-primary cursor-pointer form-checkbox focus:border-primary focus:outline-none focus:ring focus:ring-primary-light focus:ring-offset-0 rounded tb:focus:ring-gray-300',
+    base: 'form-checkbox shrink-0 cursor-pointer rounded border border-outline text-white',
+    checked: 'data-[state=checked]:text-primary data-[state=checked]:border-primary',
+    active: 'focus:border-primary focus:outline-none focus:ring focus:ring-primary-light focus:ring-offset-0',
+    disabled: 'disabled:text-accent-disabled disabled:cursor-not-allowed disabled:border-outline disabled:bg-gray-50',
   },
 
   // Radio
   radio: {
+    base: 'form-radio cursor-pointer text-primary',
     active:
-      'focus:border-primary border-outline tb:border-outline focus:ring focus:ring-primary-light tb:focus:border-outline tb:focus:ring-gray-300 tb:bg-gray-700',
+      'border-outline focus:border-primary focus:outline-none  focus:ring focus:ring-primary-light focus:ring-offset-0',
     disabled:
-      'disabled:cursor-not-allowed disabled:text-accent-disabled disabled:bg-gray-50 disabled:border-outline hover:disabled:text-accent-disabled',
-    valid:
-      'border-success tb:bg-gray-700 focus:border-success tb:focus:border-success focus:ring focus:ring-green-200 tb:focus:ring-green-200',
-    invalid:
-      'border-error tb:bg-gray-700 focus:border-error tb:focus:border-error focus:ring focus:ring-red-200 tb:focus:ring-red-200',
-    base: 'mr-3 cursor-pointer text-primary form-radio focus:border-primary focus:outline-none focus:ring focus:ring-primary-light focus:ring-offset-0 tb:focus:ring-gray-300',
+      'disabled:text-accent-disabled hover:disabled:text-accent-disabled disabled:cursor-not-allowed disabled:border-outline disabled:bg-gray-50',
   },
 
   // HelperText

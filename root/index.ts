@@ -10,6 +10,7 @@ export * from './Dropdown';
 export * from './hooks';
 export * from './Icon';
 export * from './Input';
+export * from './Form';
 export * from './Modal';
 export * from './Pagination';
 export * from './Progress';

@@ -1,6 +1,6 @@
 export { default as useConst } from './use-const';
 export { default as useEventListener } from './use-event-listener';
-export { default as useInput } from './use-input';
+export { default as useInputValue } from './use-input';
 export { default as useScreen } from './use-screen';
 export { default as useCopyToClipboard } from './use-clipboard';
 export { default as useDebounce } from './use-debounce';

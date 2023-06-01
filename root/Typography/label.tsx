@@ -1,31 +1,19 @@
-import React, { useContext } from 'react';
+import { forwardRef, ElementRef, ComponentPropsWithoutRef, useContext } from 'react';
 
+import * as LabelPrimitive from '@radix-ui/react-label';
 import { twMerge } from 'tailwind-merge';
 
 import { ThemeContext } from '../themes/theme-context';
 
-import type { LabelProps } from './types';
+const Label = forwardRef<ElementRef<typeof LabelPrimitive.Root>, ComponentPropsWithoutRef<typeof LabelPrimitive.Root>>(
+  ({ className, ...props }, ref) => {
+    const {
+      theme: { label },
+    } = useContext(ThemeContext);
+    return <LabelPrimitive.Root ref={ref} className={twMerge(label.base, className)} {...props} />;
+  }
+);
 
-const Label = React.forwardRef<HTMLLabelElement, LabelProps>((props, ref) => {
-  const { children, checkbox, radio, disabled, className, ...other } = props;
-  const {
-    theme: { label },
-  } = useContext(ThemeContext);
-
-  const cls = twMerge(
-    label.base,
-    // check and radio are interchangeable
-    (checkbox || radio) && label.checkbox,
-    disabled && label.disabled,
-    className
-  );
-
-  return (
-    // eslint-disable-next-line jsx-a11y/label-has-associated-control
-    <label className={cls} ref={ref} {...other}>
-      {children}
-    </label>
-  );
-});
+Label.displayName = LabelPrimitive.Root.displayName;
 
 export default Label;

@@ -1,72 +1,23 @@
-import React, { ChangeEvent, useContext } from 'react';
+import React from 'react';
 
-import { twMerge } from 'tailwind-merge';
-
-import { ThemeContext } from '../themes/theme-context';
-import { Label } from '../Typography';
-
-import type { ISelectOption, SelectProps } from './types';
+import type { SelectProps } from './types';
+import useSelect from './use-select';
 
 const Select = React.forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
-  const {
-    valid,
-    onChangeSelection,
-    options,
-    children,
-    className,
-    multiple,
-    label,
-    labelClassName,
-    disabled,
-    ...other
-  } = props;
-
-  const {
-    theme: { select },
-  } = useContext(ThemeContext);
-
-  function hasValidation(iValid: boolean | undefined) {
-    return iValid !== undefined;
-  }
-
-  function validationStyle(iValid: boolean | undefined): string {
-    if (hasValidation(iValid)) {
-      return valid ? select.valid : select.invalid;
-    }
-    return '';
-  }
-
-  const cls = twMerge(
-    select.base,
-    // don't apply activeStyle if has valid or disabled
-    select.active,
-    // don't apply disabledStyle if has valid
-    select.disabled,
-    validationStyle(valid),
-    !multiple && select.select,
-    className
-  );
-
-  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const item = options.find((i) => i.value === e.target.value);
-    onChangeSelection(item as ISelectOption);
-  };
+  const { styleCls, handleChange, multiple, children, options, ...other } = useSelect(props);
 
   return (
-    <div>
-      {label && <Label className={labelClassName}>{label}</Label>}
-      <div className="relative mt-1 rounded-md shadow-sm">
-        <select onChange={handleChange} className={cls} ref={ref} disabled={disabled} multiple={!!multiple} {...other}>
-          {children ||
-            options.map((item) => (
-              <option key={item.value} value={item.value}>
-                {item.name}
-              </option>
-            ))}
-        </select>
-      </div>
-    </div>
+    <select onChange={handleChange} className={styleCls} ref={ref} multiple={!!multiple} {...other}>
+      {children ||
+        options.map((item) => (
+          <option key={item.value} value={item.value}>
+            {item.name}
+          </option>
+        ))}
+    </select>
   );
 });
+
+Select.displayName = 'Select';
 
 export default Select;
