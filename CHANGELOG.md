@@ -1,5 +1,12 @@
 
 
+## [3.2.11](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.10...3.2.11) (2023-06-09)
+
+
+### Bug Fixes
+
+* **fix input:** fix input ([937f0c3](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/937f0c31e89d503909cc97a6534cb309161705fe))
+
 ## [3.2.10](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.8...3.2.10) (2023-06-09)
 
 
