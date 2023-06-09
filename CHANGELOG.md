@@ -1,5 +1,12 @@
 
 
+## [3.2.12](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.11...3.2.12) (2023-06-09)
+
+
+### Bug Fixes
+
+* **fix form pattern input:** fix pattern input ([bf3663f](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/bf3663ffa3e99eec31c9587a9871ddab732bd72d))
+
 ## [3.2.11](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.10...3.2.11) (2023-06-09)
 
 
