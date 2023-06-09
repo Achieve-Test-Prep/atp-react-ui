@@ -11,7 +11,7 @@ export type PatternInputProps = Omit<InputProps, 'value'> & {
 };
 
 const PatternInput = forwardRef<HTMLInputElement, PatternInputProps>(
-  ({ className, pattern, onValueChange, onChange, value: userValue = '', as = 'numeric', ...rest }, ref) => {
+  ({ pattern, onValueChange, onChange, value: userValue = '', as = 'numeric', ...rest }, ref) => {
     const [value, setValue] = useState(format(userValue, pattern));
     const inputRef = useRef<HTMLInputElement | null>(null);
 
