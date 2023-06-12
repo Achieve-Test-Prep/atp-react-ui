@@ -6,7 +6,7 @@ import Input from './Input';
 import { InputProps } from './use-input';
 
 const FormInput = React.forwardRef<HTMLInputElement, InputProps & { label: string; labelClassName?: string }>(
-  ({ className, label, labelClassName, ...props }, ref) => (
+  ({ label, labelClassName, ...props }, ref) => (
     <FormItem>
       {label && <FormLabel className={labelClassName}>{label}</FormLabel>}
       <FormControl>
