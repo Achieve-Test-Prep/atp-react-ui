@@ -1,7 +1,6 @@
 import { PropsWithChildren } from 'react';
 
 import { CheckboxProps } from '@radix-ui/react-checkbox';
-import { twMerge } from 'tailwind-merge';
 
 import { FormControl, FormItem, FormLabel, FormMessage } from '../Form';
 
@@ -18,11 +17,13 @@ export default function FormCheckbox({
   CheckboxProps & { label: string; labelClassName?: string; placeholder?: string; formItemClassName?: string }
 >) {
   return (
-    <FormItem className={twMerge('flex flex-row items-start justify-start space-x-3 space-y-0', formItemClassName)}>
-      <FormControl>
-        <Checkbox {...props} />
+    <FormItem className={formItemClassName}>
+      <div className="flex flex-row items-center justify-start space-x-3 space-y-0">
+        <FormControl>
+          <Checkbox {...props} />
+        </FormControl>
         {label && <FormLabel className="cursor-pointer">{label}</FormLabel>}
-      </FormControl>
+      </div>
       <FormMessage />
     </FormItem>
   );
