@@ -1,5 +1,12 @@
 
 
+## [3.2.15](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.14...3.2.15) (2023-06-12)
+
+
+### Bug Fixes
+
+* **fix checkbox:** fix checkbox ([3064af7](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/3064af726d1d2564cfaaad0aae9521e68cae2fbf))
+
 ## [3.2.14](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.13...3.2.14) (2023-06-12)
 
 
