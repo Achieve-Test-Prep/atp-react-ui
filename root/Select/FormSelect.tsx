@@ -8,11 +8,12 @@ import type { SelectProps } from './types';
 export default function FormSelect({
   children,
   labelClassName,
+  formItemClassName,
   label,
   ...props
-}: PropsWithChildren<SelectProps & { label: string; labelClassName?: string }>) {
+}: PropsWithChildren<SelectProps & { label: string; labelClassName?: string; formItemClassName?: string }>) {
   return (
-    <FormItem>
+    <FormItem className={formItemClassName}>
       {label && <FormLabel className={labelClassName}>{label}</FormLabel>}
       <Select {...props} />
       <FormMessage />
