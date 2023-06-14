@@ -19,6 +19,10 @@ module.exports = {
     'react-hook-form': 'react-hook-form',
     'tailwind-merge': 'tailwind-merge',
     tailwindcss: 'tailwindcss',
+    'react-hook-form': 'react-hook-form',
+    '@tailwindcss/typography': '@tailwindcss/typography',
+    '@tailwindcss/forms': '@tailwindcss/forms',
+    '@tailwindcss/aspect-ratio': '@tailwindcss/aspect-ratio',
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],

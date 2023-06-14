@@ -23,7 +23,3 @@ export * from './Tooltip';
 export * from './Typography';
 export * from './accordion';
 export { default as AtpLib } from './atp-lib';
-
-// Third party libs
-export * from '@headlessui/react';
-export * from 'tailwind-merge';

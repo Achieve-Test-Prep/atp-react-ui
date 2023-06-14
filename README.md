@@ -18,6 +18,20 @@ Install
 npm i atp-react-ui
 ```
 
+## Peer dependencies
+
+- react
+- 'react-dom'
+- '@headlessui/react'
+- '@heroicons/react'
+- 'react-hook-form'
+- 'tailwind-merge'
+- tailwindcss,
+- 'react-hook-form',
+- '@tailwindcss/typography',
+- '@tailwindcss/forms',
+- '@tailwindcss/aspect-ratio',
+
 Inside `tailwind.config.js`
 
 ```js
