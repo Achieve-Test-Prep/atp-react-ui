@@ -1,5 +1,12 @@
 
 
+## [3.2.18](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.17...3.2.18) (2023-06-14)
+
+
+### Reverts
+
+* **revert previous 2 builds:** revert ([abb93cb](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/abb93cb5b545acf4bb11d306fca14edadaf7026a))
+
 ## [3.2.17](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.16...3.2.17) (2023-06-14)
 
 ## [3.2.16](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.15...3.2.16) (2023-06-14)
