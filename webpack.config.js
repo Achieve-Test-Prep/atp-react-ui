@@ -14,6 +14,11 @@ module.exports = {
   externals: {
     react: 'react',
     'react-dom': 'react-dom',
+    '@headlessui/react': '@headlessui/react',
+    '@heroicons/react': '@heroicons/react',
+    'react-hook-form': 'react-hook-form',
+    'tailwind-merge': 'tailwind-merge',
+    tailwindcss: 'tailwindcss',
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],

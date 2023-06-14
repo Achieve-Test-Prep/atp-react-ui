@@ -9,12 +9,15 @@ import {
   useMemo,
 } from 'react';
 
-import * as LabelPrimitive from '@radix-ui/react-label';
 import { Slot } from '@radix-ui/react-slot';
 import { Controller, ControllerProps, FieldPath, FieldValues, FormProvider, useFormContext } from 'react-hook-form';
 import { twMerge } from 'tailwind-merge';
 
+import type { DivProps } from '../types';
 import Label from '../Typography/label';
+import type { LabelProps } from '../Typography/types';
+
+import type { FormItemContextValue } from './types';
 
 const Form = FormProvider;
 
@@ -62,13 +65,9 @@ const useFormField = () => {
   };
 };
 
-type FormItemContextValue = {
-  id: string;
-};
-
 const FormItemContext = createContext<FormItemContextValue>({} as FormItemContextValue);
 
-const FormItem = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => {
+const FormItem = forwardRef<HTMLDivElement, DivProps>(({ className, ...props }, ref) => {
   const id = useId();
   const idValue = useMemo(() => ({ id }), [id]);
 
@@ -78,16 +77,17 @@ const FormItem = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(({ c
     </FormItemContext.Provider>
   );
 });
+
 FormItem.displayName = 'FormItem';
 
-const FormLabel = forwardRef<
-  ElementRef<typeof LabelPrimitive.Root>,
-  ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
->(({ className, ...props }, ref) => {
-  const { formItemId } = useFormField();
+const FormLabel = forwardRef<ElementRef<LabelProps>, ComponentPropsWithoutRef<LabelProps>>(
+  ({ className, ...props }, ref) => {
+    const { formItemId } = useFormField();
 
-  return <Label ref={ref} className={className} htmlFor={formItemId} {...props} />;
-});
+    return <Label ref={ref} className={className} htmlFor={formItemId} {...props} />;
+  }
+);
+
 FormLabel.displayName = 'FormLabel';
 
 const FormControl = forwardRef<ElementRef<typeof Slot>, ComponentPropsWithoutRef<typeof Slot>>(({ ...props }, ref) => {

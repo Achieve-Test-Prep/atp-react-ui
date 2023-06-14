@@ -1,3 +1,5 @@
+import { Root as LabelRoot } from '@radix-ui/react-label';
+
 export interface TextProps extends React.HTMLAttributes<HTMLElement> {
   as?:
     | 'span'
@@ -23,20 +25,7 @@ export interface TextProps extends React.HTMLAttributes<HTMLElement> {
     | undefined;
 }
 
-export interface LabelProps extends React.HTMLAttributes<HTMLLabelElement> {
-  /**
-   * Applies specific styles for checkboxes
-   */
-  checkbox?: boolean;
-  /**
-   * Applies specific styles for radios
-   */
-  radio?: boolean;
-  /**
-   * Defines if the label is disabled (you should still disable child elements)
-   */
-  disabled?: boolean;
-}
+export type LabelProps = typeof LabelRoot;
 
 export interface HelperTextProps extends React.HTMLAttributes<HTMLSpanElement> {
   /**
