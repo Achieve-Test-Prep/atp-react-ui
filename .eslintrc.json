@@ -56,7 +56,7 @@
           "**/scripts/*.js",
           "**/stories/**/*.js",
           "**/__tests__/**/*.js",
-          "**/.storybook/**/*.*"
+          "**/__stories__/**/*.*"
         ],
         "peerDependencies": true
       }
@@ -89,7 +89,7 @@
       }
     ]
   },
-  "ignorePatterns": ["*.js", "setupTests.ts", "config.test.ts", "root/__tests__", "/stories"],
+  "ignorePatterns": ["*.js", "setupTests.ts", "config.test.ts", "root/__tests__", "root/__stories__"],
   "settings": {
     "react": {
       "version": "detect"

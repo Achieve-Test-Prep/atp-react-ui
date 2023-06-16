@@ -1,6 +1,6 @@
 {
   "include": ["root", "@types"],
-  "exclude": ["root/__tests__", "stories"],
+  "exclude": ["root/__tests__", "root/__stories__"],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
