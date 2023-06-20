@@ -3,15 +3,14 @@ import { PropsWithChildren } from 'react';
 import { FormItem, FormLabel, FormMessage } from '../Form';
 
 import Select from './Select';
-import type { SelectProps } from './types';
+import type { FromSelectProps } from './types';
 
 export default function FormSelect({
-  children,
   labelClassName,
   formItemClassName,
   label,
   ...props
-}: PropsWithChildren<SelectProps & { label: string; labelClassName?: string; formItemClassName?: string }>) {
+}: PropsWithChildren<FromSelectProps>) {
   return (
     <FormItem className={formItemClassName}>
       {label && <FormLabel className={labelClassName}>{label}</FormLabel>}

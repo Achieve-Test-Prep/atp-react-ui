@@ -1,3 +1,3 @@
 export { default as Checkbox } from './Checkbox';
 export { default as FormCheckbox } from './FormCheckbox';
-// export * from './types';
+export * from './types';

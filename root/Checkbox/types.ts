@@ -1,26 +1,5 @@
-import { ReactNode } from 'react';
+import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 
-export interface CheckboxProps extends React.ComponentPropsWithRef<'input'> {
-  /**
-   * Defines the color of the input
-   */
-  valid?: boolean;
-  /**
-   * Defines if the input is disabled
-   */
-  disabled?: boolean;
-  /**
-   * Defines the type of the input
-   */
-  type?: string;
-  /**
-   * Shows the label of the input
-   */
-  label?: ReactNode;
-  /**
-   * Shows the label of the input
-   */
-  labelClassName?: string;
-}
+export type CheckboxProps = typeof CheckboxPrimitive.Root;
 
-export type CheckboxRef = HTMLInputElement | null;
+export type FormCheckboxProps = Omit<CheckboxProps, 'onCheckedChange'>;

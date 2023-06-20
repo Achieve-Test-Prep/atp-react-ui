@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { FormControl, FormItem, FormLabel, FormMessage } from '../Form';
 
 import Textarea from './Textarea';
@@ -9,7 +11,7 @@ export default function FormTextarea({
   formItemClassName,
   ...props
 }: TextareaProps & {
-  label: string;
+  label: ReactNode;
   labelClassName?: string;
   formItemClassName?: string;
 }) {

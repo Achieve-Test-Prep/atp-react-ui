@@ -1,16 +1,16 @@
-import * as React from 'react';
+import { ReactNode, forwardRef } from 'react';
 
 import { FormControl, FormItem, FormLabel, FormMessage } from '../Form';
 
 import { PatternInput, PatternInputProps } from './PatternInput';
 
 type TProps = PatternInputProps & {
-  label: string;
+  label: ReactNode;
   labelClassName?: string;
   formItemClassName?: string;
 };
 
-const FormPatternInput = React.forwardRef<HTMLInputElement, TProps>(
+const FormPatternInput = forwardRef<HTMLInputElement, TProps>(
   ({ label, labelClassName, formItemClassName, value, ...props }, ref) => (
     <FormItem className={formItemClassName}>
       {label && <FormLabel className={labelClassName}>{label}</FormLabel>}

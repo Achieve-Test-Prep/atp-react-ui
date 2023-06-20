@@ -1,13 +1,13 @@
-import * as React from 'react';
+import { forwardRef, ReactNode } from 'react';
 
 import { FormControl, FormItem, FormLabel, FormMessage } from '../Form';
 
 import Input from './Input';
 import { InputProps } from './use-input';
 
-const FormInput = React.forwardRef<
+const FormInput = forwardRef<
   HTMLInputElement,
-  InputProps & { label: string; labelClassName?: string; formItemClassName?: string }
+  InputProps & { label: ReactNode; labelClassName?: string; formItemClassName?: string }
 >(({ label, labelClassName, formItemClassName, ...props }, ref) => (
   <FormItem className={formItemClassName}>
     {label && <FormLabel className={labelClassName}>{label}</FormLabel>}

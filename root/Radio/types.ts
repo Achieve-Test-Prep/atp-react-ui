@@ -1,26 +1,5 @@
-import { ReactNode } from 'react';
+import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 
-export interface RadioProps extends React.ComponentPropsWithRef<'input'> {
-  /**
-   * Defines the color of the input
-   */
-  valid?: boolean;
-  /**
-   * Defines if the input is disabled
-   */
-  disabled?: boolean;
-  /**
-   * Defines the type of the input
-   */
-  type?: string;
-  /**
-   * Shows the label of the input
-   */
-  label?: ReactNode;
-  /**
-   * Shows the label of the input
-   */
-  labelClassName?: string;
-}
+export type RadioGroupProps = typeof RadioGroupPrimitive.Root;
 
-export type RadioRef = HTMLInputElement | null;
+export type RadioProps = typeof RadioGroupPrimitive.Item;
