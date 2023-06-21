@@ -1,5 +1,3 @@
-import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
+export type CheckboxProps = React.ComponentPropsWithRef<'input'>;
 
-export type CheckboxProps = typeof CheckboxPrimitive.Root;
-
-export type FormCheckboxProps = Omit<CheckboxProps, 'onCheckedChange'>;
+export type CheckboxRef = HTMLInputElement | null;

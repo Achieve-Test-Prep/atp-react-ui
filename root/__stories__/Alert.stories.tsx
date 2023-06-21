@@ -18,10 +18,3 @@ export const Primary: Story = {
     type: 'neutral',
   },
 };
-
-// export const WithoutClose = Template.bind({});
-// WithoutClose.args = {
-//   type: 'success',
-//   children: "This alert doesn't have a close button.",
-//   onClose: undefined,
-// };

@@ -1,17 +1,18 @@
 import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import Label from '../Typography/label';
 
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { RadioItem, RadioItemsGroup } from '../Radio';
 
-import { Radio } from '../Radio';
 
-export default {
-  title: 'Radio',
-  component: Radio,
-} as ComponentMeta<typeof Radio>;
+const meta: Meta<typeof RadioItem> = {
+  component: RadioItem,
+};
 
-const Template: ComponentStory<typeof Radio> = (args) => <Radio {...args} />;
+export default meta;
+type Story = StoryObj<typeof RadioItem>;
 
-export const Basic = Template.bind({});
-Basic.args = {
-  label: 'This is Radio',
+
+export const Primary: Story = {
+  render: () => <RadioItemsGroup> <RadioItem value={''}  /></RadioItemsGroup>,
 };

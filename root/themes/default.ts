@@ -157,12 +157,10 @@ export default {
     invalid: 'border-error focus:border-error focus:ring focus:ring-red-200',
   },
 
-  // Checkbox
   checkbox: {
-    base: 'form-checkbox shrink-0 cursor-pointer rounded border border-outline text-white',
-    checked: 'data-[state=checked]:text-primary data-[state=checked]:border-primary',
-    active: 'focus:border-primary focus:outline-none focus:ring focus:ring-primary-light focus:ring-offset-0',
-    disabled: 'disabled:text-accent-disabled disabled:cursor-not-allowed disabled:border-outline disabled:bg-gray-50',
+    active: 'focus:border-primary focus:ring focus:ring-primary-light focus:outline-none focus:ring-offset-0',
+    disabled: 'disabled:cursor-not-allowed disabled:text-accent-disabled disabled:bg-gray-50 disabled:border-outline',
+    base: 'text-primary cursor-pointer form-checkbox rounded border-outline',
   },
 
   // Radio

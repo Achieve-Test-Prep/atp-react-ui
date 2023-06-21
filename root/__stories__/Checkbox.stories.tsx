@@ -1,17 +1,26 @@
-import React from 'react';
-
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Checkbox } from '../Checkbox';
+import React from 'react';
+import Label from '../Typography/label';
 
-export default {
-  title: 'Checkbox',
+const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
-} as ComponentMeta<typeof Checkbox>;
+};
 
-const Template: ComponentStory<typeof Checkbox> = (args) => <Checkbox {...args} />;
+export default meta;
+type Story = StoryObj<typeof Checkbox>;
 
-export const Basic = Template.bind({});
-Basic.args = {
-  label: 'This is the text',
+
+export const Primary: Story = {
+  render: () => <Checkbox  />,
+};
+
+export const CheckboxWithLabel: Story = {
+  render: () => (
+    <div className="flex flex-row items-center justify-start space-x-3 space-y-0">
+    <Checkbox  />
+     <Label className={`cursor-pointer`}>This is label</Label>
+    </div>
+  ),
 };

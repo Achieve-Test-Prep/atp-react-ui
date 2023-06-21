@@ -1,13 +1,13 @@
-import { ElementRef, ReactNode, forwardRef, ComponentPropsWithoutRef } from 'react';
+import { ReactNode, forwardRef } from 'react';
 
 import { FormControl, FormItem, FormLabel, FormMessage } from '../Form';
 
 import Checkbox from './Checkbox';
-import { CheckboxProps } from './types';
+import type { CheckboxProps, CheckboxRef } from './types';
 
 const FormCheckbox = forwardRef<
-  ElementRef<CheckboxProps>,
-  ComponentPropsWithoutRef<CheckboxProps> & {
+  CheckboxRef,
+  CheckboxProps & {
     /**
      * Shows the label of the input
      */
