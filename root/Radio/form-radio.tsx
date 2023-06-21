@@ -48,13 +48,15 @@ type TRadioItem = ComponentPropsWithoutRef<RadioProps> & {
 
 const FormRadioItem = forwardRef<ElementRef<RadioProps>, TRadioItem>(
   ({ label, labelClassName, formItemClassName, ...props }, ref) => (
-    <FormItem className={twMerge('flex items-center space-x-3 space-y-0', formItemClassName)}>
+    <FormItem className={twMerge('flex flex-row items-center justify-start space-x-3 space-y-0', formItemClassName)}>
       <FormControl>
         <RadioItem ref={ref} {...props} />
       </FormControl>
-      <FormLabel className={`cursor-pointer disabled:cursor-not-allowed ${labelClassName}`}>
-        {label ?? props.value}
-      </FormLabel>
+      {(label || props.value) && (
+        <FormLabel className={`cursor-pointer disabled:cursor-not-allowed ${labelClassName}`}>
+          {label ?? props.value}
+        </FormLabel>
+      )}
     </FormItem>
   )
 );

@@ -25,7 +25,11 @@ const FormCheckbox = forwardRef<
       <FormControl>
         <Checkbox {...props} ref={ref} />
       </FormControl>
-      {label && <FormLabel className={`cursor-pointer ${labelClassName}`}>{label}</FormLabel>}
+      {(label || props.value) && (
+        <FormLabel className={`cursor-pointer disabled:cursor-not-allowed ${labelClassName}`}>
+          {label ?? props.value}
+        </FormLabel>
+      )}
     </div>
     <FormMessage />
   </FormItem>
