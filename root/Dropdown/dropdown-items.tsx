@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ThemeContext } from '../themes/theme-context';
 
-import { DropdownMenuItemsProps } from './types';
+import type { DropdownMenuItemsProps } from './types';
 
 const DropdownItems = React.forwardRef<HTMLDivElement, DropdownMenuItemsProps>((props, ref) => {
   const { className, as = 'ul', align = 'right', ...rest } = props;

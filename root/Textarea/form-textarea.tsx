@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { FormControl, FormItem, FormLabel, FormMessage } from '../Form';
 
 import Textarea from './Textarea';
-import { TextareaProps } from './types';
+import type { TextareaProps } from './types';
 
 export default function FormTextarea({
   label,

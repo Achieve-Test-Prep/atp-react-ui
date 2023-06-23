@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ThemeContext } from '../themes/theme-context';
 
-import { RadioGroupProps, RadioProps } from './types';
+import type { RadioGroupProps, RadioProps } from './types';
 
 const RadioItemsGroup = forwardRef<ElementRef<RadioGroupProps>, ComponentPropsWithoutRef<RadioGroupProps>>(
   ({ className, ...props }, ref) => (

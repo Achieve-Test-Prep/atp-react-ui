@@ -11,13 +11,10 @@ export function useInput({ className, valid }: InputProps) {
     theme: { input },
   } = useContext(ThemeContext);
 
-  const styleCls = useMemo(() => {
-    let validCls = '';
-    if (valid !== undefined) {
-      validCls = valid ? input.valid : input.invalid;
-    }
-    return twMerge(input.base, input.active, input.disabled, validCls, className);
-  }, [className, input.active, input.base, input.disabled, input.invalid, input.valid, valid]);
+  const styleCls = useMemo(
+    () => twMerge(input.base, input.active, input.disabled, className),
+    [className, input.active, input.base, input.disabled]
+  );
 
   return { styleCls };
 }

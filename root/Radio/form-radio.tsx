@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { FormControl, FormItem, FormLabel, FormMessage } from '../Form';
 
 import { RadioItem, RadioItemsGroup } from './Radio';
-import { RadioGroupProps, RadioProps } from './types';
+import type { RadioGroupProps, RadioProps } from './types';
 
 const FormRadioItemsGroup = forwardRef<
   ElementRef<RadioGroupProps>,

@@ -1,6 +1,6 @@
 import { Menu } from '@headlessui/react';
 
-import { DropdownProps } from './types';
+import type { DropdownProps } from './types';
 
 export default function Dropdown(props: DropdownProps) {
   const { as = 'div', ...rest } = props;

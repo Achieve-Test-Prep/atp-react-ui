@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ThemeContext } from '../themes/theme-context';
 
-import { DropdownMenuItemProps } from './types';
+import type { DropdownMenuItemProps } from './types';
 
 export default function DropdownItem(props: DropdownMenuItemProps) {
   const { className, as = 'li', ...res } = props;

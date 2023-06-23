@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ThemeContext } from '../themes/theme-context';
 
-import { ModalHeaderProps } from './types';
+import type { ModalHeaderProps } from './types';
 
 export default function ModalHeader(props: ModalHeaderProps) {
   const { className, as = 'div', ...other } = props;

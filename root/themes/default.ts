@@ -150,11 +150,9 @@ export default {
 
   // Input
   input: {
-    base: 'block w-full rounded-lg border border-outline p-2.5 text-sm leading-5 text-accent-light focus:outline-none',
+    base: 'block w-full placeholder:text-accent-light/50 rounded-lg border border-outline p-2.5 text-sm leading-5 text-accent-light focus:outline-none',
     active: 'focus:border-primary focus:ring focus:ring-primary-light',
     disabled: 'disabled:text-accent-disabled disabled:cursor-not-allowed disabled:border-outline disabled:bg-gray-50',
-    valid: 'border-success focus:border-success focus:ring focus:ring-green-200',
-    invalid: 'border-error focus:border-error focus:ring focus:ring-red-200',
   },
 
   checkbox: {

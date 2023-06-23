@@ -14,6 +14,7 @@ import { Controller, ControllerProps, FieldPath, FieldValues, FormProvider, useF
 import { twMerge } from 'tailwind-merge';
 
 import type { DivProps } from '../types';
+import { Text } from '../Typography';
 import Label from '../Typography/label';
 import type { LabelProps } from '../Typography/types';
 
@@ -130,7 +131,13 @@ const FormDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLPara
     const { formDescriptionId } = useFormField();
 
     return (
-      <p ref={ref} id={formDescriptionId} className={twMerge('text-muted-foreground text-sm', className)} {...props} />
+      <Text
+        as="caption"
+        ref={ref}
+        id={formDescriptionId}
+        className={twMerge('text-accent-light', className)}
+        {...props}
+      />
     );
   }
 );
