@@ -62,7 +62,7 @@ const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((props, 
                 {!hideCloseButton && (
                   <Button
                     icon={XMarkIcon}
-                    size="xs"
+                    size="sm"
                     as="link"
                     disabled={disableInternalClosing}
                     aria-label="close"

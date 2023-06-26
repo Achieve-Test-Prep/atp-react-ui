@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useContext } from 'react';
+import { PropsWithChildren, useContext } from 'react';
 
 import Tippy from '@tippyjs/react';
 
@@ -30,6 +30,7 @@ export default function Tooltip({
   disabled,
   placement = 'top',
   className,
+  zIndex,
   ...props
 }: PropsWithChildren<TooltipProps>) {
   const {
@@ -41,6 +42,7 @@ export default function Tooltip({
       {...props}
       offset={[0, 4]}
       duration={50}
+      zIndex={zIndex ?? 2}
       placement={placement}
       className={`${className} ${
         placements[placement as keyof typeof placements]
