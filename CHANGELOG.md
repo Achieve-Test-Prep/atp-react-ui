@@ -1,5 +1,12 @@
 
 
+## [3.2.23](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.22...3.2.23) (2023-06-26)
+
+
+### Bug Fixes
+
+* **modal and textarea:** modal and textarea ([44e9af8](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/44e9af81a5bedd843cc8b7f7fcca773c807b0c41))
+
 ## [3.2.22](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.21...3.2.22) (2023-06-23)
 
 ## [3.2.21](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.20...3.2.21) (2023-06-21)
