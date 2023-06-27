@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { FormLabelProps } from '../types';
 
 export interface SelectProps extends React.ComponentPropsWithRef<'select'> {
   /**
@@ -17,15 +17,4 @@ export interface ISelectOption {
   value: any;
 }
 
-export interface FromSelectProps extends SelectProps {
-  /**
-   * Shows the label of the input
-   */
-  label?: ReactNode;
-  /**
-   * Shows the label of the input
-   */
-  labelClassName?: string;
-
-  formItemClassName?: string;
-}
+export type FromSelectProps = SelectProps & FormLabelProps;

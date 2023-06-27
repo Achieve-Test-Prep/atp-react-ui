@@ -1,14 +1,11 @@
-import { ReactNode, forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 import { FormControl, FormItem, FormLabel, FormMessage } from '../Form';
+import type { FormLabelProps } from '../types';
 
 import { PatternInput, PatternInputProps } from './PatternInput';
 
-type TProps = Omit<PatternInputProps, 'pattern'> & {
-  label: ReactNode;
-  labelClassName?: string;
-  formItemClassName?: string;
-};
+type TProps = Omit<PatternInputProps, 'pattern'> & FormLabelProps;
 
 const FormPhoneNumberInput = forwardRef<HTMLInputElement, TProps>(
   ({ label, labelClassName, formItemClassName, value, ...props }, ref) => (

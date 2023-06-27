@@ -11,10 +11,6 @@ const select = {
     'focus:border-primary border-outline tb:border-outline tb:bg-gray-700 focus:ring focus:ring-primary-light tb:focus:ring-gray-300 tb:focus:border-outline',
   select: 'leading-5',
   disabled: 'disabled:cursor-not-allowed disabled:text-accent-disabled disabled:bg-gray-50 disabled:border-outline',
-  valid:
-    'border-success tb:bg-gray-700 focus:border-success tb:focus:border-success focus:ring focus:ring-green-200/60 tb:focus:ring-green-200',
-  invalid:
-    'border-error tb:bg-gray-700 focus:border-error tb:focus:border-error focus:ring focus:ring-red-200/60 tb:focus:ring-red-200',
 };
 
 export default function useSelect(props: SelectProps) {

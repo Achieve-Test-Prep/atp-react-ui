@@ -13,7 +13,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, re
     theme: { textarea },
   } = useContext(ThemeContext);
 
-  const cls = twMerge(textarea.base, textarea.disabled, className);
+  const cls = twMerge(textarea.base, textarea.active, textarea.disabled, className);
 
   return (
     <textarea className={cls} ref={ref} disabled={disabled} {...other}>

@@ -6,30 +6,31 @@ export default {
   text,
   // Alert
   alert: {
-    base: 'p-4 pl-12 relative rounded-lg leading-5 bg-gray-75 text-accent-light',
+    base: 'p-4 pl-12 relative rounded-lg leading-5 bg-gray-50 border border-outline text-accent-light',
     withClose: 'pr-12',
-    success: 'tb:bg-green-600 tb:text-white',
-    error: 'tb:bg-red-600 tb:text-white',
-    warning: 'tb:bg-yellow-600 tb:text-white',
-    neutral: 'tb:bg-gray-700 tb:text-gray-300',
-    info: 'tb:bg-blue-600 tb:text-white',
+    success: '',
+    error: '',
+    warning: '',
+    neutral: '',
+    info: '',
 
     icon: {
       base: 'h-5 w-5',
-      success: 'text-success tb:text-green-300',
-      error: 'text-error tb:text-red-300',
-      warning: 'text-warning tb:text-yellow-100',
-      neutral: 'text-accent-light tb:text-gray-500',
-      info: 'text-info tb:text-blue-300',
+      success: 'text-success',
+      error: 'text-error',
+      warning: 'text-warning',
+      neutral: 'text-accent-light',
+      info: 'text-info',
     },
   },
+
   // Pagination
   pagination: {
-    base: 'flex flex-col justify-between text-xs sm:flex-row text-gray-600 tb:text-gray-400',
+    base: 'flex flex-col justify-between text-xs sm:flex-row text-gray-600',
   },
   // TableFooter
   tableFooter: {
-    base: 'px-4 py-3 border-t tb:border-gray-700 bg-gray-50 text-gray-500 tb:text-gray-400 tb:bg-gray-800',
+    base: 'px-4 py-3 border-t bg-gray-50 text-gray-500',
   },
   // TableRow
   tableRow: {
@@ -37,7 +38,7 @@ export default {
   },
   // TableHeader
   tableHeader: {
-    base: 'text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b tb:border-gray-700 bg-gray-50 tb:text-gray-400 tb:bg-gray-800',
+    base: 'text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b bg-gray-50',
   },
   // TableContainer
   tableContainer: {
@@ -49,7 +50,7 @@ export default {
   },
   // TableBody
   tableBody: {
-    base: 'bg-white divide-y tb:divide-gray-700 tb:bg-gray-800 text-accent-light tb:text-gray-400',
+    base: 'bg-white divide-y text-accent-light',
   },
   // DropdownItem
   // this is the <li> that lives inside the Dropdown <ul>
@@ -59,12 +60,13 @@ export default {
   },
   // Dropdown
   dropdown: {
-    base: 'min-w-max-content tb:text-gray-300 tb:border-gray-700 tb:bg-gray-700 absolute z-10 mt-2 w-56 rounded-lg border border-gray-100 bg-white px-6 py-4 text-accent-light shadow-md',
+    base: 'min-w-max-content absolute z-10 mt-2 w-56 rounded-lg border border-gray-100 bg-white px-6 py-4 text-accent-light shadow-md',
     align: {
       left: 'left-0',
       right: 'right-0',
     },
   },
+
   // Avatar
   avatar: {
     base: 'relative rounded-full inline-block',
@@ -95,20 +97,20 @@ export default {
 
     as: {
       light: {
-        success: 'text-success-medium bg-success-x-light tb:bg-green-700 tb:text-green-100',
-        error: 'text-error bg-error-x-light tb:text-red-100 tb:bg-red-700',
-        warning: 'text-warning-dark bg-warning-x-light tb:text-white tb:bg-orange-600',
-        info: 'text-info bg-info-x-light tb:text-white tb:bg-orange-600',
-        neutral: 'text-accent-light bg-gray-75 tb:text-gray-100 tb:bg-gray-700',
-        primary: 'text-primary bg-primary-x-light tb:text-white tb:bg-purple-600',
+        success: 'text-success-medium bg-success-x-light',
+        error: 'text-error bg-error-x-light',
+        warning: 'text-warning-dark bg-warning-x-light',
+        info: 'text-info bg-info-x-light',
+        neutral: 'text-accent-light bg-gray-75',
+        primary: 'text-primary bg-primary-x-light',
       },
       base: {
-        success: 'text-white bg-success tb:bg-green-700 tb:text-green-100',
-        error: 'text-white bg-error tb:text-red-100 tb:bg-red-700',
-        warning: 'text-accent-light bg-warning tb:text-white tb:bg-orange-600',
-        info: 'text-white bg-info tb:text-white tb:bg-orange-600',
-        neutral: 'text-accent-light bg-gray-75 tb:text-gray-100 tb:bg-gray-700',
-        primary: 'text-primary bg-primary-light tb:text-white tb:bg-purple-600',
+        success: 'text-white bg-success',
+        error: 'text-white bg-error',
+        warning: 'text-accent-light bg-warning',
+        info: 'text-white bg-info',
+        neutral: 'text-accent-light bg-gray-75',
+        primary: 'text-primary bg-primary-light',
       },
     },
   },
@@ -120,27 +122,19 @@ export default {
 
   // Textarea
   textarea: {
-    base: 'block w-full text-sm tb:text-gray-300 rounded-md focus:outline-none',
-    active:
-      'focus-visible:outline-none focus:border-primary border-outline tb:border-outline tb:focus:border-outline tb:bg-gray-700 tb:focus:ring-gray-300 focus:ring focus:ring-primary-light',
-    disabled: 'cursor-not-allowed bg-gray-50 tb:bg-gray-800',
-    valid:
-      'border-green-600 tb:bg-gray-700 focus:border-success tb:focus:border-success focus:ring focus:ring-green-200 tb:focus:ring-green-200',
-    invalid:
-      'border-red-600 tb:bg-gray-700 focus:border-error tb:focus:border-error focus:ring focus:ring-red-200 tb:focus:ring-red-200',
+    base: 'block w-full text-sm border-outline border rounded-lg focus:outline-none placeholder:text-accent-light/50',
+    active: 'focus-visible:outline-none focus:border-primary focus:ring focus:ring-primary-light',
+    disabled: 'disabled:cursor-not-allowed disabled:bg-gray-50',
   },
 
   // Select
   select: {
-    base: 'block w-full p-2.5 text-sm text-accent-light focus:outline-none tb:text-gray-300 rounded-lg',
-    active:
-      'focus:border-primary border-outline tb:border-outline tb:bg-gray-700 focus:ring focus:ring-primary-light tb:focus:ring-gray-300 tb:focus:border-outline',
+    base: 'block w-full p-2.5 text-sm text-accent-light focus:outline-none rounded-lg',
+    active: 'focus:border-primary border-outline focus:ring focus:ring-primary-light',
     select: 'leading-5',
     disabled: 'disabled:cursor-not-allowed disabled:text-accent-disabled disabled:bg-gray-50 disabled:border-outline',
-    valid:
-      'border-success tb:bg-gray-700 focus:border-success tb:focus:border-success focus:ring focus:ring-green-200/60 tb:focus:ring-green-200',
-    invalid:
-      'border-error tb:bg-gray-700 focus:border-error tb:focus:border-error focus:ring focus:ring-red-200/60 tb:focus:ring-red-200',
+    valid: 'border-success focus:border-success focus:ring focus:ring-green-200/60',
+    invalid: 'border-error focus:border-error focus:ring focus:ring-red-200/60',
   },
 
   // Label
@@ -165,7 +159,7 @@ export default {
   radio: {
     base: 'form-radio cursor-pointer text-primary',
     active:
-      'border-outline focus:border-primary focus:outline-none  focus:ring focus:ring-primary-light focus:ring-offset-0',
+      'border-outline focus:border-primary focus:outline-none focus:ring focus:ring-primary-light focus:ring-offset-0',
     disabled:
       'disabled:text-accent-disabled hover:disabled:text-accent-disabled disabled:cursor-not-allowed disabled:border-outline disabled:bg-gray-50',
   },
@@ -173,13 +167,13 @@ export default {
   // HelperText
   helperText: {
     base: 'text-xs',
-    valid: 'text-success tb:text-success',
-    invalid: 'text-error tb:text-error',
+    valid: 'text-success',
+    invalid: 'text-error',
   },
 
   // Card
   card: {
-    base: 'min-w-0 flex flex-col rounded-lg shadow-card overflow-hidden bg-white tb:bg-gray-800',
+    base: 'min-w-0 flex flex-col rounded-lg shadow-card overflow-hidden bg-white',
   },
 
   cardBody: {

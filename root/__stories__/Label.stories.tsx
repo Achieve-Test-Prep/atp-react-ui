@@ -1,17 +1,24 @@
-import React from 'react';
-
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Label } from '../Typography';
+import React from 'react';
 
-export default {
+const meta = {
   title: 'Label',
   component: Label,
-} as ComponentMeta<typeof Label>;
+  tags: ['autodocs'],
+} satisfies Meta<typeof Label>;
 
-const Template: ComponentStory<typeof Label> = (args) => <Label {...args} />;
+export default meta;
 
-export const Basic = Template.bind({});
-Basic.args = {
-  children: 'Basic label',
+type Story = StoryObj<typeof meta>;
+
+export const StringChild: Story = {
+  args: {
+    children: 'This is a string child'
+  },
+};
+
+export const NodeChild: Story = {
+  render: () => <>This is node child</>
 };

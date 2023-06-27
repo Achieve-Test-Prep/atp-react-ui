@@ -1,26 +1,16 @@
-import { ElementRef, ComponentPropsWithoutRef, forwardRef, ReactNode } from 'react';
+import { ElementRef, ComponentPropsWithoutRef, forwardRef } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
 import { FormControl, FormItem, FormLabel, FormMessage } from '../Form';
+import type { FormLabelProps } from '../types';
 
 import { RadioItem, RadioItemsGroup } from './Radio';
 import type { RadioGroupProps, RadioProps } from './types';
 
 const FormRadioItemsGroup = forwardRef<
   ElementRef<RadioGroupProps>,
-  ComponentPropsWithoutRef<RadioGroupProps> & {
-    /**
-     * Shows the label of the input
-     */
-    label?: ReactNode;
-    /**
-     * Shows the label of the input
-     */
-    labelClassName?: string;
-
-    formItemClassName?: string;
-  }
+  ComponentPropsWithoutRef<RadioGroupProps> & FormLabelProps
 >(({ labelClassName, formItemClassName, label, ...props }, ref) => (
   <FormItem className={twMerge('space-y-3', formItemClassName)}>
     {label && <FormLabel className={labelClassName}>{label}</FormLabel>}
@@ -33,18 +23,7 @@ const FormRadioItemsGroup = forwardRef<
 
 FormRadioItemsGroup.displayName = 'FormRadioItemsGroup';
 
-type TRadioItem = ComponentPropsWithoutRef<RadioProps> & {
-  /**
-   * Shows the label of the input
-   */
-  label?: ReactNode;
-  /**
-   * Shows the label of the input
-   */
-  labelClassName?: string;
-
-  formItemClassName?: string;
-};
+type TRadioItem = ComponentPropsWithoutRef<RadioProps> & FormLabelProps;
 
 const FormRadioItem = forwardRef<ElementRef<RadioProps>, TRadioItem>(
   ({ label, labelClassName, formItemClassName, ...props }, ref) => (

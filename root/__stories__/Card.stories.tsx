@@ -1,22 +1,25 @@
 import React from 'react';
 
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import { Card, CardBody } from '../Card';
 
-export default {
+import type { Meta, StoryObj } from '@storybook/react';
+
+const meta = {
   title: 'Card',
   component: Card,
-} as ComponentMeta<typeof Card>;
+  tags: ['autodocs'],
+} satisfies Meta<typeof Card>;
 
-const Template: ComponentStory<typeof Card> = (args) => (
-  <Card {...args}>
-    <CardBody>{args.children}</CardBody>
-  </Card>
-);
+export default meta;
 
-// TODO: Add composed examples with CardBody
-export const Basic = Template.bind({});
-Basic.args = {
-  children: 'Hello',
+type Story = StoryObj<typeof meta>;
+
+export const Primary: Story = {
+  args: {
+    children: 'This is a string child'
+  },
+};
+
+export const ChildrenInCardBody: Story = {
+  render: () => <Card><CardBody>This is node child</CardBody></Card>
 };

@@ -1,6 +1,1 @@
-export interface TextareaProps extends React.ComponentPropsWithRef<'textarea'> {
-  /**
-   * Defines the color of the textarea
-   */
-  valid?: boolean;
-}
+export type TextareaProps = React.ComponentPropsWithRef<'textarea'>;

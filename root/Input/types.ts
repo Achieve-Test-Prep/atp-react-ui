@@ -1,10 +1,4 @@
-import { ReactNode } from 'react';
-
 export interface InputProps extends React.ComponentPropsWithRef<'input'> {
-  /**
-   * Defines the color of the input
-   */
-  valid?: boolean;
   /**
    * Defines if the input is disabled
    */
@@ -13,12 +7,4 @@ export interface InputProps extends React.ComponentPropsWithRef<'input'> {
    * Defines the type of the input
    */
   type?: string;
-  /**
-   * Shows the label of the input
-   */
-  label?: ReactNode;
-  /**
-   * Shows the label of the input
-   */
-  labelClassName?: string;
 }

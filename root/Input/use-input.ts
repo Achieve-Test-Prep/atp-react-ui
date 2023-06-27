@@ -6,7 +6,7 @@ import { ThemeContext } from '../themes/theme-context';
 
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & { valid?: boolean };
 
-export function useInput({ className, valid }: InputProps) {
+export function useInput({ className }: InputProps) {
   const {
     theme: { input },
   } = useContext(ThemeContext);
