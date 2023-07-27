@@ -4,7 +4,6 @@ import Label from '../Typography/label';
 
 import { RadioItem, RadioItemsGroup } from '../Radio';
 
-
 const meta: Meta<typeof RadioItem> = {
   component: RadioItem,
 };
@@ -12,7 +11,11 @@ const meta: Meta<typeof RadioItem> = {
 export default meta;
 type Story = StoryObj<typeof RadioItem>;
 
-
 export const Primary: Story = {
-  render: () => <RadioItemsGroup> <RadioItem value={''}  /></RadioItemsGroup>,
+  render: () => (
+    <RadioItemsGroup>
+      {' '}
+      <RadioItem value={''} />
+    </RadioItemsGroup>
+  ),
 };

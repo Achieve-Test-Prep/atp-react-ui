@@ -11,16 +11,15 @@ const meta: Meta<typeof Checkbox> = {
 export default meta;
 type Story = StoryObj<typeof Checkbox>;
 
-
 export const Primary: Story = {
-  render: () => <Checkbox  />,
+  render: () => <Checkbox />,
 };
 
 export const CheckboxWithLabel: Story = {
   render: () => (
     <div className="flex flex-row items-center justify-start space-x-3 space-y-0">
-    <Checkbox  />
-     <Label className={`cursor-pointer`}>This is label</Label>
+      <Checkbox />
+      <Label className={`cursor-pointer`}>This is label</Label>
     </div>
   ),
 };

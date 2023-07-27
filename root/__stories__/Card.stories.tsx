@@ -16,10 +16,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: 'This is a string child'
+    children: 'This is a string child',
   },
 };
 
 export const ChildrenInCardBody: Story = {
-  render: () => <Card><CardBody>This is node child</CardBody></Card>
+  render: () => (
+    <Card>
+      <CardBody>This is node child</CardBody>
+    </Card>
+  ),
 };
