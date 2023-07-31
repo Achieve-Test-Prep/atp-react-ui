@@ -12,10 +12,23 @@ Be the most accessible it can be out of the box and the fastest way to productio
 
 ## 🚀 Usage
 
-Install
+Install ATP Library
 
 ```sh
 npm i atp-react-ui
+```
+
+Install [TailwindCSS](https://tailwindcss.com/docs/installation)
+
+```sh
+npm install -D tailwindcss
+npx tailwindcss init
+```
+
+Install [TailwindForms](https://github.com/tailwindlabs/tailwindcss-forms)
+
+```sh
+npm install -D @tailwindcss/forms
 ```
 
 Inside `tailwind.config.js`
