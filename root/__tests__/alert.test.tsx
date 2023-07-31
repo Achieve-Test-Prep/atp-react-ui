@@ -5,7 +5,7 @@ import { Alert } from '../Alert';
 
 const test = (
   <svg
-    className="h-5 w-5 text-success tb:text-green-300 absolute left-0 top-0 ml-4 mt-4"
+    className="tb:text-green-300 absolute left-0 top-0 ml-4 mt-4 h-5 w-5 text-success"
     fill="none"
     stroke="currentColor"
     stroke-linecap="round"

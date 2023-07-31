@@ -5,7 +5,7 @@ export default function useInput<T>(
 ): [
   state: T,
   inputCallback: ({ target: { name, value } }: ChangeEvent<HTMLInputElement>) => void,
-  updateState: (o: Partial<T>) => void
+  updateState: (o: Partial<T>) => void,
 ] {
   const [state, setState] = useState<T>({ ...init });
 

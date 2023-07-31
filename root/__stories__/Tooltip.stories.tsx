@@ -11,7 +11,7 @@ export default {
 } as ComponentMeta<typeof Tooltip>;
 
 const Template: ComponentStory<typeof Tooltip> = (args) => (
-  <section className="w-full h-80 flex justify-center items-center">
+  <section className="flex h-80 w-full items-center justify-center">
     <div className="relative">
       <Tooltip {...args} />{' '}
     </div>

@@ -129,12 +129,11 @@ export default {
 
   // Select
   select: {
-    base: 'block w-full p-2.5 text-sm text-accent-light focus:outline-none rounded-lg',
-    active: 'focus:border-primary border-outline focus:ring focus:ring-primary-light',
+    base: 'block w-full p-2.5 text-sm text-accent-light focus:outline-none tb:text-gray-300 rounded-lg',
+    active:
+      'focus:border-primary border-outline tb:border-outline tb:bg-gray-700 focus:ring focus:ring-primary-light tb:focus:ring-gray-300 tb:focus:border-outline',
     select: 'leading-5',
     disabled: 'disabled:cursor-not-allowed disabled:text-accent-disabled disabled:bg-gray-50 disabled:border-outline',
-    valid: 'border-success focus:border-success focus:ring focus:ring-green-200/60',
-    invalid: 'border-error focus:border-error focus:ring focus:ring-red-200/60',
   },
 
   // Label

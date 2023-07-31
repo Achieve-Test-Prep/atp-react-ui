@@ -45,7 +45,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   const closeCls = twMerge(
     alert.icon.base,
     alert.icon[type],
-    'absolute top-0 right-0 mt-4 mr-4 hover:bg-gray-overlay/10 focus:ring-primary-medium'
+    'absolute right-0 top-0 mr-4 mt-4 hover:bg-gray-overlay/10 focus:ring-primary-medium'
   );
 
   return (

@@ -15,10 +15,10 @@ type Story = StoryObj<typeof meta>;
 
 export const StringChild: Story = {
   args: {
-    children: 'This is a string child'
+    children: 'This is a string child',
   },
 };
 
 export const NodeChild: Story = {
-  render: () => <>This is node child</>
+  render: () => <>This is node child</>,
 };
