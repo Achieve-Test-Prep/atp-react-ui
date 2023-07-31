@@ -1,15 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/useTheme';
 import type { DivProps } from '../types';
 
 const ModalFooter = React.forwardRef<HTMLElement, DivProps>((props, ref) => {
   const { children, className, ...other } = props;
-  const {
-    theme: { modalFooter },
-  } = useContext(ThemeContext);
+  const { modalFooter } = useTheme();
 
   const cls = twMerge(modalFooter.base, className);
 

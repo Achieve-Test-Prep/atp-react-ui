@@ -1,17 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/useTheme';
 
 import type { TextareaProps } from './types';
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
   const { disabled, className, children, ...other } = props;
 
-  const {
-    theme: { textarea },
-  } = useContext(ThemeContext);
+  const { textarea } = useTheme();
 
   const cls = twMerge(textarea.base, textarea.active, textarea.disabled, className);
 

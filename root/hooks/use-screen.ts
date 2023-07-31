@@ -8,6 +8,7 @@ interface WindowSize {
   height: number;
 }
 
+// Confusing name; Can be useDimensions | useScreenSize
 function useScreen(): WindowSize {
   const [windowSize, setWindowSize] = useState<WindowSize>({
     width: 0,

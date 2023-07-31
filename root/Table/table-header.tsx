@@ -1,17 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/useTheme';
 
 import type { TableSectionProps } from './types';
 
 const TableHeader = React.forwardRef<HTMLTableSectionElement, TableSectionProps>((props, ref) => {
   const { className, children, ...other } = props;
 
-  const {
-    theme: { tableHeader },
-  } = useContext(ThemeContext);
+  const { tableHeader } = useTheme();
 
   const cls = twMerge(tableHeader.base, className);
 

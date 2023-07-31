@@ -1,17 +1,15 @@
-import { ChangeEvent /* , useContext */, useCallback, useContext } from 'react';
+import { ChangeEvent, useCallback } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/useTheme';
 
 import type { ISelectOption, SelectProps } from './types';
 
 export default function useSelect(props: SelectProps) {
   const { onChangeSelection, options, className, multiple, disabled, children, ...other } = props;
 
-  const {
-    theme: { select },
-  } = useContext(ThemeContext);
+  const { select } = useTheme();
 
   const styleCls = twMerge(
     select.base,

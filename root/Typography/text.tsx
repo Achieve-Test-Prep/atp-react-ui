@@ -1,16 +1,14 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/useTheme';
 
 import type { TextProps } from './types';
 
 const Text = React.forwardRef<HTMLDivElement, TextProps>((props, ref) => {
   const { children, as = 'div', className, ...other } = props;
-  const {
-    theme: { text },
-  } = useContext(ThemeContext);
+  const { text } = useTheme();
 
   const cls = useMemo(
     () => twMerge(as === 'div' || as === 'span' ? text.p : '', text?.[as as keyof typeof text] ?? '', className),

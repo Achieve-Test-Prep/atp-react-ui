@@ -1,9 +1,9 @@
-import { useContext, useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
 import { SpinnerProps } from '../Progress/types';
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/useTheme';
 import warn from '../utils/warning';
 
 import type { ButtonProps } from './types';
@@ -28,9 +28,7 @@ export default function useButton(props: ButtonProps) {
     ...other
   } = props;
 
-  const {
-    theme: { button },
-  } = useContext(ThemeContext);
+  const { button } = useTheme();
   const hasIcon = !!icon || !!iconLeft || !!iconRight;
   const IconLeft = iconLeft || icon;
   const IconRight = iconRight;

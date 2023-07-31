@@ -1,15 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/useTheme';
 import type { DivProps } from '../types';
 
 const Backdrop = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
   const { className, ...other } = props;
-  const {
-    theme: { backdrop },
-  } = useContext(ThemeContext);
+  const { backdrop } = useTheme();
 
   const cls = twMerge(backdrop.base, className);
 

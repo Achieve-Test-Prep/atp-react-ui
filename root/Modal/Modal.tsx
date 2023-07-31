@@ -1,4 +1,4 @@
-import { forwardRef, Fragment, PropsWithChildren, useContext } from 'react';
+import { forwardRef, Fragment, PropsWithChildren } from 'react';
 
 import { Dialog, Transition } from '@headlessui/react';
 import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { Backdrop } from '../Backdrop';
 import { Button } from '../Button';
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/useTheme';
 
 import { ModalProps } from './types';
 
@@ -21,9 +21,7 @@ const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((props, 
     ...other
   } = props;
 
-  const {
-    theme: { modal },
-  } = useContext(ThemeContext);
+  const { modal } = useTheme();
   const cls = twMerge(modal.base, className);
 
   const handleClose = () => {

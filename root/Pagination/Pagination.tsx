@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import ArrowSmallLeftIcon from '@heroicons/react/24/outline/ArrowSmallLeftIcon';
 import ArrowSmallRightIcon from '@heroicons/react/24/outline/ArrowSmallRightIcon';
 
 import Button from '../Button/Button';
 import { ButtonAsButtonProps } from '../Button/types';
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/useTheme';
 
 interface NavigationButtonProps extends ButtonAsButtonProps {
   directionIcon: 'prev' | 'next';
@@ -126,9 +126,7 @@ export const Pagination = React.forwardRef<Ref, PaginationProps>((props, ref) =>
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activePage]);
 
-  const {
-    theme: { pagination },
-  } = useContext(ThemeContext);
+  const { pagination } = useTheme();
 
   return (
     <div className={pagination.base} ref={ref} {...other}>

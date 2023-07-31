@@ -4,7 +4,28 @@ import defaultTheme from './themes/default';
 import { ThemeContext } from './themes/theme-context';
 import type { DivProps } from './types';
 import { mergeDeep } from './utils/merge-deep';
-import useDarkMode from './utils/use-dark-mode';
+import useThemeMode from './utils/use-theme-mode';
+
+/**
+ * AtpLib is a React Component that provides theme configurations and functionality.
+ * It uses the ThemeContext to manage the themes and the dark mode status.
+ *
+ * @component
+ * @example
+ * return (
+ *   <AtpLib theme={myTheme} dark={true} usePreferences={true}>
+ *     <MyComponent />
+ *   </AtpLib>
+ * )
+ *
+ * @param {object} props - The properties that define the AtpLib Component
+ * @param {React.ReactNode} props.children - The child components that AtpLib will wrap
+ * @param {object} [props.theme] - An optional theme object that defines the styles used throughout the library. If not provided, a default theme is used.
+ * @param {boolean} [props.dark] - An optional boolean flag that indicates if the dark mode should be the default theme.
+ * @param {boolean} [props.usePreferences=false] - An optional boolean flag that allows the change of theme, reading user's preferences and saving them. Defaults to false.
+ *
+ * @returns {React.Element} The AtpLib Component with child components
+ */
 
 interface Props extends DivProps {
   children: React.ReactNode;
@@ -28,15 +49,12 @@ export default function AtpLib({
   dark,
   usePreferences = false,
 }: PropsWithChildren<Props>) {
-  const mergedTheme = mergeDeep(defaultTheme, customTheme);
-  const [mode, setMode, toggleMode] = useDarkMode(usePreferences);
+  const [mode, setMode, toggleMode] = useThemeMode(usePreferences);
+  const mergedTheme = useMemo(() => mergeDeep(defaultTheme, customTheme), [customTheme]);
 
   useLayoutEffect(() => {
     if (dark) {
-      if (setMode != null) {
-        setMode('dark');
-      }
-      document.documentElement.classList.add(`dark`);
+      setMode?.('dark');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dark]);
@@ -48,7 +66,7 @@ export default function AtpLib({
       toggleMode,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [mode]
+    [mode, mergedTheme]
   );
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;

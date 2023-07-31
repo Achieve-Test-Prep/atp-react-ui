@@ -1,16 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/useTheme';
 
 import type { HelperTextProps } from './types';
 
 const HelperText = React.forwardRef<HTMLSpanElement, HelperTextProps>((props, ref) => {
   const { children, valid, className, ...other } = props;
-  const {
-    theme: { helperText },
-  } = useContext(ThemeContext);
+  const { helperText } = useTheme();
 
   const validationStyle = (iValid: boolean | undefined): string => {
     switch (iValid) {

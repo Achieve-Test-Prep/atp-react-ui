@@ -1,15 +1,13 @@
-import { useContext, useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/useTheme';
 
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & { valid?: boolean };
 
 export function useInput({ className }: InputProps) {
-  const {
-    theme: { input },
-  } = useContext(ThemeContext);
+  const { input } = useTheme();
 
   const styleCls = useMemo(
     () => twMerge(input.base, input.active, input.disabled, className),

@@ -1,18 +1,16 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 
 import { Menu, Transition } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
 
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/useTheme';
 
 import type { DropdownMenuItemsProps } from './types';
 
 const DropdownItems = React.forwardRef<HTMLDivElement, DropdownMenuItemsProps>((props, ref) => {
   const { className, as = 'ul', align = 'right', ...rest } = props;
 
-  const {
-    theme: { dropdown },
-  } = useContext(ThemeContext);
+  const { dropdown } = useTheme();
   const cls = twMerge(dropdown.base, dropdown.align[align], className);
 
   return (

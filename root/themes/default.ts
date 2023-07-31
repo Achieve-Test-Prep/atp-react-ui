@@ -1,6 +1,6 @@
 import button from './buttons';
 import { modalHeader, modalFooter, modalBody, modal } from './modal';
-import { text } from './text';
+import { text } from './text.theme';
 
 export default {
   text,

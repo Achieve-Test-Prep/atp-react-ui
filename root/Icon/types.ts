@@ -9,7 +9,7 @@ export type SvgIconProps = ForwardRefExoticComponent<
 
 export type IconProps = {
   icon: SvgIconProps;
-  title?: string | undefined;
-  titleId?: string | undefined;
+  title?: string | undefined; // Not used?
+  titleId?: string | undefined; // Not used?
   className?: string | undefined;
 };

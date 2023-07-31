@@ -14,6 +14,7 @@ export const Progressbar = forwardRef<
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    // Why the timeout?
     setTimeout(() => {
       setProgress(value ?? 0);
     }, 300);

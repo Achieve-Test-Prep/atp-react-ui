@@ -1,5 +1,5 @@
 // used in ThemeContext
-type Mode = string | null;
+type Mode = 'dark' | 'light' | null;
 
 declare module '*.png';
 declare module '*.svg';
