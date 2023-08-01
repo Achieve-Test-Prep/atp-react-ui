@@ -7,7 +7,7 @@ type IconType = SvgIconProps;
 // | React.FunctionComponent<React.PropsWithChildren<{ className: string; 'aria-hidden': boolean }>>
 // | React.ComponentClass<{ className: string; 'aria-hidden': boolean }>;
 
-export interface Props {
+type Props = {
   children?: React.ReactNode;
   /**
    * shows loader and disables the button
@@ -54,26 +54,29 @@ export interface Props {
    * theme color
    */
   theme?: 'dark' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning';
-}
+};
 
-export interface ButtonAsButtonProps extends Props, React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /**
-   * The element that should be rendered as a button
-   */
-  tag?: 'button';
-  /**
-   * The native HTML button type
-   */
-  type?: 'button' | 'submit' | 'reset';
-}
+export type ButtonAsButtonProps = Props &
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    /**
+     * The element that should be rendered as a button
+     */
+    tag?: 'button';
+    /**
+     * The native HTML button type
+     */
+    type?: 'button' | 'submit' | 'reset';
+  };
 
-export interface ButtonAsAnchorProps extends Props, React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  tag: 'a';
-}
+export type ButtonAsAnchorProps = Props &
+  React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+    tag: 'a';
+  };
 
-export interface ButtonAsOtherProps extends Props, React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  tag: string;
-}
+export type ButtonAsOtherProps = Props &
+  React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+    tag: string;
+  };
 
 export type ButtonProps = ButtonAsButtonProps | ButtonAsAnchorProps | ButtonAsOtherProps;
 

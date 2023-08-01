@@ -1,20 +1,20 @@
 import type { FormLabelProps } from '../types';
 
-export interface SelectProps extends React.ComponentPropsWithRef<'select'> {
+export type SelectProps = React.ComponentPropsWithRef<'select'> & {
   /**
    * Collection of options
    */
-  options: ISelectOption[];
+  options: SelectOption[];
   /**
    * Returns ISelectOptions of options
    */
-  onChangeSelection: (o: ISelectOption) => void;
-}
+  onChangeSelection: (o: SelectOption) => void;
+};
 
-export interface ISelectOption {
+export type SelectOption = {
   name: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value: any;
-}
+};
 
-export type FromSelectProps = SelectProps & FormLabelProps;
+export type FormSelectProps = SelectProps & FormLabelProps;

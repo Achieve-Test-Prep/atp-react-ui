@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { useEventListener } from './use-event-listener';
 import { useIsomorphicLayoutEffect } from './use-isomorphic-layout-effect';
 
-interface WindowSize {
+type WindowSize = {
   width: number;
   height: number;
-}
+};
 
 // Confusing name; Can be useDimensions | useScreenSize
 export function useScreen(): WindowSize {

@@ -1,6 +1,6 @@
 import type { DivProps } from '../../types';
 
-export interface AvatarProps extends DivProps {
+export type AvatarProps = DivProps & {
   /**
    * The size of the avatar
    */
@@ -13,4 +13,4 @@ export interface AvatarProps extends DivProps {
    * The source for the avatar image
    */
   src: string;
-}
+};

@@ -1,6 +1,6 @@
 import { Root as LabelRoot } from '@radix-ui/react-label';
 
-export interface TextProps extends React.HTMLAttributes<HTMLElement> {
+export type TextProps = React.HTMLAttributes<HTMLElement> & {
   as?:
     | 'span'
     | 'div'
@@ -23,13 +23,13 @@ export interface TextProps extends React.HTMLAttributes<HTMLElement> {
     | 'overline-medium'
     | 'tooltip'
     | undefined;
-}
+};
 
 export type LabelProps = typeof LabelRoot;
 
-export interface HelperTextProps extends React.HTMLAttributes<HTMLSpanElement> {
+export type HelperTextProps = React.HTMLAttributes<HTMLSpanElement> & {
   /**
    * Defines the color of the helper text (the same as with Input, Select, etc.)
    */
   valid?: boolean;
-}
+};

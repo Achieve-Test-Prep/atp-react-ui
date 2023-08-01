@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from '@testing-library/react';
 
-import { ISelectOption, Select } from '../components';
+import { SelectOption, Select } from '../components';
 import { defaultTheme as theme } from '../themes/default';
 
 describe('Select', () => {
@@ -10,7 +10,7 @@ describe('Select', () => {
     render(
       <Select
         options={[]}
-        onChangeSelection={function (_o: ISelectOption): void {
+        onChangeSelection={function (_o: SelectOption): void {
           throw new Error('Function not implemented.');
         }}
       >
@@ -25,7 +25,7 @@ describe('Select', () => {
       <Select
         data-testid="select_box"
         options={[]}
-        onChangeSelection={function (_o: ISelectOption): void {
+        onChangeSelection={function (_o: SelectOption): void {
           throw new Error('Function not implemented.');
         }}
       />
@@ -39,7 +39,7 @@ describe('Select', () => {
       <Select
         data-testid="select_box"
         options={[]}
-        onChangeSelection={function (_o: ISelectOption): void {
+        onChangeSelection={function (_o: SelectOption): void {
           throw new Error('Function not implemented.');
         }}
       />
@@ -54,7 +54,7 @@ describe('Select', () => {
       <Select
         data-testid="select_box"
         options={[]}
-        onChangeSelection={function (_o: ISelectOption): void {
+        onChangeSelection={function (_o: SelectOption): void {
           throw new Error('Function not implemented.');
         }}
       />
@@ -70,7 +70,7 @@ describe('Select', () => {
         data-testid="select_box"
         valid
         options={[]}
-        onChangeSelection={function (_o: ISelectOption): void {
+        onChangeSelection={function (_o: SelectOption): void {
           throw new Error('Function not implemented.');
         }}
       />
@@ -86,7 +86,7 @@ describe('Select', () => {
         data-testid="select_box"
         valid={false}
         options={[]}
-        onChangeSelection={function (_o: ISelectOption): void {
+        onChangeSelection={function (_o: SelectOption): void {
           throw new Error('Function not implemented.');
         }}
       />
@@ -102,7 +102,7 @@ describe('Select', () => {
         disabled
         data-testid="select_box"
         options={[]}
-        onChangeSelection={function (_o: ISelectOption): void {
+        onChangeSelection={function (_o: SelectOption): void {
           throw new Error('Function not implemented.');
         }}
       />
@@ -118,7 +118,7 @@ describe('Select', () => {
       <Select
         data-testid="select_box"
         options={[]}
-        onChangeSelection={function (_o: ISelectOption): void {
+        onChangeSelection={function (_o: SelectOption): void {
           throw new Error('Function not implemented.');
         }}
       >
@@ -136,7 +136,7 @@ describe('Select', () => {
         name="test-name"
         data-testid="select_box"
         options={[]}
-        onChangeSelection={function (_o: ISelectOption): void {
+        onChangeSelection={function (_o: SelectOption): void {
           throw new Error('Function not implemented.');
         }}
       >

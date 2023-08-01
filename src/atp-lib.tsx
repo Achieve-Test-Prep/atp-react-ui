@@ -25,7 +25,7 @@ import { mergeDeep, useThemeMode } from './utils';
  * @returns {React.Element} The AtpLib Component with child components
  */
 
-interface Props extends DivProps {
+type Props = DivProps & {
   children: React.ReactNode;
   /**
    * Defines the styles used throughout the library
@@ -39,7 +39,7 @@ interface Props extends DivProps {
    * Allows the change of theme, reading user's preferences and saving them
    */
   usePreferences?: boolean;
-}
+};
 
 export function AtpLib({ children, theme: customTheme, dark, usePreferences = false }: PropsWithChildren<Props>) {
   const [mode, setMode, toggleMode] = useThemeMode(usePreferences);

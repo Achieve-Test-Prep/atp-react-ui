@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { useTheme } from '../../../themes';
 
-import type { ISelectOption, SelectProps } from './types';
+import type { SelectOption, SelectProps } from './types';
 
 export function useSelect(props: SelectProps) {
   const { onChangeSelection, options, className, multiple, disabled, children, ...other } = props;
@@ -24,7 +24,7 @@ export function useSelect(props: SelectProps) {
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLSelectElement>) => {
       const item = options.find((i) => i.value === e.target.value);
-      onChangeSelection(item as ISelectOption);
+      onChangeSelection(item as SelectOption);
     },
     [onChangeSelection, options]
   );
