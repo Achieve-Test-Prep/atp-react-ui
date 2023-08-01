@@ -14,7 +14,7 @@ import { useTheme } from '../themes/use-theme';
 
 import type { AlertProps } from './types';
 
-const Alert = React.forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
+export const Alert = React.forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   const { className, children, type = 'neutral', onClose, ...other } = props;
   const { alert } = useTheme();
 
@@ -56,5 +56,3 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
     </div>
   );
 });
-
-export default Alert;

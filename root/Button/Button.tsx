@@ -4,9 +4,9 @@ import { Icon } from '../Icon';
 import { Spinner } from '../Progress';
 
 import type { ButtonProps, Ref } from './types';
-import useButton from './use-button';
+import { useButton } from './use-button';
 
-const Button = React.forwardRef<Ref, ButtonProps>((props, ref) => {
+export const Button = React.forwardRef<Ref, ButtonProps>((props, ref) => {
   const {
     tag,
     type,
@@ -46,5 +46,3 @@ const Button = React.forwardRef<Ref, ButtonProps>((props, ref) => {
       : null
   );
 });
-
-export default Button;

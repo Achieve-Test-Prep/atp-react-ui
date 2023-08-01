@@ -6,7 +6,7 @@ import { useTheme } from '../themes/use-theme';
 
 import type { AvatarProps } from './types';
 
-const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
+export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
   const { size = 'base', src, alt, className, ...other } = props;
   const { avatar } = useTheme();
 
@@ -19,5 +19,3 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
     </div>
   );
 });
-
-export default Avatar;

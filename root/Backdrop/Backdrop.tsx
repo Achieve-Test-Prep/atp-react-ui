@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { useTheme } from '../themes/use-theme';
 import type { DivProps } from '../types';
 
-const Backdrop = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
+export const Backdrop = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
   const { className, ...other } = props;
   const { backdrop } = useTheme();
 
@@ -13,5 +13,3 @@ const Backdrop = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
 
   return <section className={cls} ref={ref} {...other} />;
 });
-
-export default Backdrop;

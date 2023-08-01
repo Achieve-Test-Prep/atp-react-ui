@@ -8,7 +8,7 @@ import warn from '../utils/warning';
 
 import type { ButtonProps } from './types';
 
-export default function useButton(props: ButtonProps) {
+export function useButton(props: ButtonProps) {
   const {
     tag = 'button',
     type = tag === 'button' ? 'button' : undefined,

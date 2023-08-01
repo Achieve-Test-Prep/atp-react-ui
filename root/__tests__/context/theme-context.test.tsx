@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import { ThemeProvider, ThemeContext } from '../../themes/theme-context';
+import { ThemeProvider, AtpLibContext } from '../../themes/theme-context';
 
 function TestButton() {
-  const { toggleMode } = useContext(ThemeContext);
+  const { toggleMode } = useContext(AtpLibContext);
 
   return <button onClick={() => toggleMode()}>Click</button>;
 }
@@ -15,9 +15,9 @@ describe('ThemeProvider', () => {
     const expected = 'Lorem';
     const { getByTestId } = render(
       <ThemeProvider value={{ theme: 'Lorem' }}>
-        <ThemeContext.Consumer>
+        <AtpLibContext.Consumer>
           {(value) => <span data-testid="context-test">{value.theme}</span>}
-        </ThemeContext.Consumer>
+        </AtpLibContext.Consumer>
       </ThemeProvider>
     );
 
@@ -28,9 +28,9 @@ describe('ThemeProvider', () => {
     const toggleMode = jest.fn();
     const theme = { test: 'test' };
     const { getByRole } = render(
-      <ThemeContext.Provider value={{ toggleMode, theme }}>
+      <AtpLibContext.Provider value={{ toggleMode, theme }}>
         <TestButton />
-      </ThemeContext.Provider>
+      </AtpLibContext.Provider>
     );
 
     const button = getByRole('button');
