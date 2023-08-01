@@ -2,9 +2,8 @@ import React from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from '../components/Button';
-import { useBoolean } from '../components/hooks';
-import { Modal, ModalBody, ModalFooter, ModalHeader } from '../components/Modal';
+import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from '../components';
+import { useBoolean } from '../hooks';
 
 const meta: Meta<typeof Modal> = {
   component: Modal,

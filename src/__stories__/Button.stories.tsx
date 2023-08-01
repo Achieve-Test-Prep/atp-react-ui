@@ -18,7 +18,7 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from '../components/Button';
+import { Button } from '../components';
 
 const meta = {
   title: 'Button',

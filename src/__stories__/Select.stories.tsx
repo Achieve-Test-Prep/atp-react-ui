@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Select } from '../components/form-components/select';
+import { Select } from '../components';
 
 export default {
   title: 'Select',

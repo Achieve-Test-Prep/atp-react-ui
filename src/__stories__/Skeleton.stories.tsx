@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Skeleton } from '../components/Progress';
+import { Skeleton } from '../components';
 
 export default {
   title: 'Skeleton',

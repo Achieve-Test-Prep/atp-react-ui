@@ -2,8 +2,7 @@ import React from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Checkbox } from '../components/form-components/checkbox';
-import Label from '../components/Typography/label';
+import { Checkbox, Label } from '../components';
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,

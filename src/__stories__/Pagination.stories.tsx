@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Pagination } from '../components/Pagination';
+import { Pagination } from '../components';
 
 export default {
   title: 'Pagination',

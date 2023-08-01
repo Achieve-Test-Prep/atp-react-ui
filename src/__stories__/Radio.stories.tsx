@@ -2,7 +2,7 @@ import React from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { RadioItem, RadioItemsGroup } from '../components/form-components/radio';
+import { RadioItem, RadioItemsGroup } from '../components';
 
 const meta: Meta<typeof RadioItem> = {
   component: RadioItem,

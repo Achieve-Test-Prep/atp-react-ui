@@ -2,7 +2,7 @@ import React from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Label } from '../components/Typography';
+import { Label } from '../components';
 
 const meta = {
   title: 'Label',

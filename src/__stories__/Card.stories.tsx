@@ -2,7 +2,7 @@ import React from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Card, CardBody } from '../components/Card';
+import { Card, CardBody } from '../components';
 
 const meta = {
   title: 'Card',

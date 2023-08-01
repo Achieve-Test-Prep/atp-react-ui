@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { HelperText } from '../components/Typography';
+import { HelperText } from '../components';
 
 export default {
   title: 'HelperText',
