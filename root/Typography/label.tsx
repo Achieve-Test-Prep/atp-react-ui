@@ -3,7 +3,7 @@ import { forwardRef, ElementRef, ComponentPropsWithoutRef } from 'react';
 import * as LabelPrimitive from '@radix-ui/react-label';
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../themes/useTheme';
+import { useTheme } from '../themes/use-theme';
 
 import type { LabelProps } from './types';
 

@@ -1,7 +1,7 @@
 import { Menu } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../themes/useTheme';
+import { useTheme } from '../themes/use-theme';
 
 import type { DropdownMenuItemProps } from './types';
 

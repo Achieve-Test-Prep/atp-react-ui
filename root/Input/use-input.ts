@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../themes/useTheme';
+import { useTheme } from '../themes/use-theme';
 
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & { valid?: boolean };
 

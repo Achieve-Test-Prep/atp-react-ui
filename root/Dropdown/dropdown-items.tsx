@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../themes/useTheme';
+import { useTheme } from '../themes/use-theme';
 
 import type { DropdownMenuItemsProps } from './types';
 

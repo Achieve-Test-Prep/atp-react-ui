@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { SpinnerProps } from '../Progress/types';
-import { useTheme } from '../themes/useTheme';
+import { useTheme } from '../themes/use-theme';
 import warn from '../utils/warning';
 
 import type { ButtonProps } from './types';

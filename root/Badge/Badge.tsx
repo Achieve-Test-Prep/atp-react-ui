@@ -2,7 +2,7 @@ import React from 'react';
 
 import { twMerge, twJoin } from 'tailwind-merge';
 
-import { useTheme } from '../themes/useTheme';
+import { useTheme } from '../themes/use-theme';
 
 import type { BadgeProps } from './types';
 

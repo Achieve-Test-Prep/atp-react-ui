@@ -2,7 +2,7 @@ import React from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../themes/useTheme';
+import { useTheme } from '../themes/use-theme';
 import type { DivProps } from '../types';
 
 const Backdrop = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {

@@ -1,6 +1,6 @@
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../themes/useTheme';
+import { useTheme } from '../themes/use-theme';
 
 import type { SpinnerProps } from './types';
 

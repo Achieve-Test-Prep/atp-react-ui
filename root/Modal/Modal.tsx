@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { Backdrop } from '../Backdrop';
 import { Button } from '../Button';
-import { useTheme } from '../themes/useTheme';
+import { useTheme } from '../themes/use-theme';
 
 import { ModalProps } from './types';
 

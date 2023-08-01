@@ -3,7 +3,7 @@ import { forwardRef, ElementRef, ComponentPropsWithoutRef } from 'react';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../themes/useTheme';
+import { useTheme } from '../themes/use-theme';
 
 import type { RadioGroupProps, RadioProps } from './types';
 

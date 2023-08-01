@@ -10,7 +10,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { Button } from '../Button';
 import { Icon } from '../Icon';
-import { useTheme } from '../themes/useTheme';
+import { useTheme } from '../themes/use-theme';
 
 import type { AlertProps } from './types';
 
