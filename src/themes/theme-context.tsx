@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { PropsWithChildren } from 'react';
 
-import { defaultTheme } from './default';
+import { defaultTheme, DefaultThemeType } from './default';
 
 type ThemeContextType = {
-  theme: any;
+  theme: DefaultThemeType;
   mode?: Mode;
-  toggleMode?: any;
+  toggleMode: () => void;
 };
 
-export const AtpLibContext = React.createContext<ThemeContextType>({ theme: defaultTheme });
+export const AtpLibContext = React.createContext<ThemeContextType>({ theme: defaultTheme, toggleMode: () => {} });
 
 type ThemeProviderProps = {
   children: React.ReactNode;

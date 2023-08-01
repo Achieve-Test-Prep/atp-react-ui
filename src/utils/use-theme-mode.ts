@@ -2,7 +2,9 @@ import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
 
 const THEME_KEY = 'theme';
 
-export const useThemeMode = (usePreferences: boolean) => {
+type UseThemeModeReturnType = Readonly<[Mode | null, ((_: Mode) => void) | null, () => void]>;
+
+export const useThemeMode = (usePreferences: boolean): UseThemeModeReturnType => {
   const [mode, setMode] = useState<Mode>(null);
 
   const toggleMode = useCallback(() => {
@@ -24,7 +26,7 @@ export const useThemeMode = (usePreferences: boolean) => {
     }
   }, [mode]);
 
-  if (!usePreferences) return [null, null, null];
+  if (!usePreferences) return [null, null, () => {}] as const;
 
   return [mode, setMode, toggleMode] as const;
 };
