@@ -7,7 +7,7 @@ import { useTheme } from '../themes/use-theme';
 
 import type { ModalBodyProps } from './types';
 
-const ModalBody = React.forwardRef<HTMLDivElement, ModalBodyProps>((props, ref) => {
+export const ModalBody = React.forwardRef<HTMLDivElement, ModalBodyProps>((props, ref) => {
   const { children, className, as = 'div', ...other } = props;
   const { modalBody } = useTheme();
 
@@ -20,5 +20,3 @@ const ModalBody = React.forwardRef<HTMLDivElement, ModalBodyProps>((props, ref) 
     </Dialog.Description>
   );
 });
-
-export default ModalBody;

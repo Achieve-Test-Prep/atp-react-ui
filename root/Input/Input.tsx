@@ -1,12 +1,10 @@
 import * as React from 'react';
 
-import { InputProps, useInput } from './use-input';
+import { InputProps, useInputStyle } from './use-input';
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, ...props }, ref) => {
-  const { styleCls } = useInput({ ...props, className });
+export const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, ...props }, ref) => {
+  const { styleCls } = useInputStyle({ ...props, className });
   return <input className={styleCls} ref={ref} {...props} />;
 });
 
 Input.displayName = 'Input';
-
-export default Input;

@@ -5,7 +5,7 @@ import { useTheme } from '../themes/use-theme';
 
 import type { ModalHeaderProps } from './types';
 
-export default function ModalHeader(props: ModalHeaderProps) {
+export function ModalHeader(props: ModalHeaderProps) {
   const { className, as = 'div', ...other } = props;
   const { modalHeader } = useTheme();
 

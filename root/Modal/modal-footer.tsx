@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { useTheme } from '../themes/use-theme';
 import type { DivProps } from '../types';
 
-const ModalFooter = React.forwardRef<HTMLElement, DivProps>((props, ref) => {
+export const ModalFooter = React.forwardRef<HTMLElement, DivProps>((props, ref) => {
   const { children, className, ...other } = props;
   const { modalFooter } = useTheme();
 
@@ -17,5 +17,3 @@ const ModalFooter = React.forwardRef<HTMLElement, DivProps>((props, ref) => {
     </footer>
   );
 });
-
-export default ModalFooter;

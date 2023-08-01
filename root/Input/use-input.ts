@@ -6,7 +6,7 @@ import { useTheme } from '../themes/use-theme';
 
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & { valid?: boolean };
 
-export function useInput({ className }: InputProps) {
+export function useInputStyle({ className }: InputProps) {
   const { input } = useTheme();
 
   const styleCls = useMemo(

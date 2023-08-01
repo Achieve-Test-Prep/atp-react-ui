@@ -1,9 +1,9 @@
-import button from './buttons';
-import { modalHeader, modalFooter, modalBody, modal } from './modal';
-import { text } from './text.theme';
+import { buttonStyles } from './button-styles';
+import * as ModalStyles from './modal-styles';
+import { textStyles } from './text-styles';
 
-export default {
-  text,
+export const defaultTheme = {
+  text: textStyles,
   // Alert
   alert: {
     base: 'p-4 pl-12 relative rounded-lg leading-5 bg-gray-50 border border-outline text-accent-light',
@@ -78,13 +78,13 @@ export default {
   },
 
   // Modal
-  modal,
+  modal: ModalStyles.modalStyles,
   // ModalBody
-  modalBody,
+  modalBody: ModalStyles.modalBodyStyles,
   // ModalFooter
-  modalFooter,
+  modalFooter: ModalStyles.modalFooterStyles,
   // ModalHeader
-  modalHeader,
+  modalHeader: ModalStyles.modalHeaderStyles,
 
   // Badge
   badge: {
@@ -180,7 +180,7 @@ export default {
   },
 
   // Button
-  button,
+  button: buttonStyles,
 
   spinner: {
     base: 'relative inline-block flex-shrink-0 rounded-full border-primary after:absolute after:rounded-full after:bg-white',

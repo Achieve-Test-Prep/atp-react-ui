@@ -6,7 +6,7 @@ import { useTheme } from '../themes/use-theme';
 
 import type { TableCellProps } from './types';
 
-const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>((props, ref) => {
+export const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>((props, ref) => {
   const { className, children, ...other } = props;
 
   const { tableCell } = useTheme();
@@ -19,5 +19,3 @@ const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>((props,
     </td>
   );
 });
-
-export default TableCell;

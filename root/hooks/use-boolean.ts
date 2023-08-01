@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-import useConst from './use-const';
+import { useConst } from './use-const';
 
 /** Updater callbacks returned by `useBoolean`. */
 export interface IUseBooleanCallbacks {

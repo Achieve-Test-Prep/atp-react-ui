@@ -6,7 +6,7 @@ import { useTheme } from '../themes/use-theme';
 
 import type { TextareaProps } from './types';
 
-const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
+export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
   const { disabled, className, children, ...other } = props;
 
   const { textarea } = useTheme();
@@ -19,5 +19,3 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((props, re
     </textarea>
   );
 });
-
-export default Textarea;

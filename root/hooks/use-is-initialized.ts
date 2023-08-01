@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-function useIsInitialized(): boolean {
+export function useIsInitialized(): boolean {
   const isFirst = useRef(false);
 
   if (!isFirst.current) {
@@ -10,5 +10,3 @@ function useIsInitialized(): boolean {
 
   return isFirst.current;
 }
-
-export default useIsInitialized;

@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 
-export default function useInput<T>(
+export function useInput<T>(
   init: T
 ): [
   state: T,

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import type { SelectProps } from './types';
-import useSelect from './use-select';
+import { useSelect } from './use-select';
 
-const Select = React.forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
+export const Select = React.forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
   const { styleCls, handleChange, multiple, children, options, ...other } = useSelect(props);
 
   return (
@@ -19,5 +19,3 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>((props, ref) => 
 });
 
 Select.displayName = 'Select';
-
-export default Select;

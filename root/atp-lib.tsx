@@ -1,10 +1,8 @@
 import React, { PropsWithChildren, useLayoutEffect, useMemo } from 'react';
 
-import defaultTheme from './themes/default';
-import { AtpLibContext } from './themes/theme-context';
+import { defaultTheme, AtpLibContext } from './themes';
 import type { DivProps } from './types';
-import { mergeDeep } from './utils/merge-deep';
-import useThemeMode from './utils/use-theme-mode';
+import { mergeDeep, useThemeMode } from './utils';
 
 /**
  * AtpLib is a React Component that provides theme configurations and functionality.

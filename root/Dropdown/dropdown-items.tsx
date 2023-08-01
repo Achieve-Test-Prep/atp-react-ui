@@ -7,7 +7,7 @@ import { useTheme } from '../themes/use-theme';
 
 import type { DropdownMenuItemsProps } from './types';
 
-const DropdownItems = React.forwardRef<HTMLDivElement, DropdownMenuItemsProps>((props, ref) => {
+export const DropdownItems = React.forwardRef<HTMLDivElement, DropdownMenuItemsProps>((props, ref) => {
   const { className, as = 'ul', align = 'right', ...rest } = props;
 
   const { dropdown } = useTheme();
@@ -27,5 +27,3 @@ const DropdownItems = React.forwardRef<HTMLDivElement, DropdownMenuItemsProps>((
     </Transition>
   );
 });
-
-export default DropdownItems;

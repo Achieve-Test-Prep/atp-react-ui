@@ -3,10 +3,10 @@ import { forwardRef } from 'react';
 import { FormControl, FormItem, FormLabel, FormMessage } from '../Form';
 import type { FormLabelProps } from '../types';
 
-import Checkbox from './Checkbox';
+import { Checkbox } from './Checkbox';
 import type { CheckboxProps, CheckboxRef } from './types';
 
-const FormCheckbox = forwardRef<CheckboxRef, CheckboxProps & FormLabelProps>(
+export const FormCheckbox = forwardRef<CheckboxRef, CheckboxProps & FormLabelProps>(
   ({ formItemClassName, label, labelClassName, ...props }, ref) => (
     <FormItem className={formItemClassName}>
       <div className="flex flex-row items-center justify-start space-x-3 space-y-0">
@@ -23,5 +23,3 @@ const FormCheckbox = forwardRef<CheckboxRef, CheckboxProps & FormLabelProps>(
     </FormItem>
   )
 );
-
-export default FormCheckbox;

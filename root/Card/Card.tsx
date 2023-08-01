@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { useTheme } from '../themes/use-theme';
 import type { DivProps } from '../types';
 
-const Card = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
+export const Card = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
   const { className, children, ...other } = props;
   const { card } = useTheme();
 
@@ -17,5 +17,3 @@ const Card = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
     </div>
   );
 });
-
-export default Card;

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from 'react';
 
-export default function useWhyDidYouUpdate(name: string, props: any) {
+export function useWhyDidYouUpdate(name: string, props: any) {
   const previousProps = React.useRef<any>();
 
   React.useEffect(() => {

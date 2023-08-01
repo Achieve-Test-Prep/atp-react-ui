@@ -5,7 +5,7 @@ import { useTheme } from '../themes/use-theme';
 
 import type { DropdownMenuItemProps } from './types';
 
-export default function DropdownItem(props: DropdownMenuItemProps) {
+export function DropdownItem(props: DropdownMenuItemProps) {
   const { className, as = 'li', ...res } = props;
 
   const { dropdownItem } = useTheme();

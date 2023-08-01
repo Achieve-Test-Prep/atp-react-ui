@@ -1,6 +1,6 @@
 import { Skeleton } from './skeleton';
 
-export default function FormInputSkeleton() {
+export function FormInputSkeleton() {
   return (
     <div>
       <Skeleton className="h-4 w-48" />

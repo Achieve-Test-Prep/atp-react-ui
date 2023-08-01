@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { PropsWithChildren } from 'react';
 
-import defaultTheme from './default';
+import { defaultTheme } from './default';
 
 interface ThemeContextInterface {
   theme: any;

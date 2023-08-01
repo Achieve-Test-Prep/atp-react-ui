@@ -6,7 +6,7 @@ import { useTheme } from '../themes/use-theme';
 
 import type { TableSectionProps } from './types';
 
-const TableHeader = React.forwardRef<HTMLTableSectionElement, TableSectionProps>((props, ref) => {
+export const TableHeader = React.forwardRef<HTMLTableSectionElement, TableSectionProps>((props, ref) => {
   const { className, children, ...other } = props;
 
   const { tableHeader } = useTheme();
@@ -19,5 +19,3 @@ const TableHeader = React.forwardRef<HTMLTableSectionElement, TableSectionProps>
     </thead>
   );
 });
-
-export default TableHeader;

@@ -25,7 +25,7 @@ const placements = {
   'left-end': 'rounded-br-none',
 };
 
-export default function Tooltip({
+export function Tooltip({
   children,
   disabled,
   placement = 'top',
