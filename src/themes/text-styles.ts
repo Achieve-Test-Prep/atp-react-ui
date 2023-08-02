@@ -1,23 +1,25 @@
-export const h5 = 'font-serif text-base font-normal leading-tight tb:text-gray-400';
-export const captionMedium = 'tracking-[0.16px] font-sans text-sm font-normal leading-tight';
+import { twSort } from '../utils';
+
+export const h5 = twSort`tb:text-gray-400 font-serif text-base font-normal leading-tight`;
+export const captionMedium = twSort`font-sans text-sm font-normal leading-tight tracking-[0.16px]`;
 
 export const textStyles = {
-  h1: 'font-sans text-2xl font-semibold leading-tight',
-  h2: 'font-sans text-xl font-semibold leading-tight',
-  h3: 'font-serif text-xl font-normal leading-tight tracking-wide tb:text-gray-400',
-  h4: 'font-serif text-lg font-normal leading-tight tracking-tight tb:text-gray-400',
+  h1: twSort`font-sans text-2xl font-semibold leading-tight`,
+  h2: twSort`font-sans text-xl font-semibold leading-tight`,
+  h3: twSort`tb:text-gray-400 font-serif text-xl font-normal leading-tight tracking-wide`,
+  h4: twSort`tb:text-gray-400 font-serif text-lg font-normal leading-tight tracking-tight`,
   h5,
-  h6: 'font-serif text-sm font-semibold leading-tight tb:text-gray-400',
-  subheading: 'font-sans text-sm font-normal italic leading-tight',
-  subtitle: 'font-sans text-xl font-medium leading-tight',
-  'subtitle-small': 'font-sans text-xs font-semibold leading-tight',
-  p: 'font-sans text-accent text-xs font-normal leading-normal tb:text-gray-400',
-  'p-small': 'font-sans font-normal text-[0.625rem] leading-normal',
-  caption: 'tracking-[0.16px] font-sans text-xs font-normal leading-tight',
+  h6: twSort`tb:text-gray-400 font-serif text-sm font-semibold leading-tight`,
+  subheading: twSort`font-sans text-sm font-normal italic leading-tight`,
+  subtitle: twSort`font-sans text-xl font-medium leading-tight`,
+  'subtitle-small': twSort`font-sans text-xs font-semibold leading-tight`,
+  p: twSort`tb:text-gray-400 font-sans text-xs font-normal leading-normal text-accent`,
+  'p-small': twSort`font-sans text-[0.625rem] font-normal leading-normal`,
+  caption: twSort`font-sans text-xs font-normal leading-tight tracking-[0.16px]`,
   'caption-medium': captionMedium,
-  'caption-medium-bold': 'tracking-[0.16px] font-sans text-sm font-medium leading-tight',
-  'caption-large': 'tracking-[0.16px] font-sans text-lg font-normal leading-tight',
-  overline: 'tracking-[0.16px] font-sans text-xs font-normal leading-tight underline',
-  'overline-medium': 'font-sans text-xs font-medium leading-tight',
-  tooltip: 'tracking-[0.16px] font-sans font-normal text-[0.625rem] leading-tight',
+  'caption-medium-bold': twSort`font-sans text-sm font-medium leading-tight tracking-[0.16px]`,
+  'caption-large': twSort`font-sans text-lg font-normal leading-tight tracking-[0.16px]`,
+  overline: twSort`font-sans text-xs font-normal leading-tight tracking-[0.16px] underline`,
+  'overline-medium': twSort`font-sans text-xs font-medium leading-tight`,
+  tooltip: twSort`font-sans text-[0.625rem] font-normal leading-tight tracking-[0.16px]`,
 };
