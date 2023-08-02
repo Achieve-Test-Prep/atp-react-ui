@@ -1,5 +1,6 @@
 // used in ThemeContext
 type Mode = 'dark' | 'light' | null;
+type DivProps = React.HTMLAttributes<HTMLDivElement>;
 
 declare module '*.png';
 declare module '*.svg';

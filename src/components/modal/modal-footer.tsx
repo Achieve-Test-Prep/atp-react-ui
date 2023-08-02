@@ -3,7 +3,6 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { useTheme } from '../../themes';
-import type { DivProps } from '../../types';
 
 export const ModalFooter = React.forwardRef<HTMLElement, DivProps>((props, ref) => {
   const { children, className, ...other } = props;

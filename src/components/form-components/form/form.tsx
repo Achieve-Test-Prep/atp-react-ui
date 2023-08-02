@@ -13,7 +13,6 @@ import { Slot } from '@radix-ui/react-slot';
 import { Controller, ControllerProps, FieldPath, FieldValues, FormProvider, useFormContext } from 'react-hook-form';
 import { twMerge } from 'tailwind-merge';
 
-import type { DivProps } from '../../../types';
 import { Text, Label } from '../../typography';
 import type { LabelProps } from '../../typography/types';
 
