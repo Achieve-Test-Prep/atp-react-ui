@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { PropsWithChildren } from 'react';
 
-import defaultTheme from './default';
+import { defaultTheme } from './default';
 
 interface ThemeContextInterface {
   theme: any;
@@ -9,7 +9,7 @@ interface ThemeContextInterface {
   toggleMode?: any;
 }
 
-export const ThemeContext = React.createContext<ThemeContextInterface>({ theme: defaultTheme });
+export const AtpLibContext = React.createContext<ThemeContextInterface>({ theme: defaultTheme });
 
 interface ThemeProviderProps {
   children: React.ReactNode;
@@ -17,5 +17,5 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children, value }: PropsWithChildren<ThemeProviderProps>) {
-  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+  return <AtpLibContext.Provider value={value}>{children}</AtpLibContext.Provider>;
 }

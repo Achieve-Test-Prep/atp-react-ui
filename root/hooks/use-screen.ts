@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import useEventListener from './use-event-listener';
-import useIsomorphicLayoutEffect from './use-isomorphic-layout-effect';
+import { useEventListener } from './use-event-listener';
+import { useIsomorphicLayoutEffect } from './use-isomorphic-layout-effect';
 
 interface WindowSize {
   width: number;
@@ -9,7 +9,7 @@ interface WindowSize {
 }
 
 // Confusing name; Can be useDimensions | useScreenSize
-function useScreen(): WindowSize {
+export function useScreen(): WindowSize {
   const [windowSize, setWindowSize] = useState<WindowSize>({
     width: 0,
     height: 0,
@@ -32,5 +32,3 @@ function useScreen(): WindowSize {
 
   return windowSize;
 }
-
-export default useScreen;

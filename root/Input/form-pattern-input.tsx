@@ -7,7 +7,7 @@ import { PatternInput, PatternInputProps } from './PatternInput';
 
 type TProps = PatternInputProps & FormLabelProps;
 
-const FormPatternInput = forwardRef<HTMLInputElement, TProps>(
+export const FormPatternInput = forwardRef<HTMLInputElement, TProps>(
   ({ label, labelClassName, formItemClassName, value, ...props }, ref) => (
     <FormItem className={formItemClassName}>
       {label && <FormLabel className={labelClassName}>{label}</FormLabel>}
@@ -20,5 +20,3 @@ const FormPatternInput = forwardRef<HTMLInputElement, TProps>(
 );
 
 FormPatternInput.displayName = 'FormPatternInput';
-
-export default FormPatternInput;

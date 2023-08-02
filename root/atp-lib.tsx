@@ -1,14 +1,12 @@
 import React, { PropsWithChildren, useLayoutEffect, useMemo } from 'react';
 
-import defaultTheme from './themes/default';
-import { ThemeContext } from './themes/theme-context';
+import { defaultTheme, AtpLibContext } from './themes';
 import type { DivProps } from './types';
-import { mergeDeep } from './utils/merge-deep';
-import useThemeMode from './utils/use-theme-mode';
+import { mergeDeep, useThemeMode } from './utils';
 
 /**
  * AtpLib is a React Component that provides theme configurations and functionality.
- * It uses the ThemeContext to manage the themes and the dark mode status.
+ * It uses the AtpLibContext to manage the themes and the dark mode status.
  *
  * @component
  * @example
@@ -43,12 +41,7 @@ interface Props extends DivProps {
   usePreferences?: boolean;
 }
 
-export default function AtpLib({
-  children,
-  theme: customTheme,
-  dark,
-  usePreferences = false,
-}: PropsWithChildren<Props>) {
+export function AtpLib({ children, theme: customTheme, dark, usePreferences = false }: PropsWithChildren<Props>) {
   const [mode, setMode, toggleMode] = useThemeMode(usePreferences);
   const mergedTheme = useMemo(() => mergeDeep(defaultTheme, customTheme), [customTheme]);
 
@@ -69,5 +62,5 @@ export default function AtpLib({
     [mode, mergedTheme]
   );
 
-  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+  return <AtpLibContext.Provider value={value}>{children}</AtpLibContext.Provider>;
 }

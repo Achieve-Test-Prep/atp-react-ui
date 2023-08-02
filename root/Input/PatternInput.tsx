@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useRef, useState, forwardRef } from 'react';
 
-import Input from './Input';
+import { Input } from './Input';
 import { InputProps } from './use-input';
 
 export type PatternInputProps = Omit<InputProps, 'value'> & {

@@ -6,7 +6,7 @@ import { useTheme } from '../themes/use-theme';
 
 import type { HelperTextProps } from './types';
 
-const HelperText = React.forwardRef<HTMLSpanElement, HelperTextProps>((props, ref) => {
+export const HelperText = React.forwardRef<HTMLSpanElement, HelperTextProps>((props, ref) => {
   const { children, valid, className, ...other } = props;
   const { helperText } = useTheme();
 
@@ -29,5 +29,3 @@ const HelperText = React.forwardRef<HTMLSpanElement, HelperTextProps>((props, re
     </span>
   );
 });
-
-export default HelperText;

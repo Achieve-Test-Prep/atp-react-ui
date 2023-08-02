@@ -6,7 +6,7 @@ import { useTheme } from '../themes/use-theme';
 
 import type { CheckboxProps, CheckboxRef } from './types';
 
-const Checkbox = forwardRef<CheckboxRef, CheckboxProps>(
+export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>(
   ({ className, type = 'checkbox', ...other }: CheckboxProps, ref: ForwardedRef<CheckboxRef>) => {
     const { checkbox } = useTheme();
 
@@ -14,5 +14,3 @@ const Checkbox = forwardRef<CheckboxRef, CheckboxProps>(
     return <input ref={ref} {...other} type="checkbox" className={cls} />;
   }
 );
-
-export default Checkbox;

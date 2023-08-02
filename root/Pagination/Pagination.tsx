@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import ArrowSmallLeftIcon from '@heroicons/react/24/outline/ArrowSmallLeftIcon';
 import ArrowSmallRightIcon from '@heroicons/react/24/outline/ArrowSmallRightIcon';
 
-import Button from '../Button/Button';
+import { Button } from '../Button';
 import { ButtonAsButtonProps } from '../Button/types';
 import { useTheme } from '../themes/use-theme';
 

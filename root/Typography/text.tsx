@@ -6,7 +6,7 @@ import { useTheme } from '../themes/use-theme';
 
 import type { TextProps } from './types';
 
-const Text = React.forwardRef<HTMLDivElement, TextProps>((props, ref) => {
+export const Text = React.forwardRef<HTMLDivElement, TextProps>((props, ref) => {
   const { children, as = 'div', className, ...other } = props;
   const { text } = useTheme();
 
@@ -86,5 +86,3 @@ const Text = React.forwardRef<HTMLDivElement, TextProps>((props, ref) => {
     </div>
   );
 });
-
-export default Text;

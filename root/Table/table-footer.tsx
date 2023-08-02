@@ -5,7 +5,7 @@ import { twMerge } from 'tailwind-merge';
 import { useTheme } from '../themes/use-theme';
 import type { DivProps } from '../types';
 
-const TableFooter = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
+export const TableFooter = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
   const { className, children, ...other } = props;
 
   const { tableFooter } = useTheme();
@@ -18,5 +18,3 @@ const TableFooter = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
     </div>
   );
 });
-
-export default TableFooter;

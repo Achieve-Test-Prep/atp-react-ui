@@ -1,4 +1,4 @@
-const button = {
+export const buttonStyles = {
   base: 'relative inline-flex cursor-pointer select-none items-center justify-center whitespace-nowrap border border-transparent align-bottom font-medium leading-5 leading-none tracking-[0.16px] outline-none transition-colors duration-150',
   disabled: 'disabled:cursor-not-allowed disabled:border-outline disabled:bg-gray-50 disabled:text-outline',
   active: 'focus:ring-2 focus:ring-primary-light',
@@ -106,5 +106,3 @@ const button = {
     },
   },
 };
-
-export default button;

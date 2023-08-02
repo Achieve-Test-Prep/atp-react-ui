@@ -4,7 +4,7 @@ import { useTheme } from '../themes/use-theme';
 
 import type { SpinnerProps } from './types';
 
-export default function Spinner({ className = '', animate = true, size = 'base', ...rest }: SpinnerProps) {
+export function Spinner({ className = '', animate = true, size = 'base', ...rest }: SpinnerProps) {
   const { spinner } = useTheme();
 
   return (

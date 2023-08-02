@@ -6,7 +6,7 @@ import { useTheme } from '../themes/use-theme';
 
 import type { ISelectOption, SelectProps } from './types';
 
-export default function useSelect(props: SelectProps) {
+export function useSelect(props: SelectProps) {
   const { onChangeSelection, options, className, multiple, disabled, children, ...other } = props;
 
   const { select } = useTheme();

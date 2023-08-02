@@ -6,7 +6,7 @@ import { useTheme } from '../themes/use-theme';
 
 import type { BadgeProps } from './types';
 
-const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, ref) => {
+export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, ref) => {
   const { className, children, as = 'base', size = 'base', type = 'primary', ...other } = props;
 
   const { badge } = useTheme();
@@ -19,5 +19,3 @@ const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, ref) => {
     </span>
   );
 });
-
-export default Badge;

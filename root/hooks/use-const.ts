@@ -11,7 +11,7 @@ import { useRef } from 'react';
  * only the value/function passed in the first time this is called is respected.
  * @returns The value. The identity of this value will always be the same.
  */
-export default function useConst<T>(initialValue: T | (() => T)): T {
+export function useConst<T>(initialValue: T | (() => T)): T {
   // Use useRef to store the value because it's the least expensive built-in hook that works here
   // (we could also use `const [value] = useState(initialValue)` but that's more expensive
   // internally due to reducer handling which we don't need)

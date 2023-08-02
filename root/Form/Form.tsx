@@ -14,8 +14,7 @@ import { Controller, ControllerProps, FieldPath, FieldValues, FormProvider, useF
 import { twMerge } from 'tailwind-merge';
 
 import type { DivProps } from '../types';
-import { Text } from '../Typography';
-import Label from '../Typography/label';
+import { Text, Label } from '../Typography';
 import type { LabelProps } from '../Typography/types';
 
 import type { FormItemContextValue } from './types';

@@ -10,7 +10,7 @@ import { useTheme } from '../themes/use-theme';
 
 import { ModalProps } from './types';
 
-const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((props, ref) => {
+export const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((props, ref) => {
   const {
     children,
     onClose,
@@ -77,5 +77,3 @@ const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((props, 
     </Transition>
   );
 });
-
-export default Modal;

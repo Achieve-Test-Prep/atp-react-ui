@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import useConst from './use-const';
+import { useConst } from './use-const';
 
 export type UseSetIntervalReturnType = {
   setInterval: (callback: () => void, duration: number) => number;

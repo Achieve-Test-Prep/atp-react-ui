@@ -1,4 +1,4 @@
 export * from './skeleton';
-export { default as FormInputSkeleton } from './form-input-select-skeleton';
-export { default as Spinner } from './spinner';
+export * from './form-input-select-skeleton';
+export * from './spinner';
 export * from './progress-bar';

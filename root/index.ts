@@ -18,11 +18,11 @@ export * from './Radio';
 export * from './Select';
 export * from './Table';
 export * from './Textarea';
-export { ThemeContext as AtpLibContext } from './themes/theme-context';
+export * from './themes/theme-context';
 export * from './Tooltip';
 export * from './Typography';
 export * from './accordion';
-export { default as AtpLib } from './atp-lib';
+export * from './atp-lib';
 
 // Third party libs
 export * from '@headlessui/react';

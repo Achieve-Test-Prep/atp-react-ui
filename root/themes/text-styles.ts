@@ -1,7 +1,7 @@
 export const h5 = 'font-serif text-base font-normal leading-tight tb:text-gray-400';
 export const captionMedium = 'tracking-[0.16px] font-sans text-sm font-normal leading-tight';
 
-export const text = {
+export const textStyles = {
   h1: 'font-sans text-2xl font-semibold leading-tight',
   h2: 'font-sans text-xl font-semibold leading-tight',
   h3: 'font-serif text-xl font-normal leading-tight tracking-wide tb:text-gray-400',
