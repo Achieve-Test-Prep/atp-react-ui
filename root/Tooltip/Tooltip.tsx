@@ -1,8 +1,8 @@
-import { PropsWithChildren, useContext } from 'react';
+import { PropsWithChildren } from 'react';
 
 import Tippy from '@tippyjs/react';
 
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/use-theme';
 
 import type { TooltipProps } from './types';
 
@@ -33,9 +33,7 @@ export default function Tooltip({
   zIndex,
   ...props
 }: PropsWithChildren<TooltipProps>) {
-  const {
-    theme: { text },
-  } = useContext(ThemeContext);
+  const { text } = useTheme();
 
   return (
     <Tippy

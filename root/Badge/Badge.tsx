@@ -1,17 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import { twMerge, twJoin } from 'tailwind-merge';
 
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/use-theme';
 
 import type { BadgeProps } from './types';
 
 const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>((props, ref) => {
   const { className, children, as = 'base', size = 'base', type = 'primary', ...other } = props;
 
-  const {
-    theme: { badge },
-  } = useContext(ThemeContext);
+  const { badge } = useTheme();
 
   const cls = twMerge(twJoin(badge.size[size], badge.base, badge.as[as][type]), className);
 

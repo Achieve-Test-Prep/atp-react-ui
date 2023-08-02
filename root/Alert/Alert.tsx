@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import CheckCircleIcon from '@heroicons/react/24/outline/CheckCircleIcon';
 import EllipsisHorizontalCircleIcon from '@heroicons/react/24/outline/EllipsisHorizontalCircleIcon';
@@ -10,15 +10,13 @@ import { twMerge } from 'tailwind-merge';
 
 import { Button } from '../Button';
 import { Icon } from '../Icon';
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/use-theme';
 
 import type { AlertProps } from './types';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   const { className, children, type = 'neutral', onClose, ...other } = props;
-  const {
-    theme: { alert },
-  } = useContext(ThemeContext);
+  const { alert } = useTheme();
 
   let icon;
   switch (type) {

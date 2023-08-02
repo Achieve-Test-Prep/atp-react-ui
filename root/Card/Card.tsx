@@ -1,15 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/use-theme';
 import type { DivProps } from '../types';
 
 const Card = React.forwardRef<HTMLDivElement, DivProps>((props, ref) => {
   const { className, children, ...other } = props;
-  const {
-    theme: { card },
-  } = useContext(ThemeContext);
+  const { card } = useTheme();
 
   const cls = twMerge(card.base, className);
 

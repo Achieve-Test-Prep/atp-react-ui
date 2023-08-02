@@ -1,9 +1,9 @@
-import { forwardRef, ElementRef, ComponentPropsWithoutRef, useContext } from 'react';
+import { forwardRef, ElementRef, ComponentPropsWithoutRef } from 'react';
 
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 import { twMerge } from 'tailwind-merge';
 
-import { ThemeContext } from '../themes/theme-context';
+import { useTheme } from '../themes/use-theme';
 
 import type { RadioGroupProps, RadioProps } from './types';
 
@@ -17,9 +17,7 @@ RadioItemsGroup.displayName = 'RadioItemsGroup';
 
 const RadioItem = forwardRef<ElementRef<RadioProps>, ComponentPropsWithoutRef<RadioProps>>(
   ({ className, children, ...props }, ref) => {
-    const {
-      theme: { radio },
-    } = useContext(ThemeContext);
+    const { radio } = useTheme();
     return (
       <RadioGroupPrimitive.Item
         ref={ref}

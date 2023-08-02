@@ -1,5 +1,5 @@
 // Modal
-import { h5, captionMedium } from './text';
+import { h5, captionMedium } from './text.theme';
 
 export const modal = {
   base: 'tb:bg-gray-800 w-full transform overflow-hidden rounded-t-lg bg-white px-6 py-4 shadow-lg transition-all md:m-4 md:max-w-xl md:rounded-lg',
