@@ -36,7 +36,7 @@ type Props = {
   /**
    * The style of the button
    */
-  as?: 'outline' | 'link' | 'contained' | '__dropdownItem';
+  as?: 'outline' | 'link' | 'contained' | 'dropdownItem';
   /**
    * Shows the button as a block (full width)
    */

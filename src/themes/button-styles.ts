@@ -1,3 +1,24 @@
+// import { ThemeSizeStyle, ThemeStyleType } from './types';
+
+// export type ButtonVariantType = 'outline' | 'link' | 'contained' | 'dropdownItem';
+// type ButtonStateType = 'base' | 'active' | 'disabled';
+// type ButtonIconStyle = ThemeSizeStyle & {
+//   left: string;
+//   right: string;
+// };
+
+// type ButtonVariantStyleType = ThemeStyleType<ButtonVariantType, ThemeStyleType<ButtonStateType>>;
+
+// export type ButtonStyle = ButtonVariantStyleType & {
+//   base: string;
+//   disabled: string;
+//   active: string;
+//   block: string;
+//   size: ThemeSizeStyle;
+//   icon: ButtonIconStyle;
+//   modal: ThemeStyleType<'base', string>;
+// };
+
 export const buttonStyles = {
   base: 'relative inline-flex cursor-pointer select-none items-center justify-center whitespace-nowrap border border-transparent align-bottom font-medium leading-5 leading-none tracking-[0.16px] outline-none transition-colors duration-150',
   disabled: 'disabled:cursor-not-allowed disabled:border-outline disabled:bg-gray-50 disabled:text-outline',
@@ -33,6 +54,9 @@ export const buttonStyles = {
 
     left: 'mr-2 -ml-1',
     right: 'ml-2 -mr-1',
+
+    // Missing style? Because apparently its used in use-button
+    pagination: '',
   },
 
   contained: {
@@ -53,13 +77,15 @@ export const buttonStyles = {
     disabled: '',
   },
 
-  modal: {
-    base: 'w-full md:w-auto',
-  },
-
   // this is the button that lives inside the DropdownItem
   dropdownItem: {
     base: 'relative focus:ring-primary border-0 text-accent-light inline-flex items-center cursor-pointer w-full px-4 py-2.5 text-sm font-medium transition-colors duration-150 rounded-md hover:bg-primary-x-light hover:text-primary tb:hover:bg-gray-800 tb:hover:text-gray-200',
+    active: '',
+    disabled: '',
+  },
+
+  modal: {
+    base: 'w-full md:w-auto',
   },
 
   themeColor: {
@@ -67,42 +93,60 @@ export const buttonStyles = {
       contained: 'bg-accent text-white',
       link: 'text-accent-light',
       outline: 'text-accent-light border-outline',
+      // Missing style? Because apparently its used in use-button
+      dropdownItem: '',
     },
 
     primary: {
       contained: 'text-white bg-primary',
       link: 'text-primary',
       outline: 'text-primary border-primary',
+      dropdownItem: '',
     },
 
     secondary: {
       contained: 'text-white bg-secondary',
       link: 'text-secondary',
       outline: 'text-secondary border-secondary',
+      dropdownItem: '',
     },
 
     success: {
       contained: 'bg-success text-white',
       link: 'text-success',
       outline: 'text-success-medium border-success',
+      dropdownItem: '',
     },
 
     error: {
       contained: 'bg-error text-white',
       link: 'text-error',
       outline: 'text-error border-error',
+      dropdownItem: '',
     },
 
     info: {
       contained: 'bg-info text-white',
       link: 'text-info',
       outline: 'text-info border-info',
+      dropdownItem: '',
     },
 
     warning: {
       contained: 'bg-warning text-accent',
       link: 'text-warning',
       outline: 'text-warning-dark border-warning',
+      dropdownItem: '',
+    },
+
+    /*
+     ** Below are missing when using them in use-theme
+     ** line 127: theme ? button.themeColor?.[theme][as] : undefined,
+     */
+    pagination: {
+      contained: '',
+      link: '',
+      outline: '',
     },
   },
 };

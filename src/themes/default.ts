@@ -192,4 +192,4 @@ export const defaultTheme = {
   },
 };
 
-export type DefaultThemeType = typeof defaultTheme;
+export type AtpThemeType = typeof defaultTheme;

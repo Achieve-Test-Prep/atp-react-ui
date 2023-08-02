@@ -21,7 +21,7 @@ const Template: ComponentStory<typeof Dropdown> = () => (
               <DropdownItem>Lorem Ipsum</DropdownItem>
               <DropdownItem>Lorem Ipsum</DropdownItem>
               <DropdownItem>Lorem Ipsum</DropdownItem>
-              <DropdownItem>{(prop) => <Button as="__dropdownItem">Lorem Ipsum</Button>}</DropdownItem>
+              <DropdownItem>{(prop) => <Button as="dropdownItem">Lorem Ipsum</Button>}</DropdownItem>
             </DropdownItems>
           </>
         )}
