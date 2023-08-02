@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../../themes';
+import { AtpThemeType, useTheme } from '../../themes';
 import { warn } from '../../utils';
 import type { SpinnerProps } from '../progress/types';
 
@@ -75,7 +75,7 @@ export function useButton(props: ButtonProps) {
 
 type helperProps = ButtonProps & {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  button: any;
+  button: AtpThemeType['button'];
   hasChildren: boolean;
   hasIcon: boolean;
 };
@@ -95,7 +95,7 @@ function helper({
   const btnAs = button?.[as] ?? {};
 
   /**
-   * Only used in Pagination.
+   * Only used in Pagination.000
    * Not meant for general use.
    */
   const btnSize = button.size[size];
@@ -107,7 +107,7 @@ function helper({
    */
 
   const buttonStyles = twMerge(
-    as === '__dropdownItem'
+    as === 'dropdownItem'
       ? button.dropdownItem.base
       : twMerge(
           button.base,

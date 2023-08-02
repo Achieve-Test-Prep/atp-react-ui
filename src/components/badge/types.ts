@@ -1,4 +1,4 @@
-export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
+export type BadgeProps = React.HTMLAttributes<HTMLSpanElement> & {
   /**
    * The type of the badge
    */
@@ -11,4 +11,4 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
    * The color theme of the badge
    */
   as?: 'light' | 'base';
-}
+};

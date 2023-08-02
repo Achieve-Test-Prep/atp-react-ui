@@ -1,6 +1,6 @@
 import { TippyProps } from '@tippyjs/react';
 
-export interface TooltipProps extends TippyProps {
+export type TooltipProps = TippyProps & {
   disabled?: boolean;
   placement?:
     | 'top'
@@ -15,4 +15,4 @@ export interface TooltipProps extends TippyProps {
     | 'left'
     | 'left-start'
     | 'left-end';
-}
+};

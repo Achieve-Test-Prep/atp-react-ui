@@ -191,3 +191,5 @@ export const defaultTheme = {
     },
   },
 };
+
+export type AtpThemeType = typeof defaultTheme;

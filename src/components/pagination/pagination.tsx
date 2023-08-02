@@ -6,9 +6,9 @@ import ArrowSmallRightIcon from '@heroicons/react/24/outline/ArrowSmallRightIcon
 import { useTheme } from '../../themes';
 import { Button, ButtonAsButtonProps } from '../button';
 
-interface NavigationButtonProps extends ButtonAsButtonProps {
+type NavigationButtonProps = ButtonAsButtonProps & {
   directionIcon: 'prev' | 'next';
-}
+};
 
 export const NavigationButton: React.FC<React.PropsWithChildren<NavigationButtonProps>> = function NavigationButton({
   onClick,
@@ -24,7 +24,7 @@ export const NavigationButton: React.FC<React.PropsWithChildren<NavigationButton
   );
 };
 
-interface PageButtonProps extends ButtonAsButtonProps {
+type PageButtonProps = ButtonAsButtonProps & {
   /**
    * The page the button represents
    */
@@ -33,7 +33,7 @@ interface PageButtonProps extends ButtonAsButtonProps {
    * Defines if the button is active
    */
   isActive?: boolean;
-}
+};
 
 export const PageButton: React.FC<React.PropsWithChildren<PageButtonProps>> = function PageButton({
   page,
@@ -51,7 +51,7 @@ export function EmptyPageButton() {
   return <span className="px-2 py-1">...</span>;
 }
 
-export interface PaginationProps {
+export type PaginationProps = {
   /**
    * The total number of results
    */
@@ -68,7 +68,7 @@ export interface PaginationProps {
    * The function executed on page change
    */
   onChange: (activePage: number) => void;
-}
+};
 
 type Ref = HTMLDivElement;
 

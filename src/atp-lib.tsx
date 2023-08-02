@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, useLayoutEffect, useMemo } from 'react';
 
-import { defaultTheme, AtpLibContext } from './themes';
+import { defaultTheme, AtpLibContext, ThemeContextType, AtpThemeType } from './themes';
 import type { DivProps } from './types';
 import { mergeDeep, useThemeMode } from './utils';
 
@@ -25,12 +25,12 @@ import { mergeDeep, useThemeMode } from './utils';
  * @returns {React.Element} The AtpLib Component with child components
  */
 
-interface Props extends DivProps {
+type Props = DivProps & {
   children: React.ReactNode;
   /**
    * Defines the styles used throughout the library
    */
-  theme?: object;
+  theme?: AtpThemeType;
   /**
    * Defines dark mode as the default theme
    */
@@ -39,11 +39,11 @@ interface Props extends DivProps {
    * Allows the change of theme, reading user's preferences and saving them
    */
   usePreferences?: boolean;
-}
+};
 
 export function AtpLib({ children, theme: customTheme, dark, usePreferences = false }: PropsWithChildren<Props>) {
   const [mode, setMode, toggleMode] = useThemeMode(usePreferences);
-  const mergedTheme = useMemo(() => mergeDeep(defaultTheme, customTheme), [customTheme]);
+  const mergedTheme: AtpThemeType = useMemo(() => mergeDeep(defaultTheme, customTheme), [customTheme]);
 
   useLayoutEffect(() => {
     if (dark) {
@@ -52,7 +52,7 @@ export function AtpLib({ children, theme: customTheme, dark, usePreferences = fa
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dark]);
 
-  const value = useMemo(
+  const value: ThemeContextType = useMemo(
     () => ({
       theme: mergedTheme,
       mode,

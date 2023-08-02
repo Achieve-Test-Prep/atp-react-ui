@@ -1,4 +1,4 @@
-export interface InputProps extends React.ComponentPropsWithRef<'input'> {
+export type InputProps = React.ComponentPropsWithRef<'input'> & {
   /**
    * Defines if the input is disabled
    */
@@ -7,4 +7,4 @@ export interface InputProps extends React.ComponentPropsWithRef<'input'> {
    * Defines the type of the input
    */
   type?: string;
-}
+};

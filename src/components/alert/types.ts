@@ -10,7 +10,7 @@ enum AlertEnum {
   neutral,
 }
 
-export interface AlertProps extends DivProps {
+export type AlertProps = DivProps & {
   /**
    * The type of the alert
    */
@@ -19,6 +19,6 @@ export interface AlertProps extends DivProps {
    * If defined, shows the close icon that calls this function
    */
   onClose?: () => void;
-}
+};
 
 export type AlertIconProps = SVGAttributes<SVGElement>;
