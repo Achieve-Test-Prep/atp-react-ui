@@ -8,8 +8,8 @@ export const useThemeMode = (usePreferences: boolean): UseThemeModeReturnType =>
   const [mode, setMode] = useState<Mode>(null);
 
   const toggleMode = useCallback(() => {
-    setMode(mode === 'light' ? 'dark' : 'light');
-  }, [mode]);
+    setMode((currentMode) => (currentMode === 'light' ? 'dark' : 'light'));
+  }, []);
 
   useEffect(() => {
     const userPreference = !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
