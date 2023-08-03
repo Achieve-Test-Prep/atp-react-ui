@@ -1,5 +1,7 @@
 import { SVGAttributes } from 'react';
 
+import { DivProps } from '../../types';
+
 enum AlertEnum {
   success,
   error,

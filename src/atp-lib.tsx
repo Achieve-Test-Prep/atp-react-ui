@@ -1,6 +1,7 @@
 import React, { PropsWithChildren, useLayoutEffect, useMemo } from 'react';
 
 import { defaultTheme, AtpLibContext, ThemeContextType, AtpThemeType } from './themes';
+import { DivProps } from './types';
 import { mergeDeep, useThemeMode } from './utils';
 
 /**

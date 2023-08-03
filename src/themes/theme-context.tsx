@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 
+import { ThemeMode } from '../types';
+
 import { defaultTheme, AtpThemeType } from './default';
 
 export type ThemeContextType = {
   theme: AtpThemeType;
-  mode?: Mode;
+  mode?: ThemeMode;
   toggleMode: () => void;
 };
 

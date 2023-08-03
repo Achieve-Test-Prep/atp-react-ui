@@ -1,3 +1,5 @@
+import { DivProps } from '../../types';
+
 export type AvatarProps = DivProps & {
   /**
    * The size of the avatar
