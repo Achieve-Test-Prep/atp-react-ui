@@ -46,7 +46,7 @@ type Props = {
    */
   modal?: boolean;
   /**
-   * Shows the button as a block (full width)
+   * Overrides icon styles
    */
   iconClassName?: string;
 

@@ -1,6 +1,6 @@
 import * as ProgressPrimitive from '@radix-ui/react-progress';
 
-import { DivProps } from '../../types';
+import type { DivProps } from '../../types';
 
 export type SpinnerProps = DivProps & {
   animate?: boolean;
