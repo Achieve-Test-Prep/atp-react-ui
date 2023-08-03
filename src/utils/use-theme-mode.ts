@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
 
-import { ThemeMode } from '../types';
+import type { ThemeMode } from '../types';
 
 const THEME_KEY = 'theme';
 
