@@ -1,6 +1,3 @@
-// used in ThemeContext
-type Mode = 'dark' | 'light' | null;
-
 declare module '*.png';
 declare module '*.svg';
 declare module '*.jpeg';

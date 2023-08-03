@@ -77,6 +77,37 @@ function App() {
 export default App;
 ```
 
+### Sorting Tailwind Classes
+
+Update your `.prettierrc` by adding following to it:
+
+```js
+"plugins": ["prettier-plugin-tailwindcss"],
+"tailwindFunctions": ["twSort"],
+```
+
+Improve `twSort` from `atp-react-ui` and use it as:
+
+```js
+import { twSort, AtpThemeType } from atp-react-ui;
+
+const customTheme: AtpThemeType = {
+  helperText: {
+    base: twSort`flex-grow-0 relative flex h-5 md:bg-gray-900`,
+  },
+};
+
+// It will automatically be sorted as
+const customTheme: AtpThemeType = {
+  helperText: {
+    base: twSort`relative flex h-5 flex-grow-0 md:bg-gray-900`,
+  },
+};
+```
+
+> **Important:**
+> In case auto-sorting doesn't work. Try restarting IDE.
+
 ## 🔌 Contributing
 
 - Fork
