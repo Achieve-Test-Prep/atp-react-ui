@@ -1,19 +1,19 @@
 import { twSort } from '../utils';
 
-export const h5 = twSort`tb:text-gray-400 font-serif text-base font-normal leading-tight`;
+export const h5 = twSort`font-serif text-base font-normal leading-tight`;
 export const captionMedium = twSort`font-sans text-sm font-normal leading-tight tracking-[0.16px]`;
 
 export const textStyles = {
   h1: twSort`font-sans text-2xl font-semibold leading-tight`,
   h2: twSort`font-sans text-xl font-semibold leading-tight`,
-  h3: twSort`tb:text-gray-400 font-serif text-xl font-normal leading-tight tracking-wide`,
-  h4: twSort`tb:text-gray-400 font-serif text-lg font-normal leading-tight tracking-tight`,
+  h3: twSort`font-serif text-xl font-normal leading-tight tracking-wide`,
+  h4: twSort`font-serif text-lg font-normal leading-tight tracking-tight`,
   h5,
-  h6: twSort`tb:text-gray-400 font-serif text-sm font-semibold leading-tight`,
+  h6: twSort`font-serif text-sm font-semibold leading-tight`,
   subheading: twSort`font-sans text-sm font-normal italic leading-tight`,
   subtitle: twSort`font-sans text-xl font-medium leading-tight`,
   'subtitle-small': twSort`font-sans text-xs font-semibold leading-tight`,
-  p: twSort`tb:text-gray-400 font-sans text-xs font-normal leading-normal text-accent`,
+  p: twSort`font-sans text-xs font-normal leading-normal text-accent`,
   'p-small': twSort`font-sans text-[0.625rem] font-normal leading-normal`,
   caption: twSort`font-sans text-xs font-normal leading-tight tracking-[0.16px]`,
   'caption-medium': captionMedium,
