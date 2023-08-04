@@ -131,8 +131,8 @@ export const defaultTheme = {
 
   // Select
   select: {
-    base: twSort`tb:text-gray-300 block w-full rounded-lg p-2.5 text-sm text-accent-light focus:outline-none`,
-    active: twSort`tb:border-outline tb:bg-gray-700 tb:focus:ring-gray-300 tb:focus:border-outline border-outline focus:border-primary focus:ring focus:ring-primary-light`,
+    base: twSort`block w-full rounded-lg p-2.5 text-sm text-accent-light focus:outline-none`,
+    active: twSort`border-outline focus:border-primary focus:ring focus:ring-primary-light`,
     select: twSort`leading-5`,
     disabled: twSort`disabled:text-accent-disabled disabled:cursor-not-allowed disabled:border-outline disabled:bg-gray-50`,
   },

@@ -53,14 +53,14 @@ export const buttonStyles = {
   },
 
   outline: {
-    base: twSort`tb:text-gray-400 border-outline text-accent-light focus:border-primary`,
+    base: twSort`border-outline text-accent-light focus:border-primary`,
     active: twSort`hover:border-primary hover:text-primary active:border-primary active:bg-transparent`,
     disabled: twSort``,
   },
 
   // this is the button that lives inside the DropdownItem
   dropdownItem: {
-    base: twSort`tb:hover:bg-gray-800 tb:hover:text-gray-200 relative inline-flex w-full cursor-pointer items-center rounded-md border-0 px-4 py-2.5 text-sm font-medium text-accent-light transition-colors duration-150 hover:bg-primary-x-light hover:text-primary focus:ring-primary`,
+    base: twSort`relative inline-flex w-full cursor-pointer items-center rounded-md border-0 px-4 py-2.5 text-sm font-medium text-accent-light transition-colors duration-150 hover:bg-primary-x-light hover:text-primary focus:ring-primary`,
     active: twSort``,
     disabled: twSort``,
   },
