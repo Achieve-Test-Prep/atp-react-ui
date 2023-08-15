@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 import { FormControl, FormItem, FormLabel, FormMessage } from '../form';
 import type { FormLabelProps } from '../types';
 
-import { Checkbox } from './checkbox';
+import { Checkbox } from './check-box';
 import type { CheckboxProps, CheckboxRef } from './types';
 
 export const FormCheckbox = forwardRef<CheckboxRef, CheckboxProps & FormLabelProps>(

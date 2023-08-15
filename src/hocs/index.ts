@@ -1,1 +1,1 @@
-export * from './withForwardedRef';
+export * from './with-forwarded-ref';
