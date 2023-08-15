@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { useTheme } from '../../../themes';
 
-export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & { valid?: boolean };
+export type InputProps = Pick<React.InputHTMLAttributes<HTMLInputElement>, 'className'> & { valid?: boolean };
 
 export function useInputStyle({ className }: InputProps) {
   const { input } = useTheme();
