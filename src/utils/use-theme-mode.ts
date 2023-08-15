@@ -21,10 +21,10 @@ export const useThemeMode = ({ preferredMode, usePreferences = true }: UseThemeM
     const userPreferenceDark = !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     const storedThemeMode = (window.localStorage.getItem(THEME_KEY) as ThemeMode) || 'light';
     // use stored theme; fallback to user preference
-    if (usePreferences) {
-      setMode(userPreferenceDark ? 'dark' : 'light');
-    } else if (preferredMode) {
+    if (preferredMode) {
       setMode(preferredMode);
+    } else if (usePreferences) {
+      setMode(userPreferenceDark ? 'dark' : 'light');
     } else {
       setMode(storedThemeMode);
     }
