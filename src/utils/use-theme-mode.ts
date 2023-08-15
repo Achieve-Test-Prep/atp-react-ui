@@ -4,9 +4,13 @@ import type { ThemeMode } from '../types';
 
 const THEME_KEY = 'theme';
 
+type UseThemeModeParam = {
+  preferredMode?: ThemeMode;
+  usePreferences?: boolean;
+};
 type UseThemeModeReturnType = Readonly<[ThemeMode | null, ((_: ThemeMode) => void) | null, () => void]>;
 
-export const useThemeMode = (usePreferences: boolean): UseThemeModeReturnType => {
+export const useThemeMode = ({ preferredMode, usePreferences = true }: UseThemeModeParam): UseThemeModeReturnType => {
   const [mode, setMode] = useState<ThemeMode>(null);
 
   const toggleMode = useCallback(() => {
@@ -14,11 +18,17 @@ export const useThemeMode = (usePreferences: boolean): UseThemeModeReturnType =>
   }, []);
 
   useEffect(() => {
-    const userPreference = !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const storedThemeMode = window.localStorage.getItem(THEME_KEY) as ThemeMode;
+    const userPreferenceDark = !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storedThemeMode = (window.localStorage.getItem(THEME_KEY) as ThemeMode) || 'light';
     // use stored theme; fallback to user preference
-    setMode(storedThemeMode || (userPreference ? 'dark' : 'light'));
-  }, []);
+    if (usePreferences) {
+      setMode(userPreferenceDark ? 'dark' : 'light');
+    } else if (preferredMode) {
+      setMode(preferredMode);
+    } else {
+      setMode(storedThemeMode);
+    }
+  }, [preferredMode, usePreferences]);
 
   useLayoutEffect(() => {
     if (mode) {
