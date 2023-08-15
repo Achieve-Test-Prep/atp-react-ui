@@ -7,7 +7,7 @@ export const textStyles = {
   h1: twSort`font-sans text-2xl font-semibold leading-tight`,
   h2: twSort`font-sans text-xl font-semibold leading-tight`,
   h3: twSort`font-serif text-xl font-normal leading-tight tracking-wide`,
-  h4: twSort`font-serif text-lg font-normal leading-tight tracking-tight`,
+  h4: twSort`font-serif text-lg font-normal leading-tight`,
   h5,
   h6: twSort`font-serif text-sm font-semibold leading-tight`,
   subheading: twSort`font-sans text-sm font-normal italic leading-tight`,
