@@ -1,44 +1,68 @@
-import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
+import { useCallback, useLayoutEffect, useState } from 'react';
 
 import type { ThemeMode } from '../types';
 
 const THEME_KEY = 'theme';
 
 type UseThemeModeParam = {
-  preferredMode?: ThemeMode;
+  preferredMode?: Omit<ThemeMode, 'system'>;
   usePreferences?: boolean;
 };
-type UseThemeModeReturnType = Readonly<[ThemeMode | null, ((_: ThemeMode) => void) | null, () => void]>;
+
+type UseThemeModeReturnType = Readonly<[ThemeMode, (mode: ThemeMode) => void, () => void]>;
 
 export const useThemeMode = ({ preferredMode, usePreferences = true }: UseThemeModeParam): UseThemeModeReturnType => {
-  const [mode, setMode] = useState<ThemeMode>(null);
+  const getDefaultThemeMode = useCallback((): ThemeMode => {
+    if (usePreferences) {
+      return 'system';
+    }
+    const storedThemeMode = (window.localStorage.getItem(THEME_KEY) as ThemeMode) || 'system';
+    return storedThemeMode;
+  }, [usePreferences]);
+
+  const [mode, setMode] = useState<ThemeMode>(getDefaultThemeMode());
+
+  const getSystemThemeMode = useCallback(
+    () => (!!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'),
+    []
+  );
+
+  const changeThemeMode = useCallback(
+    (_mode: ThemeMode) => {
+      if (!usePreferences) {
+        window.localStorage.setItem(THEME_KEY, _mode);
+        setMode(_mode);
+      }
+    },
+    [usePreferences]
+  );
 
   const toggleMode = useCallback(() => {
-    setMode((currentMode) => (currentMode === 'light' ? 'dark' : 'light'));
-  }, []);
-
-  useEffect(() => {
-    const userPreferenceDark = !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const storedThemeMode = (window.localStorage.getItem(THEME_KEY) as ThemeMode) || 'light';
-    // use stored theme; fallback to user preference
-    if (preferredMode) {
-      setMode(preferredMode);
-    } else if (usePreferences) {
-      setMode(userPreferenceDark ? 'dark' : 'light');
-    } else {
-      setMode(storedThemeMode);
+    if (!usePreferences) {
+      changeThemeMode(mode === 'light' ? 'dark' : 'light');
     }
-  }, [preferredMode, usePreferences]);
+  }, [changeThemeMode, mode, usePreferences]);
 
   useLayoutEffect(() => {
-    if (mode) {
-      window.localStorage.setItem(THEME_KEY, mode);
-      document.documentElement.className = '';
-      document.documentElement.classList.add(mode);
+    const storedThemeMode = (window.localStorage.getItem(THEME_KEY) as ThemeMode) || getDefaultThemeMode();
+
+    let modeToApply = mode;
+    let modeToSave = mode;
+
+    if (preferredMode) {
+      modeToApply = preferredMode as ThemeMode;
+      modeToSave = preferredMode as ThemeMode;
+    } else if (usePreferences) {
+      modeToApply = getSystemThemeMode();
+      modeToSave = 'system';
+    } else if (storedThemeMode === 'system') {
+      modeToApply = getSystemThemeMode();
+      modeToSave = storedThemeMode;
     }
-  }, [mode]);
 
-  if (!usePreferences) return [null, null, () => {}] as const;
+    document.documentElement.className = modeToApply;
+    window.localStorage.setItem(THEME_KEY, modeToSave);
+  }, [preferredMode, usePreferences, mode, getSystemThemeMode, getDefaultThemeMode]);
 
-  return [mode, setMode, toggleMode] as const;
+  return [mode, changeThemeMode, toggleMode] as const;
 };

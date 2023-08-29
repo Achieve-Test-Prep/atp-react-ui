@@ -7,11 +7,17 @@ import { defaultTheme, AtpThemeType } from './default';
 
 export type ThemeContextType = {
   theme: AtpThemeType;
-  mode?: ThemeMode;
+  mode: ThemeMode;
+  setMode: (_: ThemeMode) => void;
   toggleMode: () => void;
 };
 
-export const AtpLibContext = React.createContext<ThemeContextType>({ theme: defaultTheme, toggleMode: () => {} });
+export const AtpLibContext = React.createContext<ThemeContextType>({
+  theme: defaultTheme,
+  mode: 'system',
+  setMode: () => {},
+  toggleMode: () => {},
+});
 
 // type ThemeProviderProps = {
 //   children: React.ReactNode;

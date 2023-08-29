@@ -42,16 +42,17 @@ type Props = DivProps & {
 };
 
 export function AtpLib({ children, theme: customTheme, preferredMode, usePreferences }: PropsWithChildren<Props>) {
-  const [mode, , toggleMode] = useThemeMode({ preferredMode, usePreferences });
+  const [mode, setMode, toggleMode] = useThemeMode({ preferredMode, usePreferences });
   const mergedTheme: AtpThemeType = useMemo(() => mergeDeep(defaultTheme, customTheme), [customTheme]);
 
   const value: ThemeContextType = useMemo(
     () => ({
       theme: mergedTheme,
       mode,
+      setMode,
       toggleMode,
     }),
-    [mode, toggleMode, mergedTheme]
+    [mode, toggleMode, setMode, mergedTheme]
   );
 
   return <AtpLibContext.Provider value={value}>{children}</AtpLibContext.Provider>;
