@@ -73,7 +73,7 @@ const FormItem = forwardRef<HTMLDivElement, DivProps>(({ className, ...props }, 
 
   return (
     <FormItemContext.Provider value={idValue}>
-      <div ref={ref} className={twMerge('space-y-2', className)} {...props} />
+      <div ref={ref} className={twMerge('space-y-1.5', className)} {...props} />
     </FormItemContext.Provider>
   );
 });
