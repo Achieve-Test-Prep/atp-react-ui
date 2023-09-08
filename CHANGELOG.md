@@ -1,5 +1,12 @@
 
 
+# [3.3.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.28...3.3.0) (2023-09-08)
+
+
+### Features
+
+* **feature:** features added ([8825f59](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/8825f59fe357490a4db61213f91dcb2d7bd4c5dc))
+
 ## [3.2.28](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.27...3.2.28) (2023-08-30)
 
 ## [3.2.27](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.26...3.2.27) (2023-08-15)
