@@ -14,3 +14,4 @@ export * from './progress';
 export * from './table';
 export * from './tooltip';
 export * from './typography';
+export * from './scroll-area';

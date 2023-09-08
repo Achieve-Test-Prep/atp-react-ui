@@ -109,6 +109,11 @@ const atpLibConfig = {
           'monospace',
         ],
       },
+
+      backgroundImage: {
+        slider:
+          'linear-gradient(90deg, rgba(241, 88, 16, 0.3) 20%, rgba(255, 185, 80, 0.3) 50%, rgba(99, 153, 11, 0.3) 80%)',
+      },
     },
   },
   plugins: [customFormsPlugin],

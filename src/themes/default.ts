@@ -171,7 +171,7 @@ export const defaultTheme = {
 
   // Card
   card: {
-    base: twSort`flex min-w-0 flex-col overflow-hidden rounded-lg bg-white shadow-card`,
+    base: twSort`flex min-w-0 flex-col rounded-lg bg-white shadow-card`,
   },
 
   cardBody: {
