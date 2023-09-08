@@ -1,5 +1,13 @@
 
 
+# [3.4.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.28...3.4.0) (2023-09-08)
+
+
+### Features
+
+* **add slider:** add slider ([c078c90](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/c078c900bce5394d85321f412d8b878e16456a33))
+* **feature:** features added ([8825f59](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/8825f59fe357490a4db61213f91dcb2d7bd4c5dc))
+
 # [3.3.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.28...3.3.0) (2023-09-08)
 
 
