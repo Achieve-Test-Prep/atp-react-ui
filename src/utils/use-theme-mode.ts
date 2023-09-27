@@ -14,10 +14,9 @@ type UseThemeModeReturnType = Readonly<[ThemeMode, (mode: ThemeMode) => void, ()
 export const useThemeMode = ({ preferredMode, usePreferences = true }: UseThemeModeParam): UseThemeModeReturnType => {
   const getDefaultThemeMode = useCallback((): ThemeMode => {
     if (usePreferences) {
-      return 'system';
+      window.localStorage.setItem(THEME_KEY, 'system');
     }
-    const storedThemeMode = (window.localStorage.getItem(THEME_KEY) as ThemeMode) || 'system';
-    return storedThemeMode;
+    return (window.localStorage.getItem(THEME_KEY) as ThemeMode) || 'light';
   }, [usePreferences]);
 
   const [mode, setMode] = useState<ThemeMode>(getDefaultThemeMode());
@@ -44,7 +43,7 @@ export const useThemeMode = ({ preferredMode, usePreferences = true }: UseThemeM
   }, [changeThemeMode, mode, usePreferences]);
 
   useLayoutEffect(() => {
-    const storedThemeMode = (window.localStorage.getItem(THEME_KEY) as ThemeMode) || getDefaultThemeMode();
+    const storedThemeMode = getDefaultThemeMode();
 
     let modeToApply = mode;
     let modeToSave = mode;
