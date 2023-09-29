@@ -1,6 +1,7 @@
 import React, { PropsWithChildren, useMemo } from 'react';
 
 import { defaultTheme, AtpLibContext, ThemeContextType, AtpThemeType } from './themes';
+import { DeepPartial } from './themes/types';
 import type { DivProps, ThemeMode } from './types';
 import { mergeDeep, useThemeMode } from './utils';
 
@@ -30,7 +31,7 @@ type Props = DivProps & {
   /**
    * Defines the styles used throughout the library
    */
-  theme?: AtpThemeType;
+  theme?: DeepPartial<AtpThemeType>;
   /**
    * Defines dark mode as the default theme
    */
