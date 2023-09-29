@@ -11,12 +11,27 @@ type UseThemeModeParam = {
 
 type UseThemeModeReturnType = Readonly<[ThemeMode, (mode: ThemeMode) => void, () => void]>;
 
+const storageUtil = {
+  getThemeMode: () => window.localStorage.getItem(THEME_KEY) as ThemeMode,
+  setThemeMode: (mode: ThemeMode) => {
+    window.localStorage.setItem(THEME_KEY, mode);
+  },
+  clearThemeMode: () => {
+    window.localStorage.removeItem(THEME_KEY);
+  },
+};
+
 export const useThemeMode = ({ preferredMode, usePreferences = true }: UseThemeModeParam): UseThemeModeReturnType => {
   const getDefaultThemeMode = useCallback((): ThemeMode => {
     if (usePreferences) {
-      window.localStorage.setItem(THEME_KEY, 'system');
+      storageUtil.setThemeMode('system');
+    } else {
+      const currentMode = storageUtil.getThemeMode();
+      if (currentMode === 'system') {
+        storageUtil.clearThemeMode();
+      }
     }
-    return (window.localStorage.getItem(THEME_KEY) as ThemeMode) || 'light';
+    return storageUtil.getThemeMode() || 'light';
   }, [usePreferences]);
 
   const [mode, setMode] = useState<ThemeMode>(getDefaultThemeMode());
@@ -29,7 +44,7 @@ export const useThemeMode = ({ preferredMode, usePreferences = true }: UseThemeM
   const changeThemeMode = useCallback(
     (_mode: ThemeMode) => {
       if (!usePreferences) {
-        window.localStorage.setItem(THEME_KEY, _mode);
+        storageUtil.setThemeMode(_mode);
         setMode(_mode);
       }
     },
@@ -60,7 +75,7 @@ export const useThemeMode = ({ preferredMode, usePreferences = true }: UseThemeM
     }
 
     document.documentElement.className = modeToApply;
-    window.localStorage.setItem(THEME_KEY, modeToSave);
+    storageUtil.setThemeMode(modeToSave);
   }, [preferredMode, usePreferences, mode, getSystemThemeMode, getDefaultThemeMode]);
 
   return [mode, changeThemeMode, toggleMode] as const;
