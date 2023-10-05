@@ -1,5 +1,12 @@
 
 
+## [3.4.1](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.4.0...3.4.1) (2023-10-05)
+
+
+### Bug Fixes
+
+* skeleton corners ([0bd0132](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/0bd0132c3ed095dc222f1392536a5d48de9501f1))
+
 # [3.4.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.2.28...3.4.0) (2023-09-08)
 
 
