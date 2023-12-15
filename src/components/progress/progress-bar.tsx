@@ -40,8 +40,16 @@ export const ProgressbarWithLabels = forwardRef<
 >(({ leftLabel, rightLabel, ...props }, ref) => (
   <article className="flex flex-col gap-y-1">
     <div className="flex items-center justify-between px-1">
-      {leftLabel && <Text as="caption-medium">{leftLabel}</Text>}
-      {rightLabel && <Text as="caption-medium">{rightLabel}</Text>}
+      {leftLabel && (
+        <Text as="caption-medium-bold" className="text-accent">
+          {leftLabel}
+        </Text>
+      )}
+      {rightLabel && (
+        <Text as="caption-medium-bold" className="text-accent">
+          {rightLabel}
+        </Text>
+      )}
     </div>
     <Progressbar {...props} ref={ref} />
   </article>
