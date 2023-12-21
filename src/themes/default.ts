@@ -10,11 +10,11 @@ export const defaultTheme = {
   alert: {
     base: twSort`relative rounded-lg border border-outline bg-gray-50 p-4 pl-12 leading-5 text-accent-light`,
     withClose: twSort`pr-12`,
-    success: twSort``,
-    error: twSort``,
-    warning: twSort``,
+    success: twSort`border-green-200 bg-green-50`,
+    error: twSort`border-red-200 bg-red-50`,
+    warning: twSort`border-yellow-200 bg-yellow-50`,
     neutral: twSort``,
-    info: twSort``,
+    info: twSort`border-blue-200 bg-blue-50`,
 
     icon: {
       base: twSort`h-5 w-5`,
