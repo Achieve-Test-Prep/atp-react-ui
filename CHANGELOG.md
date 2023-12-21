@@ -1,5 +1,12 @@
 
 
+## [3.4.6](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.4.5...3.4.6) (2023-12-21)
+
+
+### Reverts
+
+* **twmerge issues:** twMerge issue ([9aea61a](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/9aea61a75f7d7897dcb6034453acc715a94b6059))
+
 ## [3.4.5](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.4.4...3.4.5) (2023-12-21)
 
 ## [3.4.4](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.4.3...3.4.4) (2023-12-21)
