@@ -1,5 +1,7 @@
 
 
+## [3.4.5](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.4.4...3.4.5) (2023-12-21)
+
 ## [3.4.4](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.4.3...3.4.4) (2023-12-21)
 
 
