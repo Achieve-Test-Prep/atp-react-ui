@@ -3,5 +3,5 @@ import { twMerge } from 'tailwind-merge';
 import type { IconProps } from './types';
 
 export function Icon({ icon: SingleIcon, className }: IconProps) {
-  return <SingleIcon aria-hidden="true" className={twMerge('size-5 flex-shrink-0', className)} />;
+  return <SingleIcon aria-hidden="true" className={twMerge('h-5 w-5 flex-shrink-0', className)} />;
 }

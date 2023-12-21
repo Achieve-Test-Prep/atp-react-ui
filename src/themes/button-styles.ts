@@ -27,11 +27,11 @@ export const buttonStyles = {
 
   // styles applied to the SVG icon
   icon: {
-    lg: twSort`size-5`,
-    base: twSort`size-5`,
-    md: twSort`size-5`,
-    sm: twSort`size-5`,
-    xs: twSort`size-4`,
+    lg: twSort`h-5 w-5`,
+    base: twSort`h-5 w-5`,
+    md: twSort`h-5 w-5`,
+    sm: twSort`h-5 w-5`,
+    xs: twSort`h-4 w-4`,
 
     left: twSort`-ml-1 mr-2`,
     right: twSort`-mr-1 ml-2`,

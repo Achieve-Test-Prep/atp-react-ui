@@ -26,7 +26,7 @@ describe('NavigationButton', () => {
 
   //   it('should contain a child SVG', () => {
   //     const onClick = () => {};
-  //     const expectedSvg = 'size-3';
+  //     const expectedSvg = 'h-3 w-3';
   //     const { container } = render(<NavigationButton directionIcon="prev" onClick={onClick} />);
 
   //     // expect(wrapper.find('svg')).toBeDefined();

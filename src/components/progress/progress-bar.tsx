@@ -27,7 +27,7 @@ export const Progressbar = forwardRef<
       {...props}
     >
       <ProgressPrimitive.Indicator
-        className={twMerge(`size-full flex-1 rounded-full bg-primary transition-all`, indicatorClassName)}
+        className={twMerge(`h-full w-full flex-1 rounded-full bg-primary transition-all`, indicatorClassName)}
         style={{ transform: `translateX(-${100 - (progress || 0)}%)` }}
       />
     </ProgressPrimitive.Root>
