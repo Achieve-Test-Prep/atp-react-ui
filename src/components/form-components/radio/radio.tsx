@@ -35,7 +35,7 @@ const RadioItem = forwardRef<ElementRef<RadioProps>, ComponentPropsWithoutRef<Ra
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-2.5 w-2.5 fill-current text-current"
+            className="size-2.5 fill-current text-current"
           >
             <circle cx="12" cy="12" r="10" />
           </svg>

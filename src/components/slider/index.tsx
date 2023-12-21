@@ -27,10 +27,10 @@ const Slider = React.forwardRef<
           {steps.map((item, i) => (
             <div
               key={item}
-              className="z-0 h-1 w-1 cursor-pointer rounded-full bg-accent-light first-of-type:bg-transparent last-of-type:bg-transparent"
+              className="z-0 size-1 cursor-pointer rounded-full bg-accent-light first-of-type:bg-transparent last-of-type:bg-transparent"
             >
               <Tooltip key={item} content={i + 1}>
-                <div className="h-1.5 w-1.5" />
+                <div className="size-1.5" />
               </Tooltip>
             </div>
           ))}
@@ -40,7 +40,7 @@ const Slider = React.forwardRef<
       <Tooltip content={10}>
         <div className="mr-0.5 h-4 w-1 cursor-pointer rounded-md bg-success" />
       </Tooltip>
-      <SliderPrimitive.Thumb className="focus-visible:ring-ring z-30 flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border border-primary-light bg-primary text-xs font-semibold text-white shadow ring-primary-light transition-colors hover:ring-2 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
+      <SliderPrimitive.Thumb className="focus-visible:ring-ring z-30 flex size-5 cursor-pointer items-center justify-center rounded-full border border-primary-light bg-primary text-xs font-semibold text-white shadow ring-primary-light transition-colors hover:ring-2 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50">
         {props?.value?.[0] ?? props?.defaultValue?.[0] ?? 1}
       </SliderPrimitive.Thumb>
     </SliderPrimitive.Root>
