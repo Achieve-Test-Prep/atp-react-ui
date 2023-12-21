@@ -1,5 +1,12 @@
 
 
+## [3.4.4](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.4.3...3.4.4) (2023-12-21)
+
+
+### Bug Fixes
+
+* **skeleton fix:** skeleton and alert style ([6e6a5e7](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/6e6a5e7373298d6ebc0d00985d851996b55e6ede))
+
 ## [3.4.3](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.4.2...3.4.3) (2023-12-15)
 
 ## [3.4.2](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.4.1...3.4.2) (2023-12-05)
