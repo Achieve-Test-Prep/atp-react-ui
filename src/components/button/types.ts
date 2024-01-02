@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import { SvgIconProps } from '../icon/types';
+import type { SvgIconProps } from '../icon/types';
 
 type IconType = SvgIconProps;
 // | string

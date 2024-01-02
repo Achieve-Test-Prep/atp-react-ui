@@ -305,7 +305,7 @@ describe('Base Button', () => {
 
 //   it('should contain regular sized button icon classes', () => {
 //     const expectedButton = 'p-2 rounded-lg';
-//     const expectedSvg = 'h-5 w-5';
+//     const expectedSvg = 'size-5';
 //     const { container } = render(<Button aria-label="test" icon={HeartIcon} />);
 
 //     // // expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expectedButton);
@@ -314,7 +314,7 @@ describe('Base Button', () => {
 
 //   it('should contain small sized button icon classes', () => {
 //     const expectedButton = 'p-2 rounded-md';
-//     const expectedSvg = 'h-3 w-3';
+//     const expectedSvg = 'size-3';
 //     const { container } = render(<Button aria-label="test" size="sm" icon={HeartIcon} />);
 
 //     // // expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expectedButton);
@@ -323,7 +323,7 @@ describe('Base Button', () => {
 
 //   it('should contain large sized button icon classes', () => {
 //     const expectedButton = 'p-3 rounded-lg';
-//     const expectedSvg = 'h-5 w-5';
+//     const expectedSvg = 'size-5';
 //     const { container } = render(<Button aria-label="test" size="lg" icon={HeartIcon} />);
 
 //     // // expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expectedButton);
@@ -332,7 +332,7 @@ describe('Base Button', () => {
 
 //   it('should contain larger sized button icon classes', () => {
 //     const expectedButton = 'p-4 rounded-lg';
-//     const expectedSvg = 'h-5 w-5';
+//     const expectedSvg = 'size-5';
 //     const { container } = render(<Button aria-label="test" size="lg" icon={HeartIcon} />);
 
 //     // // expect(wrapper.find('button').getDOMNode().getAttribute('class')).toContain(expectedButton);

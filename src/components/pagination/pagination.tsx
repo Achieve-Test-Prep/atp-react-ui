@@ -4,7 +4,8 @@ import ArrowSmallLeftIcon from '@heroicons/react/24/outline/ArrowSmallLeftIcon';
 import ArrowSmallRightIcon from '@heroicons/react/24/outline/ArrowSmallRightIcon';
 
 import { useTheme } from '../../themes';
-import { Button, ButtonAsButtonProps } from '../button';
+import type { ButtonAsButtonProps } from '../button';
+import { Button } from '../button';
 
 type NavigationButtonProps = ButtonAsButtonProps & {
   directionIcon: 'prev' | 'next';

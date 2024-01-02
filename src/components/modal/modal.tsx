@@ -1,4 +1,5 @@
-import { forwardRef, Fragment, PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
+import { forwardRef, Fragment } from 'react';
 
 import { Dialog, Transition } from '@headlessui/react';
 import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
@@ -8,7 +9,7 @@ import { useTheme } from '../../themes';
 import { Backdrop } from '../backdrop';
 import { Button } from '../button';
 
-import { ModalProps } from './types';
+import type { ModalProps } from './types';
 
 export const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((props, ref) => {
   const {

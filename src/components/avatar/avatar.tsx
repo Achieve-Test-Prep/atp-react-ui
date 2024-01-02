@@ -14,7 +14,7 @@ export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>((props, ref)
 
   return (
     <div className={cls} ref={ref} {...other}>
-      <img className="h-full w-full rounded-full object-cover" src={src} alt={alt} loading="lazy" />
+      <img className="size-full rounded-full object-cover" src={src} alt={alt} loading="lazy" />
       <div className="absolute inset-0 rounded-full shadow-inner" aria-hidden="true" />
     </div>
   );

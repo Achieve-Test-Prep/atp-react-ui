@@ -2,7 +2,8 @@ import { useMemo } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { AtpThemeType, useTheme } from '../../themes';
+import type { AtpThemeType } from '../../themes';
+import { useTheme } from '../../themes';
 import { warn } from '../../utils';
 import type { SpinnerProps } from '../progress/types';
 

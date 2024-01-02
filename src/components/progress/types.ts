@@ -1,4 +1,4 @@
-import * as ProgressPrimitive from '@radix-ui/react-progress';
+import type * as ProgressPrimitive from '@radix-ui/react-progress';
 
 import type { DivProps } from '../../types';
 

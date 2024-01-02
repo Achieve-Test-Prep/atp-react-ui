@@ -1,4 +1,4 @@
-import { Root as LabelRoot } from '@radix-ui/react-label';
+import type { Root as LabelRoot } from '@radix-ui/react-label';
 
 export type TextProps = React.HTMLAttributes<HTMLElement> & {
   as?:

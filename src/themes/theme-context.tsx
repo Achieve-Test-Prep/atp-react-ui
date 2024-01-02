@@ -3,7 +3,8 @@ import React from 'react';
 
 import type { ThemeMode } from '../types';
 
-import { defaultTheme, AtpThemeType } from './default';
+import type { AtpThemeType } from './default';
+import { defaultTheme } from './default';
 
 export type ThemeContextType = {
   theme: AtpThemeType;

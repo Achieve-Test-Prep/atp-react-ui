@@ -1,7 +1,7 @@
-import { ElementType } from 'react';
+import type { ElementType } from 'react';
 
-import { DialogProps, DialogTitleProps } from '@headlessui/react';
-import { DescriptionProps } from '@headlessui/react/dist/components/description/description';
+import type { DialogProps, DialogTitleProps } from '@headlessui/react';
+import type { DescriptionProps } from '@headlessui/react/dist/components/description/description';
 
 export type ModalProps = DialogProps<ElementType> & {
   /**

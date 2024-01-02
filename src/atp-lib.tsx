@@ -1,7 +1,9 @@
-import React, { PropsWithChildren, useMemo } from 'react';
+import type { PropsWithChildren } from 'react';
+import React, { useMemo } from 'react';
 
-import { defaultTheme, AtpLibContext, ThemeContextType, AtpThemeType } from './themes';
-import { DeepPartial } from './themes/types';
+import type { ThemeContextType, AtpThemeType } from './themes';
+import { defaultTheme, AtpLibContext } from './themes';
+import type { DeepPartial } from './themes/types';
 import type { DivProps, ThemeMode } from './types';
 import { mergeDeep, useThemeMode } from './utils';
 

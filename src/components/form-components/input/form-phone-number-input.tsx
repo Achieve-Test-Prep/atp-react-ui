@@ -3,7 +3,8 @@ import { forwardRef } from 'react';
 import { FormItem, FormLabel, FormControl, FormMessage } from '../form';
 import type { FormLabelProps } from '../types';
 
-import { PatternInput, PatternInputProps } from './pattern-input';
+import type { PatternInputProps } from './pattern-input';
+import { PatternInput } from './pattern-input';
 
 type TProps = Omit<PatternInputProps, 'pattern'> & FormLabelProps;
 

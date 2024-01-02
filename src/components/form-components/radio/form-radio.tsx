@@ -1,4 +1,5 @@
-import { ElementRef, ComponentPropsWithoutRef, forwardRef } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef } from 'react';
+import { forwardRef } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 

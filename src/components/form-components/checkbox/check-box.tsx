@@ -1,4 +1,5 @@
-import { ForwardedRef, forwardRef } from 'react';
+import type { ForwardedRef } from 'react';
+import { forwardRef } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 

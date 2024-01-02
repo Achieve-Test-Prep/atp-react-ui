@@ -17,7 +17,7 @@ export const defaultTheme = {
     info: twSort`border-blue-200 bg-blue-50`,
 
     icon: {
-      base: twSort`h-5 w-5`,
+      base: twSort`size-5`,
       success: twSort`text-success`,
       error: twSort`text-error`,
       warning: twSort`text-warning`,
@@ -73,9 +73,9 @@ export const defaultTheme = {
   avatar: {
     base: twSort`relative inline-block rounded-full`,
     size: {
-      lg: twSort`h-10 w-10`,
-      base: twSort`h-8 w-8`,
-      sm: twSort`h-6 w-6`,
+      lg: twSort`size-10`,
+      base: twSort`size-8`,
+      sm: twSort`size-6`,
     },
   },
 
@@ -184,9 +184,9 @@ export const defaultTheme = {
   spinner: {
     base: twSort`relative inline-block flex-shrink-0 rounded-full border-primary after:absolute after:rounded-full after:bg-white`,
     size: {
-      xs: twSort`h-4 w-4 border-4 after:-left-1 after:top-1 after:h-1 after:w-1`,
-      sm: twSort`h-6 w-6 border-[0.375rem] after:-left-1.5 after:top-1 after:h-1.5 after:w-1.5`,
-      base: twSort`h-8 w-8 border-8 after:-left-2 after:top-2 after:h-2 after:w-2`,
+      xs: twSort`size-4 border-4 after:-left-1 after:top-1 after:size-1`,
+      sm: twSort`size-6 border-[0.375rem] after:-left-1.5 after:top-1 after:size-1.5`,
+      base: twSort`size-8 border-8 after:-left-2 after:top-2 after:size-2`,
     },
   },
 };
