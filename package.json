@@ -1,6 +1,6 @@
 {
   "name": "atp-react-ui",
-  "version": "3.4.6",
+  "version": "3.4.7",
   "description": "A new default theme for ATP Products.",
   "main": "dist/index.js",
   "files": [
