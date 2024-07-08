@@ -9,8 +9,8 @@ delete twColors['coolGray'];
 delete twColors['blueGray'];
 
 const colors = {
-  primary: { DEFAULT: '#FF6000', medium: '#FFA06A', light: '#FFDBC4', 'x-light': '#FFF3EB' },
-  secondary: { DEFAULT: '#924AAF', medium: '#C479E1', light: '#F8AAFF', 'x-light': '#FFDDFF' },
+  primary: { DEFAULT: '#FF4500', medium: '#FF8E64', light: '#FFE3D9', 'x-light': '#FFF3EB' },
+  secondary: { DEFAULT: '#9F7DFF', medium: '#CBB8FF', light: '#DDD1FF', 'x-light': '#EAE2FF' },
   accent: { DEFAULT: '#32363B', medium: '#414B58', light: '#6d6d6d', 'x-light': '#CECECE' },
 
   info: { DEFAULT: '#3E96E7', 'x-light': '#dcefff' },
@@ -62,7 +62,7 @@ const atpLibConfig = {
         },
         'accent-primary': {
           '0%, 45%, 100%': { backgroundColor: '#32363B' },
-          '67%, 78%': { backgroundColor: '#FF6000' },
+          '67%, 78%': { backgroundColor: '#FF4500' },
         },
       },
 

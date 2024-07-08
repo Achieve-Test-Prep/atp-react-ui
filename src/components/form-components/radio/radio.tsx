@@ -10,7 +10,7 @@ import type { RadioGroupProps, RadioProps } from './types';
 
 const RadioItemsGroup = forwardRef<ElementRef<RadioGroupProps>, ComponentPropsWithoutRef<RadioGroupProps>>(
   ({ className, ...props }, ref) => (
-    <RadioGroupPrimitive.Root className={twMerge('grid gap-2 ', className)} {...props} ref={ref} />
+    <RadioGroupPrimitive.Root className={twMerge('grid gap-2', className)} {...props} ref={ref} />
   )
 );
 
