@@ -1,5 +1,17 @@
 
 
+# [4.0.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.4.7...4.0.0) (2024-07-08)
+
+
+### Styles
+
+* **colors:** primary and secondary colors are now synched with new website design ([1cce4a0](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/1cce4a05287f4372a5e7574a1b93f226baf5e08d))
+
+
+### BREAKING CHANGES
+
+* **colors:** Colors should be check before using
+
 ## [3.4.7](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.4.6...3.4.7) (2024-01-02)
 
 ## [3.4.6](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/3.4.5...3.4.6) (2023-12-21)
