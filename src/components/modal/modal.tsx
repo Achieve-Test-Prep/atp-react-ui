@@ -19,6 +19,7 @@ export const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((
     className,
     disableInternalClosing = false,
     hideCloseButton = false,
+    backDropProps = {},
     ...other
   } = props;
 
@@ -43,7 +44,7 @@ export const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Backdrop />
+          <Backdrop {...backDropProps} />
         </Transition.Child>
 
         <section className="fixed inset-0 z-40 overflow-y-auto">

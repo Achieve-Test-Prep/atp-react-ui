@@ -119,7 +119,7 @@ export const defaultTheme = {
 
   // Backdrop
   backdrop: {
-    base: twSort`fixed inset-0 z-30 flex items-end bg-gray-overlay/20 sm:items-center sm:justify-center`,
+    base: twSort`fixed inset-0 z-30 flex items-end bg-gray-overlay/60 backdrop-blur sm:items-center sm:justify-center`,
   },
 
   // Textarea
