@@ -1,5 +1,12 @@
 
 
+## [4.0.5](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.4...4.0.5) (2024-09-17)
+
+
+### Bug Fixes
+
+* add dialog class prop ([5dd760a](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/5dd760aeb9935170a9bcf50bcc184f055aa03e3a))
+
 ## [4.0.4](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.3...4.0.4) (2024-09-04)
 
 ## [4.0.2](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.1...4.0.2) (2024-08-30)
