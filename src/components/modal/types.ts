@@ -17,6 +17,8 @@ export type ModalProps = DialogProps<ElementType> & {
   hideCloseButton?: boolean;
 
   backDropProps?: DivProps;
+
+  dialogClassName?: string;
 };
 
 export type ModalHeaderProps = DialogTitleProps<ElementType>;

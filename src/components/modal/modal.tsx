@@ -20,6 +20,7 @@ export const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((
     disableInternalClosing = false,
     hideCloseButton = false,
     backDropProps = {},
+    dialogClassName,
     ...other
   } = props;
 
@@ -34,7 +35,7 @@ export const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((
 
   return (
     <Transition appear show={open} as={Fragment}>
-      <Dialog as="div" ref={ref} className="relative z-20" onClose={handleClose}>
+      <Dialog as="div" ref={ref} className={twMerge('relative z-[999]', dialogClassName)} onClose={handleClose}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
