@@ -1,7 +1,7 @@
-import type { ElementType } from 'react';
+import type { ComponentProps, ElementType } from 'react';
 
 import type { DialogProps, DialogTitleProps } from '@headlessui/react';
-import type { DescriptionProps } from '@headlessui/react/dist/components/description/description';
+// import { Dialog } from '@headlessui/react';
 
 import type { DivProps } from '../../types';
 
@@ -23,4 +23,4 @@ export type ModalProps = DialogProps<ElementType> & {
 
 export type ModalHeaderProps = DialogTitleProps<ElementType>;
 
-export type ModalBodyProps = DescriptionProps;
+export type ModalBodyProps = ComponentProps<ElementType>;

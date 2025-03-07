@@ -1,3 +1,15 @@
+# Ignore artifacts:
+dist
 build
+coverage
 node_modules
 public
+storybook-static
+
+# Ignore all markdown files:
+*.md
+
+# Ignore package files
+package.json
+package-lock.json
+yarn.lock

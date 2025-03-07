@@ -12,7 +12,14 @@ export type PatternInputProps = Omit<InputProps, 'value'> & {
 };
 
 const PatternInput = forwardRef<HTMLInputElement, PatternInputProps>(
-  ({ pattern, onValueChange, onChange, value: userValue = '', as = 'numeric', ...rest }, ref) => {
+  ({
+    pattern,
+    onValueChange,
+    onChange,
+    value: userValue = '',
+    as = 'numeric',
+    ...rest
+  }) => {
     const [value, setValue] = useState(format(userValue, pattern));
     const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -46,7 +53,9 @@ const PatternInput = forwardRef<HTMLInputElement, PatternInputProps>(
       }
 
       if (didDelete) {
-        const patternCharacterDeleted = !isUserCharacter(value.split('')[cursorPosition]);
+        const patternCharacterDeleted = !isUserCharacter(
+          value.split('')[cursorPosition]
+        );
 
         if (patternCharacterDeleted) {
           const firstBit = inputValue.substr(0, cursorPosition);
@@ -54,10 +63,13 @@ const PatternInput = forwardRef<HTMLInputElement, PatternInputProps>(
 
           rawValue =
             rawFirstBit.substr(0, rawFirstBit.length - 1) +
-            stripPatternCharacters(inputValue.substr(cursorPosition, inputValue.length));
+            stripPatternCharacters(
+              inputValue.substr(cursorPosition, inputValue.length)
+            );
 
           if (infoRef.current) {
-            infoRef.current.cursorPosition = firstBit.replace(/([\d\w]+)[^\dA-z]+$/, '$1').length - 1;
+            infoRef.current.cursorPosition =
+              firstBit.replace(/([\d\w]+)[^\dA-z]+$/, '$1').length - 1;
           }
         }
       }
@@ -72,11 +84,14 @@ const PatternInput = forwardRef<HTMLInputElement, PatternInputProps>(
         const formattedCharacters = formattedValue.split('');
         const nextCharacter = formattedCharacters[cursorPosition];
         const nextCharacterIsPattern = !isUserCharacter(nextCharacter);
-        const nextUserCharacterIndex = formattedValue.substr(cursorPosition).search(/[\dA-z]/);
+        const nextUserCharacterIndex = formattedValue
+          .substr(cursorPosition)
+          .search(/[\dA-z]/);
         const numbersAhead = nextUserCharacterIndex !== -1;
 
         if (infoRef.current) {
-          infoRef.current.endOfSection = nextCharacterIsPattern && !numbersAhead;
+          infoRef.current.endOfSection =
+            nextCharacterIsPattern && !numbersAhead;
         }
 
         if (
@@ -85,7 +100,8 @@ const PatternInput = forwardRef<HTMLInputElement, PatternInputProps>(
           !isUserCharacter(formattedCharacters[cursorPosition - 1]) &&
           numbersAhead
         )
-          infoRef.current.cursorPosition = cursorPosition + nextUserCharacterIndex + 1;
+          infoRef.current.cursorPosition =
+            cursorPosition + nextUserCharacterIndex + 1;
       }
 
       onValueChange(rawValue);
@@ -112,7 +128,15 @@ const PatternInput = forwardRef<HTMLInputElement, PatternInputProps>(
       }
     }, [value, userValue, pattern]);
 
-    return <Input maxLength={pattern.length} onChange={handleChange} ref={inputRef} value={value} {...rest} />;
+    return (
+      <Input
+        maxLength={pattern.length}
+        onChange={handleChange}
+        ref={inputRef}
+        value={value}
+        {...rest}
+      />
+    );
   }
 );
 
@@ -137,7 +161,8 @@ function format(value: string, pattern: string) {
 
       if (!endOfValue) {
         if (index === patternLength - 1) endOfValue = patternLength;
-        if (character === undefined) endOfValue = pattern.indexOf(placeholder, index);
+        if (character === undefined)
+          endOfValue = pattern.indexOf(placeholder, index);
       }
 
       if (patternCharacter === placeholder) {
