@@ -2,8 +2,8 @@ import { twSort } from '../utils';
 
 export const buttonStyles = {
   base: twSort`relative inline-flex cursor-pointer select-none items-center justify-center whitespace-nowrap border border-transparent align-bottom font-medium leading-5 leading-none tracking-[0.16px] outline-none transition-colors duration-150`,
-  disabled: twSort`disabled:cursor-not-allowed disabled:border-outline disabled:bg-gray-50 disabled:text-outline`,
-  active: twSort`focus:ring-2 focus:ring-primary-light`,
+  disabled: twSort`disabled:border-outline disabled:text-outline disabled:cursor-not-allowed disabled:bg-gray-50`,
+  active: twSort`focus:ring-primary-light focus:ring-2`,
   block: twSort`w-full`,
 
   size: {
@@ -47,7 +47,7 @@ export const buttonStyles = {
   },
 
   link: {
-    base: twSort`border text-accent-light shadow-sm`,
+    base: twSort`text-accent-light border shadow-sm`,
     active: twSort`hover:bg-primary-x-light hover:text-primary hover:shadow-none active:bg-transparent`,
     disabled: twSort``,
   },
@@ -60,7 +60,7 @@ export const buttonStyles = {
 
   // this is the button that lives inside the DropdownItem
   dropdownItem: {
-    base: twSort`relative inline-flex w-full cursor-pointer items-center rounded-md border-0 px-4 py-2.5 text-sm font-medium text-accent-light transition-colors duration-150 hover:bg-primary-x-light hover:text-primary focus:ring-primary`,
+    base: twSort`text-accent-light hover:bg-primary-x-light hover:text-primary focus:ring-primary relative inline-flex w-full cursor-pointer items-center rounded-md border-0 px-4 py-2.5 text-sm font-medium transition-colors duration-150`,
     active: twSort``,
     disabled: twSort``,
   },

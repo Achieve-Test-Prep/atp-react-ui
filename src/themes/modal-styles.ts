@@ -12,7 +12,7 @@ export const modalBodyStyles = {
 };
 // ModalFooter
 export const modalFooterStyles = {
-  base: twSort`-mx-6 -mb-4 flex flex-col items-center justify-start space-y-4 bg-gray-25 px-6 py-3 md:flex-row md:items-end md:space-x-4 md:space-y-0`,
+  base: twSort`bg-gray-25 -mx-6 -mb-4 flex flex-col items-center justify-start space-y-4 px-6 py-3 md:flex-row md:items-end md:space-x-4 md:space-y-0`,
 };
 // ModalHeader
 export const modalHeaderStyles = {

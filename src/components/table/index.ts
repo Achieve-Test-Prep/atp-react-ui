@@ -5,4 +5,4 @@ export * from './table-container';
 export * from './table-footer';
 export * from './table-header';
 export * from './table-row';
-export * from './types';
+export type * from './types';

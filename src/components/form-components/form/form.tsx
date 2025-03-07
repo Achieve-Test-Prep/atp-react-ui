@@ -1,4 +1,8 @@
-import type { ElementRef, ComponentPropsWithoutRef, HTMLAttributes } from 'react';
+import type {
+  ElementRef,
+  ComponentPropsWithoutRef,
+  HTMLAttributes,
+} from 'react';
 import { createContext, useContext, forwardRef, useId, useMemo } from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
@@ -21,7 +25,9 @@ type FormFieldContextValue<
   name: TName;
 };
 
-const FormFieldContext = createContext<FormFieldContextValue>({} as FormFieldContextValue);
+const FormFieldContext = createContext<FormFieldContextValue>(
+  {} as FormFieldContextValue
+);
 
 function FormField<
   TFieldValues extends FieldValues = FieldValues,
@@ -58,39 +64,58 @@ const useFormField = () => {
   };
 };
 
-const FormItemContext = createContext<FormItemContextValue>({} as FormItemContextValue);
+const FormItemContext = createContext<FormItemContextValue>(
+  {} as FormItemContextValue
+);
 
-const FormItem = forwardRef<HTMLDivElement, DivProps>(({ className, ...props }, ref) => {
-  const id = useId();
-  const idValue = useMemo(() => ({ id }), [id]);
-
-  return (
-    <FormItemContext.Provider value={idValue}>
-      <div ref={ref} className={twMerge('space-y-1.5', className)} {...props} />
-    </FormItemContext.Provider>
-  );
-});
-
-FormItem.displayName = 'FormItem';
-
-const FormLabel = forwardRef<ElementRef<LabelProps>, ComponentPropsWithoutRef<LabelProps>>(
+const FormItem = forwardRef<HTMLDivElement, DivProps>(
   ({ className, ...props }, ref) => {
-    const { formItemId } = useFormField();
+    const id = useId();
+    const idValue = useMemo(() => ({ id }), [id]);
 
-    return <Label ref={ref} className={className} htmlFor={formItemId} {...props} />;
+    return (
+      <FormItemContext.Provider value={idValue}>
+        <div
+          ref={ref}
+          className={twMerge('space-y-1.5', className)}
+          {...props}
+        />
+      </FormItemContext.Provider>
+    );
   }
 );
 
+FormItem.displayName = 'FormItem';
+
+const FormLabel = forwardRef<
+  ElementRef<LabelProps>,
+  ComponentPropsWithoutRef<LabelProps>
+>(({ className, ...props }, ref) => {
+  const { formItemId } = useFormField();
+
+  return (
+    <Label ref={ref} className={className} htmlFor={formItemId} {...props} />
+  );
+});
+
 FormLabel.displayName = 'FormLabel';
 
-const FormControl = forwardRef<ElementRef<typeof Slot>, ComponentPropsWithoutRef<typeof Slot>>(({ ...props }, ref) => {
-  const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
+const FormControl = forwardRef<
+  ElementRef<typeof Slot>,
+  ComponentPropsWithoutRef<typeof Slot>
+>(({ ...props }, ref) => {
+  const { error, formItemId, formDescriptionId, formMessageId } =
+    useFormField();
 
   return (
     <Slot
       ref={ref}
       id={formItemId}
-      aria-describedby={!error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`}
+      aria-describedby={
+        !error
+          ? `${formDescriptionId}`
+          : `${formDescriptionId} ${formMessageId}`
+      }
       aria-invalid={!!error}
       {...props}
     />
@@ -99,41 +124,57 @@ const FormControl = forwardRef<ElementRef<typeof Slot>, ComponentPropsWithoutRef
 
 FormControl.displayName = 'FormControl';
 
-const FormMessage = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(
-  ({ className, children, ...props }, ref) => {
-    const { error, formMessageId } = useFormField();
-    const body = error ? String(error?.message) : children;
+const FormMessage = forwardRef<
+  HTMLParagraphElement,
+  HTMLAttributes<HTMLParagraphElement>
+>(({ className, children, ...props }, ref) => {
+  const { error, formMessageId } = useFormField();
+  const body = error ? String(error?.message) : children;
 
-    if (!body) {
-      return null;
-    }
-
-    return (
-      <p ref={ref} id={formMessageId} className={twMerge('text-xs text-error', className)} {...props}>
-        {body}
-      </p>
-    );
+  if (!body) {
+    return null;
   }
-);
+
+  return (
+    <p
+      ref={ref}
+      id={formMessageId}
+      className={twMerge('text-error text-xs', className)}
+      {...props}
+    >
+      {body}
+    </p>
+  );
+});
 
 FormMessage.displayName = 'FormMessage';
 
-const FormDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(
-  ({ className, ...props }, ref) => {
-    const { formDescriptionId } = useFormField();
+const FormDescription = forwardRef<
+  HTMLParagraphElement,
+  HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => {
+  const { formDescriptionId } = useFormField();
 
-    return (
-      <Text
-        as="caption"
-        ref={ref}
-        id={formDescriptionId}
-        className={twMerge('text-accent-light', className)}
-        {...props}
-      />
-    );
-  }
-);
+  return (
+    <Text
+      as="caption"
+      ref={ref}
+      id={formDescriptionId}
+      className={twMerge('text-accent-light', className)}
+      {...props}
+    />
+  );
+});
 
 FormDescription.displayName = 'FormDescription';
 
-export { useFormField, Form, FormItem, FormControl, FormLabel, FormDescription, FormMessage, FormField };
+export {
+  useFormField,
+  Form,
+  FormItem,
+  FormControl,
+  FormLabel,
+  FormDescription,
+  FormMessage,
+  FormField,
+};

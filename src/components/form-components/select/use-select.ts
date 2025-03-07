@@ -8,7 +8,15 @@ import { useTheme } from '../../../themes';
 import type { SelectOption, SelectProps } from './types';
 
 export function useSelect(props: SelectProps) {
-  const { onChangeSelection, options, className, multiple, disabled, children, ...other } = props;
+  const {
+    onChangeSelection,
+    options,
+    className,
+    multiple,
+    disabled,
+    children,
+    ...other
+  } = props;
 
   const { select } = useTheme();
 
@@ -24,11 +32,19 @@ export function useSelect(props: SelectProps) {
 
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLSelectElement>) => {
-      const item = options.find((i) => i.value === e.target.value);
+      const item = options.find(i => i.value === e.target.value);
       onChangeSelection(item as SelectOption);
     },
     [onChangeSelection, options]
   );
 
-  return { styleCls, handleChange, disabled, multiple, options, children, ...other };
+  return {
+    styleCls,
+    handleChange,
+    disabled,
+    multiple,
+    options,
+    children,
+    ...other,
+  };
 }

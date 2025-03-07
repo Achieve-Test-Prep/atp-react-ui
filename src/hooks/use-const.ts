@@ -21,7 +21,10 @@ export function useConst<T>(initialValue: T | (() => T)): T {
     // returns/is undefined
     ref.current = {
       // eslint-disable-next-line @typescript-eslint/ban-types
-      value: typeof initialValue === 'function' ? (initialValue as Function)() : initialValue,
+      value:
+        typeof initialValue === 'function'
+          ? (initialValue as Function)()
+          : initialValue,
     };
   }
   return ref.current.value;

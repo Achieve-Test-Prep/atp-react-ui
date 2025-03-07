@@ -6,7 +6,10 @@ import { useTheme } from '../../themes';
 
 import type { TableSectionProps } from './types';
 
-export const TableBody = React.forwardRef<HTMLTableSectionElement, TableSectionProps>((props, ref) => {
+export const TableBody = React.forwardRef<
+  HTMLTableSectionElement,
+  TableSectionProps
+>((props, ref) => {
   const { className, children, ...other } = props;
 
   const { tableBody } = useTheme();

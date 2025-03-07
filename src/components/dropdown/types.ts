@@ -1,6 +1,11 @@
 import type { ElementType } from 'react';
 
-import type { MenuItemProps, MenuItemsProps, MenuProps, MenuButtonProps } from '@headlessui/react';
+import type {
+  MenuItemProps,
+  MenuItemsProps,
+  MenuProps,
+  MenuButtonProps,
+} from '@headlessui/react';
 
 import type { ButtonProps } from '../button';
 

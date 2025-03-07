@@ -17,7 +17,7 @@ export const useSetTimeout = (): UseSetTimeoutReturnType => {
   useEffect(
     () => () => {
       const keys = Object.keys(timeoutIds);
-      keys.forEach((id) => {
+      keys.forEach(id => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         clearTimeout(timeoutIds[id as any]);
       });

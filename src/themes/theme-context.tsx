@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 
 import type { ThemeMode } from '../types';
@@ -9,7 +8,7 @@ import { defaultTheme } from './default';
 export type ThemeContextType = {
   theme: AtpThemeType;
   mode: ThemeMode;
-  setMode: (_: ThemeMode) => void;
+  setMode: (mode: ThemeMode) => void;
   toggleMode: () => void;
 };
 

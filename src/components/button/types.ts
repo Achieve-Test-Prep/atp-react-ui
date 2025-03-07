@@ -53,7 +53,14 @@ type Props = {
   /**
    * theme color
    */
-  theme?: 'dark' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning';
+  theme?:
+    | 'dark'
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'error'
+    | 'info'
+    | 'warning';
 };
 
 export type ButtonAsButtonProps = Props &
@@ -78,6 +85,9 @@ export type ButtonAsOtherProps = Props &
     tag: string;
   };
 
-export type ButtonProps = ButtonAsButtonProps | ButtonAsAnchorProps | ButtonAsOtherProps;
+export type ButtonProps =
+  | ButtonAsButtonProps
+  | ButtonAsAnchorProps
+  | ButtonAsOtherProps;
 
 export type Ref = ReactNode | HTMLElement | string;

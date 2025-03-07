@@ -13,7 +13,13 @@ const FormPhoneNumberInput = forwardRef<HTMLInputElement, TProps>(
     <FormItem className={formItemClassName}>
       {label && <FormLabel className={labelClassName}>{label}</FormLabel>}
       <FormControl>
-        <PatternInput pattern="### ###-####" as="numeric" value={value} {...props} ref={ref} />
+        <PatternInput
+          pattern="### ###-####"
+          as="numeric"
+          value={value}
+          {...props}
+          ref={ref}
+        />
       </FormControl>
       <FormMessage />
     </FormItem>

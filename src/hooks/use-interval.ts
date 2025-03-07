@@ -16,7 +16,7 @@ export const useSetInterval = (): UseSetIntervalReturnType => {
   useEffect(
     () => () => {
       const keys = Object.keys(intervalIds);
-      keys.forEach((id) => {
+      keys.forEach(id => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         clearTimeout(intervalIds[id as any]);
       });

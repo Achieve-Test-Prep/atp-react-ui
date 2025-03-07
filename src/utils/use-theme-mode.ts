@@ -9,7 +9,9 @@ type UseThemeModeParam = {
   usePreferences?: boolean;
 };
 
-type UseThemeModeReturnType = Readonly<[ThemeMode, (mode: ThemeMode) => void, () => void]>;
+type UseThemeModeReturnType = Readonly<
+  [ThemeMode, (mode: ThemeMode) => void, () => void]
+>;
 
 const storageUtil = {
   getThemeMode: () => window.localStorage.getItem(THEME_KEY) as ThemeMode,
@@ -21,7 +23,10 @@ const storageUtil = {
   },
 };
 
-export const useThemeMode = ({ preferredMode, usePreferences = true }: UseThemeModeParam): UseThemeModeReturnType => {
+export const useThemeMode = ({
+  preferredMode,
+  usePreferences = true,
+}: UseThemeModeParam): UseThemeModeReturnType => {
   const getDefaultThemeMode = useCallback((): ThemeMode => {
     if (usePreferences) {
       storageUtil.setThemeMode('system');
@@ -37,7 +42,11 @@ export const useThemeMode = ({ preferredMode, usePreferences = true }: UseThemeM
   const [mode, setMode] = useState<ThemeMode>(getDefaultThemeMode());
 
   const getSystemThemeMode = useCallback(
-    () => (!!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'),
+    () =>
+      !!window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light',
     []
   );
 
@@ -76,7 +85,13 @@ export const useThemeMode = ({ preferredMode, usePreferences = true }: UseThemeM
 
     document.documentElement.className = modeToApply;
     storageUtil.setThemeMode(modeToSave);
-  }, [preferredMode, usePreferences, mode, getSystemThemeMode, getDefaultThemeMode]);
+  }, [
+    preferredMode,
+    usePreferences,
+    mode,
+    getSystemThemeMode,
+    getDefaultThemeMode,
+  ]);
 
   return [mode, changeThemeMode, toggleMode] as const;
 };

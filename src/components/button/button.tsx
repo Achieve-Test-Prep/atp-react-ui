@@ -31,9 +31,16 @@ export const Button = React.forwardRef<Ref, ButtonProps>((props, ref) => {
       type,
       ...other,
     },
-    IconLeft ? React.createElement(Icon, { className: iconLeftStyles, icon: IconLeft }) : null,
+    IconLeft
+      ? React.createElement(Icon, { className: iconLeftStyles, icon: IconLeft })
+      : null,
     children || null,
-    IconRight ? React.createElement(Icon, { className: iconRightStyles, icon: IconRight }) : null,
+    IconRight
+      ? React.createElement(Icon, {
+          className: iconRightStyles,
+          icon: IconRight,
+        })
+      : null,
     showLoader
       ? React.createElement(
           'div',

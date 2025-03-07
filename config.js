@@ -9,10 +9,27 @@ delete twColors['coolGray'];
 delete twColors['blueGray'];
 
 const colors = {
-  primary: { dark: '#550700', DEFAULT: '#FF4500', medium: '#FF8E64', light: '#FFE3D9', 'x-light': '#FFF3EB' },
-  secondary: { dark: '#2D1559', DEFAULT: '#9F7DFF', medium: '#CBB8FF', light: '#DDD1FF', 'x-light': '#EAE2FF' },
+  primary: {
+    dark: '#550700',
+    DEFAULT: '#FF4500',
+    medium: '#FF8E64',
+    light: '#FFE3D9',
+    'x-light': '#FFF3EB',
+  },
+  secondary: {
+    dark: '#2D1559',
+    DEFAULT: '#9F7DFF',
+    medium: '#CBB8FF',
+    light: '#DDD1FF',
+    'x-light': '#EAE2FF',
+  },
 
-  accent: { DEFAULT: '#32363B', medium: '#414B58', light: '#6d6d6d', 'x-light': '#CECECE' },
+  accent: {
+    DEFAULT: '#32363B',
+    medium: '#414B58',
+    light: '#6d6d6d',
+    'x-light': '#CECECE',
+  },
 
   info: { DEFAULT: '#3E96E7', 'x-light': '#dcefff' },
   success: { DEFAULT: '#85BC63', medium: '#5f8f41', 'x-light': '#e6f8f1' },
@@ -24,10 +41,16 @@ const colors = {
 
   ...twColors,
 
-  gray: { ...twColors.gray, overlay: '#6D6D6D', 75: '#E5E5E5', 50: '#F3F4F6', 25: '#F9FAFB' },
+  gray: {
+    ...twColors.gray,
+    overlay: '#6D6D6D',
+    75: '#E5E5E5',
+    50: '#F3F4F6',
+    25: '#F9FAFB',
+  },
 };
 
-const maxHeight = (theme) => ({
+const maxHeight = theme => ({
   0: '0',
   xl: '36rem',
   ...theme('spacing'),
@@ -36,7 +59,10 @@ const maxHeight = (theme) => ({
 const atpLibConfig = {
   darkMode: 'class',
   content: {
-    files: ['node_modules/atp-react-ui/lib/defaultTheme.js', 'node_modules/atp-react-ui/dist/index.js'],
+    files: [
+      'node_modules/atp-react-ui/lib/defaultTheme.js',
+      'node_modules/atp-react-ui/dist/index.js',
+    ],
   },
   theme: {
     colors,
@@ -77,7 +103,8 @@ const atpLibConfig = {
 
       boxShadow: {
         card: '0px 1px 2px rgba(50, 54, 59, 0.05), 0px 2px 4px rgba(50, 54, 59, 0.25)',
-        'card-orange': '0px 1px 2px rgba(50, 54, 59, 0.05), 0px 2px 4px rgba(50, 54, 59, 0.25)',
+        'card-orange':
+          '0px 1px 2px rgba(50, 54, 59, 0.05), 0px 2px 4px rgba(50, 54, 59, 0.25)',
       },
 
       fontFamily: {
@@ -98,7 +125,15 @@ const atpLibConfig = {
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
         ],
-        serif: ['Bitter', 'ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+        serif: [
+          'Bitter',
+          'ui-serif',
+          'Georgia',
+          'Cambria',
+          '"Times New Roman"',
+          'Times',
+          'serif',
+        ],
         mono: [
           'ui-monospace',
           'SFMono-Regular',
@@ -141,7 +176,9 @@ function wrapper(tailwindConfig) {
   } else {
     content = tailwindConfig.content;
   }
-  return deepMerge({ ...tailwindConfig, content }, atpLibConfig, { arrayMerge: arrayMergeFn });
+  return deepMerge({ ...tailwindConfig, content }, atpLibConfig, {
+    arrayMerge: arrayMergeFn,
+  });
 }
 
 module.exports = wrapper;

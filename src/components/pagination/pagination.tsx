@@ -153,7 +153,6 @@ export const Pagination = React.forwardRef<Ref, PaginationProps>(
 
     useEffect(() => {
       onChange(activePage);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activePage]);
 
     const { pagination } = useTheme();

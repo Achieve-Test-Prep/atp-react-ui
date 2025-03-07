@@ -21,7 +21,9 @@ export type UseBooleanCallbacks = {
  * @param initialState - Initial value
  * @returns Array with the current value and an object containing the updater callbacks.
  */
-export function useBoolean(initialState = false): [boolean, UseBooleanCallbacks] {
+export function useBoolean(
+  initialState = false
+): [boolean, UseBooleanCallbacks] {
   const [value, setValue] = useState(initialState);
 
   const setTrue = useConst(() => () => {
@@ -31,14 +33,17 @@ export function useBoolean(initialState = false): [boolean, UseBooleanCallbacks]
     setValue(false);
   });
   const toggle = useConst(() => () => {
-    setValue((currentValue) => !currentValue);
+    setValue(currentValue => !currentValue);
   });
 
   const set = useConst(() => (v: boolean) => {
     setValue(v);
   });
 
-  const setFun = useMemo(() => ({ setTrue, setFalse, toggle, set }), [setFalse, setTrue, toggle, set]);
+  const setFun = useMemo(
+    () => ({ setTrue, setFalse, toggle, set }),
+    [setFalse, setTrue, toggle, set]
+  );
 
   return [value, setFun];
 }

@@ -16,7 +16,11 @@ const FormRadioItemsGroup = forwardRef<
   <FormItem className={twMerge('space-y-3', formItemClassName)}>
     {label && <FormLabel className={labelClassName}>{label}</FormLabel>}
     <FormControl>
-      <RadioItemsGroup ref={ref} className="flex flex-col space-y-1" {...props} />
+      <RadioItemsGroup
+        ref={ref}
+        className="flex flex-col space-y-1"
+        {...props}
+      />
     </FormControl>
     <FormMessage />
   </FormItem>
@@ -28,12 +32,19 @@ type TRadioItem = ComponentPropsWithoutRef<RadioProps> & FormLabelProps;
 
 const FormRadioItem = forwardRef<ElementRef<RadioProps>, TRadioItem>(
   ({ label, labelClassName, formItemClassName, ...props }, ref) => (
-    <FormItem className={twMerge('flex flex-row items-center justify-start space-x-3 space-y-0', formItemClassName)}>
+    <FormItem
+      className={twMerge(
+        'flex flex-row items-center justify-start space-x-3 space-y-0',
+        formItemClassName
+      )}
+    >
       <FormControl>
         <RadioItem ref={ref} {...props} />
       </FormControl>
       {(label || props.value) && (
-        <FormLabel className={`cursor-pointer disabled:cursor-not-allowed ${labelClassName}`}>
+        <FormLabel
+          className={`cursor-pointer disabled:cursor-not-allowed ${labelClassName}`}
+        >
           {label ?? props.value}
         </FormLabel>
       )}

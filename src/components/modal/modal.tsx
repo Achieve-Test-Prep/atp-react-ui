@@ -11,72 +11,79 @@ import { Button } from '../button';
 
 import type { ModalProps } from './types';
 
-export const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>((props, ref) => {
-  const {
-    children,
-    onClose,
-    open,
-    className,
-    disableInternalClosing = false,
-    hideCloseButton = false,
-    backDropProps = {},
-    dialogClassName,
-    ...other
-  } = props;
+export const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>(
+  (props, ref) => {
+    const {
+      children,
+      onClose,
+      open,
+      className,
+      disableInternalClosing = false,
+      hideCloseButton = false,
+      backDropProps = {},
+      dialogClassName,
+      ...other
+    } = props;
 
-  const { modal } = useTheme();
-  const cls = twMerge(modal.base, className);
+    const { modal } = useTheme();
+    const cls = twMerge(modal.base, className);
 
-  const handleClose = () => {
-    if (!disableInternalClosing) {
-      onClose(false);
-    }
-  };
+    const handleClose = () => {
+      if (!disableInternalClosing) {
+        onClose(false);
+      }
+    };
 
-  return (
-    <Transition appear show={open} as={Fragment}>
-      <Dialog as="div" ref={ref} className={twMerge('relative z-[999]', dialogClassName)} onClose={handleClose}>
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
+    return (
+      <Transition appear show={open} as={Fragment}>
+        <Dialog
+          as="div"
+          ref={ref}
+          className={twMerge('relative z-[999]', dialogClassName)}
+          onClose={handleClose}
         >
-          <Backdrop {...backDropProps} />
-        </Transition.Child>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <Backdrop {...backDropProps} />
+          </Transition.Child>
 
-        <section className="fixed inset-0 z-40 overflow-y-auto">
-          <div className="flex min-h-full items-end justify-center md:items-center md:justify-center">
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
-            >
-              <Dialog.Panel {...other} className={cls}>
-                {!hideCloseButton && (
-                  <Button
-                    icon={XMarkIcon}
-                    size="sm"
-                    as="link"
-                    disabled={disableInternalClosing}
-                    aria-label="close"
-                    onClick={handleClose}
-                    className="absolute right-4 top-4"
-                  />
-                )}
-                {children}
-              </Dialog.Panel>
-            </Transition.Child>
-          </div>
-        </section>
-      </Dialog>
-    </Transition>
-  );
-});
+          <section className="fixed inset-0 z-40 overflow-y-auto">
+            <div className="flex min-h-full items-end justify-center md:items-center md:justify-center">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel {...other} className={cls}>
+                  {!hideCloseButton && (
+                    <Button
+                      icon={XMarkIcon}
+                      size="sm"
+                      as="link"
+                      disabled={disableInternalClosing}
+                      aria-label="close"
+                      onClick={handleClose}
+                      className="absolute right-4 top-4"
+                    />
+                  )}
+                  {children}
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </section>
+        </Dialog>
+      </Transition>
+    );
+  }
+);

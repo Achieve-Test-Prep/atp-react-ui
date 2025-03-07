@@ -13,7 +13,7 @@ export const textStyles = {
   subheading: twSort`font-sans text-sm font-normal italic leading-tight`,
   subtitle: twSort`font-sans text-xl font-medium leading-tight`,
   'subtitle-small': twSort`font-sans text-xs font-semibold leading-tight`,
-  p: twSort`font-sans text-xs font-normal leading-normal text-accent`,
+  p: twSort`text-accent font-sans text-xs font-normal leading-normal`,
   'p-small': twSort`font-sans text-[0.625rem] font-normal leading-normal`,
   caption: twSort`font-sans text-xs font-normal leading-tight tracking-[0.16px]`,
   'caption-medium': captionMedium,

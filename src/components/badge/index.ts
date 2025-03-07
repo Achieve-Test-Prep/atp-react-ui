@@ -1,2 +1,2 @@
 export * from './badge';
-export * from './types';
+export type * from './types';

@@ -10,5 +10,11 @@ export function DropdownItem(props: DropdownMenuItemProps) {
 
   const { dropdownItem } = useTheme();
 
-  return <Menu.Item as={as} {...res} className={twMerge(dropdownItem.base, className)} />;
+  return (
+    <Menu.Item
+      as={as}
+      {...res}
+      className={twMerge(dropdownItem.base, className)}
+    />
+  );
 }

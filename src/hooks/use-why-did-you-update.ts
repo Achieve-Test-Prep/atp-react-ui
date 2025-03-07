@@ -8,7 +8,7 @@ export function useWhyDidYouUpdate(name: string, props: any) {
     if (previousProps.current) {
       const allKeys = Object.keys({ ...previousProps.current, ...props });
       const changesObj: Record<string, any> = {};
-      allKeys.forEach((key) => {
+      allKeys.forEach(key => {
         if (previousProps.current[key] !== props[key]) {
           changesObj[key] = {
             from: previousProps.current[key],

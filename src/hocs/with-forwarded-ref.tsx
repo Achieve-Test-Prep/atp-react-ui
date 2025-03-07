@@ -7,16 +7,16 @@ import React from 'react';
  *
  * @template T A subtype of React.ElementType.
  */
-type ComponentType<T extends React.ElementType> = React.ComponentPropsWithoutRef<T> &
-  React.RefAttributes<React.ElementRef<T>>;
+type ComponentType<T extends React.ElementType> =
+  React.ComponentPropsWithoutRef<T> & React.RefAttributes<React.ElementRef<T>>;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 /**
  * Represents a React component without ref attribute. It's a union of React.ElementType and
  * React.ForwardRefExoticComponent with any props.
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type ComponentWithoutRef = React.ElementType & React.ForwardRefExoticComponent<any>;
+
+type ComponentWithoutRef = React.ElementType &
+  React.ForwardRefExoticComponent<any>;
 
 /**
  * Higher Order Component (HOC) to share ref-forwarding logic across components.
@@ -27,15 +27,15 @@ type ComponentWithoutRef = React.ElementType & React.ForwardRefExoticComponent<a
  * @returns A new component with forwarded refs.
  */
 export function withForwardedRef<T extends ComponentWithoutRef>(Component: T) {
-  const ForwardedRefComponent = React.forwardRef<React.ElementRef<T>, ComponentType<T>>(
-    ({ className, children, ...rest }, ref) => (
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      <Component ref={ref} className={className} {...rest}>
-        {children}
-      </Component>
-    )
-  );
+  const ForwardedRefComponent = React.forwardRef<
+    React.ElementRef<T>,
+    ComponentType<T>
+  >(({ className, children, ...rest }, ref) => (
+    // @ts-ignore
+    <Component ref={ref} className={className} {...rest}>
+      {children}
+    </Component>
+  ));
 
   ForwardedRefComponent.displayName = Component.displayName;
 

@@ -54,7 +54,7 @@ export function useButton(props: ButtonProps) {
         size,
         hasIcon,
       }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
     [children, theme, block, className, iconClassName, modal, as, size, hasIcon]
   );
 
@@ -75,7 +75,6 @@ export function useButton(props: ButtonProps) {
 }
 
 type helperProps = ButtonProps & {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   button: AtpThemeType['button'];
   hasChildren: boolean;
   hasIcon: boolean;
@@ -129,9 +128,19 @@ function helper({
     className
   );
 
-  const iconLeftStyles = twMerge(button.icon[size], hasChildren ? button.icon.left : '', iconClassName);
-  const iconRightStyles = twMerge(button.icon[size], hasChildren ? button.icon.right : '', iconClassName);
-  const loaderSize = (size === 'xs' || size === 'pagination' ? 'xs' : 'sm') as SpinnerProps['size'];
+  const iconLeftStyles = twMerge(
+    button.icon[size],
+    hasChildren ? button.icon.left : '',
+    iconClassName
+  );
+  const iconRightStyles = twMerge(
+    button.icon[size],
+    hasChildren ? button.icon.right : '',
+    iconClassName
+  );
+  const loaderSize = (
+    size === 'xs' || size === 'pagination' ? 'xs' : 'sm'
+  ) as SpinnerProps['size'];
 
   return {
     buttonStyles,

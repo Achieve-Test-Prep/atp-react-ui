@@ -16,7 +16,7 @@ export function mergeDeep(target: any, ...sources: any[]): any {
 
   if (isObject(target) && isObject(source)) {
     const keys = Object.keys(source);
-    keys.forEach((key) => {
+    keys.forEach(key => {
       if (isObject(source[key])) {
         if (!target[key]) Object.assign(target, { [key]: {} });
         mergeDeep(target[key], source[key]);
