@@ -9,8 +9,9 @@ delete twColors['coolGray'];
 delete twColors['blueGray'];
 
 const colors = {
-  primary: { DEFAULT: '#FF4500', medium: '#FF8E64', light: '#FFE3D9', 'x-light': '#FFF3EB' },
-  secondary: { DEFAULT: '#9F7DFF', medium: '#CBB8FF', light: '#DDD1FF', 'x-light': '#EAE2FF' },
+  primary: { dark: '#550700', DEFAULT: '#FF4500', medium: '#FF8E64', light: '#FFE3D9', 'x-light': '#FFF3EB' },
+  secondary: { dark: '#2D1559', DEFAULT: '#9F7DFF', medium: '#CBB8FF', light: '#DDD1FF', 'x-light': '#EAE2FF' },
+
   accent: { DEFAULT: '#32363B', medium: '#414B58', light: '#6d6d6d', 'x-light': '#CECECE' },
 
   info: { DEFAULT: '#3E96E7', 'x-light': '#dcefff' },
