@@ -1,5 +1,17 @@
 
 
+# [5.0.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.7...5.0.0) (2025-03-10)
+
+
+### Build System
+
+* **move code and build system to vite:** move code ([2d68ebf](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/2d68ebf2716a7c271d38b37ed7336432ac7474b2))
+
+
+### BREAKING CHANGES
+
+* **move code and build system to vite:** removed headless ui export from package
+
 ## [4.0.7](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.6...4.0.7) (2025-03-10)
 
 
