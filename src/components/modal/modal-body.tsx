@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Dialog } from '@headlessui/react';
+import { Description } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
 
 import { useTheme } from '../../themes';
@@ -16,9 +16,9 @@ export const ModalBody = React.forwardRef<HTMLDivElement, ModalBodyProps>(
     const cls = twMerge(modalBody.base, className as string);
 
     return (
-      <Dialog.Description as={as} className={cls} ref={ref} {...other}>
+      <Description as={as} className={cls} ref={ref} {...other}>
         {children}
-      </Dialog.Description>
+      </Description>
     );
   }
 );

@@ -51,7 +51,7 @@
     }
   },
   "scripts": {
-    "dev": "vite",
+    "predev": "tailwindcss -i style/tailwind.css -o style/output.css -c style/tailwind.config.js --watch",
     "build": "tsc && vite build",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --fix",
@@ -85,7 +85,7 @@
     "@chromatic-com/storybook": "^3.2.5",
     "@eslint/eslintrc": "^3.3.0",
     "@eslint/js": "^9.21.0",
-    "@headlessui/react": "^1.7.13",
+    "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.0.16",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-label": "^2.0.2",

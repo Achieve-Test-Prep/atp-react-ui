@@ -1,4 +1,4 @@
-import { Dialog } from '@headlessui/react';
+import { DialogTitle } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
 
 import { useTheme } from '../../themes';
@@ -11,5 +11,5 @@ export function ModalHeader(props: ModalHeaderProps) {
 
   const cls = twMerge(modalHeader.base, className);
 
-  return <Dialog.Title as={as} className={cls} {...other} />;
+  return <DialogTitle as={as} className={cls} {...other} />;
 }

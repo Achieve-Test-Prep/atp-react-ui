@@ -1,7 +1,6 @@
 import type { ComponentProps, ElementType } from 'react';
 
 import type { DialogProps, DialogTitleProps } from '@headlessui/react';
-// import { Dialog } from '@headlessui/react';
 
 import type { DivProps } from '../../types';
 

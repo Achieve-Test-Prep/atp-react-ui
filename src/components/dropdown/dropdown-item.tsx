@@ -1,4 +1,4 @@
-import { Menu } from '@headlessui/react';
+import { MenuItem } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
 
 import { useTheme } from '../../themes/use-theme';
@@ -11,7 +11,7 @@ export function DropdownItem(props: DropdownMenuItemProps) {
   const { dropdownItem } = useTheme();
 
   return (
-    <Menu.Item
+    <MenuItem
       as={as}
       {...res}
       className={twMerge(dropdownItem.base, className)}
