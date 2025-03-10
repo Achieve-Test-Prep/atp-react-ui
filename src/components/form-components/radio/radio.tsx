@@ -26,6 +26,9 @@ const RadioItem = forwardRef<
   ComponentPropsWithoutRef<RadioProps>
 >(({ className, children, ...props }, ref) => {
   const { radio } = useTheme();
+  if (children) {
+    console.log('RadioItem must have children');
+  }
   return (
     <RadioGroupPrimitive.Item
       ref={ref}

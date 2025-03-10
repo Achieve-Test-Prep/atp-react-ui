@@ -20,6 +20,6 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>(
       checkbox.disabled,
       className
     );
-    return <input ref={ref} {...other} type="checkbox" className={cls} />;
+    return <input ref={ref} {...other} type={type} className={cls} />;
   }
 );

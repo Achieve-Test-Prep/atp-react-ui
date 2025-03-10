@@ -7,10 +7,9 @@ import { useTheme } from '../../themes/use-theme';
 
 import type { DropdownMenuItemsProps } from './types';
 
-export const DropdownItems = React.forwardRef<
-  HTMLDivElement,
-  DropdownMenuItemsProps
->((props, ref) => {
+export const DropdownItems: React.ForwardRefExoticComponent<
+  DropdownMenuItemsProps & React.RefAttributes<HTMLDivElement>
+> = React.forwardRef<HTMLDivElement, DropdownMenuItemsProps>((props, ref) => {
   const { className, as = 'ul', align = 'right', ...rest } = props;
 
   const { dropdown } = useTheme();

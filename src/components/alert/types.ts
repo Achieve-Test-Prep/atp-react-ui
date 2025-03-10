@@ -2,7 +2,7 @@ import type { SVGAttributes } from 'react';
 
 import type { DivProps } from '../../types';
 
-enum AlertEnum {
+export enum AlertEnum {
   success,
   error,
   warning,

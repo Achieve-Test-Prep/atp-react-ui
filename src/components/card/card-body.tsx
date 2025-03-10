@@ -10,7 +10,10 @@ export const CardBody = React.forwardRef<HTMLDivElement, DivProps>(
     const { className, children, ...other } = props;
     const { cardBody } = useTheme();
 
-    const cls = useMemo(() => twMerge(cardBody.base, className), [className]);
+    const cls = useMemo(
+      () => twMerge(cardBody.base, className),
+      [cardBody.base, className]
+    );
 
     return (
       <div className={cls} ref={ref} {...other}>

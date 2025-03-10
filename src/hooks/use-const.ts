@@ -16,16 +16,17 @@ export function useConst<T>(initialValue: T | (() => T)): T {
   // (we could also use `const [value] = useState(initialValue)` but that's more expensive
   // internally due to reducer handling which we don't need)
   const ref = useRef<{ value: T }>();
+
   if (ref.current === undefined) {
     // Box the value in an object so we can tell if it's initialized even if the initializer
     // returns/is undefined
     ref.current = {
-      // eslint-disable-next-line @typescript-eslint/ban-types
       value:
         typeof initialValue === 'function'
-          ? (initialValue as Function)()
+          ? (initialValue as () => T)()
           : initialValue,
     };
   }
+
   return ref.current.value;
 }

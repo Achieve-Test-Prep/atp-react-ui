@@ -1,162 +1,124 @@
-import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
-import tseslint from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
-import reactPlugin from 'eslint-plugin-react';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
-import reactRefreshPlugin from 'eslint-plugin-react-refresh';
-import prettierPlugin from 'eslint-plugin-prettier';
-import storybookPlugin from 'eslint-plugin-storybook';
-import globals from 'globals';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import importX from 'eslint-plugin-import-x';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
 import unusedImports from 'eslint-plugin-unused-imports';
-import importPlugin from 'eslint-plugin-import';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-export default [
-  js.configs.recommended,
-  importPlugin.flatConfigs.recommended,
-  ...compat.config({
-    extends: ['plugin:storybook/recommended'],
-  }),
+export default tseslint.config(
   {
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    files: ['**/*.{ts,tsx,js,jsx}'],
     languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true,
-        },
-        project: './tsconfig.json',  // Add this line to point to your tsconfig
-        tsconfigRootDir: __dirname,  // Add this to set the root directory
-      },
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-        ...globals.es2021,
-      },
+      ecmaVersion: 2020,
+      globals: globals.browser,
     },
     plugins: {
-      '@typescript-eslint': tseslint,
-      react: reactPlugin,
-      'react-hooks': reactHooksPlugin,
-      'react-refresh': reactRefreshPlugin,
+      react,
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh,
       'unused-imports': unusedImports,
-      prettier: prettierPlugin,
-      storybook: storybookPlugin,
+      'import-x': importX,
     },
     settings: {
-      react: {
-        version: 'detect',
+      'import-x/extensions': ['.js', '.jsx', '.ts', '.tsx'],
+      'import-x/parsers': {
+        '@typescript-eslint/parser': ['.ts', '.tsx'],
+      },
+      'import-x/resolver': {
+        node: {
+          paths: ['src'],
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
       },
     },
+
+    ignores: ['!.storybook', 'dist/**', 'node_modules/**', '/dist/index.js'],
     rules: {
-      'react/react-in-jsx-scope': 'off',
-      'react/prop-types': 'off',
+      ...reactHooks.configs.recommended.rules,
+      indent: 'error',
+      // refresh
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
-      'prettier/prettier': 'error',
-      '@typescript-eslint/no-explicit-any': 'warn',
+
+      // eslint
+      'no-underscore-dangle': 0,
+      'no-console': 'off',
+      'no-plusplus': 'off',
+      camelcase: 'off',
+      'no-use-before-define': 'off',
+
+      // tslint
+      '@typescript-eslint/no-use-before-define': 'off',
+      // '@typescript-eslint/consistent-type-exports': 'error',
+      '@typescript-eslint/consistent-type-imports': 'error',
+      '@typescript-eslint/naming-convention': [
+        'error',
+        {
+          selector: 'variable',
+          modifiers: ['destructured'],
+          format: null,
+        },
+      ],
       '@typescript-eslint/no-unused-vars': [
-        'warn',
-        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+        'error',
+        {
+          args: 'all',
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
       ],
 
-      "@typescript-eslint/consistent-type-exports": "error",
-      "@typescript-eslint/consistent-type-imports": "error",
-      "no-underscore-dangle": 0,
-      "import/prefer-default-export": "off",
-      "react/require-default-props": "off",
-      "react/jsx-uses-react": "off",
-      "react/react-in-jsx-scope": "off",
-      "prettier/prettier": ["error", {}, { "usePrettierrc": true }], // Use our .prettierrc file as source
-      "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
-      "no-use-before-define": "off",
-      "@typescript-eslint/no-use-before-define": "off",
-      "no-console": "off",
-      "react/prop-types": 0,
-      "react/forbid-prop-types": [0, { "forbid": ["any"] }],
-      "no-plusplus": "off",
-      "react/jsx-props-no-spreading": "off",
-      "camelcase": "off",
-      "no-unused-vars": ["error", { "vars": "local", "args": "none", "ignoreRestSiblings": false }],
-      "unused-imports/no-unused-imports": "error",
-      "@typescript-eslint/no-unused-vars": ["error", { "vars": "local", "args": "none", "ignoreRestSiblings": false }],
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": [
-            "examples/**",
-            "examples-native/**",
-            "**/example/**",
-            "*.js",
-            "**/*.test.js",
-            "**/*.stories.*",
-            "**/scripts/*.js",
-            "**/stories/**/*.js",
-            "**/__tests__/**/*.js",
-            "**/__stories__/**/*.*",
-            "**/__tests__/**/*.*"
-          ],
-          "peerDependencies": true
-        }
+      // react
+      'react/require-default-props': 'off',
+      'react/jsx-uses-react': 'off',
+      'react/react-in-jsx-scope': 'off',
+      'react/jsx-filename-extension': [
+        2,
+        { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
       ],
-      "@typescript-eslint/naming-convention": [
-        "error",
+      'react/prop-types': 0,
+      'react/forbid-prop-types': [0, { forbid: ['any'] }],
+      'react/jsx-props-no-spreading': 'off',
+
+      // eslint-plugin-unused-imports
+      'unused-imports/no-unused-imports': 'error',
+
+      // eslint-plugin-import
+      'import-x/extensions': 'off',
+      'import-x/prefer-default-export': 'off',
+      'import-x/order': [
+        'error',
         {
-          "selector": "variable",
-          "modifiers": ["destructured"],
-          "format": null
-        }
-      ],
-      "import/order": [
-        "error",
-        {
-          "groups": ["builtin", "external", "internal", "parent", "sibling"],
-          "pathGroups": [
+          groups: ['builtin', 'external', 'internal', 'parent', 'sibling'],
+          pathGroups: [
             {
-              "pattern": "react",
-              "group": "external",
-              "position": "before"
-            }
+              pattern: '@/**',
+              group: 'internal',
+              position: 'before',
+            },
+            {
+              pattern: 'react',
+              group: 'external',
+              position: 'before',
+            },
           ],
-          "pathGroupsExcludedImportTypes": ["react"],
-          "newlines-between": "always",
-          "alphabetize": {
-            "order": "asc",
-            "caseInsensitive": true
-          }
-        }
+          pathGroupsExcludedImportTypes: ['react'],
+          'newlines-between': 'always',
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
+        },
       ],
     },
   },
-  {
-    files: ['**/*.ts', '**/*.tsx'],
-    rules: {
-      // TypeScript-specific rules
-      '@typescript-eslint/explicit-module-boundary-types': 'off',
-    },
-  },
-  {
-    files: ['**/*.stories.ts', '**/*.stories.tsx'],
-    rules: {
-      // Storybook-specific rules
-      'import/no-anonymous-default-export': 'off',
-    },
-  },
-  {
-    ignores: ['dist/**', 'node_modules/**', 'storybook-static/**'],
-  },
-];
+
+  eslintConfigPrettier
+);

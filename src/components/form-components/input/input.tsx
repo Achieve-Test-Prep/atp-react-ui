@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import type { InputProps } from './use-input';
+import type { InputProps } from './types';
 import { useInputStyle } from './use-input';
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(

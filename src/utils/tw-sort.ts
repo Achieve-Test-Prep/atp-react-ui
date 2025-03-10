@@ -8,6 +8,7 @@
 
 export function twSort(
   strings: TemplateStringsArray,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ...values: any[]
 ): string {
   let result = '';

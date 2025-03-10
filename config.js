@@ -1,6 +1,6 @@
-const deepMerge = require('deepmerge');
-const twColors = require('tailwindcss/colors');
-const customFormsPlugin = require('@tailwindcss/forms');
+import customFormsPlugin from '@tailwindcss/forms';
+import deepMerge from 'deepmerge';
+import twColors from 'tailwindcss/colors';
 
 delete twColors['lightBlue'];
 delete twColors['warmGray'];
@@ -181,4 +181,4 @@ function wrapper(tailwindConfig) {
   });
 }
 
-module.exports = wrapper;
+export default wrapper;

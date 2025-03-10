@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "*.ts",
+    "*.js",
+    ".eslintrc.js",
+    "eslint.config.js",
+    "vite.config.ts",
+    ".storybook/**/*.ts" // Add this line to include Storybook config files
+  ]
+}

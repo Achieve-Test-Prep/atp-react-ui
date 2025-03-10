@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 import React from 'react';
 
 // Define the generic type for components which will use the HOC
@@ -16,6 +19,7 @@ type ComponentType<T extends React.ElementType> =
  */
 
 type ComponentWithoutRef = React.ElementType &
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   React.ForwardRefExoticComponent<any>;
 
 /**
@@ -31,7 +35,6 @@ export function withForwardedRef<T extends ComponentWithoutRef>(Component: T) {
     React.ElementRef<T>,
     ComponentType<T>
   >(({ className, children, ...rest }, ref) => (
-    // @ts-ignore
     <Component ref={ref} className={className} {...rest}>
       {children}
     </Component>

@@ -55,7 +55,18 @@ export function useButton(props: ButtonProps) {
         hasIcon,
       }),
 
-    [children, theme, block, className, iconClassName, modal, as, size, hasIcon]
+    [
+      button,
+      theme,
+      children,
+      block,
+      className,
+      iconClassName,
+      modal,
+      as,
+      size,
+      hasIcon,
+    ]
   );
 
   return {

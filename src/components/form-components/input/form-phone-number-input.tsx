@@ -28,8 +28,4 @@ const FormPhoneNumberInput = forwardRef<HTMLInputElement, TProps>(
 
 FormPhoneNumberInput.displayName = 'FormPhoneNumberInput';
 
-function validatePhoneNumber(value: string) {
-  return value.length === 10;
-}
-
-export { FormPhoneNumberInput, validatePhoneNumber };
+export { FormPhoneNumberInput };

@@ -19,7 +19,7 @@ export const Text = React.forwardRef<HTMLDivElement, TextProps>(
           className
         ),
 
-      [as, className]
+      [as, className, text]
     );
 
     if (as === 'h1') {

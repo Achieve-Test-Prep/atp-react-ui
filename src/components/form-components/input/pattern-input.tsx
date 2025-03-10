@@ -2,7 +2,7 @@ import type { ChangeEvent } from 'react';
 import { useEffect, useRef, useState, forwardRef } from 'react';
 
 import { Input } from './input';
-import type { InputProps } from './use-input';
+import type { InputProps } from './types';
 
 export type PatternInputProps = Omit<InputProps, 'value'> & {
   pattern: string;
@@ -127,6 +127,10 @@ const PatternInput = forwardRef<HTMLInputElement, PatternInputProps>(
         setValue(format(userValue, pattern));
       }
     }, [value, userValue, pattern]);
+
+    if (onChange) {
+      console.log('Please use onValueChange instead of onChange');
+    }
 
     return (
       <Input

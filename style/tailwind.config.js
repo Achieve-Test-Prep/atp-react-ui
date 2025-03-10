@@ -1,13 +1,17 @@
-const atpLib = require('../config');
+import aspectRatio from '@tailwindcss/aspect-ratio';
+import forms from '@tailwindcss/forms';
+import typography from '@tailwindcss/typography';
 
-module.exports = atpLib({
+import atpLib from '../config';
+
+export default atpLib({
   content: ['./src/**/*.{html,js,ts,tsx}'],
   theme: {},
   plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms')({
+    typography,
+    forms({
       strategy: 'class',
     }),
-    require('@tailwindcss/aspect-ratio'),
+    aspectRatio,
   ],
 });

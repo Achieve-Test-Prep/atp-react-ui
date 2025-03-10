@@ -27,7 +27,6 @@ const placements = {
 
 export function Tooltip({
   children,
-  disabled,
   placement = 'top',
   className,
   zIndex,

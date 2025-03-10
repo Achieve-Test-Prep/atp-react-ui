@@ -3,70 +3,20 @@ import type {
   ComponentPropsWithoutRef,
   HTMLAttributes,
 } from 'react';
-import { createContext, useContext, forwardRef, useId, useMemo } from 'react';
+import { forwardRef, useId, useMemo } from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
-import type { ControllerProps, FieldPath, FieldValues } from 'react-hook-form';
-import { Controller, FormProvider, useFormContext } from 'react-hook-form';
+import { FormProvider } from 'react-hook-form';
 import { twMerge } from 'tailwind-merge';
 
 import type { DivProps } from '../../../types';
 import { Text, Label } from '../../typography';
 import type { LabelProps } from '../../typography/types';
 
-import type { FormItemContextValue } from './types';
+import { FormItemContext } from './form-item-context';
+import { useFormField } from './use-form-field';
 
 const Form = FormProvider;
-
-type FormFieldContextValue<
-  TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
-> = {
-  name: TName;
-};
-
-const FormFieldContext = createContext<FormFieldContextValue>(
-  {} as FormFieldContextValue
-);
-
-function FormField<
-  TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
->({ ...props }: ControllerProps<TFieldValues, TName>) {
-  const nameValue = useMemo(() => ({ name: props.name }), [props.name]);
-  return (
-    <FormFieldContext.Provider value={nameValue}>
-      <Controller {...props} />
-    </FormFieldContext.Provider>
-  );
-}
-
-const useFormField = () => {
-  const fieldContext = useContext(FormFieldContext);
-  const itemContext = useContext(FormItemContext);
-  const { getFieldState, formState } = useFormContext();
-
-  const fieldState = getFieldState(fieldContext.name, formState);
-
-  if (!fieldContext) {
-    throw new Error('useFormField should be used within <FormField>');
-  }
-
-  const { id } = itemContext;
-
-  return {
-    id,
-    name: fieldContext.name,
-    formItemId: `${id}-form-item`,
-    formDescriptionId: `${id}-form-item-description`,
-    formMessageId: `${id}-form-item-message`,
-    ...fieldState,
-  };
-};
-
-const FormItemContext = createContext<FormItemContextValue>(
-  {} as FormItemContextValue
-);
 
 const FormItem = forwardRef<HTMLDivElement, DivProps>(
   ({ className, ...props }, ref) => {
@@ -168,13 +118,4 @@ const FormDescription = forwardRef<
 
 FormDescription.displayName = 'FormDescription';
 
-export {
-  useFormField,
-  Form,
-  FormItem,
-  FormControl,
-  FormLabel,
-  FormDescription,
-  FormMessage,
-  FormField,
-};
+export { Form, FormItem, FormControl, FormLabel, FormDescription, FormMessage };
