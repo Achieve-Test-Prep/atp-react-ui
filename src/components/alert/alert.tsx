@@ -48,12 +48,12 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const iconCls = twMerge(
       alert.icon.base,
       alert.icon[type],
-      'absolute top-0 left-0 mt-4 ml-4'
+      'absolute left-0 top-0 ml-4 mt-4'
     );
     const closeCls = twMerge(
       alert.icon.base,
       alert.icon[type],
-      'hover:bg-gray-overlay/10 focus:ring-primary-medium absolute top-0 right-0 mt-4 mr-4'
+      'hover:bg-gray-overlay/10 focus:ring-primary-medium absolute right-0 top-0 mr-4 mt-4'
     );
 
     return (

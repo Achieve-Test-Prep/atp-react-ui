@@ -8,11 +8,11 @@ export const modalStyles = {
 };
 // ModalBody
 export const modalBodyStyles = {
-  base: twSort`mt-4 mb-6 ${captionMedium} text-accent-light`,
+  base: twSort`mb-6 mt-4 ${captionMedium} text-accent-light`,
 };
 // ModalFooter
 export const modalFooterStyles = {
-  base: twSort`bg-gray-25 -mx-6 -mb-4 flex flex-col items-center justify-start space-y-4 px-6 py-3 md:flex-row md:items-end md:space-y-0 md:space-x-4`,
+  base: twSort`bg-gray-25 -mx-6 -mb-4 flex flex-col items-center justify-start space-y-4 px-6 py-3 md:flex-row md:items-end md:space-x-4 md:space-y-0`,
 };
 // ModalHeader
 export const modalHeaderStyles = {

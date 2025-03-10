@@ -8,6 +8,6 @@
     ".eslintrc.js",
     "eslint.config.js",
     "vite.config.ts",
-    ".storybook/**/*.ts" // Add this line to include Storybook config files
+    ".storybook/**/*.ts"
   ]
 }

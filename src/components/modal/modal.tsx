@@ -74,7 +74,7 @@ export const Modal = forwardRef<HTMLDivElement, PropsWithChildren<ModalProps>>(
                       disabled={disableInternalClosing}
                       aria-label="close"
                       onClick={handleClose}
-                      className="absolute top-4 right-4"
+                      className="absolute right-4 top-4"
                     />
                   )}
                   {children}
