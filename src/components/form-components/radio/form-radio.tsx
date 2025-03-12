@@ -34,7 +34,7 @@ const FormRadioItem = forwardRef<ElementRef<RadioProps>, TRadioItem>(
   ({ label, labelClassName, formItemClassName, ...props }, ref) => (
     <FormItem
       className={twMerge(
-        'flex flex-row items-center justify-start space-x-3 space-y-0',
+        'flex flex-row items-center justify-start space-y-0 space-x-3',
         formItemClassName
       )}
     >

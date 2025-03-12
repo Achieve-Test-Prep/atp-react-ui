@@ -18,12 +18,3 @@ export const AtpLibContext = React.createContext<ThemeContextType>({
   setMode: () => {},
   toggleMode: () => {},
 });
-
-// type ThemeProviderProps = {
-//   children: React.ReactNode;
-//   value?: ThemeContextType;
-// };
-
-// export function ThemeProvider({ children, value }: PropsWithChildren<ThemeProviderProps>) {
-//   return <AtpLibContext.Provider value={value}>{children}</AtpLibContext.Provider>;
-// }

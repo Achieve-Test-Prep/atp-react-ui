@@ -11,7 +11,7 @@ export const FormCheckbox = forwardRef<
   CheckboxProps & FormLabelProps
 >(({ formItemClassName, label, labelClassName, ...props }, ref) => (
   <FormItem className={formItemClassName}>
-    <div className="flex flex-row items-center justify-start space-x-3 space-y-0">
+    <div className="flex flex-row items-center justify-start space-y-0 space-x-3">
       <FormControl>
         <Checkbox {...props} ref={ref} />
       </FormControl>

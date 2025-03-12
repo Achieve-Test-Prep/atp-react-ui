@@ -19,7 +19,7 @@ export const Primary: Story = {
 
 export const CheckboxWithLabel: Story = {
   render: () => (
-    <div className="flex flex-row items-center justify-start space-x-3 space-y-0">
+    <div className="flex flex-row items-center justify-start space-y-0 space-x-3">
       <Checkbox />
       <Label className="cursor-pointer">This is label</Label>
     </div>

@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 export function useWhyDidYouUpdate(name: string, props: any) {
-  const previousProps = React.useRef<any>();
+  const previousProps = React.useRef<any>(undefined);
 
   React.useEffect(() => {
     if (previousProps.current) {

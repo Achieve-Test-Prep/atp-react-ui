@@ -2,12 +2,6 @@ import customFormsPlugin from '@tailwindcss/forms';
 import deepMerge from 'deepmerge';
 import twColors from 'tailwindcss/colors';
 
-delete twColors['lightBlue'];
-delete twColors['warmGray'];
-delete twColors['trueGray'];
-delete twColors['coolGray'];
-delete twColors['blueGray'];
-
 const colors = {
   primary: {
     dark: '#550700',
@@ -60,7 +54,7 @@ const atpLibConfig = {
   darkMode: 'class',
   content: {
     files: [
-      'node_modules/atp-react-ui/lib/defaultTheme.js',
+      // 'node_modules/atp-react-ui/lib/defaultTheme.js',
       'node_modules/atp-react-ui/dist/index.js',
     ],
   },
@@ -181,4 +175,5 @@ function wrapper(tailwindConfig) {
   });
 }
 
+export { wrapper };
 export default wrapper;

@@ -162,7 +162,7 @@ export const Pagination = React.forwardRef<Ref, PaginationProps>(
         {/*
          * This (label) should probably be an option, and not the default
          */}
-        <span className="flex items-center font-semibold uppercase tracking-wide">
+        <span className="flex items-center font-semibold tracking-wide uppercase">
           Showing {activePage * resultsPerPage - resultsPerPage + 1}-
           {Math.min(activePage * resultsPerPage, totalResults)} of{' '}
           {totalResults}

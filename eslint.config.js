@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import { globalIgnores } from 'eslint/config';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import importX from 'eslint-plugin-import-x';
 import react from 'eslint-plugin-react';
@@ -9,6 +10,12 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
+  globalIgnores([
+    '!.storybook',
+    'dist/**',
+    'node_modules/**',
+    '/dist/index.js',
+  ]),
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx,js,jsx}'],
@@ -36,7 +43,7 @@ export default tseslint.config(
       },
     },
 
-    ignores: ['!.storybook', 'dist/**', 'node_modules/**', '/dist/index.js'],
+    // ignores: ['!.storybook', 'dist/**', 'node_modules/**', '/dist/index.js'],
     rules: {
       ...reactHooks.configs.recommended.rules,
       indent: 'error',
