@@ -1,4 +1,19 @@
+# Changelog
 
+# [5.1.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/5.0.0...5.1.0) (2025-03-12)
+
+
+### Bug Fixes
+
+* animation ([e390923](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/e390923d90ed6c2d6ac8706d012eb1b71b2f193c))
+* tailwind css 4 integration ([4418826](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/4418826ab988f1b3c9467e7263a1fef0d04d0316))
+* tailwind v4 ([66c8ed1](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/66c8ed162a32d9a0ead27fd56063e43c9ca356e9))
+* ui theme ([7b2cab1](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/7b2cab14e4f6d67b55f8837719e5732d1a104655))
+
+
+### Features
+
+* bring back stories ([e40acca](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/e40accaf6ed79ad72919051bc51bd4a10451d7f9))
 
 # [5.0.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.7...5.0.0) (2025-03-10)
 
