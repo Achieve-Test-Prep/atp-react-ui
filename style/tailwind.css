@@ -1,13 +1,8 @@
+/* First import the fonts */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Bitter:wght@300;400;500;700&display=swap')
-layer(utilities);
+layer(fonts);
 
-@import 'tailwindcss';
-/* @import 'tailwindcss' source('../src');
-@source "../node_modules/atp-react-ui/lib/defaultTheme.js";
-@source "../node_modules/atp-react-ui/dist/index.js"; */
-
-@custom-variant dark (&:is(.dark *));
-
+/* Define the theme BEFORE importing Tailwind */
 @theme {
   --color-*: initial;
   --color-primary-dark: #550700;
@@ -409,15 +404,36 @@ layer(utilities);
   }
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+@import 'tailwindcss';
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+/* Define custom variant after imports */
+@custom-variant dark (&:is(.dark *));
+
+/* Add your theme overrides in the base layer to ensure they take precedence */
 @layer base {
+  :root {
+    /* Reinforcing primary theme colors */
+    --tw-color-primary: var(--color-primary);
+    --tw-color-primary-dark: var(--color-primary-dark);
+    --tw-color-primary-medium: var(--color-primary-medium);
+    --tw-color-primary-light: var(--color-primary-light);
+    --tw-color-primary-x-light: var(--color-primary-x-light);
+
+    /* Secondary colors */
+    --tw-color-secondary: var(--color-secondary);
+    --tw-color-secondary-dark: var(--color-secondary-dark);
+    --tw-color-secondary-medium: var(--color-secondary-medium);
+    --tw-color-secondary-light: var(--color-secondary-light);
+    --tw-color-secondary-x-light: var(--color-secondary-x-light);
+
+    /* Accent colors */
+    --tw-color-accent: var(--color-accent);
+    --tw-color-accent-medium: var(--color-accent-medium);
+    --tw-color-accent-light: var(--color-accent-light);
+    --tw-color-accent-x-light: var(--color-accent-x-light);
+  }
+
+  /* Border color fix */
   *,
   ::after,
   ::before,
