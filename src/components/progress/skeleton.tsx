@@ -19,7 +19,7 @@ export function CircleSkeleton({ className, ...rest }: DivProps) {
     <div
       {...rest}
       className={twMerge(
-        'bg-gray-75 size-3 flex-shrink-0 flex-grow-0 animate-pulse rounded-full',
+        'bg-gray-75 size-3 shrink-0 grow-0 animate-pulse rounded-full',
         className
       )}
     />

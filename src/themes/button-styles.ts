@@ -1,7 +1,7 @@
 import { twSort } from '../utils';
 
 export const buttonStyles = {
-  base: twSort`relative inline-flex cursor-pointer select-none items-center justify-center whitespace-nowrap border border-transparent align-bottom font-medium leading-5 leading-none tracking-[0.16px] outline-none transition-colors duration-150`,
+  base: twSort`relative inline-flex cursor-pointer items-center justify-center border border-transparent align-bottom leading-5 leading-none font-medium tracking-[0.16px] whitespace-nowrap outline-hidden transition-colors duration-150 select-none`,
   disabled: twSort`disabled:border-outline disabled:text-outline disabled:cursor-not-allowed disabled:bg-gray-50`,
   active: twSort`focus:ring-primary-light focus:ring-2`,
   block: twSort`w-full`,
@@ -33,7 +33,7 @@ export const buttonStyles = {
     sm: twSort`size-5`,
     xs: twSort`size-4`,
 
-    left: twSort`-ml-1 mr-2`,
+    left: twSort`mr-2 -ml-1`,
     right: twSort`-mr-1 ml-2`,
 
     // Missing style? Because apparently its used in use-button
@@ -47,7 +47,7 @@ export const buttonStyles = {
   },
 
   link: {
-    base: twSort`text-accent-light border shadow-sm`,
+    base: twSort`text-accent-light border shadow-xs`,
     active: twSort`hover:bg-primary-x-light hover:text-primary hover:shadow-none active:bg-transparent`,
     disabled: twSort``,
   },

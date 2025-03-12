@@ -40,11 +40,11 @@ export const defaultTheme = {
   },
   // TableHeader
   tableHeader: {
-    base: twSort`border-b bg-gray-50 text-left text-xs font-semibold uppercase tracking-wide text-gray-500`,
+    base: twSort`border-b bg-gray-50 text-left text-xs font-semibold tracking-wide text-gray-500 uppercase`,
   },
   // TableContainer
   tableContainer: {
-    base: twSort`w-full overflow-hidden rounded-lg ring-1 ring-black ring-opacity-5`,
+    base: twSort`w-full overflow-hidden rounded-lg ring-1 ring-black/5`,
   },
   // TableCell
   tableCell: {
@@ -90,7 +90,7 @@ export const defaultTheme = {
 
   // Badge
   badge: {
-    base: twSort`inline-flex rounded-full font-medium leading-5`,
+    base: twSort`inline-flex rounded-full leading-5 font-medium`,
     size: {
       sm: twSort`px-1.5 text-[0.625rem]`,
       base: twSort`px-2 text-xs`,
@@ -124,14 +124,14 @@ export const defaultTheme = {
 
   // Textarea
   textarea: {
-    base: twSort`border-outline placeholder:text-accent-light/50 block w-full rounded-lg border text-sm focus:outline-none`,
-    active: twSort`focus:border-primary focus:ring-primary-light focus:ring focus-visible:outline-none`,
+    base: twSort`border-outline placeholder:text-accent-light/50 block w-full rounded-lg border text-sm focus:outline-hidden`,
+    active: twSort`focus:border-primary focus:ring-primary-light focus:ring focus-visible:outline-hidden`,
     disabled: twSort`disabled:cursor-not-allowed disabled:bg-gray-50`,
   },
 
   // Select
   select: {
-    base: twSort`text-accent-light block w-full rounded-lg p-2.5 text-sm focus:outline-none`,
+    base: twSort`text-accent-light block w-full rounded-lg p-2.5 text-sm focus:outline-hidden`,
     active: twSort`border-outline focus:border-primary focus:ring-primary-light focus:ring`,
     select: twSort`leading-5`,
     disabled: twSort`disabled:text-accent-disabled disabled:border-outline disabled:cursor-not-allowed disabled:bg-gray-50`,
@@ -139,26 +139,26 @@ export const defaultTheme = {
 
   // Label
   label: {
-    base: twSort`text-accent-light block text-sm font-normal leading-tight tracking-[0.16px]`,
+    base: twSort`text-accent-light block text-sm leading-tight font-normal tracking-[0.16px]`,
   },
 
   // Input
   input: {
-    base: twSort`border-outline text-accent-light placeholder:text-accent-light/50 block w-full rounded-lg border p-2.5 text-sm leading-5 focus:outline-none`,
+    base: twSort`border-outline text-accent-light placeholder:text-accent-light/50 block w-full rounded-lg border p-2.5 text-sm leading-5 focus:outline-hidden`,
     active: twSort`focus:border-primary focus:ring-primary-light focus:ring`,
     disabled: twSort`disabled:text-accent-disabled disabled:border-outline disabled:cursor-not-allowed disabled:bg-gray-50`,
   },
 
   checkbox: {
-    active: twSort`focus:border-primary focus:ring-primary-light focus:outline-none focus:ring focus:ring-offset-0`,
+    active: twSort`focus:border-primary focus:ring-primary-light focus:ring focus:ring-offset-0 focus:outline-hidden`,
     disabled: twSort`disabled:text-accent-disabled disabled:border-outline disabled:cursor-not-allowed disabled:bg-gray-50`,
-    base: twSort`form-checkbox border-outline text-primary cursor-pointer rounded`,
+    base: twSort`form-checkbox border-outline text-primary cursor-pointer rounded-sm`,
   },
 
   // Radio
   radio: {
     base: twSort`form-radio text-primary cursor-pointer`,
-    active: twSort`border-outline focus:border-primary focus:ring-primary-light focus:outline-none focus:ring focus:ring-offset-0`,
+    active: twSort`border-outline focus:border-primary focus:ring-primary-light focus:ring focus:ring-offset-0 focus:outline-hidden`,
     disabled: twSort`disabled:text-accent-disabled hover:disabled:text-accent-disabled disabled:border-outline disabled:cursor-not-allowed disabled:bg-gray-50`,
   },
 
@@ -182,11 +182,11 @@ export const defaultTheme = {
   button: buttonStyles,
 
   spinner: {
-    base: twSort`border-primary relative inline-block flex-shrink-0 rounded-full after:absolute after:rounded-full after:bg-white`,
+    base: twSort`border-primary relative inline-block shrink-0 rounded-full after:absolute after:rounded-full after:bg-white`,
     size: {
-      xs: twSort`size-4 border-4 after:-left-1 after:top-1 after:size-1`,
-      sm: twSort`size-6 border-[0.375rem] after:-left-1.5 after:top-1 after:size-1.5`,
-      base: twSort`size-8 border-8 after:-left-2 after:top-2 after:size-2`,
+      xs: twSort`size-4 border-4 after:top-1 after:-left-1 after:size-1`,
+      sm: twSort`size-6 border-[0.375rem] after:top-1 after:-left-1.5 after:size-1.5`,
+      base: twSort`size-8 border-8 after:top-2 after:-left-2 after:size-2`,
     },
   },
 };
