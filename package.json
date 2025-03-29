@@ -12,8 +12,7 @@
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./styles.css": "./dist/index.css",
-    "./config": "./config.js"
+    "./style/atp-css-styles.css": "./atp-css-styles.css"
   },
   "sideEffects": false,
   "files": [
@@ -51,8 +50,8 @@
     }
   },
   "scripts": {
-    "build:css": "npx @tailwindcss/cli -i ./style/tailwind.css -o ./style/output.css",
-    "watch:css": "npx @tailwindcss/cli -i ./style/tailwind.css -o ./style/output.css --watch",
+    "build:css": "npx @tailwindcss/cli -i ./style/tailwind.css -o ./style/atp-css-styles.css",
+    "watch:css": "npx @tailwindcss/cli -i ./style/tailwind.css -o ./style/atp-css-styles.css --watch",
     "build": "npm run build:css && tsc && vite build",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --fix",

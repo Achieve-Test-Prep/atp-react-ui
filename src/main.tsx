@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ReactDOM from 'react-dom/client';
-import '../style/output.css';
+import '../style/atp-css-styles.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
