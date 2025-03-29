@@ -17,7 +17,6 @@
   "sideEffects": false,
   "files": [
     "dist",
-    "config.js",
     "README.md"
   ],
   "repository": {
