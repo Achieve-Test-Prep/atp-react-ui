@@ -12,7 +12,7 @@
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./style/atp-css-styles.css": "./atp-css-styles.css"
+    "./style/atp-css-styles.css": "./dist/atp-css-styles.css"
   },
   "sideEffects": false,
   "files": [
