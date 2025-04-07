@@ -69,7 +69,5 @@ export function AtpLib({
     [mode, toggleMode, setMode, mergedTheme]
   );
 
-  return (
-    <AtpLibContext.Provider value={value}>{children}</AtpLibContext.Provider>
-  );
+  return (<AtpLibContext value={value}>{children}</AtpLibContext>);
 }
