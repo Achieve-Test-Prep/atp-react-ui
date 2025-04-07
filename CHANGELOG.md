@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.1.5](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/5.1.4...5.1.5) (2025-04-07)
+
+
+### Bug Fixes
+
+* removed provide using codemod ([0b29ea6](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/0b29ea60548d87a137980e4d7d2eba225253aa47))
+
 ## [5.1.4](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/5.1.3...5.1.4) (2025-03-29)
 
 ## [5.1.3](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/5.1.2...5.1.3) (2025-03-29)
