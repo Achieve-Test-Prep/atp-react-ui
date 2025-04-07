@@ -21,5 +21,3 @@ export const Select = (props: SelectProps) => {
     </select>
   );
 };
-
-Select.displayName = 'Select';

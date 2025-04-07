@@ -49,6 +49,4 @@ const Slider = ({
   );
 };
 
-Slider.displayName = SliderPrimitive.Root.displayName;
-
 export { Slider };

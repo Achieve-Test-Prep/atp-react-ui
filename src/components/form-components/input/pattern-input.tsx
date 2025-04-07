@@ -1,5 +1,5 @@
 import type { ChangeEvent } from 'react';
-import { useEffect, useRef, useState, forwardRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { Input } from './input';
 import type { InputProps } from './types';
@@ -11,140 +11,134 @@ export type PatternInputProps = Omit<InputProps, 'value'> & {
   onValueChange: (v: string) => void;
 };
 
-const PatternInput = forwardRef<HTMLInputElement, PatternInputProps>(
-  ({
-    pattern,
-    onValueChange,
-    onChange,
-    value: userValue = '',
-    as = 'numeric',
-    ...rest
-  }) => {
-    const [value, setValue] = useState(format(userValue, pattern));
-    const inputRef = useRef<HTMLInputElement | null>(null);
+const PatternInput = ({
+  pattern,
+  onValueChange,
+  onChange,
+  value: userValue = '',
+  as = 'numeric',
+  ...rest
+}: PatternInputProps) => {
+  const [value, setValue] = useState(format(userValue, pattern));
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
-    const infoRef = useRef({
-      cursorPosition: userValue?.length ?? 0,
-      endOfSection: false,
-    });
+  const infoRef = useRef({
+    cursorPosition: userValue?.length ?? 0,
+    endOfSection: false,
+  });
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-      const { value: inputValue, selectionStart } = event.target;
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { value: inputValue, selectionStart } = event.target;
 
-      const didDelete = inputValue.length < value.length;
-      const cursorPosition = selectionStart as number;
+    const didDelete = inputValue.length < value.length;
+    const cursorPosition = selectionStart as number;
 
-      if (infoRef.current) {
-        infoRef.current.cursorPosition = cursorPosition;
-      }
-
-      let rawValue = stripPatternCharacters(inputValue);
-
-      if (rawValue !== '') {
-        if (as === 'numeric') {
-          if (!/^\d+$/.test(rawValue)) {
-            return;
-          }
-        } else if (as === 'alpha') {
-          if (!/^[a-zA-Z]+$/.test(rawValue)) {
-            return;
-          }
-        }
-      }
-
-      if (didDelete) {
-        const patternCharacterDeleted = !isUserCharacter(
-          value.split('')[cursorPosition]
-        );
-
-        if (patternCharacterDeleted) {
-          const firstBit = inputValue.substr(0, cursorPosition);
-          const rawFirstBit = stripPatternCharacters(firstBit);
-
-          rawValue =
-            rawFirstBit.substr(0, rawFirstBit.length - 1) +
-            stripPatternCharacters(
-              inputValue.substr(cursorPosition, inputValue.length)
-            );
-
-          if (infoRef.current) {
-            infoRef.current.cursorPosition =
-              firstBit.replace(/([\d\w]+)[^\dA-z]+$/, '$1').length - 1;
-          }
-        }
-      }
-
-      const formattedValue = format(rawValue, pattern);
-
-      if (infoRef.current) {
-        infoRef.current.endOfSection = false;
-      }
-
-      if (!didDelete) {
-        const formattedCharacters = formattedValue.split('');
-        const nextCharacter = formattedCharacters[cursorPosition];
-        const nextCharacterIsPattern = !isUserCharacter(nextCharacter);
-        const nextUserCharacterIndex = formattedValue
-          .substr(cursorPosition)
-          .search(/[\dA-z]/);
-        const numbersAhead = nextUserCharacterIndex !== -1;
-
-        if (infoRef.current) {
-          infoRef.current.endOfSection =
-            nextCharacterIsPattern && !numbersAhead;
-        }
-
-        if (
-          infoRef.current &&
-          nextCharacterIsPattern &&
-          !isUserCharacter(formattedCharacters[cursorPosition - 1]) &&
-          numbersAhead
-        )
-          infoRef.current.cursorPosition =
-            cursorPosition + nextUserCharacterIndex + 1;
-      }
-
-      onValueChange(rawValue);
-
-      // if (typeof onChange === 'function') {
-      //   onChange(event);
-      // }
-
-      setValue(formattedValue);
-    };
-
-    useEffect(() => {
-      if (inputRef.current && infoRef.current) {
-        const { cursorPosition, endOfSection } = infoRef.current;
-
-        if (endOfSection) return;
-        inputRef.current.setSelectionRange(cursorPosition, cursorPosition);
-      }
-    }, [inputRef, value]);
-
-    useEffect(() => {
-      if (userValue !== '' && value === '') {
-        setValue(format(userValue, pattern));
-      }
-    }, [value, userValue, pattern]);
-
-    if (onChange) {
-      console.log('Please use onValueChange instead of onChange');
+    if (infoRef.current) {
+      infoRef.current.cursorPosition = cursorPosition;
     }
 
-    return (
-      <Input
-        maxLength={pattern.length}
-        onChange={handleChange}
-        ref={inputRef}
-        value={value}
-        {...rest}
-      />
-    );
-  }
-);
+    let rawValue = stripPatternCharacters(inputValue);
 
-PatternInput.displayName = 'PatternInput';
+    if (rawValue !== '') {
+      if (as === 'numeric') {
+        if (!/^\d+$/.test(rawValue)) {
+          return;
+        }
+      } else if (as === 'alpha') {
+        if (!/^[a-zA-Z]+$/.test(rawValue)) {
+          return;
+        }
+      }
+    }
+
+    if (didDelete) {
+      const patternCharacterDeleted = !isUserCharacter(
+        value.split('')[cursorPosition]
+      );
+
+      if (patternCharacterDeleted) {
+        const firstBit = inputValue.substr(0, cursorPosition);
+        const rawFirstBit = stripPatternCharacters(firstBit);
+
+        rawValue =
+          rawFirstBit.substr(0, rawFirstBit.length - 1) +
+          stripPatternCharacters(
+            inputValue.substr(cursorPosition, inputValue.length)
+          );
+
+        if (infoRef.current) {
+          infoRef.current.cursorPosition =
+            firstBit.replace(/([\d\w]+)[^\dA-z]+$/, '$1').length - 1;
+        }
+      }
+    }
+
+    const formattedValue = format(rawValue, pattern);
+
+    if (infoRef.current) {
+      infoRef.current.endOfSection = false;
+    }
+
+    if (!didDelete) {
+      const formattedCharacters = formattedValue.split('');
+      const nextCharacter = formattedCharacters[cursorPosition];
+      const nextCharacterIsPattern = !isUserCharacter(nextCharacter);
+      const nextUserCharacterIndex = formattedValue
+        .substr(cursorPosition)
+        .search(/[\dA-z]/);
+      const numbersAhead = nextUserCharacterIndex !== -1;
+
+      if (infoRef.current) {
+        infoRef.current.endOfSection = nextCharacterIsPattern && !numbersAhead;
+      }
+
+      if (
+        infoRef.current &&
+        nextCharacterIsPattern &&
+        !isUserCharacter(formattedCharacters[cursorPosition - 1]) &&
+        numbersAhead
+      )
+        infoRef.current.cursorPosition =
+          cursorPosition + nextUserCharacterIndex + 1;
+    }
+
+    onValueChange(rawValue);
+
+    // if (typeof onChange === 'function') {
+    //   onChange(event);
+    // }
+
+    setValue(formattedValue);
+  };
+
+  useEffect(() => {
+    if (inputRef.current && infoRef.current) {
+      const { cursorPosition, endOfSection } = infoRef.current;
+
+      if (endOfSection) return;
+      inputRef.current.setSelectionRange(cursorPosition, cursorPosition);
+    }
+  }, [inputRef, value]);
+
+  useEffect(() => {
+    if (userValue !== '' && value === '') {
+      setValue(format(userValue, pattern));
+    }
+  }, [value, userValue, pattern]);
+
+  if (onChange) {
+    console.log('Please use onValueChange instead of onChange');
+  }
+
+  return (
+    <Input
+      maxLength={pattern.length}
+      onChange={handleChange}
+      value={value}
+      {...rest}
+    />
+  );
+};
 
 export { PatternInput };
 

@@ -18,5 +18,3 @@ export const FormTextarea = ({
     <FormMessage />
   </FormItem>
 );
-
-FormTextarea.displayName = 'FormTextarea';

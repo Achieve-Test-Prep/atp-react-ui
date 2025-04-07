@@ -5,7 +5,7 @@ import { useTheme } from '../../themes/use-theme';
 
 import type { DropdownMenuItemsProps } from './types';
 
-export const DropdownItem = ({
+export const DropdownItems = ({
   className,
   as = 'ul',
   align = 'right',

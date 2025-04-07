@@ -1,25 +1,21 @@
-import type { ForwardedRef } from 'react';
-import { forwardRef } from 'react';
-
 import { twMerge } from 'tailwind-merge';
 
 import { useTheme } from '../../../themes';
 
-import type { CheckboxProps, CheckboxRef } from './types';
+import type { CheckboxProps } from './types';
 
-export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>(
-  (
-    { className, type = 'checkbox', ...other }: CheckboxProps,
-    ref: ForwardedRef<CheckboxRef>
-  ) => {
-    const { checkbox } = useTheme();
+export const Checkbox = ({
+  className,
+  type = 'checkbox',
+  ...other
+}: CheckboxProps) => {
+  const { checkbox } = useTheme();
 
-    const cls = twMerge(
-      checkbox.base,
-      checkbox.active,
-      checkbox.disabled,
-      className
-    );
-    return <input ref={ref} {...other} type={type} className={cls} />;
-  }
-);
+  const cls = twMerge(
+    checkbox.base,
+    checkbox.active,
+    checkbox.disabled,
+    className
+  );
+  return <input {...other} type={type} className={cls} />;
+};

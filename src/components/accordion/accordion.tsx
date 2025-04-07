@@ -41,15 +41,12 @@ const AccordionTrigger = ({
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 );
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
 const AccordionContent = ({
   className,
   children,
   ...props
-}: React.ComponentProps<typeof AccordionPrimitive.Content> & {
-  ref: React.RefObject<React.ElementRef<typeof AccordionPrimitive.Content>>;
-}) => (
+}: React.ComponentProps<typeof AccordionPrimitive.Content>) => (
   <AccordionPrimitive.Content
     className={twMerge(
       'data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm transition-all',
@@ -60,6 +57,4 @@ const AccordionContent = ({
     {children}
   </AccordionPrimitive.Content>
 );
-AccordionContent.displayName = AccordionPrimitive.Content.displayName;
-
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
