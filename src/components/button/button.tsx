@@ -31,25 +31,16 @@ export const Button = React.forwardRef<Ref, ButtonProps>((props, ref) => {
       type,
       ...other,
     },
-    IconLeft
-      ? React.createElement(Icon, { className: iconLeftStyles, icon: IconLeft })
-      : null,
+    IconLeft ? <Icon className={iconLeftStyles} icon={IconLeft} /> : null,
     children || null,
-    IconRight
-      ? React.createElement(Icon, {
-          className: iconRightStyles,
-          icon: IconRight,
-        })
-      : null,
-    showLoader
-      ? React.createElement(
-          'div',
-          {
-            className: 'absolute inset-0 z-10 flex items-center justify-center',
-            'aria-hidden': true,
-          },
-          React.createElement(Spinner, { size: loaderSize })
-        )
-      : null
+    IconRight ? <Icon className={iconRightStyles} icon={IconRight} /> : null,
+    showLoader ? (
+      <div
+        className="absolute inset-0 z-10 flex items-center justify-center"
+        aria-hidden={true}
+      >
+        <Spinner size={loaderSize} />
+      </div>
+    ) : null
   );
 });

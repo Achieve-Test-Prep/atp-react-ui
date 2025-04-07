@@ -24,13 +24,13 @@ const FormItem = forwardRef<HTMLDivElement, DivProps>(
     const idValue = useMemo(() => ({ id }), [id]);
 
     return (
-      (<FormItemContext value={idValue}>
+      <FormItemContext value={idValue}>
         <div
           ref={ref}
           className={twMerge('space-y-1.5', className)}
           {...props}
         />
-      </FormItemContext>)
+      </FormItemContext>
     );
   }
 );
