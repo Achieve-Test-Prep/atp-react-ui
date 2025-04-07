@@ -5,15 +5,14 @@ import { twMerge } from 'tailwind-merge';
 
 import { Tooltip } from '../tooltip';
 
-const Slider = React.forwardRef<
-  React.ElementRef<typeof SliderPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
->(({ className, ...props }, ref) => {
+const Slider = ({
+  className,
+  ...props
+}: React.ComponentProps<typeof SliderPrimitive.Root>) => {
   const steps = Array.from({ length: props.max ?? 0 }, (_, i) => i);
 
   return (
     <SliderPrimitive.Root
-      ref={ref}
       className={twMerge(
         'relative flex w-full touch-none items-center select-none',
         className
@@ -48,7 +47,8 @@ const Slider = React.forwardRef<
       </SliderPrimitive.Thumb>
     </SliderPrimitive.Root>
   );
-});
+};
+
 Slider.displayName = SliderPrimitive.Root.displayName;
 
 export { Slider };

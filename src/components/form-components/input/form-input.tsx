@@ -1,22 +1,20 @@
-import { forwardRef } from 'react';
-
 import { FormControl, FormItem, FormLabel, FormMessage } from '../form';
 import type { FormLabelProps } from '../types';
 
 import { Input } from './input';
 import type { InputProps } from './types';
 
-export const FormInput = forwardRef<
-  HTMLInputElement,
-  InputProps & FormLabelProps
->(({ label, labelClassName, formItemClassName, ...props }, ref) => (
+export const FormInput = ({
+  label,
+  labelClassName,
+  formItemClassName,
+  ...props
+}: InputProps & FormLabelProps) => (
   <FormItem className={formItemClassName}>
     {label && <FormLabel className={labelClassName}>{label}</FormLabel>}
     <FormControl>
-      <Input {...props} ref={ref} />
+      <Input {...props} />
     </FormControl>
     <FormMessage />
   </FormItem>
-));
-
-FormInput.displayName = 'FormInput';
+);

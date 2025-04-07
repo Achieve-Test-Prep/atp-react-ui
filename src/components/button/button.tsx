@@ -3,10 +3,10 @@ import React from 'react';
 import { Icon } from '../icon';
 import { Spinner } from '../progress';
 
-import type { ButtonProps, Ref } from './types';
+import type { ButtonProps } from './types';
 import { useButton } from './use-button';
 
-export const Button = React.forwardRef<Ref, ButtonProps>((props, ref) => {
+export const Button = ({ ...props }: ButtonProps) => {
   const {
     tag,
     type,
@@ -26,7 +26,6 @@ export const Button = React.forwardRef<Ref, ButtonProps>((props, ref) => {
     tag,
     {
       className: buttonStyles,
-      ref,
       disabled,
       type,
       ...other,
@@ -43,4 +42,4 @@ export const Button = React.forwardRef<Ref, ButtonProps>((props, ref) => {
       </div>
     ) : null
   );
-});
+};
