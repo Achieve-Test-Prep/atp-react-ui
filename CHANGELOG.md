@@ -1,5 +1,12 @@
 # Changelog
 
+# [5.2.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/5.1.6...5.2.0) (2025-04-09)
+
+
+### Features
+
+* **add avatar and also password field:** add avatar and also ([2f9a404](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/2f9a4048fad5ce33450e1f2aa546fda8b02a26d4))
+
 ## [5.1.6](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/5.1.5...5.1.6) (2025-04-07)
 
 ## [5.1.5](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/5.1.4...5.1.5) (2025-04-07)
