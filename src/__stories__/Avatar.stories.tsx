@@ -1,6 +1,8 @@
+import React from 'react';
+
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Avatar } from '../components';
+import { Avatar, AvatarFallback, AvatarImage } from '../components';
 
 import avatarImage from './static/avatar-1.jpg';
 
@@ -15,9 +17,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {
-    size: 'lg',
-    src: avatarImage,
-    alt: 'Profile image',
-  },
+  render: () => (
+    <Avatar>
+      <AvatarImage src={avatarImage} alt={'John Doe'} />
+      <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+    </Avatar>
+  ),
 };

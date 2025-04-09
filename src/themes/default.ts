@@ -71,7 +71,7 @@ export const defaultTheme = {
 
   // Avatar
   avatar: {
-    base: twSort`relative inline-block rounded-full`,
+    base: twSort`relative flex shrink-0 overflow-hidden rounded-full`,
     size: {
       lg: twSort`size-10`,
       base: twSort`size-8`,
