@@ -2,72 +2,78 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Bitter:wght@300;400;500;700&display=swap')
 layer(fonts);
 
+@import 'tailwindcss';
+
+/* Define custom variant after imports */
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --primary-dark: #550700;
+  --primary: #ff4500;
+  --primary-medium: #ff8e64;
+  --primary-light: #ffe3d9;
+  --primary-x-light: #fff3eb;
+
+  --secondary-dark: #2d1559;
+  --secondary: #9f7dff;
+  --secondary-medium: #cbb8ff;
+  --secondary-light: #ddd1ff;
+  --secondary-x-light: #eae2ff;
+
+  --accent: #32363b;
+  --accent-medium: #414b58;
+  --accent-light: #6d6d6d;
+  --accent-x-light: #cecece;
+
+  --info: #3e96e7;
+  --info-x-light: #dcefff;
+
+  --success: #85bc63;
+  --success-medium: #5f8f41;
+  --success-x-light: #e6f8f1;
+
+  --warning: #ffcb46;
+  --warning-dark: #e6ab12;
+  --warning-x-light: #fff5db;
+
+  --error: #ff5353;
+  --error-x-light: #ffeaea;
+
+  --outline: #d1d5db;
+  --avatar: #b7babc;
+  --inherit: inherit;
+  --current: currentColor;
+  --transparent: transparent;
+  --black: #000;
+  --white: #fff;
+
+  --gray-25: #f9fafb;
+  --gray-50: #f3f4f6;
+  --gray-75: #e5e5e5;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --gray-950: #030712;
+  --gray-overlay: #6d6d6d;
+
+  --red-50: #fef2f2;
+  --red-200: #fecaca;
+  --yellow-50: #fefce8;
+  --yellow-200: #fef08a;
+  --green-50: #f0fdf4;
+  --green-200: #bbf7d0;
+  --blue-50: #eff6ff;
+  --blue-200: #bfdbfe;
+}
+
 /* Define the theme BEFORE importing Tailwind */
 @theme {
-  --color-*: initial;
-  --color-primary-dark: #550700;
-  --color-primary: #ff4500;
-  --color-primary-medium: #ff8e64;
-  --color-primary-light: #ffe3d9;
-  --color-primary-x-light: #fff3eb;
-
-  --color-secondary-dark: #2d1559;
-  --color-secondary: #9f7dff;
-  --color-secondary-medium: #cbb8ff;
-  --color-secondary-light: #ddd1ff;
-  --color-secondary-x-light: #eae2ff;
-
-  --color-accent: #32363b;
-  --color-accent-medium: #414b58;
-  --color-accent-light: #6d6d6d;
-  --color-accent-x-light: #cecece;
-
-  --color-info: #3e96e7;
-  --color-info-x-light: #dcefff;
-
-  --color-success: #85bc63;
-  --color-success-medium: #5f8f41;
-  --color-success-x-light: #e6f8f1;
-
-  --color-warning: #ffcb46;
-  --color-warning-dark: #e6ab12;
-  --color-warning-x-light: #fff5db;
-
-  --color-error: #ff5353;
-  --color-error-x-light: #ffeaea;
-
-  --color-outline: #d1d5db;
-  --color-avatar: #b7babc;
-  --color-inherit: inherit;
-  --color-current: currentColor;
-  --color-transparent: transparent;
-  --color-black: #000;
-  --color-white: #fff;
-
-  --color-gray-25: #f9fafb;
-  --color-gray-50: #f3f4f6;
-  --color-gray-75: #e5e5e5;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
-  --color-gray-950: #030712;
-  --color-gray-overlay: #6d6d6d;
-
-  --color-red-50: #fef2f2;
-  --color-red-200: #fecaca;
-  --color-yellow-50: #fefce8;
-  --color-yellow-200: #fef08a;
-  --color-green-50: #f0fdf4;
-  --color-green-200: #bbf7d0;
-  --color-blue-50: #eff6ff;
-  --color-blue-200: #bfdbfe;
-
   --max-height-*: initial;
   --max-height-0: 0;
   --max-height-xl: 36rem;
@@ -161,36 +167,74 @@ layer(fonts);
   }
 }
 
-@import 'tailwindcss';
+/* Define the theme BEFORE importing Tailwind */
+@theme inline {
+  --color-primary-dark: var(--primary-dark);
+  --color-primary: var(--primary);
+  --color-primary-medium: var(--primary-medium);
+  --color-primary-light: var(--primary-light);
+  --color-primary-x-light: var(--primary-x-light);
 
-/* Define custom variant after imports */
-@custom-variant dark (&:is(.dark *));
+  --color-secondary-dark: var(--secondary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-medium: var(--secondary-medium);
+  --color-secondary-light: var(--secondary-light);
+  --color-secondary-x-light: var(--secondary-x-light);
+
+  --color-accent: var(--accent);
+  --color-accent-medium: var(--accent-medium);
+  --color-accent-light: var(--accent-light);
+  --color-accent-x-light: var(--accent-x-light);
+
+  --color-info: var(--info);
+  --color-info-x-light: var(--info-x-light);
+
+  --color-success: var(--success);
+  --color-success-medium: var(--success-medium);
+  --color-success-x-light: var(--success-x-light);
+
+  --color-warning: var(--warning);
+  --color-warning-dark: var(--warning-dark);
+  --color-warning-x-light: var(--warning-x-light);
+
+  --color-error: var(--error);
+  --color-error-x-light: var(--error-x-light);
+
+  --color-outline: var(--outline);
+  --color-avatar: var(--avatar);
+  --color-inherit: var(--inherit);
+  --color-current: var(--current);
+  --color-transparent: var(--transparent);
+  --color-black: var(--black);
+  --color-white: var(--white);
+
+  --color-gray-25: var(--gray-25);
+  --color-gray-50: var(--gray-50);
+  --color-gray-75: var(--gray-75);
+  --color-gray-100: var(--gray-100);
+  --color-gray-200: var(--gray-200);
+  --color-gray-300: var(--gray-300);
+  --color-gray-400: var(--gray-400);
+  --color-gray-500: var(--gray-500);
+  --color-gray-600: var(--gray-600);
+  --color-gray-700: var(--gray-700);
+  --color-gray-800: var(--gray-800);
+  --color-gray-900: var(--gray-900);
+  --color-gray-950: var(--gray-950);
+  --color-gray-overlay: var(--gray-overlay);
+
+  --color-red-50: var(--red-50);
+  --color-red-200: var(--red-200);
+  --color-yellow-50: var(--yellow-50);
+  --color-yellow-200: var(--yellow-200);
+  --color-green-50: var(--green-50);
+  --color-green-200: var(--green-200);
+  --color-blue-50: var(--blue-50);
+  --color-blue-200: var(--blue-200);
+}
 
 /* Add your theme overrides in the base layer to ensure they take precedence */
 @layer base {
-  :root {
-    /* Reinforcing primary theme colors */
-    --tw-color-primary: var(--color-primary);
-    --tw-color-primary-dark: var(--color-primary-dark);
-    --tw-color-primary-medium: var(--color-primary-medium);
-    --tw-color-primary-light: var(--color-primary-light);
-    --tw-color-primary-x-light: var(--color-primary-x-light);
-
-    /* Secondary colors */
-    --tw-color-secondary: var(--color-secondary);
-    --tw-color-secondary-dark: var(--color-secondary-dark);
-    --tw-color-secondary-medium: var(--color-secondary-medium);
-    --tw-color-secondary-light: var(--color-secondary-light);
-    --tw-color-secondary-x-light: var(--color-secondary-x-light);
-
-    /* Accent colors */
-    --tw-color-accent: var(--color-accent);
-    --tw-color-accent-medium: var(--color-accent-medium);
-    --tw-color-accent-light: var(--color-accent-light);
-    --tw-color-accent-x-light: var(--color-accent-x-light);
-  }
-
-  /* Border color fix */
   *,
   ::after,
   ::before,

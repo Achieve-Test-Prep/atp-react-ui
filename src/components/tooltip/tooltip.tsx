@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 
 import Tippy from '@tippyjs/react';
 
-import { useTheme } from '../../themes/use-theme';
+import { useTheme } from '../../themes';
 
 import type { TooltipProps } from './types';
 

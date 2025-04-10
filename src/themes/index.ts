@@ -1,3 +1,2 @@
-export * from './default';
-export * from './theme-context';
-export * from './use-theme';
+export * from './atp-theme';
+export * from './context';

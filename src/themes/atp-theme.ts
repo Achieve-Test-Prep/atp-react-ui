@@ -4,7 +4,7 @@ import { buttonStyles } from './button-styles';
 import * as ModalStyles from './modal-styles';
 import { textStyles } from './text-styles';
 
-export const defaultTheme = {
+export const atpTheme = {
   text: textStyles,
   // Alert
   alert: {
@@ -191,4 +191,4 @@ export const defaultTheme = {
   },
 };
 
-export type AtpThemeType = typeof defaultTheme;
+export type AtpThemeType = typeof atpTheme;
