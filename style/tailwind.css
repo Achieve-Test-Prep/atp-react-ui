@@ -9,7 +9,7 @@ layer(fonts);
 
 :root {
   --primary-dark: #550700;
-  --primary: #ff4500;
+  --primary: oklch(0.66 0.229356 35.4025);
   --primary-medium: #ff8e64;
   --primary-light: #ffe3d9;
   --primary-x-light: #fff3eb;
@@ -74,7 +74,6 @@ layer(fonts);
 
 /* Define the theme BEFORE importing Tailwind */
 @theme {
-  --max-height-*: initial;
   --max-height-0: 0;
   --max-height-xl: 36rem;
 
@@ -94,11 +93,17 @@ layer(fonts);
     BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
     'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
+
   --font-serif:
     Bitter, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+
   --font-mono:
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
     'Courier New', monospace;
+
+  --default-font-family: var(--font-sans);
+  --default-mono-font-family: var(--font-mono);
+  --default-serif-font-family: var(--font-serif);
 
   --background-image-slider: linear-gradient(
     90deg,
@@ -115,6 +120,7 @@ layer(fonts);
       height: var(--radix-accordion-content-height);
     }
   }
+
   @keyframes accordion-up {
     from {
       height: var(--radix-accordion-content-height);
@@ -123,6 +129,7 @@ layer(fonts);
       height: 0;
     }
   }
+
   @keyframes scale-min-max {
     0%,
     100% {
@@ -134,6 +141,7 @@ layer(fonts);
       transform: scale(1);
     }
   }
+
   @keyframes shake {
     0%,
     66%,
@@ -154,15 +162,16 @@ layer(fonts);
       transform: translateX(3px);
     }
   }
+
   @keyframes accent-primary {
     0%,
     45%,
     100% {
-      background-color: #32363b;
+      background-color: var(--accent);
     }
     67%,
     78% {
-      background-color: #ff4500;
+      background-color: var(--primary);
     }
   }
 }

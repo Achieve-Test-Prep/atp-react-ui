@@ -16,3 +16,4 @@ export * from './tooltip';
 export * from './typography';
 export * from './scroll-area';
 export * from './slider';
+export * from './sheet';
