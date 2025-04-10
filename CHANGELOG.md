@@ -1,5 +1,12 @@
 # Changelog
 
+# [5.3.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/5.2.1...5.3.0) (2025-04-10)
+
+
+### Features
+
+* **add sheet and fonts:** add sheet and fonts ([2ca2f29](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/2ca2f297269c971a4695bd09cdd502bdbf822d3a))
+
 ## [5.2.1](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/5.2.0...5.2.1) (2025-04-10)
 
 # [5.2.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/5.1.6...5.2.0) (2025-04-09)
