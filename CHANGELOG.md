@@ -1,5 +1,7 @@
 # Changelog
 
+## [5.3.1](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/5.3.0...5.3.1) (2025-05-09)
+
 # [5.3.0](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/5.2.1...5.3.0) (2025-04-10)
 
 
