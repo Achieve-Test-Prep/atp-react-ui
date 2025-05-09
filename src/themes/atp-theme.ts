@@ -144,15 +144,16 @@ export const atpTheme = {
 
   // Input
   input: {
-    base: twSort`border-outline text-accent-light placeholder:text-accent-light/50 block w-full rounded-lg border p-2.5 text-sm leading-5 focus:outline-hidden`,
-    active: twSort`focus:border-primary focus:ring-primary-light focus:ring`,
-    disabled: twSort`disabled:text-accent-disabled disabled:border-outline disabled:cursor-not-allowed disabled:bg-gray-50`,
+    base: twSort`border-input-border text-input-foreground placeholder:text-accent-light/50 block w-full rounded-lg border bg-transparent p-2.5 text-sm leading-5 outline-hidden`,
+    active: twSort`focus:border-primary focus:ring focus:ring-transparent focus:outline-hidden`,
+    disabled: twSort`disabled:text-input-foreground-muted disabled:border-input-border disabled:bg-input-muted disabled:cursor-not-allowed`,
   },
 
+  //
   checkbox: {
     active: twSort`focus:border-primary focus:ring-primary-light focus:ring focus:ring-offset-0 focus:outline-hidden`,
-    disabled: twSort`disabled:text-accent-disabled disabled:border-outline disabled:cursor-not-allowed disabled:bg-gray-50`,
-    base: twSort`form-checkbox border-outline text-primary cursor-pointer rounded-sm`,
+    disabled: twSort`checked:disabled:border-primary disabled:text-accent-disabled disabled:border-border disabled:cursor-not-allowed disabled:bg-gray-50`,
+    base: twSort`not-checked:disabled:bg-input-muted form-checkbox checked:disabled:bg-primary border-input-border text-primary cursor-pointer rounded-sm fill-transparent not-checked:bg-transparent`,
   },
 
   // Radio
@@ -171,11 +172,11 @@ export const atpTheme = {
 
   // Card
   card: {
-    base: twSort`shadow-card flex min-w-0 flex-col rounded-lg bg-white`,
+    base: twSort`shadow-card bg-card text-card-foreground flex min-w-0 flex-col rounded-xl`,
   },
 
   cardBody: {
-    base: twSort`px-4 py-5 sm:px-6`,
+    base: twSort`px-6 py-5`,
   },
 
   // Button

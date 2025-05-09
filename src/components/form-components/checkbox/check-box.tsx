@@ -17,5 +17,6 @@ export const Checkbox = ({
     checkbox.disabled,
     className
   );
+
   return <input {...other} type={type} className={cls} />;
 };
