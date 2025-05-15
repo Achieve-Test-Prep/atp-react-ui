@@ -2,7 +2,7 @@
   "name": "atp-react-ui",
   "description": "A new default theme for ATP Products.",
   "private": false,
-  "version": "4.0.7",
+  "version": "4.0.8",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",

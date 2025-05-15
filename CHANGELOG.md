@@ -1,4 +1,17 @@
+# Changelog
 
+## [4.0.8](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/5.3.2...4.0.8) (2025-05-15)
+
+
+### Bug Fixes
+
+* minor issues ([f166169](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/f1661696deb991327daa7b2ff55326471b34d76d))
+
+
+### Reverts
+
+* all changes to 4.7.0 with new settings ([145d3a2](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/145d3a2a4044204cecf228eb883a1f40425480cf))
+* **react 19:** return to react 18.3.1 ([ae4618a](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/ae4618ab5f85c1e0be9ddb454d00bdeccb1a7634))
 
 ## [4.0.7](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.6...4.0.7) (2025-03-10)
 
