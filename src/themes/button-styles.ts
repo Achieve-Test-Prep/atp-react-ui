@@ -1,7 +1,7 @@
 import { twSort } from '../utils';
 
 export const buttonStyles = {
-  base: twSort`relative inline-flex cursor-pointer items-center justify-center border border-transparent align-bottom leading-5 leading-none font-medium tracking-[0.16px] whitespace-nowrap outline-hidden transition-colors duration-150 select-none`,
+  base: twSort`relative inline-flex cursor-pointer items-center justify-center border border-transparent align-bottom leading-5 leading-none font-medium tracking-[0.16px] whitespace-nowrap transition-colors duration-150 outline-none select-none`,
   disabled: twSort`disabled:border-outline disabled:text-outline disabled:cursor-not-allowed disabled:bg-gray-50`,
   active: twSort`focus:ring-primary-light focus:ring-2`,
   block: twSort`w-full`,
@@ -47,7 +47,7 @@ export const buttonStyles = {
   },
 
   link: {
-    base: twSort`text-accent-light border shadow-xs`,
+    base: twSort`text-accent-light border shadow-sm`,
     active: twSort`hover:bg-primary-x-light hover:text-primary hover:shadow-none active:bg-transparent`,
     disabled: twSort``,
   },

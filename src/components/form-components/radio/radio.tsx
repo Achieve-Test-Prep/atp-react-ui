@@ -1,4 +1,5 @@
-import type { ComponentProps } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef } from 'react';
+import { forwardRef } from 'react';
 
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 import { twMerge } from 'tailwind-merge';
@@ -7,27 +8,30 @@ import { useTheme } from '../../../themes';
 
 import type { RadioGroupProps, RadioProps } from './types';
 
-const RadioItemsGroup = ({
-  className,
-  ...props
-}: ComponentProps<RadioGroupProps>) => (
+const RadioItemsGroup = forwardRef<
+  ElementRef<RadioGroupProps>,
+  ComponentPropsWithoutRef<RadioGroupProps>
+>(({ className, ...props }, ref) => (
   <RadioGroupPrimitive.Root
     className={twMerge('grid gap-2', className)}
     {...props}
+    ref={ref}
   />
-);
+));
 
-const RadioItem = ({
-  className,
-  children,
-  ...props
-}: ComponentProps<RadioProps>) => {
+RadioItemsGroup.displayName = 'RadioItemsGroup';
+
+const RadioItem = forwardRef<
+  ElementRef<RadioProps>,
+  ComponentPropsWithoutRef<RadioProps>
+>(({ className, children, ...props }, ref) => {
   const { radio } = useTheme();
   if (children) {
     console.log('RadioItem must have children');
   }
   return (
     <RadioGroupPrimitive.Item
+      ref={ref}
       className={twMerge(radio.base, radio.active, radio.disabled, className)}
       {...props}
     >
@@ -49,6 +53,8 @@ const RadioItem = ({
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   );
-};
+});
+
+RadioItem.displayName = 'RadioItem';
 
 export { RadioItemsGroup, RadioItem };

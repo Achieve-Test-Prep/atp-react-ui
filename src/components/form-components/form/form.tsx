@@ -1,5 +1,9 @@
-import type { HTMLAttributes, ComponentProps } from 'react';
-import { useId, useMemo } from 'react';
+import type {
+  ElementRef,
+  ComponentPropsWithoutRef,
+  HTMLAttributes,
+} from 'react';
+import { forwardRef, useId, useMemo } from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
 import { FormProvider } from 'react-hook-form';
@@ -14,28 +18,48 @@ import { useFormField } from './use-form-field';
 
 const Form = FormProvider;
 
-const FormItem = ({ className, ...props }: DivProps) => {
-  const id = useId();
-  const idValue = useMemo(() => ({ id }), [id]);
+const FormItem = forwardRef<HTMLDivElement, DivProps>(
+  ({ className, ...props }, ref) => {
+    const id = useId();
+    const idValue = useMemo(() => ({ id }), [id]);
+
+    return (
+      <FormItemContext.Provider value={idValue}>
+        <div
+          ref={ref}
+          className={twMerge('space-y-1.5', className)}
+          {...props}
+        />
+      </FormItemContext.Provider>
+    );
+  }
+);
+
+FormItem.displayName = 'FormItem';
+
+const FormLabel = forwardRef<
+  ElementRef<LabelProps>,
+  ComponentPropsWithoutRef<LabelProps>
+>(({ className, ...props }, ref) => {
+  const { formItemId } = useFormField();
 
   return (
-    <FormItemContext value={idValue}>
-      <div className={twMerge('space-y-1.5', className)} {...props} />
-    </FormItemContext>
+    <Label ref={ref} className={className} htmlFor={formItemId} {...props} />
   );
-};
+});
 
-const FormLabel = ({ className, ...props }: ComponentProps<LabelProps>) => {
-  const { formItemId } = useFormField();
-  return <Label className={className} htmlFor={formItemId} {...props} />;
-};
+FormLabel.displayName = 'FormLabel';
 
-const FormControl = (props: ComponentProps<typeof Slot>) => {
+const FormControl = forwardRef<
+  ElementRef<typeof Slot>,
+  ComponentPropsWithoutRef<typeof Slot>
+>(({ ...props }, ref) => {
   const { error, formItemId, formDescriptionId, formMessageId } =
     useFormField();
 
   return (
     <Slot
+      ref={ref}
       id={formItemId}
       aria-describedby={
         !error
@@ -46,13 +70,14 @@ const FormControl = (props: ComponentProps<typeof Slot>) => {
       {...props}
     />
   );
-};
+});
 
-const FormMessage = ({
-  className,
-  children,
-  ...props
-}: HTMLAttributes<HTMLParagraphElement>) => {
+FormControl.displayName = 'FormControl';
+
+const FormMessage = forwardRef<
+  HTMLParagraphElement,
+  HTMLAttributes<HTMLParagraphElement>
+>(({ className, children, ...props }, ref) => {
   const { error, formMessageId } = useFormField();
   const body = error ? String(error?.message) : children;
 
@@ -62,6 +87,7 @@ const FormMessage = ({
 
   return (
     <p
+      ref={ref}
       id={formMessageId}
       className={twMerge('text-error text-xs', className)}
       {...props}
@@ -69,22 +95,27 @@ const FormMessage = ({
       {body}
     </p>
   );
-};
+});
 
-const FormDescription = ({
-  className,
-  ...props
-}: HTMLAttributes<HTMLParagraphElement>) => {
+FormMessage.displayName = 'FormMessage';
+
+const FormDescription = forwardRef<
+  HTMLParagraphElement,
+  HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => {
   const { formDescriptionId } = useFormField();
 
   return (
     <Text
       as="caption"
+      ref={ref}
       id={formDescriptionId}
       className={twMerge('text-accent-light', className)}
       {...props}
     />
   );
-};
+});
+
+FormDescription.displayName = 'FormDescription';
 
 export { Form, FormItem, FormControl, FormLabel, FormDescription, FormMessage };

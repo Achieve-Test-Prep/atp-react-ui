@@ -1,5 +1,5 @@
-import type { ComponentProps } from 'react';
-import { useState, useEffect } from 'react';
+import type { ElementRef, ComponentPropsWithoutRef } from 'react';
+import { useState, useEffect, forwardRef } from 'react';
 
 import * as ProgressPrimitive from '@radix-ui/react-progress';
 import { twMerge } from 'tailwind-merge';
@@ -8,14 +8,12 @@ import { Text } from '../typography';
 
 import type { ProgressbarProps } from './types';
 
-export const Progressbar = ({
-  className,
-  indicatorClassName,
-  value,
-  ...props
-}: React.ComponentProps<ProgressbarProps> & {
-  indicatorClassName?: string;
-}) => {
+export const Progressbar = forwardRef<
+  React.ElementRef<ProgressbarProps>,
+  React.ComponentPropsWithoutRef<ProgressbarProps> & {
+    indicatorClassName?: string;
+  }
+>(({ className, indicatorClassName, value, ...props }, ref) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -27,6 +25,7 @@ export const Progressbar = ({
 
   return (
     <ProgressPrimitive.Root
+      ref={ref}
       className={twMerge(
         'bg-primary-light relative h-2 w-full min-w-full overflow-hidden rounded-full',
         className
@@ -42,17 +41,16 @@ export const Progressbar = ({
       />
     </ProgressPrimitive.Root>
   );
-};
+});
 
-export const ProgressbarWithLabels = ({
-  leftLabel,
-  rightLabel,
-  ...props
-}: ComponentProps<ProgressbarProps> & {
-  indicatorClassName?: string;
-  leftLabel?: string;
-  rightLabel?: string;
-}) => (
+export const ProgressbarWithLabels = forwardRef<
+  ElementRef<ProgressbarProps>,
+  ComponentPropsWithoutRef<ProgressbarProps> & {
+    indicatorClassName?: string;
+    leftLabel?: string;
+    rightLabel?: string;
+  }
+>(({ leftLabel, rightLabel, ...props }, ref) => (
   <article className="flex flex-col gap-y-1">
     <div className="flex items-center justify-between px-1">
       {leftLabel && (
@@ -66,6 +64,6 @@ export const ProgressbarWithLabels = ({
         </Text>
       )}
     </div>
-    <Progressbar {...props} />
+    <Progressbar {...props} ref={ref} />
   </article>
-);
+));

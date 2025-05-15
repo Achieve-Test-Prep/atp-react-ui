@@ -11,8 +11,8 @@ export function FormField<
 >({ ...props }: ControllerProps<TFieldValues, TName>) {
   const nameValue = useMemo(() => ({ name: props.name }), [props.name]);
   return (
-    <FormFieldContext value={nameValue}>
+    <FormFieldContext.Provider value={nameValue}>
       <Controller {...props} />
-    </FormFieldContext>
+    </FormFieldContext.Provider>
   );
 }

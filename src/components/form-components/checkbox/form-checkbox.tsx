@@ -1,19 +1,19 @@
+import { forwardRef } from 'react';
+
 import { FormControl, FormItem, FormLabel, FormMessage } from '../form';
 import type { FormLabelProps } from '../types';
 
 import { Checkbox } from './check-box';
-import type { CheckboxProps } from './types';
+import type { CheckboxProps, CheckboxRef } from './types';
 
-export const FormCheckbox = ({
-  formItemClassName,
-  label,
-  labelClassName,
-  ...props
-}: CheckboxProps & FormLabelProps) => (
+export const FormCheckbox = forwardRef<
+  CheckboxRef,
+  CheckboxProps & FormLabelProps
+>(({ formItemClassName, label, labelClassName, ...props }, ref) => (
   <FormItem className={formItemClassName}>
     <div className="flex flex-row items-center justify-start space-y-0 space-x-3">
       <FormControl>
-        <Checkbox {...props} />
+        <Checkbox {...props} ref={ref} />
       </FormControl>
       {(label || props.value) && (
         <FormLabel
@@ -25,4 +25,4 @@ export const FormCheckbox = ({
     </div>
     <FormMessage />
   </FormItem>
-);
+));

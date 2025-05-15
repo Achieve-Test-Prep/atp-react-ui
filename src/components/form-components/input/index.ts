@@ -5,4 +5,3 @@ export * from './pattern-input';
 export * from './form-phone-number-input';
 export * from './form-pattern-input';
 export * from './types';
-export * from './form-password-input';

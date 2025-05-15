@@ -46,8 +46,8 @@ export function ThemeProvider({
   };
 
   return (
-    <ThemeProviderContext {...props} value={value}>
+    <ThemeProviderContext.Provider {...props} value={value}>
       {children}
-    </ThemeProviderContext>
+    </ThemeProviderContext.Provider>
   );
 }

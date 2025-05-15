@@ -1,16 +1,22 @@
+import React from 'react';
+
 import { twMerge } from 'tailwind-merge';
 
 import { useTheme } from '../../themes';
 import type { DivProps } from '../../types';
 
-export const TableContainer = ({ className, children, ...other }: DivProps) => {
-  const { tableContainer } = useTheme();
+export const TableContainer = React.forwardRef<HTMLDivElement, DivProps>(
+  (props, ref) => {
+    const { className, children, ...other } = props;
 
-  const cls = twMerge(tableContainer.base, className);
+    const { tableContainer } = useTheme();
 
-  return (
-    <div className={cls} {...other}>
-      {children}
-    </div>
-  );
-};
+    const cls = twMerge(tableContainer.base, className);
+
+    return (
+      <div className={cls} ref={ref} {...other}>
+        {children}
+      </div>
+    );
+  }
+);
