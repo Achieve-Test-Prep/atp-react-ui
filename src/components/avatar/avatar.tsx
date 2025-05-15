@@ -1,31 +1,45 @@
-import React from 'react';
+import * as React from 'react';
 
+import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { twMerge } from 'tailwind-merge';
 
 import { useTheme } from '../../themes';
 
 import type { AvatarProps } from './types';
 
-export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
-  (props, ref) => {
-    const { size = 'base', src, alt, className, ...other } = props;
-    const { avatar } = useTheme();
+function Avatar({ className, size = 'base', ...props }: AvatarProps) {
+  const { avatar } = useTheme();
+  const cls = twMerge(avatar.base, avatar.size[size], className);
+  return <AvatarPrimitive.Root data-slot="avatar" className={cls} {...props} />;
+}
 
-    const cls = twMerge(avatar.base, avatar.size[size], className);
+function AvatarImage({
+  className,
+  ...props
+}: React.ComponentProps<typeof AvatarPrimitive.Image>) {
+  return (
+    <AvatarPrimitive.Image
+      data-slot="avatar-image"
+      className={twMerge('aspect-square size-full', className)}
+      {...props}
+    />
+  );
+}
 
-    return (
-      <div className={cls} ref={ref} {...other}>
-        <img
-          className="size-full rounded-full object-cover"
-          src={src}
-          alt={alt}
-          loading="lazy"
-        />
-        <div
-          className="absolute inset-0 rounded-full shadow-inner"
-          aria-hidden="true"
-        />
-      </div>
-    );
-  }
-);
+function AvatarFallback({
+  className,
+  ...props
+}: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {
+  return (
+    <AvatarPrimitive.Fallback
+      data-slot="avatar-fallback"
+      className={twMerge(
+        'bg-muted flex size-full items-center justify-center rounded-full',
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
+export { Avatar, AvatarImage, AvatarFallback };

@@ -6,7 +6,7 @@ export function Icon({ icon: SingleIcon, className }: IconProps) {
   return (
     <SingleIcon
       aria-hidden="true"
-      className={twMerge('size-5 flex-shrink-0', className)}
+      className={twMerge('size-5 shrink-0', className)}
     />
   );
 }

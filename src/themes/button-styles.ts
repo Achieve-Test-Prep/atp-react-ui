@@ -1,7 +1,7 @@
 import { twSort } from '../utils';
 
 export const buttonStyles = {
-  base: twSort`relative inline-flex cursor-pointer items-center justify-center border border-transparent align-bottom leading-5 leading-none font-medium tracking-[0.16px] whitespace-nowrap transition-colors duration-150 outline-none select-none`,
+  base: twSort`relative inline-flex cursor-pointer items-center justify-center border border-transparent align-bottom leading-5 leading-none font-medium tracking-[0.16px] whitespace-nowrap outline-hidden transition-colors duration-150 select-none`,
   disabled: twSort`disabled:border-outline disabled:text-outline disabled:cursor-not-allowed disabled:bg-gray-50`,
   active: twSort`focus:ring-primary-light focus:ring-2`,
   block: twSort`w-full`,
@@ -10,14 +10,14 @@ export const buttonStyles = {
     lg: twSort`rounded-lg px-10 py-3.5 text-sm`,
     base: twSort`rounded-lg px-5 py-2.5 text-sm`,
     md: twSort`rounded-lg px-5 py-2 text-sm`,
-    sm: twSort`rounded-lg px-4 py-[0.4375rem] text-xs`,
-    xs: twSort`rounded-md px-3 py-[0.1875rem] text-xs`,
+    sm: twSort`rounded-lg px-4 py-1.75 text-xs`,
+    xs: twSort`rounded-md px-3 py-0.75 text-xs`,
 
     icon: {
       lg: twSort`rounded-xl p-3.5 text-base`,
       base: twSort`rounded-xl p-2.5 text-base`,
       md: twSort`rounded-xl p-2 text-sm`,
-      sm: twSort`rounded-xl p-[0.3125rem] text-sm`,
+      sm: twSort`rounded-xl p-1.25 text-sm`,
       xs: twSort`rounded-lg p-px text-xs`,
       pagination: twSort`rounded-md px-1 py-0.5 text-sm`,
     },
@@ -47,7 +47,7 @@ export const buttonStyles = {
   },
 
   link: {
-    base: twSort`text-accent-light border shadow-sm`,
+    base: twSort`text-accent-light border shadow-xs`,
     active: twSort`hover:bg-primary-x-light hover:text-primary hover:shadow-none active:bg-transparent`,
     disabled: twSort``,
   },

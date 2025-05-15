@@ -1,16 +1,8 @@
-import type { DivProps } from '../../types';
+import type * as AvatarPrimitive from '@radix-ui/react-avatar';
 
-export type AvatarProps = DivProps & {
+export type AvatarProps = React.ComponentProps<typeof AvatarPrimitive.Root> & {
   /**
    * The size of the avatar
    */
   size?: 'lg' | 'base' | 'sm';
-  /**
-   * Alternative text for the avatar image
-   */
-  alt?: string;
-  /**
-   * The source for the avatar image
-   */
-  src: string;
 };

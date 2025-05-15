@@ -11,7 +11,7 @@ layer(fonts);
 
 :root {
   --primary-dark: #550700;
-  --primary: #ff4500;
+  --primary: oklch(0.66 0.229356 35.4025);
   --primary-medium: #ff8e64;
   --primary-light: #ffe3d9;
   --primary-x-light: #fff3eb;
@@ -46,6 +46,8 @@ layer(fonts);
   --inherit: inherit;
   --current: currentColor;
   --transparent: transparent;
+  --black: #000;
+  --white: #fff;
 
   --gray-25: #f9fafb;
   --gray-50: #f3f4f6;
@@ -70,96 +72,6 @@ layer(fonts);
   --green-200: #bbf7d0;
   --blue-50: #eff6ff;
   --blue-200: #bfdbfe;
-
-  --radius: 0.625rem;
-
-  --background: #f9fafb; /* oklch(1 0 0); */
-  /* --foreground: #09090b;  oklch(0.141 0.005 285.823); */
-  --foreground: #32363b; /* oklch(0.33 0.0104 253.98) */
-
-  --card: #ffffff; /* oklch(1 0 0); */
-  --card-foreground: #32363b; /* oklch(0.33 0.0104 253.98) */
-
-  --popover: #ffffff; /* oklch(1 0 0); */
-  --popover-foreground: #32363b; /* oklch(0.33 0.0104 253.98) */
-
-  /* --primary: #171717; oklch(0.205 0 0); */
-  /* --primary: #ff4500;  oklch(0.66 0.229356 35.4025) */
-  --primary-foreground: #fafafa; /* oklch(0.985 0 0); */
-
-  /* --secondary: #9f7dff; oklch(0.967 0.001 286.375); */
-  --secondary-foreground: #18181b; /* oklch(0.21 0.006 285.885); */
-
-  --muted: #f4f4f5; /* oklch(0.967 0.001 286.375); */
-  --muted-foreground: #6d6d6d; /* oklch(0.552 0.016 285.938); */
-
-  /* --accent: #f4f4f5; oklch(0.967 0.001 286.375); */
-  --accent-foreground: #18181b; /* oklch(0.21 0.006 285.885); */
-
-  --destructive: #e7000b;
-
-  --border: var(--outline);
-  --input: var(--outline);
-  --ring: #9f9fa9;
-  --sidebar: #fafafa;
-  --sidebar-foreground: #32363b;
-  --sidebar-primary: #18181b;
-  --sidebar-primary-foreground: #fafafa;
-  --sidebar-accent: #f4f4f5;
-  --sidebar-accent-foreground: #18181b;
-  --sidebar-border: var(--outline);
-  --sidebar-ring: var(--primary);
-
-  --skeleton: #e5e5e5;
-
-  --input-muted: #f5f5f6;
-  --input-border: var(--outline);
-  --input-foreground: #32363b;
-  --input-foreground-muted: #6d6d6d;
-}
-
-.dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.92 0.004 286.32);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-
-  --border: oklch(1 0 0 / 10%);
-
-  --input: rgb(34, 34, 35);
-  --ring: oklch(0.552 0.016 285.938);
-
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-
-  --sidebar-border: oklch(1 0 0 / 10%);
-
-  --sidebar-ring: oklch(0.552 0.016 285.938);
-
-  --outline: oklch(1 0 0 / 10%);
-  --skeleton: oklch(0.274 0.006 286.033);
-
-  --input-muted: #17171a;
-  --input-border: oklch(1 0 0 / 10%);
-  --input-foreground: #ffffff;
-  --input-foreground-muted: oklch(0.705 0.015 286.067);
 }
 
 /* Define the theme BEFORE importing Tailwind */
@@ -330,41 +242,6 @@ layer(fonts);
   --color-green-200: var(--green-200);
   --color-blue-50: var(--blue-50);
   --color-blue-200: var(--blue-200);
-
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-
-  --color-outline: var(--sidebar-border);
-
-  --color-skeleton: var(--skeleton);
-
-  --color-input-muted: var(--input-muted);
-  --color-input-border: var(--input-border);
-  --color-input-foreground: var(--input-foreground);
-  --color-input-foreground-muted: var(--input-foreground-muted);
 }
 
 /* Add your theme overrides in the base layer to ensure they take precedence */

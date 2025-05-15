@@ -93,14 +93,14 @@ import { twSort, AtpThemeType } from atp-react-ui;
 
 const customTheme: AtpThemeType = {
   helperText: {
-    base: twSort`flex-grow-0 relative flex h-5 md:bg-gray-900`,
+    base: twSort`grow-0 relative flex h-5 md:bg-gray-900`,
   },
 };
 
 // It will automatically be sorted as
 const customTheme: AtpThemeType = {
   helperText: {
-    base: twSort`relative flex h-5 flex-grow-0 md:bg-gray-900`,
+    base: twSort`relative flex h-5 grow-0 md:bg-gray-900`,
   },
 };
 ```

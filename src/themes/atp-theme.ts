@@ -125,7 +125,7 @@ export const atpTheme = {
   // Textarea
   textarea: {
     base: twSort`border-outline placeholder:text-accent-light/50 block w-full rounded-lg border text-sm focus:outline-hidden`,
-    active: twSort`focus:border-primary focus:ring-primary-light focus:ring focus-visible:outline-hidden`,
+    active: twSort`focus:border-primary focus:ring-primary-light focus:ring-3 focus-visible:outline-hidden`,
     disabled: twSort`disabled:cursor-not-allowed disabled:bg-gray-50`,
   },
 
@@ -145,21 +145,21 @@ export const atpTheme = {
   // Input
   input: {
     base: twSort`border-input-border text-input-foreground placeholder:text-accent-light/50 block w-full rounded-lg border bg-transparent p-2.5 text-sm leading-5 outline-hidden`,
-    active: twSort`focus:border-primary focus:ring focus:ring-transparent focus:outline-hidden`,
+    active: twSort`focus:border-primary focus:ring-3 focus:ring-transparent focus:outline-hidden`,
     disabled: twSort`disabled:text-input-foreground-muted disabled:border-input-border disabled:bg-input-muted disabled:cursor-not-allowed`,
   },
 
   //
   checkbox: {
-    active: twSort`focus:border-primary focus:ring-primary-light focus:ring focus:ring-offset-0 focus:outline-hidden`,
+    active: twSort`focus:border-primary focus:ring-primary-light focus:ring-3 focus:ring-offset-0 focus:outline-hidden`,
     disabled: twSort`checked:disabled:border-primary disabled:text-accent-disabled disabled:border-border disabled:cursor-not-allowed disabled:bg-gray-50`,
-    base: twSort`not-checked:disabled:bg-input-muted form-checkbox checked:disabled:bg-primary border-input-border text-primary cursor-pointer rounded-sm fill-transparent not-checked:bg-transparent`,
+    base: twSort`not-checked:disabled:bg-input-muted form-checkbox checked:disabled:bg-primary border-input-border text-primary cursor-pointer rounded-xs fill-transparent not-checked:bg-transparent`,
   },
 
   // Radio
   radio: {
     base: twSort`form-radio text-primary cursor-pointer`,
-    active: twSort`border-outline focus:border-primary focus:ring-primary-light focus:ring focus:ring-offset-0 focus:outline-hidden`,
+    active: twSort`border-outline focus:border-primary focus:ring-primary-light focus:ring-3 focus:ring-offset-0 focus:outline-hidden`,
     disabled: twSort`disabled:text-accent-disabled hover:disabled:text-accent-disabled disabled:border-outline disabled:cursor-not-allowed disabled:bg-gray-50`,
   },
 

@@ -43,7 +43,7 @@ const Slider = React.forwardRef<
       <Tooltip content={10}>
         <div className="bg-success mr-0.5 h-4 w-1 cursor-pointer rounded-md" />
       </Tooltip>
-      <SliderPrimitive.Thumb className="focus-visible:ring-ring border-primary-light bg-primary ring-primary-light z-30 flex size-5 cursor-pointer items-center justify-center rounded-full border text-xs font-semibold text-white shadow transition-colors hover:ring-2 focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
+      <SliderPrimitive.Thumb className="focus-visible:ring-ring-3 border-primary-light bg-primary ring-primary-light z-30 flex size-5 cursor-pointer items-center justify-center rounded-full border text-xs font-semibold text-white shadow-sm transition-colors hover:ring-2 focus-visible:ring-1 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50">
         {props?.value?.[0] ?? props?.defaultValue?.[0] ?? 1}
       </SliderPrimitive.Thumb>
     </SliderPrimitive.Root>

@@ -34,8 +34,8 @@ export const Modal = ({
       as="div"
       open={open}
       className={twMerge(
-        'relative z-[999]',
-        'transition duration-300 ease-out data-[closed]:opacity-0',
+        'relative z-999',
+        'transition duration-300 ease-out data-closed:opacity-0',
         dialogClassName
       )}
       onClose={handleClose}

@@ -20,7 +20,7 @@ export const DropdownItems = ({
       as={as}
       {...rest}
       className={twMerge(
-        'origin-top transition duration-200 ease-out data-[closed]:scale-95 data-[closed]:opacity-0',
+        'origin-top transition duration-200 ease-out data-closed:scale-95 data-closed:opacity-0',
         cls
       )}
     />

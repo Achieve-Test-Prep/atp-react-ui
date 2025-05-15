@@ -28,7 +28,7 @@ export const FormPasswordInput = ({
         size="sm"
         as="link"
         aria-label="Toggle secure field visibility"
-        className="absolute top-7 right-[0.3125rem]"
+        className="absolute top-7 right-1.25"
       />
     </div>
   );
