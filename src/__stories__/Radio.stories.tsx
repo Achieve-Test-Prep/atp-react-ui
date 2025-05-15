@@ -17,7 +17,6 @@ type Story = StoryObj<typeof RadioItem>;
 export const Primary: Story = {
   render: () => (
     <RadioItemsGroup>
-      {' '}
       <RadioItem value="" />
     </RadioItemsGroup>
   ),

@@ -11,7 +11,7 @@ layer(fonts);
 
 :root {
   --primary-dark: #550700;
-  --primary: oklch(0.66 0.229356 35.4025);
+  --primary: #ff4500;
   --primary-medium: #ff8e64;
   --primary-light: #ffe3d9;
   --primary-x-light: #fff3eb;
