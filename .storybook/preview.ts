@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-vite';
 import '../style/atp-css-styles.css';
 
 const preview: Preview = {

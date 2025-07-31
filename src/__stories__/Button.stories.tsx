@@ -16,7 +16,7 @@
 //   'aria-label': 'test btn with icon',
 // };
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Button } from '../components';
 
