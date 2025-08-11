@@ -55,7 +55,7 @@ const ModalExample = () => {
           </Button>
         </ModalFooter>
       </Modal>
-      <Button size="xs" className="fixed z-[9999999px]" onClick={toggle}>
+      <Button size="xs" className="fixed z-[9999]" onClick={toggle}>
         Click to open
       </Button>
     </>

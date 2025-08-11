@@ -15,6 +15,7 @@ export default tseslint.config(
     'dist/**',
     'node_modules/**',
     '/dist/index.js',
+    'storybook-static/**',
   ]),
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],

@@ -1,13 +1,4 @@
-/* First import the fonts */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Bitter:wght@300;400;500;700&display=swap')
-layer(fonts);
-
-@import 'tailwindcss';
-
-@plugin '@tailwindcss/forms';
-
-/* Define custom variant after imports */
-@custom-variant dark (&:is(.dark *));
+/* Define theme tokens and Tailwind theme before importing Tailwind */
 
 :root {
   --primary-dark: #550700;
@@ -74,7 +65,6 @@ layer(fonts);
   --blue-200: #bfdbfe;
 }
 
-/* Define the theme BEFORE importing Tailwind */
 @theme {
   --max-height-0: 0;
   --max-height-xl: 36rem;
@@ -178,7 +168,6 @@ layer(fonts);
   }
 }
 
-/* Define the theme BEFORE importing Tailwind */
 @theme inline {
   --color-primary-dark: var(--primary-dark);
   --color-primary: var(--primary);
@@ -254,3 +243,10 @@ layer(fonts);
     border-color: var(--outline, currentColor);
   }
 }
+
+/* Now import Tailwind and plugins */
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+
+/* Define custom variant after imports */
+@custom-variant dark (&:is(.dark *));
