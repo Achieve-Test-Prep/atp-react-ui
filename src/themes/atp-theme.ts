@@ -172,7 +172,7 @@ export const atpTheme = {
 
   // Card
   card: {
-    base: twSort`shadow-card bg-card text-card-foreground flex min-w-0 flex-col rounded-xl`,
+    base: twSort`shadow-atp-card bg-card text-card-foreground flex min-w-0 flex-col rounded-xl`,
   },
 
   cardBody: {

@@ -43,7 +43,7 @@ export function Tooltip({
       placement={placement}
       className={`${className} ${
         placements[placement as keyof typeof placements]
-      } text-accent-light shadow-card rounded-md bg-gray-50 px-2 py-1 ${text.tooltip}`}
+      } text-accent-light shadow-atp-card rounded-md bg-gray-50 px-2 py-1 ${text.tooltip}`}
     >
       <div>{children}</div>
     </Tippy>

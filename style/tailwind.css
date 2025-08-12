@@ -63,6 +63,26 @@
   --green-200: #bbf7d0;
   --blue-50: #eff6ff;
   --blue-200: #bfdbfe;
+
+  --card: #ffffff;
+  --card-foreground: #32363b;
+  --border: var(--outline);
+
+  --input-muted: #f5f5f6;
+  --input-border: var(--outline);
+  --input-foreground: var(--accent);
+  --input-foreground-muted: #6d6d6d;
+}
+
+.dark {
+  --card: oklch(0.21 0.006 285.885);
+  --card-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
+
+  --input-muted: #17171a;
+  --input-border: oklch(1 0 0 / 10%);
+  --input-foreground: #ffffff;
+  --input-foreground-muted: oklch(0.705 0.015 286.067);
 }
 
 @theme {
@@ -75,9 +95,9 @@
   --animate-shake: shake 3000ms ease-in-out infinite;
   --animate-accent-primary: accent-primary 3000ms ease-in-out infinite;
 
-  --shadow-card:
+  --shadow-atp-card:
     0px 1px 2px rgba(50, 54, 59, 0.05), 0px 2px 4px rgba(50, 54, 59, 0.25);
-  --shadow-card-orange:
+  --shadow-atp-card-orange:
     0px 1px 2px rgba(50, 54, 59, 0.05), 0px 2px 4px rgba(50, 54, 59, 0.25);
 
   --font-sans:
@@ -231,6 +251,15 @@
   --color-green-200: var(--green-200);
   --color-blue-50: var(--blue-50);
   --color-blue-200: var(--blue-200);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+
+  --color-input-muted: var(--input-muted);
+  --color-input-border: var(--input-border);
+  --color-input-foreground: var(--input-foreground);
+  --color-input-foreground-muted: var(--input-foreground-muted);
 }
 
 /* Add your theme overrides in the base layer to ensure they take precedence */
