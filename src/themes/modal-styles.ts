@@ -4,7 +4,7 @@ import { twSort } from '../utils';
 import { h5, captionMedium } from './text-styles';
 
 export const modalStyles = {
-  base: twSort`w-full transform overflow-hidden rounded-t-lg bg-white px-6 py-4 shadow-lg transition-all md:m-4 md:max-w-xl md:rounded-lg`,
+  base: twSort`relative w-full transform overflow-hidden rounded-t-lg bg-white px-6 py-4 shadow-lg transition-all md:m-4 md:max-w-xl md:rounded-lg`,
 };
 // ModalBody
 export const modalBodyStyles = {
