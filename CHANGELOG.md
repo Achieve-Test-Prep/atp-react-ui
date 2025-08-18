@@ -1,5 +1,7 @@
 # Changelog
 
+## [4.0.12](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.11...4.0.12) (2025-08-18)
+
 ## [4.0.11](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.10...4.0.11) (2025-08-12)
 
 ## [4.0.10](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.9...4.0.10) (2025-08-11)
