@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.13](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.12...4.0.13) (2026-03-09)
+
+
+### Bug Fixes
+
+* **component level:** component level ([169cbd8](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/169cbd876e0b44fff40c0879553e92acb3607fd4))
+
 ## [4.0.12](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.11...4.0.12) (2025-08-18)
 
 ## [4.0.11](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.10...4.0.11) (2025-08-12)
