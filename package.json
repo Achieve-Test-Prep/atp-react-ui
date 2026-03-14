@@ -33,6 +33,15 @@
     "github": {
       "release": true
     },
+    "git": {
+      "requireBranch": [
+        "main",
+        "master",
+        "v5.x",
+        "5.x"
+      ],
+      "requireUpstream": false
+    },
     "plugins": {
       "@release-it/conventional-changelog": {
         "preset": "angular",
