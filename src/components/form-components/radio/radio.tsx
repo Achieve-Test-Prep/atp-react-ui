@@ -3,9 +3,9 @@ import type { ComponentProps } from 'react';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../../../themes';
-
 import type { RadioGroupProps, RadioProps } from './types';
+
+import { useTheme } from '../../../themes';
 
 const RadioItemsGroup = ({
   className,

@@ -1,9 +1,9 @@
 import type { PropsWithChildren } from 'react';
 
-import { FormItem, FormLabel, FormMessage } from '../form';
-
 import { Select } from './select';
 import type { FormSelectProps } from './types';
+
+import { FormItem, FormLabel, FormMessage } from '../form';
 
 export function FormSelect({
   labelClassName,

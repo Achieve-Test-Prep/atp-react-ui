@@ -3,9 +3,9 @@ import { useCallback } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../../../themes';
-
 import type { SelectOption, SelectProps } from './types';
+
+import { useTheme } from '../../../themes';
 
 export function useSelect(props: SelectProps) {
   const {

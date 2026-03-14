@@ -1,11 +1,11 @@
-import * as React from 'react';
+import type * as React from 'react';
 
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../../themes';
-
 import type { AvatarProps } from './types';
+
+import { useTheme } from '../../themes';
 
 function Avatar({ className, size = 'base', ...props }: AvatarProps) {
   const { avatar } = useTheme();

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import type * as React from 'react';
 
 import * as SliderPrimitive from '@radix-ui/react-slider';
 import { twMerge } from 'tailwind-merge';

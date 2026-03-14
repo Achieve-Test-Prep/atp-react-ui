@@ -1,12 +1,12 @@
 import type { ComponentProps } from 'react';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import * as ProgressPrimitive from '@radix-ui/react-progress';
 import { twMerge } from 'tailwind-merge';
 
-import { Text } from '../typography';
-
 import type { ProgressbarProps } from './types';
+
+import { Text } from '../typography';
 
 export const Progressbar = ({
   className,

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import { atpTheme } from '../atp-theme';
-
 import {
-  ThemeProviderContext,
   type Theme,
+  ThemeProviderContext,
   type ThemeProviderProps,
 } from './theme-context';
+
+import { atpTheme } from '../atp-theme';
 
 export function ThemeProvider({
   children,

@@ -1,8 +1,8 @@
-import { FormControl, FormItem, FormLabel, FormMessage } from '../form';
-import type { FormLabelProps } from '../types';
-
 import type { PatternInputProps } from './pattern-input';
 import { PatternInput } from './pattern-input';
+
+import { FormControl, FormItem, FormLabel, FormMessage } from '../form';
+import type { FormLabelProps } from '../types';
 
 type TProps = PatternInputProps & FormLabelProps;
 

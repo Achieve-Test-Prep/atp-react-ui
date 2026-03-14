@@ -1,9 +1,38 @@
-/* First import the fonts */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Bitter:wght@300;400;500;700&display=swap')
-layer(fonts);
+@font-face {
+  font-family: 'Ibm Plex Sans Var';
+  src: url('/fonts/ibm-plex-sans.woff2') format('woff2');
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ibm Plex Sans Var';
+  src: url('/fonts/ibm-plex-sans-italic.woff2') format('woff2');
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter Variablefont Wght';
+  src: url('/fonts/bitter.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter Variablefont Wght';
+  src: url('/fonts/bitter-italic.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
 
 @import 'tailwindcss';
 
+@import 'tw-animate-css';
 @plugin '@tailwindcss/forms';
 
 /* Define custom variant after imports */
@@ -179,13 +208,14 @@ layer(fonts);
     0px 1px 2px rgba(50, 54, 59, 0.05), 0px 2px 4px rgba(50, 54, 59, 0.25);
 
   --font-sans:
-    'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system,
+    "'Ibm Plex Sans Var'", ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
     'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
 
   --font-serif:
-    Bitter, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    'Bitter Variablefont Wght', ui-serif, Georgia, Cambria, 'Times New Roman',
+    Times, serif;
 
   --font-mono:
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
@@ -375,5 +405,11 @@ layer(fonts);
   ::backdrop,
   ::file-selector-button {
     border-color: var(--outline, currentColor);
+  }
+}
+
+@layer utilities {
+  .corner-shape-square-circle {
+    corner-shape: squircle;
   }
 }

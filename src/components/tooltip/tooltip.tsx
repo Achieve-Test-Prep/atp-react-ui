@@ -2,9 +2,9 @@ import type { PropsWithChildren } from 'react';
 
 import Tippy from '@tippyjs/react';
 
-import { useTheme } from '../../themes';
-
 import type { TooltipProps } from './types';
+
+import { useTheme } from '../../themes';
 
 const placements = {
   // default

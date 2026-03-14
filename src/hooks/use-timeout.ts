@@ -31,12 +31,14 @@ export const useSetTimeout = (): UseSetTimeoutReturnType => {
     setTimeout: (func: () => void, duration: number): number => {
       const id = setTimeout(func, duration) as unknown as number;
 
+      // eslint-disable-next-line react-hooks/immutability
       timeoutIds[id] = 1;
 
       return id;
     },
 
     clearTimeout: (id: number): void => {
+      // eslint-disable-next-line react-hooks/immutability
       delete timeoutIds[id];
       clearTimeout(id);
     },

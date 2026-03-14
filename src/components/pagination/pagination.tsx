@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import type React from 'react';
+import { useEffect, useState } from 'react';
 
 import ArrowSmallLeftIcon from '@heroicons/react/24/outline/ArrowSmallLeftIcon';
 import ArrowSmallRightIcon from '@heroicons/react/24/outline/ArrowSmallRightIcon';
@@ -118,6 +119,7 @@ export const Pagination = ({
     // always show first and last
     // max of 7 pages shown (incl. [...])
     if (TOTAL_PAGES <= MAX_VISIBLE_PAGES) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPages(Array.from({ length: TOTAL_PAGES }).map((_, i) => i + 1));
     } else if (activePage < 5) {
       // #1 active page < 5 -> show first 5

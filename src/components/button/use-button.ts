@@ -2,12 +2,12 @@ import { useMemo } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
+import type { ButtonProps } from './types';
+
 import type { AtpThemeType } from '../../themes';
 import { useTheme } from '../../themes';
 import { warn } from '../../utils';
 import type { SpinnerProps } from '../progress/types';
-
-import type { ButtonProps } from './types';
 
 export function useButton(props: ButtonProps) {
   const {

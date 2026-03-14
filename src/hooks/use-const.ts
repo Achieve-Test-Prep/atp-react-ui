@@ -28,5 +28,6 @@ export function useConst<T>(initialValue: T | (() => T)): T {
     };
   }
 
+  // eslint-disable-next-line react-hooks/refs
   return ref.current.value;
 }

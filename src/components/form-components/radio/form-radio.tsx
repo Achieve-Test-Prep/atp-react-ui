@@ -1,12 +1,12 @@
-import type { ComponentPropsWithoutRef, ComponentProps } from 'react';
+import type { ComponentProps, ComponentPropsWithoutRef } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { FormControl, FormItem, FormLabel, FormMessage } from '../form';
-import type { FormLabelProps } from '../types';
-
 import { RadioItem, RadioItemsGroup } from './radio';
 import type { RadioGroupProps, RadioProps } from './types';
+
+import { FormControl, FormItem, FormLabel, FormMessage } from '../form';
+import type { FormLabelProps } from '../types';
 
 const FormRadioItemsGroup = ({
   labelClassName,

@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../../themes';
-
 import type { TextProps } from './types';
+
+import { useTheme } from '../../themes';
 
 export const Text = ({
   children,

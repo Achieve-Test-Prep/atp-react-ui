@@ -1,9 +1,9 @@
 import { MenuItems } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../../themes';
-
 import type { DropdownMenuItemsProps } from './types';
+
+import { useTheme } from '../../themes';
 
 export const DropdownItems = ({
   className,

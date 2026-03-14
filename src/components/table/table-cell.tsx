@@ -1,8 +1,8 @@
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../../themes';
-
 import type { TableCellProps } from './types';
+
+import { useTheme } from '../../themes';
 
 export const TableCell = ({
   className,

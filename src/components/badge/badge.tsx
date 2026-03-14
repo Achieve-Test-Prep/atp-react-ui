@@ -1,8 +1,8 @@
-import { twMerge, twJoin } from 'tailwind-merge';
-
-import { useTheme } from '../../themes';
+import { twJoin, twMerge } from 'tailwind-merge';
 
 import type { BadgeProps } from './types';
+
+import { useTheme } from '../../themes';
 
 export const Badge = ({
   className,

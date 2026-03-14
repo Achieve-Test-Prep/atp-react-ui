@@ -1,8 +1,10 @@
 import type { ChangeEvent } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 
 import { Input } from './input';
 import type { InputProps } from './types';
+
+import { useIsomorphicLayoutEffect } from '../../../hooks';
 
 export type PatternInputProps = Omit<InputProps, 'value'> & {
   pattern: string;
@@ -19,8 +21,8 @@ const PatternInput = ({
   as = 'numeric',
   ...rest
 }: PatternInputProps) => {
-  const [value, setValue] = useState(format(userValue, pattern));
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const value = format(userValue, pattern);
 
   const infoRef = useRef({
     cursorPosition: userValue?.length ?? 0,
@@ -103,15 +105,9 @@ const PatternInput = ({
     }
 
     onValueChange(rawValue);
-
-    // if (typeof onChange === 'function') {
-    //   onChange(event);
-    // }
-
-    setValue(formattedValue);
   };
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (inputRef.current && infoRef.current) {
       const { cursorPosition, endOfSection } = infoRef.current;
 
@@ -119,12 +115,6 @@ const PatternInput = ({
       inputRef.current.setSelectionRange(cursorPosition, cursorPosition);
     }
   }, [inputRef, value]);
-
-  useEffect(() => {
-    if (userValue !== '' && value === '') {
-      setValue(format(userValue, pattern));
-    }
-  }, [value, userValue, pattern]);
 
   if (onChange) {
     console.log('Please use onValueChange instead of onChange');
@@ -134,6 +124,7 @@ const PatternInput = ({
     <Input
       maxLength={pattern.length}
       onChange={handleChange}
+      ref={inputRef}
       value={value}
       {...rest}
     />
@@ -178,6 +169,6 @@ function stripPatternCharacters(value: string) {
   return value.replace(/[^\dA-z]/g, '');
 }
 
-function isUserCharacter(character: string) {
-  return /[\dA-z]/.test(character);
+function isUserCharacter(character?: string) {
+  return typeof character === 'string' && /[\dA-z]/.test(character);
 }

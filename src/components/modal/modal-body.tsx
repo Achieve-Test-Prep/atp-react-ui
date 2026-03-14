@@ -1,9 +1,9 @@
 import { Description } from '@headlessui/react';
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../../themes';
-
 import type { ModalBodyProps } from './types';
+
+import { useTheme } from '../../themes';
 
 export const ModalBody = ({
   children,

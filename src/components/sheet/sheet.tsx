@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import type * as React from 'react';
 
 import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
 import * as SheetPrimitive from '@radix-ui/react-dialog';

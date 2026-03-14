@@ -1,16 +1,16 @@
-import type { HTMLAttributes, ComponentProps } from 'react';
+import type { ComponentProps, HTMLAttributes } from 'react';
 import { useId, useMemo } from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
 import { FormProvider } from 'react-hook-form';
 import { twMerge } from 'tailwind-merge';
 
-import type { DivProps } from '../../../types';
-import { Text, Label } from '../../typography';
-import type { LabelProps } from '../../typography/types';
-
 import { FormItemContext } from './form-item-context';
 import { useFormField } from './use-form-field';
+
+import type { DivProps } from '../../../types';
+import { Label, Text } from '../../typography';
+import type { LabelProps } from '../../typography/types';
 
 const Form = FormProvider;
 

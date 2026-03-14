@@ -1,8 +1,8 @@
-import { FormControl, FormItem, FormLabel, FormMessage } from '../form';
-import type { FormLabelProps } from '../types';
-
 import { Checkbox } from './check-box';
 import type { CheckboxProps } from './types';
+
+import { FormControl, FormItem, FormLabel, FormMessage } from '../form';
+import type { FormLabelProps } from '../types';
 
 export const FormCheckbox = ({
   formItemClassName,

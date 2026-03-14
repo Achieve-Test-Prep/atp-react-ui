@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Icon } from '../icon';
-import { Spinner } from '../progress';
-
 import type { ButtonProps } from './types';
 import { useButton } from './use-button';
+
+import { Icon } from '../icon';
+import { Spinner } from '../progress';
 
 export const Button = ({ ...props }: ButtonProps) => {
   const {

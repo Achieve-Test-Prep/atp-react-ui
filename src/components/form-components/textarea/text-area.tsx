@@ -1,8 +1,8 @@
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../../../themes';
-
 import type { TextareaProps } from './types';
+
+import { useTheme } from '../../../themes';
 
 export const Textarea = ({
   disabled,

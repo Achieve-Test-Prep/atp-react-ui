@@ -1,8 +1,8 @@
-import { FormControl, FormItem, FormLabel, FormMessage } from '../form';
-import type { FormLabelProps } from '../types';
-
 import { Input } from './input';
 import type { InputProps } from './types';
+
+import { FormControl, FormItem, FormLabel, FormMessage } from '../form';
+import type { FormLabelProps } from '../types';
 
 export const FormInput = ({
   label,

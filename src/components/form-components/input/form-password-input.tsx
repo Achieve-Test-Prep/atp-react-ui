@@ -1,12 +1,12 @@
 import EyeIcon from '@heroicons/react/24/outline/EyeIcon';
 import EyeSlashIcon from '@heroicons/react/24/outline/EyeSlashIcon';
 
+import { FormInput } from './form-input';
+import type { InputProps } from './types';
+
 import { useBoolean } from '../../../hooks';
 import { Button } from '../../button';
 import type { FormLabelProps } from '../types';
-
-import { FormInput } from './form-input';
-import type { InputProps } from './types';
 
 export const FormPasswordInput = ({
   type = 'password',

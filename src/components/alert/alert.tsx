@@ -6,11 +6,11 @@ import XCircleIcon from '@heroicons/react/24/outline/XCircleIcon';
 import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
 import { twMerge } from 'tailwind-merge';
 
+import type { AlertProps } from './types';
+
 import { useTheme } from '../../themes';
 import { Button } from '../button';
 import { Icon } from '../icon';
-
-import type { AlertProps } from './types';
 
 export const Alert = ({
   className,

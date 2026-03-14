@@ -29,12 +29,14 @@ export const useSetInterval = (): UseSetIntervalReturnType => {
     setInterval: (func: () => void, duration: number): number => {
       const id = setInterval(func, duration) as unknown as number;
 
+      // eslint-disable-next-line react-hooks/immutability
       intervalIds[id] = 1;
 
       return id;
     },
 
     clearInterval: (id: number): void => {
+      // eslint-disable-next-line react-hooks/immutability
       delete intervalIds[id];
       clearInterval(id);
     },

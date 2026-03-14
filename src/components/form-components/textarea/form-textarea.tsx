@@ -1,8 +1,8 @@
-import { FormControl, FormItem, FormLabel, FormMessage } from '../form';
-import type { FormLabelProps } from '../types';
-
 import { Textarea } from './text-area';
 import type { TextareaProps } from './types';
+
+import { FormControl, FormItem, FormLabel, FormMessage } from '../form';
+import type { FormLabelProps } from '../types';
 
 export const FormTextarea = ({
   label,

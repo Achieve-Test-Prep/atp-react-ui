@@ -4,10 +4,10 @@ import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
 import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
 import { twMerge } from 'tailwind-merge';
 
+import type { ModalProps } from './types';
+
 import { useTheme } from '../../themes';
 import { Button } from '../button';
-
-import type { ModalProps } from './types';
 
 export const Modal = ({
   children,

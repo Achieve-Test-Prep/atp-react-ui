@@ -1,8 +1,8 @@
-import { twSort } from '../utils';
-
 import { buttonStyles } from './button-styles';
 import * as ModalStyles from './modal-styles';
 import { textStyles } from './text-styles';
+
+import { twSort } from '../utils';
 
 export const atpTheme = {
   text: textStyles,

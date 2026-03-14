@@ -1,8 +1,8 @@
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../../themes';
-
 import type { TableRowProps } from './types';
+
+import { useTheme } from '../../themes';
 
 export const TableRow = ({ className, children, ...other }: TableRowProps) => {
   const { tableRow } = useTheme();

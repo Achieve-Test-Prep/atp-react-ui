@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
-import { useTheme } from '../../../themes';
-
 import type { InputProps } from './types';
+
+import { useTheme } from '../../../themes';
 
 export function useInputStyle({ className }: InputProps) {
   const { input } = useTheme();

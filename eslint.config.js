@@ -1,43 +1,45 @@
-import js from '@eslint/js';
-import { globalIgnores } from 'eslint/config';
-import eslintConfigPrettier from 'eslint-config-prettier';
-import importX from 'eslint-plugin-import-x';
-import react from 'eslint-plugin-react';
+// ESLint core
+import eslint from '@eslint/js';
+import eslintConfigPrettier from 'eslint-config-prettier/flat';
+import importPlugin from 'eslint-plugin-import';
+import reactPlugin from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import unusedImports from 'eslint-plugin-unused-imports';
+import { defineConfig, globalIgnores } from 'eslint/config';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-export default tseslint.config(
+export default defineConfig(
   globalIgnores([
     '!.storybook',
     'dist/**',
     'node_modules/**',
     '/dist/index.js',
   ]),
+  eslint.configs.recommended,
+  tseslint.configs.recommended,
+  reactPlugin.configs.flat.recommended,
+  reactPlugin.configs.flat['jsx-runtime'],
+  reactRefresh.configs.recommended,
+  importPlugin.flatConfigs.typescript,
+  reactHooks.configs.flat.recommended,
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx,js,jsx}'],
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       globals: globals.browser,
     },
     plugins: {
-      react,
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
       'unused-imports': unusedImports,
-      'import-x': importX,
     },
     settings: {
-      'import-x/extensions': ['.js', '.jsx', '.ts', '.tsx'],
-      'import-x/parsers': {
-        '@typescript-eslint/parser': ['.ts', '.tsx'],
+      react: {
+        version: 'detect',
       },
-      'import-x/resolver': {
+      'import/resolver': {
         node: {
-          paths: ['src'],
           extensions: ['.js', '.jsx', '.ts', '.tsx'],
         },
       },
@@ -45,25 +47,17 @@ export default tseslint.config(
 
     // ignores: ['!.storybook', 'dist/**', 'node_modules/**', '/dist/index.js'],
     rules: {
-      ...reactHooks.configs.recommended.rules,
-      indent: 'error',
-      // refresh
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
-
-      // eslint
-      'no-underscore-dangle': 0,
-      'no-console': 'off',
       'no-plusplus': 'off',
       camelcase: 'off',
       'no-use-before-define': 'off',
 
-      // tslint
+      // TypeScript ESLint rules (replacing deprecated TSLint)
       '@typescript-eslint/no-use-before-define': 'off',
-      // '@typescript-eslint/consistent-type-exports': 'error',
-      '@typescript-eslint/consistent-type-imports': 'error',
+      // Prefer explicit `import type` and split type-only specifiers when auto-fixing
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        { prefer: 'type-imports', fixStyle: 'separate-type-imports' },
+      ],
       '@typescript-eslint/naming-convention': [
         'error',
         {
@@ -81,42 +75,52 @@ export default tseslint.config(
           caughtErrorsIgnorePattern: '^_',
         },
       ],
-
-      // react
-      'react/require-default-props': 'off',
-      'react/jsx-uses-react': 'off',
-      'react/react-in-jsx-scope': 'off',
+      'react/display-name': 'off',
       'react/jsx-filename-extension': [
         2,
         { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
       ],
-      'react/prop-types': 0,
-      'react/forbid-prop-types': [0, { forbid: ['any'] }],
-      'react/jsx-props-no-spreading': 'off',
 
       // eslint-plugin-unused-imports
       'unused-imports/no-unused-imports': 'error',
 
       // eslint-plugin-import
-      'import-x/extensions': 'off',
-      'import-x/prefer-default-export': 'off',
-      'import-x/order': [
+      'import/extensions': 'off',
+      'import/prefer-default-export': 'off',
+      'import/order': [
         'error',
         {
-          groups: ['builtin', 'external', 'internal', 'parent', 'sibling'],
+          groups: [
+            'builtin', // Node.js built-in modules
+            'external', // External modules from node_modules (includes type imports)
+            'internal', // Internal modules (aliases)
+            'sibling', // Sibling/current directory imports (./)
+            'parent', // Parent directory imports (../)
+            'index', // Index imports
+          ],
           pathGroups: [
+            {
+              pattern: 'react',
+              group: 'external',
+              position: 'before',
+            },
+            {
+              pattern: 'react-dom',
+              group: 'external',
+              position: 'before',
+            },
             {
               pattern: '@/**',
               group: 'internal',
               position: 'before',
             },
             {
-              pattern: 'react',
-              group: 'external',
+              pattern: '@root/**',
+              group: 'internal',
               position: 'before',
             },
           ],
-          pathGroupsExcludedImportTypes: ['react'],
+          pathGroupsExcludedImportTypes: ['type'],
           'newlines-between': 'always',
           alphabetize: {
             order: 'asc',
@@ -124,6 +128,25 @@ export default tseslint.config(
           },
         },
       ],
+      // Enable sort-imports to sort members within import statements
+      // This complements import/order which handles declaration ordering
+      'sort-imports': [
+        'error',
+        {
+          ignoreCase: true, // Match import/order's caseInsensitive setting
+          ignoreDeclarationSort: true, // Let import/order handle declaration order
+          ignoreMemberSort: false, // Sort members within imports
+          memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+          allowSeparatedGroups: false,
+        },
+      ],
+    },
+  },
+  {
+    files: ['eslint.config.js'],
+    rules: {
+      // Editors often organize these imports differently than eslint-plugin-import.
+      'import/order': 'off',
     },
   },
 
