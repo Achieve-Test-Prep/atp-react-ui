@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.3.5](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/5.3.4...5.3.5) (2026-03-20)
+
+
+### Bug Fixes
+
+* vite issues 2 ([deed3ba](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/deed3ba3b6cd7812bef1bbbe93be604a3a690fb9))
+
 ## [5.3.4](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/5.3.3...5.3.4) (2026-03-20)
 
 
