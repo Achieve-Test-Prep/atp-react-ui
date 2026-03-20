@@ -13,8 +13,6 @@ const externalPackages = [
   'react',
   'react-dom',
   'react-hook-form',
-  'tailwind-merge',
-  'tw-animate-css',
 ];
 
 export default defineConfig({
