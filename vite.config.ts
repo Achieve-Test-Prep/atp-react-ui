@@ -3,29 +3,22 @@ import { resolve } from 'path';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
 
-const libraryBuildExcludes = [
-  '.storybook/**/*',
-  'src/**/__stories__/**/*',
-  'src/**/*.stories.ts',
-  'src/**/*.stories.tsx',
-  'src/**/*.test.ts',
-  'src/**/*.test.tsx',
+const externalPackages = [
+  '@headlessui/react',
+  '@radix-ui/react-avatar',
+  '@radix-ui/react-dialog',
+  '@radix-ui/react-scroll-area',
+  '@radix-ui/react-slider',
+  'react',
+  'react-dom',
+  'react-hook-form',
+  'tailwind-merge',
+  'tw-animate-css',
 ];
 
 export default defineConfig({
-  plugins: [
-    tailwindcss(),
-    react(),
-    dts({
-      exclude: libraryBuildExcludes,
-      insertTypesEntry: true,
-      include: ['src/**/*.ts', 'src/**/*.tsx'],
-      outDir: 'dist',
-      tsconfigPath: resolve(__dirname, 'tsconfig.build.json'),
-    }),
-  ],
+  plugins: [tailwindcss(), react()],
   build: {
     emptyOutDir: true,
     lib: {
@@ -35,7 +28,8 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: (id) =>
+        externalPackages.some((pkg) => id === pkg || id.startsWith(`${pkg}/`)),
       output: {
         globals: {
           react: 'React',
