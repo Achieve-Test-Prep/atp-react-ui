@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.14](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.13...4.0.14) (2026-03-23)
+
+
+### Bug Fixes
+
+* **font update in css:** font update in css ([f7412f3](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/f7412f3cc816efa816524c1c09a1bef2dda19a56))
+
 ## [4.0.13](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.12...4.0.13) (2026-03-09)
 
 
