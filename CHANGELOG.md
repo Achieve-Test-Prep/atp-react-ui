@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.0.16](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.15...4.0.16) (2026-08-17)
+
+### Bug Fixes
+
+* build configs ([dd135c1](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/dd135c1db8267810e32dd1708359f626fe5bbff3))
+
 ## [4.0.15](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.14...4.0.15) (2026-08-17)
 
 ### Bug Fixes
