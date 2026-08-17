@@ -5,6 +5,14 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 
+const reactExternals = [
+  'react',
+  'react-dom',
+  'react/jsx-runtime',
+  'react/jsx-dev-runtime',
+  'react-dom/client',
+];
+
 export default defineConfig({
   plugins: [
     tailwindcss(),
@@ -23,7 +31,10 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: (id) =>
+        reactExternals.includes(id) ||
+        id.startsWith('react/') ||
+        id.startsWith('react-dom/'),
       output: {
         globals: {
           react: 'React',
