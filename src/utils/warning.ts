@@ -5,7 +5,7 @@
  * @param {string} message - instructions about the warning
  */
 export function warn(assert: boolean, scope: string, message: string) {
-  if (process.env.NODE_ENV !== 'production') {
+  if (!import.meta.env.PROD) {
     if (assert) {
       if (console.warn) {
         console.warn(`AtpLib [${scope}]: ${message}`);
