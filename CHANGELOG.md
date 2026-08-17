@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.0.15](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.14...4.0.15) (2026-08-17)
+
+### Bug Fixes
+
+* bump dependencies ([eef8be8](https://github.com/Achieve-Test-Prep/atp-react-ui/commit/eef8be8347f84c2609814afdc862f42dda335553))
+
 ## [4.0.14](https://github.com/Achieve-Test-Prep/atp-react-ui/compare/4.0.13...4.0.14) (2026-03-23)
 
 
